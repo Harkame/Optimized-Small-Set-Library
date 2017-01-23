@@ -1,4 +1,4 @@
-package skadi.net.communitation;
+package implementation;
 
 import java.math.BigDecimal;
 import java.util.Collection;
@@ -8,24 +8,24 @@ import java.util.Set;
 //TODO 
 public final class ConnexionArray implements Set<Number>
 {	
-	private static final int SIZE = 999999;
+	private static final int SIZE = 100;
 	
 	private int   card;
 	private Number[] values;
 	private Number[] positions;
 	
-	public SetImpl()
+	public ConnexionArray()
 	{
 		card      = 0;
-		values    = new Number[999999];
-		positions = new Number[999999];
+		values    = new Number[SIZE];
+		positions = new Number[SIZE];
 	}
 	
 	@Override
 	public boolean addAll(Collection<? extends Number> c)
 	{
 		c.forEach(n -> add(n));
-		return true;
+			return true;
 	}
 
 	@Override
@@ -52,8 +52,7 @@ public final class ConnexionArray implements Set<Number>
 	@Override
 	public boolean isEmpty()
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return card == 0;
 	}
 
 	@Override
@@ -77,29 +76,30 @@ public final class ConnexionArray implements Set<Number>
 		
 		BigDecimal b = new BigDecimal(card);
 		positions[p_value.intValue()] = b;
-
-		System.out.println("card : " + card + " - p_value : " + p_value);
+		
 		values[card]       = p_value;
 		
 		card++;
 		return true;
-
 	}
 	
 	@Override
 	public boolean remove(Object p_value)
 	{
-		Number t_value = (Number) p_value;
+		Number t_value  = (Number) p_value;
 		Number position = positions[t_value.intValue()];
-		if(values[position.intValue()] != p_value)
-		{
-			values[card]       = card;
-			card--;
-			positions[t_value.intValue()] = card;
-			return true;
-		}
-		else
+		
+		if((position == null) || (!values[position.intValue()].equals(p_value)))
 			return false;
+		
+		card--;
+		
+		values[position.intValue()]   = card;
+		
+		positions[t_value.intValue()] = card;
+		
+		
+		return true;
 	}
 	
 	@Override
@@ -119,8 +119,7 @@ public final class ConnexionArray implements Set<Number>
 	@Override
 	public int size()
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		return card;
 	}
 
 	@Override
@@ -140,15 +139,22 @@ public final class ConnexionArray implements Set<Number>
 	@Override
 	public String toString()
 	{
+		int cpt = 0;
 		StringBuilder string_builder = new StringBuilder();
 		string_builder.append("{");
 		
-		for(int index = 0; index <= card; index++)
-			if(index != card - 1)
-				string_builder.append(values[index] + ", ");
-			else
-				string_builder.append(values[index]);
-		
+		for(int index = 0; index < positions.length; index++)
+		{
+			if(positions[index] != null && values[positions[index].intValue()].intValue() == index)
+			{
+				string_builder.append(values[positions[index].intValue()].intValue());
+			
+				if(cpt < card - 1)
+					string_builder.append(", ");
+				
+			cpt++;
+			}
+		}
 		string_builder.append("}");
 		
 		return string_builder.toString();
@@ -156,9 +162,20 @@ public final class ConnexionArray implements Set<Number>
 	
 	public static void main(String[] Args)
 	{
-		ConnexionArray connexion_array = new SetImpl();
-		connexion_array.add(12);
-		connexion_array.add(42);
+		Set<Number> connexion_array = new ConnexionArray();
+		
+		System.out.println(connexion_array.add(12));
+		System.out.println(	connexion_array.add(42));
+		System.out.println(connexion_array.add(83));
+		System.out.println(connexion_array.add(83));
+		
+		System.out.println(connexion_array.toString());
+		
+		System.out.println(connexion_array.remove(12));
+		System.out.println(connexion_array.remove(12));
+		System.out.println(connexion_array.remove(49));
+		System.out.println(connexion_array.remove(42));
+		
 		System.out.println(connexion_array.toString());
 	}
 }
