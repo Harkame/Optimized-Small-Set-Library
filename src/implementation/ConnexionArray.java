@@ -3,6 +3,7 @@ package implementation;
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Set;
 
 //TODO 
@@ -25,7 +26,7 @@ public final class ConnexionArray implements Set<Number>
 	public boolean addAll(Collection<? extends Number> c)
 	{
 		c.forEach(n -> add(n));
-			return true;
+		return true;
 	}
 
 	@Override
@@ -42,14 +43,22 @@ public final class ConnexionArray implements Set<Number>
 	public boolean contains(Object o)
 	{
 		Number t_value = (Number) o;
-		return values[positions[t_value.intValue()].intValue()] == t_value;
+		return values[positions[t_value.intValue()].intValue()].equals(t_value);
 	}
 
 	@Override
 	public boolean containsAll(Collection<?> c)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		boolean contains = true;
+
+        for(Object o : c)
+        {
+            if (!this.contains(o))
+            {
+                contains = false;
+            }
+        }
+		return contains;
 	}
 
 	@Override
