@@ -31,8 +31,11 @@ public final class ConnexionArray implements Set<Number>
 	@Override
 	public void clear()
 	{
-		// TODO Auto-generated method stub
-		
+		for(int index = 0; index < values.length; index++)
+		{
+			values[index]    = null;
+			positions[index] = null;
+		}
 	}
 
 	@Override
@@ -58,8 +61,7 @@ public final class ConnexionArray implements Set<Number>
 	@Override
 	public Iterator<Number> iterator()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return new ConnexionArrayIterator(this);
 	}
 	
 	@Override
@@ -77,9 +79,10 @@ public final class ConnexionArray implements Set<Number>
 		BigDecimal b = new BigDecimal(card);
 		positions[p_value.intValue()] = b;
 		
-		values[card]       = p_value;
+		values[card] = p_value;
 		
 		card++;
+		
 		return true;
 	}
 	
@@ -125,15 +128,23 @@ public final class ConnexionArray implements Set<Number>
 	@Override
 	public Object[] toArray()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Number[] res = new Number[card];
+		int cpt = 0;
+		
+		for(int index = 0; index < values.length; index++)
+			if(positions[index] != null && values[positions[index].intValue()].intValue() == index)
+			{
+				res[cpt] = values[positions[index].intValue()];
+				cpt++;
+			}
+		
+		return res;
 	}
 
 	@Override
 	public <T> T[] toArray(T[] a)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return null; //TODO
 	}
 	
 	@Override
@@ -160,6 +171,16 @@ public final class ConnexionArray implements Set<Number>
 		return string_builder.toString();
 	}
 	
+	public Number[] getValues()
+	{
+		return values;
+	}
+	
+	public Number[] getPositions()
+	{
+		return positions;
+	}
+	
 	public static void main(String[] Args)
 	{
 		Set<Number> connexion_array = new ConnexionArray();
@@ -177,5 +198,12 @@ public final class ConnexionArray implements Set<Number>
 		System.out.println(connexion_array.remove(42));
 		
 		System.out.println(connexion_array.toString());
+		
+		Iterator<Number> t = connexion_array.iterator();
+		
+		while(t.hasNext())
+		{
+			System.out.println(t.next().toString());
+		}
 	}
 }
