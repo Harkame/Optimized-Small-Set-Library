@@ -1,4 +1,4 @@
-package implementation;
+package j.implementation;
 
 public class InnerSet_2<T> implements InnerSet<T>
 {	
