@@ -1,7 +1,9 @@
 package j.implementation;
 
 import j.implementation.innerSet.InnerSet;
+import j.implementation.innerSet.InnerSet_0;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
@@ -28,8 +30,7 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public void clear()
 	{
-		// TODO Auto-generated method stub
-		
+		this.inner_set = new InnerSet_0<>();
 	}
 
 	@Override
@@ -49,8 +50,7 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public boolean isEmpty()
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return this.inner_set.getSize() == 0;
 	}
 
 	@Override
@@ -84,8 +84,7 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public int size()
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		return this.inner_set.getSize();
 	}
 
 	@Override

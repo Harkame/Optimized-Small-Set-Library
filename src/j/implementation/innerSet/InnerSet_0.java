@@ -1,12 +1,14 @@
 package j.implementation.innerSet;
 
+import java.lang.reflect.Array;
+
 public class InnerSet_0 <T> implements InnerSet<T>
 {
 	private int size;
-	
+
 	public InnerSet_0()
 	{
-		size = 0;	
+		size = 0;
 	}
 	
 	@Override
