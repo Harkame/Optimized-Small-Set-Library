@@ -1,4 +1,4 @@
-package j.implementation;
+package j.implementation.innerSet;
 
 public interface InnerSet<T>
 {

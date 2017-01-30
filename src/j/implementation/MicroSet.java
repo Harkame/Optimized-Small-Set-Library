@@ -1,5 +1,7 @@
 package j.implementation;
 
+import j.implementation.innerSet.InnerSet;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
