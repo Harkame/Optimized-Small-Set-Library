@@ -2,11 +2,13 @@ package j.implementation.innerSet;
 
 public class InnerSet_1<T> implements InnerSet<T>
 {	
+	private int size;
+
 	private T element_0;
 	
 	public InnerSet_1()
 	{
-		
+		size = 1;
 	}
 	
 	public InnerSet_1(T p_element)
@@ -46,5 +48,11 @@ public class InnerSet_1<T> implements InnerSet<T>
 		string_builder.append("}");
 		
 		return string_builder.toString();
+	}
+	
+	@Override
+	public int getSize()
+	{
+		return size;
 	}
 }
