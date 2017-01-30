@@ -8,13 +8,14 @@ import java.util.Set;
 
 public class MicroSet<T> implements Set<T>
 {
-	InnerSet<T> inner_set;
+	private InnerSet<T> inner_set;
 
 	@Override
 	public boolean add(T e)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		InnerSet<T> temp = this.inner_set;
+		this.inner_set = this.inner_set.addElement(e);
+		return temp.getSize() == (this.inner_set.getSize() + 1);
 	}
 
 	@Override
