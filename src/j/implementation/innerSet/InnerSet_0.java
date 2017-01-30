@@ -2,9 +2,11 @@ package j.implementation.innerSet;
 
 public class InnerSet_0 <T> implements InnerSet<T>
 {
+	private int size;
+	
 	public InnerSet_0()
 	{
-		
+		size = 0;	
 	}
 	
 	@Override
@@ -30,5 +32,11 @@ public class InnerSet_0 <T> implements InnerSet<T>
 		string_builder.append("}");
 		
 		return string_builder.toString();
+	}
+	
+	@Override
+	public int getSize()
+	{
+		return size;
 	}
 }
