@@ -4,7 +4,7 @@ public class InnerSet_1<T> implements InnerSet<T>
 {	
 	private int size;
 
-	private T element_0;
+	public T element_0;
 	
 	public InnerSet_1()
 	{
@@ -23,7 +23,7 @@ public class InnerSet_1<T> implements InnerSet<T>
 		if(element_0.equals(p_element))
 			return this;
 		else
-			return new InnerSet_2(element_0, p_element);
+			return new InnerSet_2(this, p_element);
 	}
 
 	@Override
