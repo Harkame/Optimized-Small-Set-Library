@@ -2,9 +2,11 @@ package j.implementation.innerSet;
 
 public interface InnerSet<T>
 {
-	public InnerSet<T> addElement(T p_element);
-	
-	public InnerSet<T> removeElement(T p_element);
-	
-	public int getSize();
+	InnerSet<T> addElement(T p_element);
+
+	InnerSet<T> removeElement(T p_element);
+
+	int getSize();
+
+	boolean containsElement(T p_element);
 }

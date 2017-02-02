@@ -23,7 +23,7 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public boolean addAll(Collection<? extends T> c)
 	{
-		// TODO Auto-generated method stub
+		// TODO Titou
 		return false;
 	}
 
@@ -36,8 +36,7 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public boolean contains(Object o)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return this.inner_set.containsElement((T)o);
 	}
 
 	@Override

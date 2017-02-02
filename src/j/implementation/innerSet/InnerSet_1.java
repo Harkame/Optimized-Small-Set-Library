@@ -35,6 +35,13 @@ public class InnerSet_1<T> implements InnerSet<T>
 		else
 			return this;
 	}
+
+	@Override
+	public boolean containsElement(T p_element)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	@Override
 	public String toString()

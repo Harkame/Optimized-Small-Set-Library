@@ -19,7 +19,7 @@ public class InnerSet_2<T> implements InnerSet<T>
 	}
 	
 	@Override
-	public InnerSet<T>addElement(T p_element)
+	public InnerSet<T> addElement(T p_element)
 	{
 		if(element_0.equals(p_element))
 			return this;
@@ -41,7 +41,14 @@ public class InnerSet_2<T> implements InnerSet<T>
 		else
 			return this;
 	}
-	
+
+	@Override
+	public boolean containsElement(T p_element)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	@Override
 	public String toString()
 	{

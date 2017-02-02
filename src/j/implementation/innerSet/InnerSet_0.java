@@ -41,4 +41,11 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	{
 		return size;
 	}
+
+	@Override
+	public boolean containsElement(T p_element)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
