@@ -1,7 +1,5 @@
 package j.implementation.innerSet;
 
-import java.lang.reflect.Array;
-
 public class InnerSet_0 <T> implements InnerSet<T>
 {
 	private int size;
@@ -45,7 +43,6 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	@Override
 	public boolean containsElement(T p_element)
 	{
-		// TODO Auto-generated method stub
 		return false;
 	}
 }
