@@ -39,8 +39,7 @@ public class InnerSet_1<T> implements InnerSet<T>
 	@Override
 	public boolean containsElement(T p_element)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return element_0.equals(p_element);
 	}
 	
 	@Override
