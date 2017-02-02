@@ -21,9 +21,8 @@ public class InnerSet_2<T> implements InnerSet<T>
 	@Override
 	public InnerSet<T> addElement(T p_element)
 	{
-		if(element_0.equals(p_element))
-			return this;
-		else if(element_1.equals(p_element))
+		if(element_0.equals(p_element) ||
+				element_1.equals(p_element))
 			return this;
 		else
 			//return new InnerSet_2(p_element);
@@ -34,9 +33,8 @@ public class InnerSet_2<T> implements InnerSet<T>
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public InnerSet<T> removeElement(T p_element)
 	{
-		if(element_0.equals(p_element))
-			return new InnerSet_1(element_1);
-		else if(element_1.equals(p_element))
+		if(element_0.equals(p_element) ||
+			element_1.equals(p_element))
 			return new InnerSet_1(element_0);
 		else
 			return this;
@@ -45,8 +43,8 @@ public class InnerSet_2<T> implements InnerSet<T>
 	@Override
 	public boolean containsElement(T p_element)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return element_0.equals(p_element) ||
+				element_1.equals(p_element);
 	}
 
 	@Override
