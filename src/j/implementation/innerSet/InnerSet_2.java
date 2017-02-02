@@ -4,18 +4,19 @@ public class InnerSet_2<T> implements InnerSet<T>
 {	
 	private int size;
 
-	private T element_0;
-	private T element_1;
+	public T element_0;
+	public T element_1;
 	
 	public InnerSet_2()
 	{
 		size = 2;
 	}
 	
-	public InnerSet_2(T p_element_0, T p_element_1)
+	public InnerSet_2(InnerSet_1<T> p_inner_set, T p_element)
 	{
-		element_0 = p_element_0;
-		element_1 = p_element_1;
+		element_0 = p_inner_set.element_0;
+		
+		element_1 = p_element;
 	}
 	
 	@Override
