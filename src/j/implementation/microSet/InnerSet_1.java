@@ -1,14 +1,12 @@
-package j.implementation.innerSet;
+package j.implementation.microSet;
 
 public class InnerSet_1<T> implements InnerSet<T>
 {	
-	private int size;
-
-	public T element_0;
+	protected T element_0;
 	
+	// Supprimer les attributs public
 	public InnerSet_1()
 	{
-		size = 1;
 	}
 	
 	public InnerSet_1(T p_element)
@@ -23,21 +21,21 @@ public class InnerSet_1<T> implements InnerSet<T>
 		if(element_0.equals(p_element))
 			return this;
 		else
-			return new InnerSet_2(this, p_element);
+			return new InnerSet_2(this.element_0, p_element);
 	}
 
 	@Override
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public InnerSet<T> removeElement(T p_element)
+	public InnerSet<T> removeElement(Object p_element)
 	{
 		if(element_0.equals(p_element))
-				return new InnerSet_0();
+			return new InnerSet_0();
 		else
 			return this;
 	}
 
 	@Override
-	public boolean containsElement(T p_element)
+	public boolean containsElement(Object p_element)
 	{
 		return element_0.equals(p_element);
 	}
@@ -59,6 +57,6 @@ public class InnerSet_1<T> implements InnerSet<T>
 	@Override
 	public int getSize()
 	{
-		return size;
+		return 1;
 	}
 }

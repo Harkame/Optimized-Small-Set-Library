@@ -1,12 +1,11 @@
-package j.implementation.innerSet;
+package j.implementation.microSet;
 
 public class InnerSet_0 <T> implements InnerSet<T>
 {
-	private int size;
+	static InnerSet_0<Object> singleton = new InnerSet_0<Object>();
 
 	public InnerSet_0()
 	{
-		size = 0;
 	}
 	
 	@Override
@@ -17,7 +16,7 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	}
 
 	@Override
-	public InnerSet<T> removeElement(T p_element)
+	public InnerSet<T> removeElement(Object p_element)
 	{
 		return this;
 	}
@@ -37,11 +36,11 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	@Override
 	public int getSize()
 	{
-		return size;
+		return 0;
 	}
 
 	@Override
-	public boolean containsElement(T p_element)
+	public boolean containsElement(Object p_element)
 	{
 		return false;
 	}

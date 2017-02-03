@@ -1,7 +1,7 @@
-package j.implementation;
+package j.implementation.microSet;
 
-import j.implementation.innerSet.InnerSet;
-import j.implementation.innerSet.InnerSet_0;
+import j.implementation.microSet.InnerSet;
+import j.implementation.microSet.InnerSet_0;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -30,13 +30,13 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public void clear()
 	{
-		this.inner_set = new InnerSet_0<>();
+		this.inner_set = (InnerSet_0<T>) InnerSet_0.singleton;
 	}
 
 	@Override
 	public boolean contains(Object o)
 	{
-		return this.inner_set.containsElement((T)o);
+		return this.inner_set.containsElement(o);
 	}
 
 	@Override

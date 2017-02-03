@@ -1,22 +1,19 @@
-package j.implementation.innerSet;
+package j.implementation.microSet;
 
 public class InnerSet_2<T> implements InnerSet<T>
 {	
-	private int size;
-
-	public T element_0;
-	public T element_1;
+	protected T element_0;
+	protected T element_1;
 	
 	public InnerSet_2()
 	{
-		size = 2;
 	}
 	
-	public InnerSet_2(InnerSet_1<T> p_inner_set, T p_element)
+	public InnerSet_2(T p_element_0, T p_element_1)
 	{
-		element_0 = p_inner_set.element_0;
+		element_0 = p_element_0;
 		
-		element_1 = p_element;
+		element_1 = p_element_1;
 	}
 	
 	@Override
@@ -32,20 +29,21 @@ public class InnerSet_2<T> implements InnerSet<T>
 
 	@Override
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public InnerSet<T> removeElement(T p_element)
+	public InnerSet<T> removeElement(Object p_element)
 	{
-		if(element_0.equals(p_element) ||
-			element_1.equals(p_element))
+		if(element_0.equals(p_element))
+			return new InnerSet_1(element_1);
+		else if (element_1.equals(p_element))
 			return new InnerSet_1(element_0);
 		else
 			return this;
 	}
 
 	@Override
-	public boolean containsElement(T p_element)
+	public boolean containsElement(Object p_element)
 	{
 		return element_0.equals(p_element) ||
-				element_1.equals(p_element);
+			   element_1.equals(p_element);
 	}
 
 	@Override
@@ -69,7 +67,7 @@ public class InnerSet_2<T> implements InnerSet<T>
 	@Override
 	public int getSize()
 	{
-		return size;
+		return 2;
 	}
 	
 	public static void main(String [] Args)
