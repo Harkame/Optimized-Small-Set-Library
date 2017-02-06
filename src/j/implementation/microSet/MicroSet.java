@@ -1,9 +1,5 @@
 package j.implementation.microSet;
 
-import j.implementation.microSet.InnerSet;
-import j.implementation.microSet.InnerSet_0;
-
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
@@ -15,16 +11,20 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public boolean add(T e)
 	{
-		InnerSet<T> temp = this.inner_set;
+		InnerSet<T> oldInnerSet = this.inner_set;
 		this.inner_set = this.inner_set.addElement(e);
-		return temp.getSize() == (this.inner_set.getSize() + 1);
+		return oldInnerSet.getSize() == (this.inner_set.getSize() + 1);
 	}
 
+	/**
+	 * @return true if this.innerSet has been changed after the call
+	 */
 	@Override
 	public boolean addAll(Collection<? extends T> c)
 	{
-		// TODO Titou
-		return false;
+		InnerSet<T> oldInnerSet = this.inner_set;
+		this.inner_set = this.inner_set.addAllElements(c);
+		return this.inner_set.getSize() != oldInnerSet.getSize();
 	}
 
 	@Override
@@ -42,8 +42,7 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public boolean containsAll(Collection<?> c)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return this.inner_set.containsAllElements(c);
 	}
 
 	@Override
@@ -52,7 +51,7 @@ public class MicroSet<T> implements Set<T>
 		return this.inner_set.getSize() == 0;
 	}
 
-	@Override
+    @Override
 	public Iterator<T> iterator()
 	{
 		// TODO Auto-generated method stub
@@ -62,22 +61,28 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public boolean remove(Object o)
 	{
-		// TODO Auto-generated method stub
-		return false;
+        InnerSet<T> oldInnerSet = this.inner_set;
+        this.inner_set = this.inner_set.removeElement(o);
+        return oldInnerSet.getSize() == (this.inner_set.getSize() - 1);
 	}
 
+    /**
+     * @return true if this.innerSet has been changed after the call
+     */
 	@Override
 	public boolean removeAll(Collection<?> c)
 	{
-		// TODO Auto-generated method stub
-		return false;
+        InnerSet<T> oldInnerSet = this.inner_set;
+        this.inner_set = this.inner_set.removeAllElements(c);
+        return this.inner_set.getSize() != oldInnerSet.getSize();
 	}
 
 	@Override
 	public boolean retainAll(Collection<?> c)
 	{
-		// TODO Auto-generated method stub
-		return false;
+        InnerSet<T> oldInnerSet = this.inner_set;
+        this.inner_set = this.inner_set.retainAllElements(c);
+        return this.inner_set.getSize() != oldInnerSet.getSize();
 	}
 
 	@Override

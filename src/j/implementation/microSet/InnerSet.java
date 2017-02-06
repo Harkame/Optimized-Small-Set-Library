@@ -1,12 +1,21 @@
 package j.implementation.microSet;
 
-public interface InnerSet<T>
-{
-	InnerSet<T> addElement(T p_element);
+import java.util.Collection;
 
-	InnerSet<T> removeElement(Object p_element);
+public interface InnerSet<T> {
+    InnerSet<T> addElement(T p_element);
 
-	int getSize();
+    InnerSet<T> addAllElements(Collection<? extends T> p_newC);
 
-	boolean containsElement(Object p_element);
+    boolean containsElement(Object p_element);
+
+    boolean containsAllElements(Collection<?> p_c);
+
+    InnerSet<T> removeElement(Object p_element);
+
+    InnerSet<T> removeAllElements(Collection<?> p_cToDelete);
+
+    InnerSet<T> retainAllElements(Collection<?> p_cToKeep);
+
+    int getSize();
 }
