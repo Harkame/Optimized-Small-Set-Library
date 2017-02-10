@@ -3,7 +3,7 @@ package j.implementation.microSet;
 public class InnerSet_inneroffset<T> implements InnerSet<T>
 {
 	// for inneroffset
-	protected T element_inneroffset;
+	protected T element_offset;
 	// end
 
 	public InnerSet_inneroffset()
@@ -30,9 +30,9 @@ public class InnerSet_inneroffset<T> implements InnerSet<T>
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public InnerSet<T> removeElement(Object p_element)
 	{
-		/* for inneroffset separator='else'*/
+		/* for inneroffset separator='else '*/
 		if(element_offset.equals(p_element))
-			return new InnerSet_inneroffsetless(element_1); // TODO
+			return new InnerSet_inneroffsetless(/* for inneroffset separator=', ' except_offset */element_offset/* end */);
 		/* end */
 		else
 			return this;
@@ -47,7 +47,7 @@ public class InnerSet_inneroffset<T> implements InnerSet<T>
 	@Override
 	public String toString()
 	{
-		return "{ }"
+		return "{" + /* for inneroffset separator='+", "+' */ element_offset.toString() /*end*/ + "}"
 	}
 	
 	@Override
