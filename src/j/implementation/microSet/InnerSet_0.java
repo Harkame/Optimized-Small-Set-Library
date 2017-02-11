@@ -15,6 +15,11 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	{
 		return this;
 	}
+
+	protected T getElement(int index)
+	{
+		return null;
+	}
 	
 	@Override
 	public String toString()

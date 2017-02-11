@@ -11,6 +11,8 @@ public interface InnerSet<T> {
 
     boolean containsAllElements(Collection<?> p_c);
 
+    T getElement(int index);
+
     InnerSet<T> removeElement(Object p_element);
 
     InnerSet<T> removeAllElements(Collection<?> p_cToDelete);

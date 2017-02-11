@@ -34,6 +34,14 @@ public class InnerSet_1<T> implements InnerSet<T>
 			return this;
 	}
 
+	protected T getElement(int index)
+	{
+		if (index == 0)
+			return element_0;
+		else
+			return null;
+	}
+
 	@Override
 	public boolean containsElement(Object p_element)
 	{
@@ -43,15 +51,7 @@ public class InnerSet_1<T> implements InnerSet<T>
 	@Override
 	public String toString()
 	{
-		StringBuilder string_builder = new StringBuilder();
-		
-		string_builder.append("{");
-		
-		string_builder.append(element_0);
-		
-		string_builder.append("}");
-		
-		return string_builder.toString();
+		return "{" + element_0 + "}";
 	}
 	
 	@Override
