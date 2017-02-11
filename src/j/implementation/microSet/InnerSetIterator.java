@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class InnerSetIterator implements Iterator<Object>
 {
-	private int index = 1;
+	private int index = 0;
 	private InnerSet innerSet;
 	
 	public InnerSetIterator(InnerSet p_innerSet)
