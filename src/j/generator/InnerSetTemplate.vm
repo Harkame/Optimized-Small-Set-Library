@@ -1,58 +1,57 @@
+#set( $equals_p = '.equals(p_element)' )
 package j.implementation.microSet;
 
 public class $innerSetClassName <T> implements InnerSet<T>
 {
-	#foreach($element in $elements)
-	protected T $element;
-	#end
+    #foreach($element in $elements)
+protected T $element;
+    #end
+    
+    public $innerSetClassName(#foreach($element in $elements)T p_element_$foreach.count#if( $foreach.hasNext ), #end#end)
+    {
+        #foreach($element in $elements)
+$element = p_element_$foreach.count;
+        #end
+    }
+    
+    @Override
+    public InnerSet<T> addElement(T p_element)
+    {
+        if(#foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end)
+            return this;
+        else
+            return new $nextInnerSet(#foreach($element in $elements)$element#if( $foreach.hasNext ), #end#end , p_element);
+    }
 
-	public $innerSetClassName() {}
+    @Override
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public InnerSet<T> removeElement(Object p_element)
+    {
+        #foreach($el in $elements)
+        #set( $count = $foreach.count )
+if($el$equals_p)
+            return new $previousInnerSet(#foreach($element in $elements)#if($count != $foreach.count)$element#end#end);
+        #end
+else
+            return this;
+    }
 
-	
-	public $innerSetClassName(/* for innersetoffset separator=',' */T p_element_/* offset end */)
-	{
-		// for innersetoffset
-		element_/* offset */ = p_element_/* offset */;
-		// end
-	}
-	
-	@Override
-	public InnerSet<T> addElement(T p_element)
-	{
-		if(/* for innersetoffset separator='||'*/element_/* offset */.equals(p_element)/* end */)
-			return this;
-		else
-			return new $nextInnerSet(p_element);
-	}
+    @Override
+    public boolean containsElement(Object p_element)
+    {
+        return #foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end;
+    }
 
-	@Override
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public InnerSet<T> removeElement(Object p_element)
-	{
-		// for innersetoffset separator='else '
-		if(element_/* offset */.equals(p_element))
-			return new $previousInnerSet(/* for innersetoffset separator=', ' except_current_offset */element_/* offset end */);
-		// end
-		else
-			return this;
-	}
-
-	@Override
-	public boolean containsElement(Object p_element)
-	{
-		return /* for innersetoffset separator='||'*/element_/* offset */.equals(p_element)/* end */;
-	}
-
-	@Override
-	public String toString()
-	{
-		return "{" + /* for innersetoffset separator='+", "+' */ element_/* offset */.toString() /*end*/ + "}"
-	}
-	
-	@Override
-	public int getSize()
-	{
-		return $innerSetOffset;
-	}
+    @Override
+    public String toString()
+    {
+        return "{" + #foreach($element in $elements)$element#if( $foreach.hasNext ) + ", " + #end#end + " }";
+    }
+    
+    @Override
+    public int getSize()
+    {
+        return $innerSetOffset;
+    }
 
 }
