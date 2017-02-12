@@ -1,13 +1,13 @@
-package j.implementation.other;
+package j.implementation.microSet;
 
 import java.util.Iterator;
 
-public class InnerSetIterator implements Iterator<Object>
+public class InnerSetIterator<T> implements Iterator<T>
 {
 	private int index = 0;
 	private InnerSet innerSet;
 	
-	public InnerSetIterator(InnerSet p_innerSet)
+	public InnerSetIterator(InnerSet<T> p_innerSet)
 	{
 		innerSet = p_innerSet;
 	}
@@ -19,8 +19,8 @@ public class InnerSetIterator implements Iterator<Object>
 	}
 
 	@Override
-	public Object next()
+	public T next()
 	{
-		return innerSet.getElement(index++);
+		return (T) innerSet.getElement(index++);
 	}
 }

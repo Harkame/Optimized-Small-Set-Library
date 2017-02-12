@@ -1,5 +1,7 @@
 package j.implementation.microSet;
 
+import java.util.Collection;
+
 public class InnerSet_1<T> implements InnerSet<T>
 {	
 	protected T element_0;
@@ -15,7 +17,6 @@ public class InnerSet_1<T> implements InnerSet<T>
 	}
 
 	@Override
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public InnerSet<T>addElement(T p_element)
 	{
 		if(element_0.equals(p_element))
@@ -25,7 +26,11 @@ public class InnerSet_1<T> implements InnerSet<T>
 	}
 
 	@Override
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public InnerSet<T> addAllElements(Collection<? extends T> p_newC) {
+		return null;
+	}
+
+	@Override
 	public InnerSet<T> removeElement(Object p_element)
 	{
 		if(element_0.equals(p_element))
@@ -34,7 +39,17 @@ public class InnerSet_1<T> implements InnerSet<T>
 			return this;
 	}
 
-	protected T getElement(int index)
+	@Override
+	public InnerSet<T> removeAllElements(Collection<?> p_cToDelete) {
+		return null;
+	}
+
+	@Override
+	public InnerSet<T> retainAllElements(Collection<?> p_cToKeep) {
+		return null;
+	}
+
+	public T getElement(int index)
 	{
 		if (index == 0)
 			return element_0;
@@ -47,7 +62,12 @@ public class InnerSet_1<T> implements InnerSet<T>
 	{
 		return element_0.equals(p_element);
 	}
-	
+
+	@Override
+	public boolean containsAllElements(Collection<?> p_c) {
+		return false;
+	}
+
 	@Override
 	public String toString()
 	{

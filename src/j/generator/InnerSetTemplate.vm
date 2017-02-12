@@ -1,15 +1,15 @@
 package j.implementation.microSet;
 
-public class InnerSet_innersetoffset<T> implements InnerSet<T>
+public class $innerSetClassName <T> implements InnerSet<T>
 {
-	// for innersetoffset
-	protected T element_/* offset */;
-	// end
+	#foreach($element in $elements)
+	protected T $element;
+	#end
 
-	public InnerSet_innersetoffset() {}
+	public $innerSetClassName() {}
 
 	
-	public InnerSet_innersetoffset(/* for innersetoffset separator=',' */T p_element_/* offset end */)
+	public $innerSetClassName(/* for innersetoffset separator=',' */T p_element_/* offset end */)
 	{
 		// for innersetoffset
 		element_/* offset */ = p_element_/* offset */;
@@ -22,7 +22,7 @@ public class InnerSet_innersetoffset<T> implements InnerSet<T>
 		if(/* for innersetoffset separator='||'*/element_/* offset */.equals(p_element)/* end */)
 			return this;
 		else
-			return new InnerSet_innersetoffsetplus(p_element);
+			return new $nextInnerSet(p_element);
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class InnerSet_innersetoffset<T> implements InnerSet<T>
 	{
 		// for innersetoffset separator='else '
 		if(element_/* offset */.equals(p_element))
-			return new InnerSet_innersetoffsetless(/* for innersetoffset separator=', ' except_current_offset */element_/* offset end */);
+			return new $previousInnerSet(/* for innersetoffset separator=', ' except_current_offset */element_/* offset end */);
 		// end
 		else
 			return this;
@@ -52,7 +52,7 @@ public class InnerSet_innersetoffset<T> implements InnerSet<T>
 	@Override
 	public int getSize()
 	{
-		return innersetoffset;
+		return $innerSetOffset;
 	}
 
 }

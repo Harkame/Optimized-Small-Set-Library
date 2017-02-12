@@ -15,6 +15,8 @@
 	#define INNERSET_NUMBER = 1;
 %}
 %%
+\/\/ { BEGIN(ONE_LINE_COMMENT); }
+\/\* { BEGIN(INLINE_COMMENT); }
 <ONE_LINE_COMMENT>\n { BEGIN(INITIAL); }
 <INLINE_COMMENT>\*\/ { BEGIN(INTIAL); }
 <ONE_LINE_COMMENT,INLINE_COMMENT>[a-z]([a-z]|[0-9]|\_)* { return ID; }
@@ -24,8 +26,6 @@
 <ONE_LINE_COMMENT,INLINE_COMMENT>separator=' { BEGIN(SEPARATOR); }
 <SEPARATOR>[^'] { return SEPARATOR; }
 <SEPARATOR>' { BEGIN(INITIAL); }
-\/\/ { BEGIN(ONE_LINE_COMMENT); }
-\/\* { BEGIN(INLINE_COMMENT); }
 .|\n {return yytext[0];}
 %%
 

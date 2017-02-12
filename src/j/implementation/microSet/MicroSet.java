@@ -1,5 +1,6 @@
 package j.implementation.microSet;
 
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
@@ -54,7 +55,7 @@ public class MicroSet<T> implements Set<T>
     @Override
 	public Iterator<T> iterator()
 	{
-		return new InnerSetIterator(this.innerSet);
+		return new InnerSetIterator<>(this.innerSet);
 	}
 
 	@Override

@@ -1,5 +1,7 @@
 package j.implementation.microSet;
 
+import java.util.Collection;
+
 public class InnerSet_0 <T> implements InnerSet<T>
 {
 	static InnerSet_0<Object> singleton = new InnerSet_0<>();
@@ -11,12 +13,27 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	}
 
 	@Override
+	public InnerSet<T> addAllElements(Collection<? extends T> p_newC) {
+		return null;
+	}
+
+	@Override
 	public InnerSet<T> removeElement(Object p_element)
 	{
 		return this;
 	}
 
-	protected T getElement(int index)
+	@Override
+	public InnerSet<T> removeAllElements(Collection<?> p_cToDelete) {
+		return null;
+	}
+
+	@Override
+	public InnerSet<T> retainAllElements(Collection<?> p_cToKeep) {
+		return null;
+	}
+
+	public T getElement(int index)
 	{
 		return null;
 	}
@@ -36,6 +53,11 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	@Override
 	public boolean containsElement(Object p_element)
 	{
+		return false;
+	}
+
+	@Override
+	public boolean containsAllElements(Collection<?> p_c) {
 		return false;
 	}
 }
