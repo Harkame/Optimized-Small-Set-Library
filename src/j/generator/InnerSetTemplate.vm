@@ -4,13 +4,13 @@ package j.implementation.microSet;
 public class $innerSetClassName <T> implements InnerSet<T>
 {
     #foreach($element in $elements)
-protected T $element;
+    protected T $element;
     #end
     
     public $innerSetClassName(#foreach($element in $elements)T p_element_$foreach.count#if( $foreach.hasNext ), #end#end)
     {
         #foreach($element in $elements)
-$element = p_element_$foreach.count;
+        $element = p_element_$foreach.count;
         #end
     }
     
@@ -28,11 +28,13 @@ $element = p_element_$foreach.count;
     public InnerSet<T> removeElement(Object p_element)
     {
         #foreach($el in $elements)
-        #set( $count = $foreach.count )
-if($el$equals_p)
-            return new $previousInnerSet(#foreach($element in $elements)#if($count != $foreach.count)$element#end#end);
+        #set( $f = $foreach )
+        #set($sep = "")
+        if($el$equals_p)
+            return new $previousInnerSet(#foreach($element in $elements)#if($f.count != $foreach.count)$sep$element#set($sep = ", ")#end#end);
+        #if( $f.hasNext ) else #end
         #end
-else
+        else
             return this;
     }
 
@@ -40,6 +42,18 @@ else
     public boolean containsElement(Object p_element)
     {
         return #foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end;
+    }
+
+
+    public T getElement(int index)
+    {
+        #foreach($element in $elements)
+        if (index == $foreach.count )
+            return $element;
+        #if( $foreach.hasNext ) else #end
+        #end
+        else
+            return null;
     }
 
     @Override

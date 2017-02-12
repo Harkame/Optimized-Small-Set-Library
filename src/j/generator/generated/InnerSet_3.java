@@ -2,15 +2,15 @@ package j.implementation.microSet;
 
 public class InnerSet_3 <T> implements InnerSet<T>
 {
-    protected T element_1;
-    protected T element_2;
-    protected T element_3;
+        protected T element_1;
+        protected T element_2;
+        protected T element_3;
         
     public InnerSet_3(T p_element_1, T p_element_2, T p_element_3)
     {
-        element_1 = p_element_1;
-        element_2 = p_element_2;
-        element_3 = p_element_3;
+                element_1 = p_element_1;
+                element_2 = p_element_2;
+                element_3 = p_element_3;
             }
     
     @Override
@@ -26,13 +26,13 @@ public class InnerSet_3 <T> implements InnerSet<T>
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public InnerSet<T> removeElement(Object p_element)
     {
-        if(element_1.equals(p_element))
-            return new InnerSet_2(element_2element_3);
-        if(element_2.equals(p_element))
-            return new InnerSet_2(element_1element_3);
-        if(element_3.equals(p_element))
-            return new InnerSet_2(element_1element_2);
-        else
+                if(element_1.equals(p_element))
+            return new InnerSet_2(element_2, element_3);
+         else                 if(element_2.equals(p_element))
+            return new InnerSet_2(element_1, element_3);
+         else                 if(element_3.equals(p_element))
+            return new InnerSet_2(element_1, element_2);
+                        else
             return this;
     }
 
@@ -40,6 +40,19 @@ public class InnerSet_3 <T> implements InnerSet<T>
     public boolean containsElement(Object p_element)
     {
         return element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element);
+    }
+
+
+    public T getElement(int index)
+    {
+                if (index == 1 )
+            return element_1;
+         else                 if (index == 2 )
+            return element_2;
+         else                 if (index == 3 )
+            return element_3;
+                        else
+            return null;
     }
 
     @Override
