@@ -1,6 +1,8 @@
 #set( $equals_p = '.equals(p_element)' )
 package j.implementation.microSet;
 
+import java.util.Collection;
+
 public class $innerSetClassName <T> implements InnerSet<T>
 {
     #foreach($element in $elements)
@@ -54,6 +56,26 @@ public class $innerSetClassName <T> implements InnerSet<T>
         #end
         else
             return null;
+    }
+
+    @Override
+    public InnerSet<T> addAllElements(Collection<? extends T> p_newC) {
+        return null;
+    }
+
+    @Override
+    public InnerSet<T> removeAllElements(Collection<?> p_cToDelete) {
+        return null;
+    }
+
+    @Override
+    public InnerSet<T> retainAllElements(Collection<?> p_cToKeep) {
+        return null;
+    }
+
+    @Override
+    public boolean containsAllElements(Collection<?> p_c) {
+        return false;
     }
 
     @Override

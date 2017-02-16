@@ -23,9 +23,10 @@ public class Generator {
 
         try {
             VelocityEngine engine = new VelocityEngine();
-            String path = "/home/fly/workspace/Optimized-Small-Set-Library/src/j/generator/";
+            String pathToTemplate = "/home/fly/workspace/Optimized-Small-Set-Library/src/j/generator/";
+            String pathToGenerated = "/home/fly/workspace/Optimized-Small-Set-Library/src/j/implementation/microSet/";
             engine.setProperty(RuntimeConstants.RESOURCE_LOADER, "file");
-            engine.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, path);
+            engine.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, pathToTemplate);
             engine.init();
             Template template = engine.getTemplate("InnerSetTemplate.vm");
 
@@ -36,9 +37,9 @@ public class Generator {
             context.put("innerSetClassName", innerSetClassName);
             context.put("elements", elements);
 
-            Path dir = Paths.get(path + "generated/");
+            Path dir = Paths.get(pathToGenerated);
             Files.createDirectories(dir);
-            FileWriter writer = new FileWriter(new File(path +"generated/" + innerSetClassName + ".java"), false);
+            FileWriter writer = new FileWriter(new File(pathToGenerated + innerSetClassName + ".java"), false);
 
             template.merge(context, writer);
 

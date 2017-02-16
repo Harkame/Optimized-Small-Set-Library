@@ -1,5 +1,6 @@
 package j.implementation.microSet;
 
+
 import java.util.Collection;
 
 public class InnerSet_0 <T> implements InnerSet<T>
@@ -9,7 +10,7 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	@Override
 	public InnerSet<T> addElement(T p_element)
 	{
-		return new InnerSet_1(p_element);
+		return null;//new InnerSet_1(p_element);
 	}
 
 	@Override
