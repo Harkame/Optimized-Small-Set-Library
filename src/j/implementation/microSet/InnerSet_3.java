@@ -21,7 +21,7 @@ public class InnerSet_3 <T> implements InnerSet<T>
         if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element))
             return this;
         else
-            return new InnerSet_4(element_1, element_2, element_3 , p_element);
+            return null; //new InnerSet_4(element_1, element_2, element_3 , p_element);
     }
 
     @Override
