@@ -9,12 +9,16 @@ public class MicroSet<T> implements Set<T>
 {
 	private InnerSet<T> innerSet;
 
+	public MicroSet() {
+		this.innerSet = new InnerSet_0<>();
+	}
+
 	@Override
 	public boolean add(T e)
 	{
 		InnerSet<T> oldInnerSet = this.innerSet;
 		this.innerSet = this.innerSet.addElement(e);
-		return oldInnerSet.getSize() == (this.innerSet.getSize() + 1);
+		return (oldInnerSet.getSize() + 1) == this.innerSet.getSize();
 	}
 
 	/**
@@ -63,7 +67,7 @@ public class MicroSet<T> implements Set<T>
 	{
         InnerSet<T> oldInnerSet = this.innerSet;
         this.innerSet = this.innerSet.removeElement(o);
-        return oldInnerSet.getSize() == (this.innerSet.getSize() - 1);
+        return (oldInnerSet.getSize() - 1) == this.innerSet.getSize();
 	}
 
     /**
@@ -75,6 +79,13 @@ public class MicroSet<T> implements Set<T>
         InnerSet<T> oldInnerSet = this.innerSet;
         this.innerSet = this.innerSet.removeAllElements(c);
         return this.innerSet.getSize() != oldInnerSet.getSize();
+	}
+
+	@Override
+	public String toString() {
+		return "MicroSet{" +
+				"innerSet=" + innerSet +
+				'}';
 	}
 
 	@Override

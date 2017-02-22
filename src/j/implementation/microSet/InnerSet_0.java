@@ -5,12 +5,12 @@ import java.util.Collection;
 
 public class InnerSet_0 <T> implements InnerSet<T>
 {
-	static InnerSet_0<Object> singleton = new InnerSet_0<>();
+	public static InnerSet_0<Object> singleton = new InnerSet_0<>();
 	
 	@Override
 	public InnerSet<T> addElement(T p_element)
 	{
-		return null;//new InnerSet_1(p_element);
+		return new InnerSet_1(p_element);
 	}
 
 	@Override
