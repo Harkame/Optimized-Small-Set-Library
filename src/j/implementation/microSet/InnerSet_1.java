@@ -4,13 +4,13 @@ import java.util.Collection;
 
 public class InnerSet_1 <T> implements InnerSet<T>
 {
-    protected T element_1;
-
+        protected T element_1;
+        
     public InnerSet_1(T p_element_1)
     {
-        element_1 = p_element_1;
-    }
-
+                element_1 = p_element_1;
+            }
+    
     @Override
     public InnerSet<T> addElement(T p_element)
     {
@@ -24,9 +24,9 @@ public class InnerSet_1 <T> implements InnerSet<T>
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public InnerSet<T> removeElement(Object p_element)
     {
-        if(element_1.equals(p_element))
+                if(element_1.equals(p_element))
             return new InnerSet_0();
-        else
+                        else
             return this;
     }
 
@@ -39,12 +39,11 @@ public class InnerSet_1 <T> implements InnerSet<T>
 
     public T getElement(int index)
     {
-        if (index == 1 )
+                if (index == 1 )
             return element_1;
-        else
+                        else
             return null;
     }
-
 
     @Override
     public InnerSet<T> addAllElements(Collection<? extends T> p_newC) {
@@ -71,7 +70,7 @@ public class InnerSet_1 <T> implements InnerSet<T>
     {
         return "{" + element_1 + " }";
     }
-
+    
     @Override
     public int getSize()
     {

@@ -9,6 +9,10 @@ public class MicroSet<T> implements Set<T>
 {
 	private InnerSet<T> innerSet;
 
+	public MicroSet(InnerSet<T> innerSet) {
+		this.innerSet = innerSet;
+	}
+
 	public MicroSet() {
 		this.innerSet = new InnerSet_0<>();
 	}

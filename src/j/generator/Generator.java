@@ -13,6 +13,15 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Generator {
+    // Constructeur avec l'innerset precedent + Tout dans un fichier classe interne
+    // AB getElement
+    // SuperClasseAbstraite
+    // InnerHashset
+    // Constructeur par copie
+    // Switch case
+
+
+    static int TO_GENERATE = 15;
 
     public static void createOneFile(int offset) {
         String innerSetClassName = "InnerSet_" + offset;
@@ -50,7 +59,7 @@ public class Generator {
     }
 
     public static void main(String[] args) {
-        for(int i = 1; i <= 3; i++)
+        for(int i = 1; i <= TO_GENERATE; i++)
         createOneFile(i);
     }
 

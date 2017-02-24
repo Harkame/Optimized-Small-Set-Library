@@ -2,26 +2,28 @@ package j.implementation.microSet;
 
 import java.util.Collection;
 
-public class InnerSet_3 <T> implements InnerSet<T>
+public class InnerSet_4 <T> implements InnerSet<T>
 {
         protected T element_1;
         protected T element_2;
         protected T element_3;
+        protected T element_4;
         
-    public InnerSet_3(T p_element_1, T p_element_2, T p_element_3)
+    public InnerSet_4(T p_element_1, T p_element_2, T p_element_3, T p_element_4)
     {
                 element_1 = p_element_1;
                 element_2 = p_element_2;
                 element_3 = p_element_3;
+                element_4 = p_element_4;
             }
     
     @Override
     public InnerSet<T> addElement(T p_element)
     {
-        if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element))
+        if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element) || element_4.equals(p_element))
             return this;
         else
-            return new InnerSet_4(element_1, element_2, element_3 , p_element);
+            return new InnerSet_5(element_1, element_2, element_3, element_4 , p_element);
     }
 
     @Override
@@ -29,11 +31,13 @@ public class InnerSet_3 <T> implements InnerSet<T>
     public InnerSet<T> removeElement(Object p_element)
     {
                 if(element_1.equals(p_element))
-            return new InnerSet_2(element_2, element_3);
+            return new InnerSet_3(element_2, element_3, element_4);
          else                 if(element_2.equals(p_element))
-            return new InnerSet_2(element_1, element_3);
+            return new InnerSet_3(element_1, element_3, element_4);
          else                 if(element_3.equals(p_element))
-            return new InnerSet_2(element_1, element_2);
+            return new InnerSet_3(element_1, element_2, element_4);
+         else                 if(element_4.equals(p_element))
+            return new InnerSet_3(element_1, element_2, element_3);
                         else
             return this;
     }
@@ -41,7 +45,7 @@ public class InnerSet_3 <T> implements InnerSet<T>
     @Override
     public boolean containsElement(Object p_element)
     {
-        return element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element);
+        return element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element) || element_4.equals(p_element);
     }
 
 
@@ -53,6 +57,8 @@ public class InnerSet_3 <T> implements InnerSet<T>
             return element_2;
          else                 if (index == 3 )
             return element_3;
+         else                 if (index == 4 )
+            return element_4;
                         else
             return null;
     }
@@ -80,13 +86,13 @@ public class InnerSet_3 <T> implements InnerSet<T>
     @Override
     public String toString()
     {
-        return "{" + element_1 + ", " + element_2 + ", " + element_3 + " }";
+        return "{" + element_1 + ", " + element_2 + ", " + element_3 + ", " + element_4 + " }";
     }
     
     @Override
     public int getSize()
     {
-        return 3;
+        return 4;
     }
 
 }
