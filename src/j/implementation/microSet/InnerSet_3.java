@@ -1,6 +1,7 @@
 package j.implementation.microSet;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class InnerSet_3 <T> implements InnerSet<T>
 {
@@ -14,6 +15,11 @@ public class InnerSet_3 <T> implements InnerSet<T>
                 element_2 = p_element_2;
                 element_3 = p_element_3;
             }
+
+    public InnerSet_3(InnerSet_2<T> i, T el)
+    {
+            element_1 = i.element_1;            element_2 = i.element_2;                    element_3 = el;
+    }
     
     @Override
     public InnerSet<T> addElement(T p_element)
@@ -21,19 +27,17 @@ public class InnerSet_3 <T> implements InnerSet<T>
         if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element))
             return this;
         else
-            return new InnerSet_4(element_1, element_2, element_3 , p_element);
-    }
+            return new InnerSet_4<>(this, p_element);    }
 
     @Override
-    @SuppressWarnings({ "rawtypes", "unchecked" })
     public InnerSet<T> removeElement(Object p_element)
     {
                 if(element_1.equals(p_element))
-            return new InnerSet_2(element_2, element_3);
+            return new InnerSet_2<>(element_2, element_3);
          else                 if(element_2.equals(p_element))
-            return new InnerSet_2(element_1, element_3);
+            return new InnerSet_2<>(element_1, element_3);
          else                 if(element_3.equals(p_element))
-            return new InnerSet_2(element_1, element_2);
+            return new InnerSet_2<>(element_1, element_2);
                         else
             return this;
     }
@@ -46,15 +50,16 @@ public class InnerSet_3 <T> implements InnerSet<T>
 
 
     public T getElement(int index)
-    {
-                if (index == 1 )
+    {switch(index) {
+                case 1:
             return element_1;
-         else                 if (index == 2 )
+                case 2:
             return element_2;
-         else                 if (index == 3 )
+                case 3:
             return element_3;
-                        else
+                default:
             return null;
+            }
     }
 
     @Override
@@ -87,6 +92,11 @@ public class InnerSet_3 <T> implements InnerSet<T>
     public int getSize()
     {
         return 3;
+    }
+
+    @Override
+    public Iterator<T> getIterator() {
+        return new InnerSetIterator<>(this);
     }
 
 }

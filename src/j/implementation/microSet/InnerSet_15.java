@@ -1,6 +1,7 @@
 package j.implementation.microSet;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class InnerSet_15 <T> implements InnerSet<T>
 {
@@ -38,6 +39,11 @@ public class InnerSet_15 <T> implements InnerSet<T>
                 element_14 = p_element_14;
                 element_15 = p_element_15;
             }
+
+    public InnerSet_15(InnerSet_14<T> i, T el)
+    {
+            element_1 = i.element_1;            element_2 = i.element_2;            element_3 = i.element_3;            element_4 = i.element_4;            element_5 = i.element_5;            element_6 = i.element_6;            element_7 = i.element_7;            element_8 = i.element_8;            element_9 = i.element_9;            element_10 = i.element_10;            element_11 = i.element_11;            element_12 = i.element_12;            element_13 = i.element_13;            element_14 = i.element_14;                    element_15 = el;
+    }
     
     @Override
     public InnerSet<T> addElement(T p_element)
@@ -45,43 +51,41 @@ public class InnerSet_15 <T> implements InnerSet<T>
         if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element) || element_4.equals(p_element) || element_5.equals(p_element) || element_6.equals(p_element) || element_7.equals(p_element) || element_8.equals(p_element) || element_9.equals(p_element) || element_10.equals(p_element) || element_11.equals(p_element) || element_12.equals(p_element) || element_13.equals(p_element) || element_14.equals(p_element) || element_15.equals(p_element))
             return this;
         else
-            return null;
-    }
+            return new InnerHashSet<>(this);    }
 
     @Override
-    @SuppressWarnings({ "rawtypes", "unchecked" })
     public InnerSet<T> removeElement(Object p_element)
     {
                 if(element_1.equals(p_element))
-            return new InnerSet_14(element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_2.equals(p_element))
-            return new InnerSet_14(element_1, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_3.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_4.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_5.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_6.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_7.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_6, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_6, element_8, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_8.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_9, element_10, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_9.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_10, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_10, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_10.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_11, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_11, element_12, element_13, element_14, element_15);
          else                 if(element_11.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_12, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_12, element_13, element_14, element_15);
          else                 if(element_12.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_13, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_13, element_14, element_15);
          else                 if(element_13.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_14, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_14, element_15);
          else                 if(element_14.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_15);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_15);
          else                 if(element_15.equals(p_element))
-            return new InnerSet_14(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14);
+            return new InnerSet_14<>(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8, element_9, element_10, element_11, element_12, element_13, element_14);
                         else
             return this;
     }
@@ -94,39 +98,40 @@ public class InnerSet_15 <T> implements InnerSet<T>
 
 
     public T getElement(int index)
-    {
-                if (index == 1 )
+    {switch(index) {
+                case 1:
             return element_1;
-         else                 if (index == 2 )
+                case 2:
             return element_2;
-         else                 if (index == 3 )
+                case 3:
             return element_3;
-         else                 if (index == 4 )
+                case 4:
             return element_4;
-         else                 if (index == 5 )
+                case 5:
             return element_5;
-         else                 if (index == 6 )
+                case 6:
             return element_6;
-         else                 if (index == 7 )
+                case 7:
             return element_7;
-         else                 if (index == 8 )
+                case 8:
             return element_8;
-         else                 if (index == 9 )
+                case 9:
             return element_9;
-         else                 if (index == 10 )
+                case 10:
             return element_10;
-         else                 if (index == 11 )
+                case 11:
             return element_11;
-         else                 if (index == 12 )
+                case 12:
             return element_12;
-         else                 if (index == 13 )
+                case 13:
             return element_13;
-         else                 if (index == 14 )
+                case 14:
             return element_14;
-         else                 if (index == 15 )
+                case 15:
             return element_15;
-                        else
+                default:
             return null;
+            }
     }
 
     @Override
@@ -159,6 +164,11 @@ public class InnerSet_15 <T> implements InnerSet<T>
     public int getSize()
     {
         return 15;
+    }
+
+    @Override
+    public Iterator<T> getIterator() {
+        return new InnerSetIterator<>(this);
     }
 
 }

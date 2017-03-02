@@ -1,6 +1,7 @@
 package j.implementation.microSet;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class InnerSet_8 <T> implements InnerSet<T>
 {
@@ -24,6 +25,11 @@ public class InnerSet_8 <T> implements InnerSet<T>
                 element_7 = p_element_7;
                 element_8 = p_element_8;
             }
+
+    public InnerSet_8(InnerSet_7<T> i, T el)
+    {
+            element_1 = i.element_1;            element_2 = i.element_2;            element_3 = i.element_3;            element_4 = i.element_4;            element_5 = i.element_5;            element_6 = i.element_6;            element_7 = i.element_7;                    element_8 = el;
+    }
     
     @Override
     public InnerSet<T> addElement(T p_element)
@@ -31,29 +37,27 @@ public class InnerSet_8 <T> implements InnerSet<T>
         if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element) || element_4.equals(p_element) || element_5.equals(p_element) || element_6.equals(p_element) || element_7.equals(p_element) || element_8.equals(p_element))
             return this;
         else
-            return new InnerSet_9(element_1, element_2, element_3, element_4, element_5, element_6, element_7, element_8 , p_element);
-    }
+            return new InnerSet_9<>(this, p_element);    }
 
     @Override
-    @SuppressWarnings({ "rawtypes", "unchecked" })
     public InnerSet<T> removeElement(Object p_element)
     {
                 if(element_1.equals(p_element))
-            return new InnerSet_7(element_2, element_3, element_4, element_5, element_6, element_7, element_8);
+            return new InnerSet_7<>(element_2, element_3, element_4, element_5, element_6, element_7, element_8);
          else                 if(element_2.equals(p_element))
-            return new InnerSet_7(element_1, element_3, element_4, element_5, element_6, element_7, element_8);
+            return new InnerSet_7<>(element_1, element_3, element_4, element_5, element_6, element_7, element_8);
          else                 if(element_3.equals(p_element))
-            return new InnerSet_7(element_1, element_2, element_4, element_5, element_6, element_7, element_8);
+            return new InnerSet_7<>(element_1, element_2, element_4, element_5, element_6, element_7, element_8);
          else                 if(element_4.equals(p_element))
-            return new InnerSet_7(element_1, element_2, element_3, element_5, element_6, element_7, element_8);
+            return new InnerSet_7<>(element_1, element_2, element_3, element_5, element_6, element_7, element_8);
          else                 if(element_5.equals(p_element))
-            return new InnerSet_7(element_1, element_2, element_3, element_4, element_6, element_7, element_8);
+            return new InnerSet_7<>(element_1, element_2, element_3, element_4, element_6, element_7, element_8);
          else                 if(element_6.equals(p_element))
-            return new InnerSet_7(element_1, element_2, element_3, element_4, element_5, element_7, element_8);
+            return new InnerSet_7<>(element_1, element_2, element_3, element_4, element_5, element_7, element_8);
          else                 if(element_7.equals(p_element))
-            return new InnerSet_7(element_1, element_2, element_3, element_4, element_5, element_6, element_8);
+            return new InnerSet_7<>(element_1, element_2, element_3, element_4, element_5, element_6, element_8);
          else                 if(element_8.equals(p_element))
-            return new InnerSet_7(element_1, element_2, element_3, element_4, element_5, element_6, element_7);
+            return new InnerSet_7<>(element_1, element_2, element_3, element_4, element_5, element_6, element_7);
                         else
             return this;
     }
@@ -66,25 +70,26 @@ public class InnerSet_8 <T> implements InnerSet<T>
 
 
     public T getElement(int index)
-    {
-                if (index == 1 )
+    {switch(index) {
+                case 1:
             return element_1;
-         else                 if (index == 2 )
+                case 2:
             return element_2;
-         else                 if (index == 3 )
+                case 3:
             return element_3;
-         else                 if (index == 4 )
+                case 4:
             return element_4;
-         else                 if (index == 5 )
+                case 5:
             return element_5;
-         else                 if (index == 6 )
+                case 6:
             return element_6;
-         else                 if (index == 7 )
+                case 7:
             return element_7;
-         else                 if (index == 8 )
+                case 8:
             return element_8;
-                        else
+                default:
             return null;
+            }
     }
 
     @Override
@@ -117,6 +122,11 @@ public class InnerSet_8 <T> implements InnerSet<T>
     public int getSize()
     {
         return 8;
+    }
+
+    @Override
+    public Iterator<T> getIterator() {
+        return new InnerSetIterator<>(this);
     }
 
 }

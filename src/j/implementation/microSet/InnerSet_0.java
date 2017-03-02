@@ -2,6 +2,7 @@ package j.implementation.microSet;
 
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class InnerSet_0 <T> implements InnerSet<T>
 {
@@ -10,7 +11,7 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	@Override
 	public InnerSet<T> addElement(T p_element)
 	{
-		return new InnerSet_1(p_element);
+		return null;//new InnerSet_1(p_element);
 	}
 
 	@Override
@@ -49,6 +50,11 @@ public class InnerSet_0 <T> implements InnerSet<T>
 	public int getSize()
 	{
 		return 0;
+	}
+
+	@Override
+	public Iterator<T> getIterator() {
+		return new InnerSetIterator<>(this);
 	}
 
 	@Override

@@ -21,8 +21,8 @@ public class MicroSet_Benchmark_Add {
 
     MicroSet<TestObject> microSet = new MicroSet<>();
     HashSet<TestObject> hashSet = new HashSet<>();
-
     MicroSetFor<TestObject> microSetFor = new MicroSetFor<>();
+
     TestObject[] testObjects = new TestObject[NUMBER_OF_TEST_OBJECT];
     int[] randomInt = new int[NUMBER_OF_RANDOM_VALUE];
 

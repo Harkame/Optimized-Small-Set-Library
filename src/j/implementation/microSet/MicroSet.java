@@ -63,7 +63,7 @@ public class MicroSet<T> implements Set<T>
     @Override
 	public Iterator<T> iterator()
 	{
-		return new InnerSetIterator<>(this.innerSet);
+		return this.innerSet.getIterator();
 	}
 
 	@Override

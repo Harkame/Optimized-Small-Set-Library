@@ -1,6 +1,7 @@
 package j.implementation.microSet;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class InnerSet_1 <T> implements InnerSet<T>
 {
@@ -10,6 +11,11 @@ public class InnerSet_1 <T> implements InnerSet<T>
     {
                 element_1 = p_element_1;
             }
+
+    public InnerSet_1(InnerSet_0<T> i, T el)
+    {
+                    element_1 = el;
+    }
     
     @Override
     public InnerSet<T> addElement(T p_element)
@@ -17,15 +23,13 @@ public class InnerSet_1 <T> implements InnerSet<T>
         if(element_1.equals(p_element))
             return this;
         else
-            return new InnerSet_2(element_1 , p_element);
-    }
+            return new InnerSet_2<>(this, p_element);    }
 
     @Override
-    @SuppressWarnings({ "rawtypes", "unchecked" })
     public InnerSet<T> removeElement(Object p_element)
     {
                 if(element_1.equals(p_element))
-            return new InnerSet_0();
+            return new InnerSet_0<>();
                         else
             return this;
     }
@@ -38,11 +42,12 @@ public class InnerSet_1 <T> implements InnerSet<T>
 
 
     public T getElement(int index)
-    {
-                if (index == 1 )
+    {switch(index) {
+                case 1:
             return element_1;
-                        else
+                default:
             return null;
+            }
     }
 
     @Override
@@ -75,6 +80,11 @@ public class InnerSet_1 <T> implements InnerSet<T>
     public int getSize()
     {
         return 1;
+    }
+
+    @Override
+    public Iterator<T> getIterator() {
+        return new InnerSetIterator<>(this);
     }
 
 }

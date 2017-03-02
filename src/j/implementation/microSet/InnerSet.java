@@ -1,6 +1,7 @@
 package j.implementation.microSet;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public interface InnerSet<T> {
     InnerSet<T> addElement(T p_element);
@@ -20,4 +21,6 @@ public interface InnerSet<T> {
     InnerSet<T> retainAllElements(Collection<?> p_cToKeep);
 
     int getSize();
+
+    Iterator<T> getIterator();
 }

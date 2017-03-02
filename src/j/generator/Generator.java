@@ -13,13 +13,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Generator {
-    // Constructeur avec l'innerset precedent + Tout dans un fichier classe interne
-    // AB getElement
-    // SuperClasseAbstraite
-    // InnerHashset
-    // Constructeur par copie
-    // Switch case
-
 
     static int TO_GENERATE = 15;
 
@@ -42,6 +35,7 @@ public class Generator {
             VelocityContext context = new VelocityContext();
             context.put("innerSetOffset", offset);
             context.put("nextInnerSet", "InnerSet_" + (offset + 1));
+            context.put("lastInnerSet", TO_GENERATE);
             context.put("previousInnerSet", "InnerSet_" + (offset - 1));
             context.put("innerSetClassName", innerSetClassName);
             context.put("elements", elements);
