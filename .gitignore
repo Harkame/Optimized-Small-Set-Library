@@ -1,10 +1,9 @@
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, 
-CLion
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
 
 *.iml
 
 ## Directory-based project format:
-.idea/
+# .idea/
 # if you remove the above rule, at least ignore the following:
 
 # User-specific stuff:
@@ -21,7 +20,7 @@ CLion
 
 # Gradle:
 # .idea/gradle.xml
-# .idea/libraries
+! .idea/libraries
 
 # Mongo Explorer plugin:
 # .idea/mongoSettings.xml
