@@ -71,6 +71,14 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
         return null;
     }
 
+    public InnerSet<T> addAllReverse(InnerSet<T> innerSet) {
+        #foreach($element in $elements)
+            innerSet = innerSet.addElement($element);
+        #end
+        return innerSet;
+    }
+
+
     @Override
     public InnerSet<T> removeAllElements(Collection<?> p_cToDelete) {
         return null;

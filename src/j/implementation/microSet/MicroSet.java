@@ -10,7 +10,11 @@ public class MicroSet<T> implements Set<T>
 	private InnerSet<T> innerSet;
 
 	public MicroSet(InnerSet<T> innerSet) {
-		this.innerSet = innerSet;
+		if (innerSet instanceof InnerHashSet) {
+			this.innerSet = new InnerHashSet<>(innerSet);
+		} else {
+			this.innerSet = innerSet;
+		}
 	}
 
 	public MicroSet() {
@@ -29,10 +33,18 @@ public class MicroSet<T> implements Set<T>
 	 * @return true if this.innerSet has been changed after the call
 	 */
 	@Override
-	public boolean addAll(Collection<? extends T> c)
+	public boolean addAll(Collection<? extends T> collection)
 	{
 		InnerSet<T> oldInnerSet = this.innerSet;
-		this.innerSet = this.innerSet.addAllElements(c);
+		for (T el : collection) {
+			innerSet = innerSet.addElement(el);
+		}
+		return this.innerSet.getSize() != oldInnerSet.getSize();
+	}
+
+	public boolean addAll(MicroSet<T> microSet) {
+		InnerSet<T> oldInnerSet = this.innerSet;
+		this.innerSet = microSet.innerSet.addAllReverse(oldInnerSet);
 		return this.innerSet.getSize() != oldInnerSet.getSize();
 	}
 

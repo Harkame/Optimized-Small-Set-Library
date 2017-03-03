@@ -14,9 +14,8 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
 
     public InnerHashSet(InnerSet<T> i) {
         super(); // DANS INNERSET_15
-        Iterator<T> it = i.getIterator();
-        while(it.hasNext()) {
-            add((T) it.next());
+        for (T el : this) {
+            add(el);
         }
     }
 
@@ -30,6 +29,14 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
     public InnerSet<T> addAllElements(Collection<? extends T> p_newC) {
     	addAll(p_newC);
     	return this;
+    }
+
+    @Override
+    public InnerSet<T> addAllReverse(InnerSet<T> innerSet) {
+        for (T el : this) {
+            innerSet = innerSet.addElement(el);
+        }
+        return innerSet;
     }
 
     @Override

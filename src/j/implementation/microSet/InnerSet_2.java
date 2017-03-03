@@ -3,7 +3,7 @@ package j.implementation.microSet;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class InnerSet_2 <T> implements InnerSet<T>
+public class InnerSet_2 <T> extends AbstractInnerSet<T>
 {
         protected T element_1;
         protected T element_2;
@@ -60,6 +60,13 @@ public class InnerSet_2 <T> implements InnerSet<T>
     public InnerSet<T> addAllElements(Collection<? extends T> p_newC) {
         return null;
     }
+
+    public InnerSet<T> addAllReverse(InnerSet<T> innerSet) {
+                    innerSet = innerSet.addElement(element_1);
+                    innerSet = innerSet.addElement(element_2);
+                return innerSet;
+    }
+
 
     @Override
     public InnerSet<T> removeAllElements(Collection<?> p_cToDelete) {

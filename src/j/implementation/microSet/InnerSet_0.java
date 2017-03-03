@@ -11,12 +11,17 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 	@Override
 	public InnerSet<T> addElement(T p_element)
 	{
-		return new InnerSet_1(p_element);
+		return null;//new InnerSet_1(p_element);
 	}
 
 	@Override
 	public InnerSet<T> addAllElements(Collection<? extends T> p_newC) {
 		return null;
+	}
+
+	@Override
+	public InnerSet<T> addAllReverse(InnerSet<T> innerSet) {
+		return innerSet;
 	}
 
 	@Override
