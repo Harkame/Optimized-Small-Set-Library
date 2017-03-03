@@ -1,10 +1,11 @@
-#ifndef _MICROSET_H
-#define _MICROSET_H
+#ifndef MICROSET_H
+#define MICROSET_H
 
+#include <map>
 #include <set>
 
-#include "inner_set.h"
-#include "inner_set_0.h"
+#include "inner_set.hpp"
+#include "inner_set_0.hpp"
 
 using namespace std;
 
@@ -41,11 +42,11 @@ class micro_set : public set<T>
         virtual void crend();
 
         /* Capacity */
-        virtual bool empty();
+        virtual bool empty() const;
 
-        virtual int size();
+        virtual int size() const;
 
-        virtual int max_size();
+        virtual int max_size() const;
 
         /* Modifiers */
 
@@ -61,17 +62,17 @@ class micro_set : public set<T>
 
         virtual void emplace_hint();
 
-        /* Observers */
+        /* Observers */ //TODO
 
-        virtual void key_comp();
+        //virtual key_compare key_comp() const;
 
-        virtual void value_comp();
+        //virtual value_compare value_comp() const;
 
         /* Operations */
 
-        virtual void fin();
+        //virtual iterator find(const T*) const;
 
-        virtual void count();
+        //virtual size_type count(const T*) const;
 
         virtual void lower_bound();
 

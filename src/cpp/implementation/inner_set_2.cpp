@@ -1,8 +1,9 @@
-#include "inner_set.h"
-#include "inner_set_1.h"
-#include "inner_set_2.h"
+#include "inner_set.hpp"
+#include "inner_set_1.hpp"
+#include "inner_set_2.hpp"
+#include <stdlib.h>
 
-#include <iostream>
+using namespace std;
 
 template<typename T>
 inner_set_2<T>::inner_set_2()
@@ -90,16 +91,5 @@ inner_set<T>* inner_set_2<T>::retain_all_element(T** p_elements)
 template<typename T>
 int inner_set_2<T>::get_size()
 {
-    return 0;
-}
-
-int main()
-{
-	int* i = (int*) malloc(1 * sizeof(int));
-	i[0] = 1;
-
-    inner_set<int>* t_inner_set_1 = new inner_set_1<int>();
-    t_inner_set_1->add_element(i);
-
     return 0;
 }

@@ -1,4 +1,6 @@
-#include "micro_set.h"
+#include "micro_set.hpp"
+
+using namespace std;
 
 template<typename T>
 micro_set<T>::micro_set()
@@ -26,76 +28,78 @@ micro_set<T> micro_set<T>::operator=(micro_set<T> p_micro_set)
 
 /* Iterators */
 
-virtual void begin()
+void begin()
 {
 
 }
 
-virtual void end();
+void end();
 
-virtual void rbegin();
+void rbegin();
 
-virtual void rend();
+void rend();
 
-virtual void cbegin();
+void cbegin();
 
-virtual void cend();
+void cend();
 
-virtual void crbegin();
+void crbegin();
 
-virtual void crend();
+void crend();
 
 /* Capacity */
 template<typename T>
-bool micro_set<T>::empty()
+bool micro_set<T>::empty() const
 {
     return a_inner_set->get_size() == 0;
 }
 
 template<typename T>
-int micro_set<T>::size()
+int micro_set<T>::size() const
 {
     return a_inner_set->get_size();
 }
 
 template<typename T>
-int micro_set<T>::max_size()
+int micro_set<T>::max_size() const
 {
 	return -1; //Pas de taille max ?
 }
 
 /* Modifiers */
 
-virtual void insert();
+void insert();
 
-virtual void erase();
+void erase();
 
-virtual void swap();
+void swap();
 
-virtual void clear();
+void clear();
 
-virtual void emplace();
+void emplace();
 
-virtual void emplace_hint();
+void emplace_hint();
 
-/* Observers */
-
-virtual void key_comp();
-
-virtual void value_comp();
+/* Observers */ //TODO
 
 /* Operations */
 
-virtual void fin();
+void find()
+{
 
-virtual void count();
+}
 
-virtual void lower_bound();
+void count()
+{
 
-virtual void upper_bound();
+}
 
-virtual void equal_range();
+void lower_bound();
+
+void upper_bound();
+
+void equal_range();
 
 /* Allocator */
 
-virtual void get_allocator();
+void get_allocator();

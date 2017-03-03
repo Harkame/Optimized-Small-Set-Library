@@ -1,8 +1,8 @@
 #ifndef INNER_SET_2_H
 #define INNER_SET_2_H
 
-#include "inner_set.h"
-#include "inner_set_1.h"
+#include "inner_set.hpp"
+#include "inner_set_1.hpp"
 
 using namespace std;
 
@@ -17,8 +17,7 @@ class inner_set_2 : public inner_set<T>
 
         inner_set_2<T>(T*, T*);
 
-        //inner_set_2<T>(inner_set_1<T>*, T*);
-
+        //inner_set_2<T>(inner_set_1<T>);
         virtual ~inner_set_2<T>();
 
         virtual inner_set<T>* add_element(T*);

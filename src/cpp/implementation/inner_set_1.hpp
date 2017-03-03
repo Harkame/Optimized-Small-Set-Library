@@ -1,17 +1,15 @@
 #ifndef INNER_SET_1_H
 #define INNER_SET_1_H
 
-#include "inner_set.h"
-#include "inner_set_0.h"
-#include "inner_set_2.h"
+#include "inner_set.hpp"
+#include "inner_set_0.hpp"
+#include "inner_set_2.hpp"
 
 using namespace std;
 
 template<typename T>
 class inner_set_1 : public inner_set<T>
 {
-	friend class inner_set_2<T>;
-
     private :
         T** a_values;
 

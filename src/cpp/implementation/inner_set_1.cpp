@@ -1,4 +1,4 @@
-#include "inner_set_1.h"
+#include "inner_set_1.hpp"
 
 #include <iostream>
 
