@@ -4,7 +4,7 @@ package j.implementation.microSet;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class $innerSetClassName <T> implements InnerSet<T>
+public class $innerSetClassName <T> extends AbstractInnerSet<T>
 {
     #foreach($element in $elements)
     protected T $element;

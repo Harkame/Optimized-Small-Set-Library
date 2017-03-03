@@ -13,7 +13,7 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
     }
 
     public InnerHashSet(InnerSet<T> i) {
-        super();
+        super(); // DANS INNERSET_15
         Iterator<T> it = i.getIterator();
         while(it.hasNext()) {
             add((T) it.next());
