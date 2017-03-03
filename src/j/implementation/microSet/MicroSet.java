@@ -61,9 +61,14 @@ public class MicroSet<T> implements Set<T>
 	}
 
 	@Override
-	public boolean containsAll(Collection<?> c)
+	public boolean containsAll(Collection<? extends T> c)
 	{
-		return this.innerSet.containsAllElements(c);
+		for (T el : c) {
+			if(!innerSet.containsElement(el)){
+				return false;
+			}
+		}
+		return true;
 	}
 
 	@Override
@@ -89,12 +94,20 @@ public class MicroSet<T> implements Set<T>
     /**
      * @return true if this.innerSet has been changed after the call
      */
-	@Override
+	/*@Override
 	public boolean removeAll(Collection<?> c)
 	{
         InnerSet<T> oldInnerSet = this.innerSet;
         this.innerSet = this.innerSet.removeAllElements(c);
         return this.innerSet.getSize() != oldInnerSet.getSize();
+	}*/
+
+	@Override
+	public boolean removeAll(InnerSet<T> innerSet)
+	{
+		InnerSet<T> oldInnerSet = this.innerSet;
+		this.innerSet = this.innerSet.removeAllElements(innerSet);
+		return this.innerSet.getSize() != oldInnerSet.getSize();
 	}
 
 	@Override

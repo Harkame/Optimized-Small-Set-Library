@@ -2,7 +2,7 @@ package j.tests;
 
 
 import j.implementation.TestObject;
-import j.implementation.microSet.*;
+import j.implementation.microSet.MicroSet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

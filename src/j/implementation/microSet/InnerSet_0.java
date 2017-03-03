@@ -14,10 +14,7 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 		return null;//new InnerSet_1(p_element);
 	}
 
-	@Override
-	public InnerSet<T> addAllElements(Collection<? extends T> p_newC) {
-		return null;
-	}
+	public InnerSet<T> addAllElements(InnerSet<T> innerSet) { return null; }
 
 	@Override
 	public InnerSet<T> addAllReverse(InnerSet<T> innerSet) {
@@ -31,12 +28,12 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 	}
 
 	@Override
-	public InnerSet<T> removeAllElements(Collection<?> p_cToDelete) {
+	public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
 		return null;
 	}
 
 	@Override
-	public InnerSet<T> retainAllElements(Collection<?> p_cToKeep) {
+	public InnerSet<T> retainAllElements(InnerSet<T> innerSet) {
 		return null;
 	}
 
@@ -69,7 +66,7 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 	}
 
 	@Override
-	public boolean containsAllElements(Collection<?> p_c) {
+	public boolean containsAllElements(InnerSet<T> innerSet) {
 		return false;
 	}
 }
