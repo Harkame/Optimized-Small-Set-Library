@@ -91,5 +91,5 @@ inner_set<T>* inner_set_2<T>::retain_all_element(T** p_elements)
 template<typename T>
 int inner_set_2<T>::get_size()
 {
-    return 0;
+    return 2;
 }
