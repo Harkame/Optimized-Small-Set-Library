@@ -25,8 +25,8 @@ public class Generator {
 
         try {
             VelocityEngine engine = new VelocityEngine();
-            String pathToTemplate = "/home/fly/workspace/Optimized-Small-Set-Library/src/j/generator/";
-            String pathToGenerated = "/home/fly/workspace/Optimized-Small-Set-Library/src/j/implementation/microSet/";
+            String pathToTemplate = "src/j/generator/";
+            String pathToGenerated = "src/j/implementation/microSet/";
             engine.setProperty(RuntimeConstants.RESOURCE_LOADER, "file");
             engine.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, pathToTemplate);
             engine.init();
