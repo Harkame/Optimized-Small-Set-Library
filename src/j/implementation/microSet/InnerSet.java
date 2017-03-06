@@ -6,21 +6,21 @@ import java.util.Iterator;
 public interface InnerSet<T> {
     InnerSet<T> addElement(T p_element);
 
-    InnerSet<T> addAllElements(Collection<? extends T> p_newC);
+    InnerSet<T> addAllElements(InnerSet<T> innerSet);
 
     InnerSet<T> addAllReverse(InnerSet<T> innerSet);
 
     boolean containsElement(Object p_element);
 
-    boolean containsAllElements(Collection<?> p_c);
+    boolean containsAllElements(InnerSet<T> innerSet);
 
     T getElement(int index);
 
     InnerSet<T> removeElement(Object p_element);
 
-    InnerSet<T> removeAllElements(Collection<?> p_cToDelete);
+    InnerSet<T> removeAllElements(InnerSet<T> innerSet);
 
-    InnerSet<T> retainAllElements(Collection<?> p_cToKeep);
+    InnerSet<T> retainAllElements(InnerSet<T> innerSet);
 
     int getSize();
 

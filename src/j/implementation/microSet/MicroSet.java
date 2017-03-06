@@ -1,6 +1,8 @@
 package j.implementation.microSet;
 
 
+import javafx.beans.Observable;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
@@ -63,7 +65,12 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public boolean containsAll(Collection<?> c)
 	{
-		return this.innerSet.containsAllElements(c);
+		for (Object el : c) {
+			if(!innerSet.containsElement((T)el)){
+				return false;
+			}
+		}
+		return true;
 	}
 
 	@Override
@@ -93,8 +100,18 @@ public class MicroSet<T> implements Set<T>
 	public boolean removeAll(Collection<?> c)
 	{
         InnerSet<T> oldInnerSet = this.innerSet;
-        this.innerSet = this.innerSet.removeAllElements(c);
+        for (Object el : c) {
+            innerSet = innerSet.removeElement(el);
+        }
         return this.innerSet.getSize() != oldInnerSet.getSize();
+	}
+
+
+	public boolean removeAll(InnerSet<T> innerSet)
+	{
+		InnerSet<T> oldInnerSet = this.innerSet;
+		this.innerSet = this.innerSet.removeAllElements(innerSet);
+		return this.innerSet.getSize() != oldInnerSet.getSize();
 	}
 
 	@Override
@@ -104,12 +121,26 @@ public class MicroSet<T> implements Set<T>
 				'}';
 	}
 
+
 	@Override
 	public boolean retainAll(Collection<?> c)
 	{
         InnerSet<T> oldInnerSet = this.innerSet;
-        this.innerSet = this.innerSet.retainAllElements(c);
+        this.innerSet = new InnerSet_0<T>();
+        for (Object el : c) {
+            if(oldInnerSet.containsElement(el)){
+                this.innerSet = this.innerSet.addElement((T) el);
+            }
+        }
         return this.innerSet.getSize() != oldInnerSet.getSize();
+	}
+
+
+	public boolean retainAll(InnerSet<T> innerSet)
+	{
+		InnerSet<T> oldInnerSet = this.innerSet;
+		this.innerSet = this.innerSet.retainAllElements(innerSet);
+		return this.innerSet.getSize() != oldInnerSet.getSize();
 	}
 
 	@Override

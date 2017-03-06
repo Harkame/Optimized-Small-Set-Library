@@ -26,8 +26,8 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
     }
 
     @Override
-    public InnerSet<T> addAllElements(Collection<? extends T> p_newC) {
-    	addAll(p_newC);
+    public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
+    	//addAll(innerSet);
     	return this;
     }
 
@@ -45,8 +45,9 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
     }
 
     @Override
-    public boolean containsAllElements(Collection<?> p_c) {
-        return containsAll(p_c);
+    public boolean containsAllElements(InnerSet<T> innerSet) {
+        //return containsAll(innerSet);
+        return false;
     }
 
     @Override
@@ -65,14 +66,14 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
     }
 
     @Override
-    public InnerSet<T> removeAllElements(Collection<?> p_cToDelete) {
-        removeAll(p_cToDelete);
+    public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
+        //removeAll(innerSet);
         return null;
     }
 
     @Override
-    public InnerSet<T> retainAllElements(Collection<?> p_cToKeep) {
-        retainAll(p_cToKeep);
+    public InnerSet<T> retainAllElements(InnerSet<T> innerSet) {
+       // retainAll(innerSet);
         return this;
     }
 
