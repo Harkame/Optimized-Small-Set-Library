@@ -31,7 +31,7 @@ public class InnerSet_5 <T> extends AbstractInnerSet<T>
         if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element) || element_4.equals(p_element) || element_5.equals(p_element))
             return this;
         else
-            return new InnerSet_6<>(this, p_element);    }
+            return new InnerHashSet<>(this);    }
 
     @Override
     public InnerSet<T> removeElement(Object p_element)
@@ -92,7 +92,13 @@ public class InnerSet_5 <T> extends AbstractInnerSet<T>
 
     @Override
     public InnerSet<T> retainAllElements(InnerSet<T> innerSet) {
-        return null;
+        InnerSet<T> i = this;
+                if (!innerSet.containsElement(element_1)) i = i.removeElement(element_1);
+                if (!innerSet.containsElement(element_2)) i = i.removeElement(element_2);
+                if (!innerSet.containsElement(element_3)) i = i.removeElement(element_3);
+                if (!innerSet.containsElement(element_4)) i = i.removeElement(element_4);
+                if (!innerSet.containsElement(element_5)) i = i.removeElement(element_5);
+                return i;
     }
 
     @Override
