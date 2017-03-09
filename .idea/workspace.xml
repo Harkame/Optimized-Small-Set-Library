@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b999aeaf-6daf-434a-aa0d-e91a20c3e6f9" name="Default" comment="Ajout des methodes ensembliste (paramétré par innerset)&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_10.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_11.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_12.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_13.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_14.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_15.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_4.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_5.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_6.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_7.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_8.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_9.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Optimized-Small-Set-Library/j/generator/Generator.class" afterPath="$PROJECT_DIR$/out/production/Optimized-Small-Set-Library/j/generator/Generator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Optimized-Small-Set-Library/j/implementation/microSet/InnerHashSet.class" afterPath="$PROJECT_DIR$/out/production/Optimized-Small-Set-Library/j/implementation/microSet/InnerHashSet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Optimized-Small-Set-Library/j/implementation/microSet/InnerSet_0.class" afterPath="$PROJECT_DIR$/out/production/Optimized-Small-Set-Library/j/implementation/microSet/InnerSet_0.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Optimized-Small-Set-Library/j/implementation/microSet/MicroSet.class" afterPath="$PROJECT_DIR$/out/production/Optimized-Small-Set-Library/j/implementation/microSet/MicroSet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/generator/Generator.java" afterPath="$PROJECT_DIR$/src/j/generator/Generator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/MicroSet.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/MicroSet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" afterPath="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,24 +34,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InnerSet_0.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InnerSet_0.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="68" column="59" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
+            <state relative-caret-position="144">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MicroSet_Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/j/tests/MicroSet_Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
               <folding>
-                <element signature="e#1171#1172#0" expanded="true" />
-                <element signature="e#1190#1191#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1400#1401#0" expanded="true" />
+                <element signature="e#1447#1448#0" expanded="true" />
+                <element signature="e#1475#1476#0" expanded="true" />
+                <element signature="e#1522#1523#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MicroSet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MicroSet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/MicroSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1332">
-              <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
               <folding>
                 <element signature="method#MicroSet#0;class#MicroSet#0" expanded="false" />
                 <element signature="method#add#0;class#MicroSet#0" expanded="false" />
@@ -89,16 +82,6 @@
                 <element signature="method#toArray#0;class#MicroSet#0" expanded="false" />
                 <element signature="method#toArray#1;class#MicroSet#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InnerSet_12.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_12.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -144,7 +127,6 @@
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1_Test.java" />
         <option value="$PROJECT_DIR$/src/j/tests/InnerSet_1Test.java" />
         <option value="$PROJECT_DIR$/src/j/tests/InnerSet_Test.java" />
-        <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
         <option value="$PROJECT_DIR$/src/j/tests/Benchmark_MicroTest.java" />
         <option value="$PROJECT_DIR$/src/j/tests/Benchmark.java" />
         <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark.java" />
@@ -171,6 +153,7 @@
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerHashSet.java" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/MicroSet.java" />
         <option value="$PROJECT_DIR$/src/j/generator/Generator.java" />
+        <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
       </list>
     </option>
   </component>
@@ -180,11 +163,17 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
-    <option name="y" value="25" />
-    <option name="width" value="1682" />
-    <option name="height" value="1026" />
+    <option name="width" value="1282" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -211,9 +200,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -247,6 +233,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="j" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -336,6 +326,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,21 +352,21 @@
       <recent name="j.tests" />
       <recent name="j.implementation.microSet" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="j.tests" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.Generator">
+  <component name="RunManager" selected="JUnit.MicroSet_Test">
     <configuration default="false" name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -687,11 +680,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Generator" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Add" />
-        <item index="2" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Contains" />
-        <item index="3" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Remove" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MicroSet_Test" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MicroSet_Test" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Generator" />
+        <item index="2" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Add" />
+        <item index="3" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Contains" />
+        <item index="4" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Remove" />
       </list>
     </recent_temporary>
   </component>
@@ -702,6 +695,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -733,21 +729,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MicroSet_Test - 2017.02.22 at 21h 04m 42s.xml">
-      <configuration name="MicroSet_Test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MicroSet_Test - 2017.02.22 at 21h 05m 49s.xml">
-      <configuration name="MicroSet_Test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MicroSet_Test - 2017.02.22 at 21h 30m 42s.xml">
-      <configuration name="MicroSet_Test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MicroSet_Test - 2017.02.22 at 21h 31m 16s.xml">
-      <configuration name="MicroSet_Test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MicroSet_Test - 2017.02.22 at 21h 32m 25s.xml">
-      <configuration name="MicroSet_Test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MicroSet_Test - 2017.02.22 at 21h 34m 33s.xml">
       <configuration name="MicroSet_Test" configurationId="JUnit" />
     </history-entry>
@@ -763,25 +744,41 @@
     <history-entry file="MicroSet_Test - 2017.02.23 at 12h 39m 28s.xml">
       <configuration name="MicroSet_Test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MicroSet_Test - 2017.03.09 at 11h 35m 06s.xml">
+      <configuration name="MicroSet_Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MicroSet_Test - 2017.03.09 at 11h 37m 34s.xml">
+      <configuration name="MicroSet_Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MicroSet_Test - 2017.03.09 at 11h 39m 12s.xml">
+      <configuration name="MicroSet_Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MicroSet_Test - 2017.03.09 at 11h 40m 30s.xml">
+      <configuration name="MicroSet_Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MicroSet_Test - 2017.03.09 at 11h 44m 14s.xml">
+      <configuration name="MicroSet_Test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="55555000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="25" width="1682" height="1026" extended-state="6" />
+    <frame x="-1" y="0" width="1282" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32723358" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32668883" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32989064" sideWeight="0.50125" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32723358" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32668883" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17678571" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26328126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -870,7 +867,7 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -967,7 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,7 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,14 +1027,6 @@
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_5.java" />
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_8.java" />
     <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/src/j/tests/MicroSet_Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Optimized-Small-Set-Library.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1089,14 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_12.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
@@ -1105,10 +1083,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_12.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/tests/MicroSet_Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1400#1401#0" expanded="true" />
+            <element signature="e#1447#1448#0" expanded="true" />
+            <element signature="e#1475#1476#0" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/MicroSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
           <folding>
             <element signature="method#MicroSet#0;class#MicroSet#0" expanded="false" />
             <element signature="method#add#0;class#MicroSet#0" expanded="false" />
@@ -1125,17 +1133,6 @@
             <element signature="method#retainAll#1;class#MicroSet#0" expanded="false" />
             <element signature="method#toArray#0;class#MicroSet#0" expanded="false" />
             <element signature="method#toArray#1;class#MicroSet#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="68" column="59" selection-start-line="68" selection-start-column="59" selection-end-line="68" selection-end-column="59" />
-          <folding>
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
           </folding>
         </state>
       </provider>
