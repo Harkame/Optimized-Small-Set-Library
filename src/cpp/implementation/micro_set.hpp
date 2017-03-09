@@ -6,6 +6,8 @@
 
 #include "inner_set.hpp"
 #include "inner_set_0.hpp"
+#include "inner_set_1.hpp"
+#include "inner_set_2.hpp"
 
 using namespace std;
 

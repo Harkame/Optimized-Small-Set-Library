@@ -23,7 +23,7 @@ inner_set<T>* inner_set_0<T>::add_element(T p_element)
 }
 
 template<typename T>
-inner_set<T>* inner_set_0<T>::add_elements(T p_elements)
+inner_set<T>* inner_set_0<T>::add_elements(T* p_elements)
 {
 	return nullptr;
 }
@@ -35,7 +35,7 @@ bool inner_set_0<T>::contains_element(T p_element)
 }
 
 template<typename T>
-bool inner_set_0<T>::contains_all_elements(T p_elements)
+bool inner_set_0<T>::contains_all_elements(T* p_elements)
 {
     return false;
 }
@@ -53,9 +53,9 @@ inner_set<T>* inner_set_0<T>::remove_element(T p_element)
 }
 
 template<typename T>
-inner_set<T> inner_set_0<T>::retain_all_element(T p_elements)
+inner_set<T>* inner_set_0<T>::retain_all_element(T* p_elements)
 {
-    return *this;
+    return nullptr;
 }
 
 template<typename T>
@@ -64,9 +64,8 @@ int inner_set_0<T>::get_size()
     return 0;
 }
 
-int main()
+template<typename T>
+void inner_set_0<T>::print()
 {
-	inner_set_0<int> i0;
-
-	return 0;
+    cout << "{}" << endl;
 }

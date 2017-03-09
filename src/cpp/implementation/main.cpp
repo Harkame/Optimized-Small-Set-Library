@@ -1,112 +1,7 @@
-#include "micro_set.hpp"
+#include "inner_set_0.hpp"
+#include "inner_set_1.hpp"
+#include "inner_set_2.hpp"
 
-using namespace std;
-
-inner_set_0<int> INNER_SET_0;
-
-template<typename T>
-micro_set<T>::micro_set()
-{
-	a_inner_set = inner_set_0<T>::INNER_SET_0;
-}
-
-template<typename T>
-micro_set<T>::~micro_set()
-{
-
-}
-
-/* Operator */
-/*
-template<typename T>
-micro_set<T> micro_set<T>::operator=(micro_set<T> p_micro_set)
-{
-	//TODO
-	micro_set<T>* r_micro_set = new micro_set<T>();
-
-	return r_micro_set;
-}
-*/
-
-/* Iterators */
-
-void begin()
-{
-
-}
-
-void end();
-
-void rbegin();
-
-void rend();
-
-void cbegin();
-
-void cend();
-
-void crbegin();
-
-void crend();
-
-/* Capacity */
-template<typename T>
-bool micro_set<T>::empty() const
-{
-    return a_inner_set->get_size() == 0;
-}
-
-template<typename T>
-int micro_set<T>::size() const
-{
-    return a_inner_set->get_size();
-}
-
-template<typename T>
-int micro_set<T>::max_size() const
-{
-	return -1; //Pas de taille max ?
-}
-
-/* Modifiers */
-
-void insert();
-
-void erase();
-
-void swap();
-
-void clear();
-
-void emplace();
-
-void emplace_hint();
-
-/* Observers */ //TODO
-
-/* Operations */
-
-void find()
-{
-
-}
-
-void count()
-{
-
-}
-
-void lower_bound();
-
-void upper_bound();
-
-void equal_range();
-
-/* Allocator */
-
-void get_allocator();
-
-/* inner_set_x implementations */
 template<typename T>
 inner_set_0<T>::inner_set_0()
 {
@@ -228,10 +123,12 @@ T inner_set_1<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_set_1<T>::remove_element(T p_element)
 {
-	if(a_values.element_1 == p_element)
-		return &INNER_SET_0;
-	else
-		return this;
+    if(a_values.element_1 == p_element)
+      return new inner_set_1<int>(a_values.element_2);
+    else if(a_values.element_2 == p_element))
+      return new inner_set_1<int>(a_values.element_1);
+    else
+      return this;
 }
 
 template<typename T>
@@ -307,9 +204,9 @@ template<typename T>
 inner_set<T>* inner_set_2<T>::remove_element(T p_element)
 {
     if(a_values.element_1 == p_element)
-    	return new inner_set_1<T>(a_values.element_2);
-    else if(a_values.element_2 == p_element)
     	return new inner_set_1<T>(a_values.element_1);
+    else if(a_values.element_2 == p_element)
+    	return new inner_set_1<T>(a_values.element_2);
     else
     	return this;
 }
@@ -343,13 +240,13 @@ int main()
   i1 = i0->add_element(12);
   i1->print();
 
-  i2 = i1->add_element(573);
+  i2 = i1->add_element(42);
   i2->print();
 
   i1 = i2->remove_element(12);
   i1->print();
 
-  i0 = i1->remove_element(573);
+  i0 = i1->remove_element(42);
   i0->print();
 
 	return 0;

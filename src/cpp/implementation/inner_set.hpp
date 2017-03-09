@@ -8,26 +8,32 @@ using namespace std;
 template<typename T>
 class inner_set
 {
-    public :
-      inner_set<T>(){}
+  private :
+      struct values
+      {
 
-      virtual ~inner_set<T>(){}
+      } a_values;
 
-      virtual inner_set<T>* add_element(T){};
+  public :
+    inner_set<T>(){}
 
-      virtual inner_set<T>* add_elements(T){};
+    virtual ~inner_set<T>(){}
 
-      virtual bool contains_element(T){};
+    virtual inner_set<T>* add_element(T){};
+    virtual inner_set<T>* add_elements(T*){};
 
-      virtual bool contains_all_elements(T){};
+    virtual bool contains_element(T){};
+    virtual bool contains_all_elements(T*){};
 
-      virtual T get_element(int){};
+    virtual T get_element(int){};
 
-      virtual inner_set<T>* remove_element(T){};
+    virtual inner_set<T>* remove_element(T){};
 
-      virtual inner_set<T> retain_all_element(T){};
+    virtual inner_set<T>* retain_all_element(T*){};
 
-      virtual  int get_size(){};
+    virtual int get_size(){};
+
+    virtual void print(){};
 };
 
 
