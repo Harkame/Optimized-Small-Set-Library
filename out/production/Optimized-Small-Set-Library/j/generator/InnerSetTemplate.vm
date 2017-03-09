@@ -87,7 +87,7 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
 
     @Override
     public boolean containsAllElements(InnerSet<T> innerSet) {
-        return false;
+        return #foreach($element in $elements) innerSet.containsElement($element)#if( $foreach.hasNext) &&#end#end;
     }
 
     @Override

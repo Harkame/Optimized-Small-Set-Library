@@ -73,6 +73,10 @@ public class MicroSet<T> implements Set<T>
 		return true;
 	}
 
+	public boolean containsAll(MicroSet<T> microSet){
+		return microSet.innerSet.containsAllElements(innerSet);
+	}
+
 	@Override
 	public boolean isEmpty()
 	{

@@ -69,7 +69,7 @@ public class InnerSet_1 <T> extends AbstractInnerSet<T>
 
     @Override
     public boolean containsAllElements(InnerSet<T> innerSet) {
-        return false;
+        return  innerSet.containsElement(element_1);
     }
 
     @Override
