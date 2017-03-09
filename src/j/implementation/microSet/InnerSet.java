@@ -8,8 +8,6 @@ public interface InnerSet<T> {
 
     InnerSet<T> addAllElements(InnerSet<T> innerSet);
 
-    InnerSet<T> addAllReverse(InnerSet<T> innerSet);
-
     boolean containsElement(Object p_element);
 
     boolean containsAllElements(InnerSet<T> innerSet);

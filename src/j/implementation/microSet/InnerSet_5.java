@@ -74,12 +74,8 @@ public class InnerSet_5 <T> extends AbstractInnerSet<T>
             }
     }
 
-    @Override
-    public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-        return null;
-    }
 
-    public InnerSet<T> addAllReverse(InnerSet<T> innerSet) {
+    public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
                     innerSet = innerSet.addElement(element_1);
                     innerSet = innerSet.addElement(element_2);
                     innerSet = innerSet.addElement(element_3);
@@ -101,7 +97,7 @@ public class InnerSet_5 <T> extends AbstractInnerSet<T>
 
     @Override
     public boolean containsAllElements(InnerSet<T> innerSet) {
-        return false;
+        return  innerSet.containsElement(element_1) && innerSet.containsElement(element_2) && innerSet.containsElement(element_3) && innerSet.containsElement(element_4) && innerSet.containsElement(element_5);
     }
 
     @Override

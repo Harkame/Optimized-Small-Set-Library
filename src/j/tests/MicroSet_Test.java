@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class MicroSet_Test {
+public class MicroSet_Test {
 
     MicroSet<TestObject> microSet;
     TestObject testObject = new TestObject(1);
@@ -21,25 +21,37 @@ class MicroSet_Test {
     }
 
     @Test
-    void addElement() {
+    void test_addElement_Already_in() {
         boolean res = microSet.add(testObject);
         assertFalse(res);
+    }
+
+    @Test
+    void test_addElement(){
         boolean res2 = microSet.add(new TestObject(2));
         assertTrue(res2);
     }
 
     @Test
-    void removeElement() {
+    void test_removeElement_Not_in_Microset() {
         boolean res = microSet.remove(new TestObject(1));
         assertFalse(res);
+    }
+
+    @Test
+    void test_removeElement(){
         boolean res2 = microSet.remove(testObject);
         assertTrue(res2);
     }
 
     @Test
-    void containsElement() {
+    void test_contains_wrongElem() {
         boolean res = microSet.contains(new TestObject(1));
         assertFalse(res);
+    }
+
+    @Test
+    void test_contains_goodElem(){
         boolean res2 = microSet.contains(testObject);
         assertTrue(res2);
     }
@@ -51,23 +63,33 @@ class MicroSet_Test {
     }
 
     @Test
+    void isEmpty(){
+        assertFalse(microSet.isEmpty());
+    }
+
+    @Test
+    void size(){
+        assertEquals(microSet.size(),1);
+    }
+
     void addAllElements() {
-
+        //ToDo
     }
 
-    @Test
     void removeAllElements() {
-
+        //ToDo
     }
 
-    @Test
     void retainAllElements() {
-
+        //Todo
     }
 
-    @Test
     void containsAllElements() {
+        //Todo
+    }
 
+    void toArray(){
+        //Todo
     }
 
 }
