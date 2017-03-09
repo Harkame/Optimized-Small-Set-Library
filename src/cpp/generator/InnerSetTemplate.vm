@@ -3,8 +3,6 @@
 
 
 #[[#include]]# "inner_set.hpp"
-#[[#include]]# "$previousInnerSet.cpp"
-#[[#include]]# "$nextInnerSet.cpp"
 
 using namespace std;
 
@@ -12,7 +10,10 @@ template<typename T>
 class $innerSetClassName : public inner_set<T>
 {
     private :
-        T** a_values;
+        struct values
+        {
+          $foreach($element as elements)
+        } a_values;
 
     public :
         $innerSetClassName<T>();
@@ -22,11 +23,9 @@ class $innerSetClassName : public inner_set<T>
         virtual ~$innerSetClassName<T>();
 
         virtual inner_set<T>* add_element(T*);
-
         virtual inner_set<T>* add_elements(T**);
 
         virtual bool contains_element(T*);
-
         virtual bool contains_all_elements(T*);
 
         virtual T* get_element(int);
@@ -35,11 +34,10 @@ class $innerSetClassName : public inner_set<T>
 
         virtual inner_set<T>* retain_all_element(T**);
 
-        virtual  int get_size();
+        virtual int get_size();
 };
 
 #endif
-
 
 #[[#include]]# "$innerSetClassName.hpp"
 
@@ -48,12 +46,13 @@ class $innerSetClassName : public inner_set<T>
 template<typename T>
 $innerSetClassName<T>::$innerSetClassName() : inner_set<T>()
 {
-	a_values = new T*[1];
+
 }
 
 template<typename T>
-$innerSetClassName<T>::$innerSetClassName(T* p_element)
+$innerSetClassName<T>::$innerSetClassName(T $previousInnerSet, T p_element)
 {
+ return #foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end;
 	a_values = new T*[1];
 	a_values[0] = p_element;
 }
@@ -91,7 +90,7 @@ bool $innerSetClassName<T>::contains_all_elements(T* p_elements)
 template<typename T>
 T* $innerSetClassName<T>::get_element(int p_index)
 {
-    return a_values[p_index];
+    return reinterpret_cast<T*>(&a_values)[p_index];
 }
 
 template<typename T>
