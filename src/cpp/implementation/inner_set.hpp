@@ -13,21 +13,21 @@ class inner_set
 
       virtual ~inner_set<T>(){}
 
-      virtual inner_set<T>* add_element(T*);
+      virtual inner_set<T>* add_element(T){};
 
-      virtual inner_set<T>* add_elements(T**);
+      virtual inner_set<T>* add_elements(T){};
 
-      virtual bool contains_element(T*);
+      virtual bool contains_element(T){};
 
-      virtual bool contains_all_elements(T*);
+      virtual bool contains_all_elements(T){};
 
-      virtual T* get_element(int);
+      virtual T get_element(int){};
 
-      virtual inner_set<T>* remove_element(T*);
+      virtual inner_set<T>* remove_element(T){};
 
-      virtual inner_set<T>* retain_all_element(T**);
+      virtual inner_set<T> retain_all_element(T){};
 
-      virtual  int get_size();
+      virtual  int get_size(){};
 };
 
 
