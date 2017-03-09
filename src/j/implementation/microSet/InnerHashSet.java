@@ -25,14 +25,10 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
         return this;
     }
 
-    @Override
-    public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-    	//addAll(innerSet);
-    	return this;
-    }
+
 
     @Override
-    public InnerSet<T> addAllReverse(InnerSet<T> innerSet) {
+    public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
         for (T el : this) {
             innerSet = innerSet.addElement(el);
         }

@@ -128,12 +128,8 @@ public class InnerSet_14 <T> extends AbstractInnerSet<T>
             }
     }
 
-    @Override
-    public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-        return null;
-    }
 
-    public InnerSet<T> addAllReverse(InnerSet<T> innerSet) {
+    public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
                     innerSet = innerSet.addElement(element_1);
                     innerSet = innerSet.addElement(element_2);
                     innerSet = innerSet.addElement(element_3);

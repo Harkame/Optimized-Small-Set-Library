@@ -46,7 +46,7 @@ public class MicroSet<T> implements Set<T>
 
 	public boolean addAll(MicroSet<T> microSet) {
 		InnerSet<T> oldInnerSet = this.innerSet;
-		this.innerSet = microSet.innerSet.addAllReverse(oldInnerSet);
+		this.innerSet = microSet.innerSet.addAllElements(oldInnerSet);
 		return this.innerSet.getSize() != oldInnerSet.getSize();
 	}
 

@@ -66,12 +66,8 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
             }
     }
 
-    @Override
-    public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-        return null;
-    }
 
-    public InnerSet<T> addAllReverse(InnerSet<T> innerSet) {
+    public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
         #foreach($element in $elements)
             innerSet = innerSet.addElement($element);
         #end
