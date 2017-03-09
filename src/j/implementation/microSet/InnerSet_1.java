@@ -29,7 +29,8 @@ public class InnerSet_1 <T> extends AbstractInnerSet<T>
     public InnerSet<T> removeElement(Object p_element)
     {
                 if(element_1.equals(p_element))
-            return new InnerSet_0<>();
+            return  (InnerSet_0<T>) InnerSet_0.singleton
+            ;
                         else
             return this;
     }

@@ -33,11 +33,11 @@ public class InnerSet_3 <T> extends AbstractInnerSet<T>
     public InnerSet<T> removeElement(Object p_element)
     {
                 if(element_1.equals(p_element))
-            return new InnerSet_2<>(element_2, element_3);
+            return  new InnerSet_2<>(element_2, element_3);
          else                 if(element_2.equals(p_element))
-            return new InnerSet_2<>(element_1, element_3);
+            return  new InnerSet_2<>(element_1, element_3);
          else                 if(element_3.equals(p_element))
-            return new InnerSet_2<>(element_1, element_2);
+            return  new InnerSet_2<>(element_1, element_2);
                         else
             return this;
     }

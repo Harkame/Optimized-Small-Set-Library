@@ -37,15 +37,15 @@ public class InnerSet_5 <T> extends AbstractInnerSet<T>
     public InnerSet<T> removeElement(Object p_element)
     {
                 if(element_1.equals(p_element))
-            return new InnerSet_4<>(element_2, element_3, element_4, element_5);
+            return  new InnerSet_4<>(element_2, element_3, element_4, element_5);
          else                 if(element_2.equals(p_element))
-            return new InnerSet_4<>(element_1, element_3, element_4, element_5);
+            return  new InnerSet_4<>(element_1, element_3, element_4, element_5);
          else                 if(element_3.equals(p_element))
-            return new InnerSet_4<>(element_1, element_2, element_4, element_5);
+            return  new InnerSet_4<>(element_1, element_2, element_4, element_5);
          else                 if(element_4.equals(p_element))
-            return new InnerSet_4<>(element_1, element_2, element_3, element_5);
+            return  new InnerSet_4<>(element_1, element_2, element_3, element_5);
          else                 if(element_5.equals(p_element))
-            return new InnerSet_4<>(element_1, element_2, element_3, element_4);
+            return  new InnerSet_4<>(element_1, element_2, element_3, element_4);
                         else
             return this;
     }

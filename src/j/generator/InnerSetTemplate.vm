@@ -41,7 +41,8 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
         #set( $f = $foreach )
         #set($sep = "")
         if($el$equals_p)
-            return new $previousInnerSet<>(#foreach($element in $elements)#if($f.count != $foreach.count)$sep$element#set($sep = ", ")#end#end);
+            return #if($innerSetOffset == 1) (InnerSet_0<T>) InnerSet_0.singleton
+            #else new $previousInnerSet<>(#foreach($element in $elements)#if($f.count != $foreach.count)$sep$element#set($sep = ", ")#end#end)#end;
         #if( $f.hasNext ) else #end
         #end
         else
