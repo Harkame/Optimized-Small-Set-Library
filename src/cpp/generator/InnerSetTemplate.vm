@@ -41,9 +41,9 @@ class $innerSetClassName : public inner_set<T>
 #endif
 
 
-#include "$innerSetClassName.hpp"
+#[[#include]]# "$innerSetClassName.hpp"
 
-#include <iostream>
+#[[#include <iostream>]]#
 
 template<typename T>
 $innerSetClassName<T>::$innerSetClassName() : inner_set<T>()
@@ -98,7 +98,8 @@ template<typename T>
 inner_set<T>* $innerSetClassName<T>::remove_element(T* p_element)
 {
     if(a_values[0] == p_element)
-    	return $<T>::INNER_SET_0;
+    	return #if($innerSetOffset == 1)InnerSet_0<T>::SINGLETON #else
+                                                                    #end;
     else
     	return this;
 }
