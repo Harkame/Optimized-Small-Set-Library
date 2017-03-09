@@ -86,11 +86,7 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
 
     @Override
     public InnerSet<T> retainAllElements(InnerSet<T> innerSet) {
-        InnerSet<T> i = this;
-        #foreach($element in $elements)
-        if (!innerSet.containsElement($element)) i = i.removeElement($element);
-        #end
-        return i;
+        return null;
     }
 
     @Override

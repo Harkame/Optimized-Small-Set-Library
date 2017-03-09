@@ -51,7 +51,7 @@ public class InnerSet_15 <T> extends AbstractInnerSet<T>
         if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element) || element_4.equals(p_element) || element_5.equals(p_element) || element_6.equals(p_element) || element_7.equals(p_element) || element_8.equals(p_element) || element_9.equals(p_element) || element_10.equals(p_element) || element_11.equals(p_element) || element_12.equals(p_element) || element_13.equals(p_element) || element_14.equals(p_element) || element_15.equals(p_element))
             return this;
         else
-            return new InnerHashSet<>(this);    }
+            return new InnerSet_16<>(this, p_element);    }
 
     @Override
     public InnerSet<T> removeElement(Object p_element)

@@ -1,6 +1,6 @@
 package j.implementation;
 
-public class TestObject 
+public class TestObject implements Comparable<TestObject>
 {
 	private int id;
 
@@ -9,4 +9,11 @@ public class TestObject
 		this.id = id;
 	}
 
+	@Override
+	public int compareTo(TestObject testObject) {
+		int res = 0;
+		if (this.id < testObject.id) res = -1;
+		if (this.id > testObject.id) res = 1;
+		return res;
+	}
 }

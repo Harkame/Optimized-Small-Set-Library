@@ -4,7 +4,11 @@ package j.tests;
 import com.google.caliper.BeforeExperiment;
 import com.google.caliper.Benchmark;
 import com.google.caliper.api.VmOptions;
+import com.google.caliper.model.Run;
 import com.google.caliper.runner.CaliperMain;
+import com.google.caliper.runner.CaliperRun;
+import com.google.caliper.runner.Running;
+import j.generator.Generator;
 import j.implementation.TestObject;
 import j.implementation.microSet.MicroSet;
 import j.implementation.microSet.MicroSetFor;
@@ -16,15 +20,15 @@ import java.util.TreeSet;
 @VmOptions("-XX:-TieredCompilation")
 public class MicroSet_Benchmark_Add {
 
-    private int NUMBER_OF_TEST_OBJECT = 10;
-    private int NUMBER_OF_RANDOM_VALUE = 10;
+    public static final int NUMBER_OF_TEST_OBJECT = Generator.TO_GENERATE;
 
     MicroSet<TestObject> microSet = new MicroSet<>();
     HashSet<TestObject> hashSet = new HashSet<>();
+    TreeSet<TestObject> treeSet = new TreeSet<>();
     MicroSetFor<TestObject> microSetFor = new MicroSetFor<>();
 
     TestObject[] testObjects = new TestObject[NUMBER_OF_TEST_OBJECT];
-    int[] randomInt = new int[NUMBER_OF_RANDOM_VALUE];
+    int[] randomInt = new int[NUMBER_OF_TEST_OBJECT];
 
     @BeforeExperiment
     void setUp() {
@@ -32,16 +36,25 @@ public class MicroSet_Benchmark_Add {
         for (int i = 0; i < NUMBER_OF_TEST_OBJECT; i++) {
             testObjects[i] = new TestObject(random.nextInt());
         }
-        for (int i = 0; i < NUMBER_OF_RANDOM_VALUE; i++) {
+        for (int i = 0; i < NUMBER_OF_TEST_OBJECT; i++) {
             randomInt[i] = random.nextInt(NUMBER_OF_TEST_OBJECT);
         }
     }
 
 
     @Benchmark
+    public void testAdd_TreeSet(int reps) {
+        for (int i = 0; i < reps; i++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
+                treeSet.add(testObjects[randomInt[j]]);
+            }
+        }
+    }
+
+    @Benchmark
     public void testAdd_MicroSetFor(int reps) {
         for (int i = 0; i < reps; i++) {
-            for (int j = 0; j < NUMBER_OF_RANDOM_VALUE; j++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 microSetFor.add(testObjects[randomInt[j]]);
             }
         }
@@ -50,7 +63,7 @@ public class MicroSet_Benchmark_Add {
     @Benchmark
     public void testAdd_HashSet(int reps) {
         for (int i = 0; i < reps; i++) {
-            for (int j = 0; j < NUMBER_OF_RANDOM_VALUE; j++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 hashSet.add(testObjects[randomInt[j]]);
             }
         }
@@ -59,13 +72,15 @@ public class MicroSet_Benchmark_Add {
     @Benchmark
     public void testAdd_MicroSet(int reps) {
         for (int i = 0; i < reps; i++) {
-            for (int j = 0; j < NUMBER_OF_RANDOM_VALUE; j++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 microSet.add(testObjects[randomInt[j]]);
             }
         }
     }
 
     public static void main(String[] args) {
+        args = new String[]{ "-i", "runtime" };
         CaliperMain.main(MicroSet_Benchmark_Add.class, args);
+
     }
 }
