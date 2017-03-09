@@ -59,7 +59,8 @@ public class InnerSet_1 <T> extends AbstractInnerSet<T>
 
     @Override
     public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
-        return null;
+                   innerSet = innerSet.removeElement(element_1);
+                  return innerSet;
     }
 
     @Override

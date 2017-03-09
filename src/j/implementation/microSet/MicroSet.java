@@ -111,10 +111,10 @@ public class MicroSet<T> implements Set<T>
 	}
 
 
-	public boolean removeAll(InnerSet<T> innerSet)
+	public boolean removeAll(MicroSet<T> microSet)
 	{
 		InnerSet<T> oldInnerSet = this.innerSet;
-		this.innerSet = this.innerSet.removeAllElements(innerSet);
+		this.innerSet = microSet.innerSet.removeAllElements(oldInnerSet);
 		return this.innerSet.getSize() != oldInnerSet.getSize();
 	}
 
