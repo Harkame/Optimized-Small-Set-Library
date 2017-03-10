@@ -1,7 +1,7 @@
 #ifndef INNER_SET_H
 #define INNER_SET_H
 
-#include <iterator>
+#include <iostream>
 
 using namespace std;
 
@@ -9,6 +9,11 @@ template<typename T>
 class inner_set
 {
     public :
+      struct values
+      {
+
+      } a_values;
+
       inner_set<T>(){}
 
       virtual ~inner_set<T>(){}
@@ -25,9 +30,11 @@ class inner_set
 
       virtual inner_set<T>* remove_element(T){};
 
-      virtual inner_set<T> retain_all_element(T){};
+      virtual inner_set<T>* retain_all_element(T){};
 
-      virtual  int get_size(){};
+      virtual int get_size(){};
+
+      virtual void print(){};
 };
 
 

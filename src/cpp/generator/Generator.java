@@ -17,7 +17,7 @@ public class Generator {
     static int TO_GENERATE = 3;
 
     public static void createOneFile(int offset) {
-        String innerSetClassName = "InnerSet_" + offset;
+        String innerSetClassName = "inner_set_" + offset;
         ArrayList<String> elements = new ArrayList<>();
         for(int i = 1; i <= offset; i++) {
             elements.add("element_" + i);
@@ -26,7 +26,7 @@ public class Generator {
         try {
             VelocityEngine engine = new VelocityEngine();
             String pathToTemplate = "src/cpp/generator/";
-            String pathToGenerated = "src/cpp/implementation/";
+            String pathToGenerated = "src/cpp/implementation/test/";
             engine.setProperty(RuntimeConstants.RESOURCE_LOADER, "file");
             engine.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, pathToTemplate);
             engine.init();
@@ -34,15 +34,16 @@ public class Generator {
 
             VelocityContext context = new VelocityContext();
             context.put("innerSetOffset", offset);
-            context.put("nextInnerSet", "InnerSet_" + (offset + 1));
+            context.put("nextInnerSet", "inner_set_" + (offset + 1));
             context.put("lastInnerSet", TO_GENERATE);
-            context.put("previousInnerSet", "InnerSet_" + (offset - 1));
+            context.put("previousInnerSet", "inner_set_" + (offset - 1));
             context.put("innerSetClassName", innerSetClassName);
             context.put("elements", elements);
+            context.put("innerSetClassNameDefine", innerSetClassName.toUpperCase() + "_H");
 
             Path dir = Paths.get(pathToGenerated);
             Files.createDirectories(dir);
-            FileWriter writer = new FileWriter(new File(pathToGenerated + innerSetClassName + ".java"), false);
+            FileWriter writer = new FileWriter(new File(pathToGenerated + innerSetClassName + ".cpp"), false);
 
             template.merge(context, writer);
 

@@ -5,7 +5,7 @@
 #include <iostream>
 
 #include "inner_set.hpp"
-#include "inner_set_1.hpp"
+#include "inner_set_1.h"
 
 using namespace std;
 
@@ -37,9 +37,11 @@ class inner_set_0 : public inner_set<T>
 
         virtual inner_set<T>* remove_element(T);
 
-        virtual inner_set<T> retain_all_element(T);
+        virtual inner_set<T>* retain_all_element(T*);
 
         virtual int get_size();
+
+        virtual void print();
 };
 
 #endif
