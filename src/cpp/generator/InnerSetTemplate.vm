@@ -3,6 +3,7 @@
 
 
 #[[#include]]# "inner_set.hpp"
+#[[#include]]# " $previousInnerSet.hpp "
 
 using namespace std;
 
@@ -16,8 +17,8 @@ class $innerSetClassName : public inner_set<T>
         } a_values;
 
         $innerSetClassName<T>();
-        public $innerSetClassName(#foreach($element in $elements)T #if( $foreach.hasNext ), #end#end);
-        $innerSetClassName<T>($previousInnerSet, T);
+        $innerSetClassName<T>(#foreach($element in $elements)T #if( $foreach.hasNext ), #end#end);
+        $innerSetClassName<T>($previousInnerSet<T>, T);
 
         virtual ~$innerSetClassName<T>();
 
@@ -38,9 +39,7 @@ class $innerSetClassName : public inner_set<T>
 
 #endif
 
-#[[#include]]# "$innerSetClassName.hpp"
-
-#[[#include <iostream>]]#
+#[[#include]]# " $innerSetClassName.hpp "
 
 template<typename T>
 $innerSetClassName<T>::$innerSetClassName()
@@ -49,7 +48,7 @@ $innerSetClassName<T>::$innerSetClassName()
 }
 
 template<typename T>
-public $innerSetClassName(#foreach($element in $elements)T p_element_$foreach.count#if( $foreach.hasNext ), #end#end)
+$innerSetClassName<T>::$innerSetClassName(#foreach($element in $elements)T p_element_$foreach.count#if( $foreach.hasNext ), #end#end)
 {
     #foreach($element in $elements)
         a_values.$element = p_element_$foreach.count;
@@ -57,10 +56,10 @@ public $innerSetClassName(#foreach($element in $elements)T p_element_$foreach.co
 }
 
 template<typename T>
-$innerSetClassName<T>::$innerSetClassName(T $previousInnerSet, T p_element)
+$innerSetClassName<T>::$innerSetClassName($previousInnerSet<T> p_inner_set, T p_element)
 {
     #foreach($element in $elements)
-        #if( $foreach.hasNext )a_values.$element = i.element_$foreach.count;#end
+        #if( $foreach.hasNext )a_values.$element = p_inner_set.a_values.element_$foreach.count;#end
     #end
     a_values.element_$innerSetOffset = p_element;
 }
@@ -74,7 +73,7 @@ $innerSetClassName<T>::~$innerSetClassName()
                                                 template<typename T>
 inner_set<T>* $innerSetClassName<T>::add_element(T p_element)
 {
-    if(!contains_element(p_element);
+    if(!contains_element(p_element))
         return new $nextInnerSet<T>(this, p_element);
     else
         return this;
@@ -95,7 +94,7 @@ bool $innerSetClassName<T>::contains_element(T p_element)
 template<typename T>
 bool $innerSetClassName<T>::contains_all_elements(T* p_elements)
 {
-    return false //TODO
+    return false; //TODO
 }
 
 template<typename T>
@@ -111,7 +110,7 @@ inner_set<T>* $innerSetClassName<T>::remove_element(T p_element)
         #set( $f = $foreach )
         #set($sep = "")
         if($el == p_element)
-            return new $previousInnerSet<>(#foreach($element in $elements)#if($f.count != $foreach.count)$sep$element#set($sep = ", ")#end#end);
+            return new $previousInnerSet<T>(#foreach($element in $elements)#if($f.count != $foreach.count)$sep$element#set($sep = ", ")#end#end);
         #if( $f.hasNext ) else #end
     #end
     else
@@ -119,7 +118,7 @@ inner_set<T>* $innerSetClassName<T>::remove_element(T p_element)
 }
 
 template<typename T>
-inner_set<T>* $innerSetClassName<T>::retain_all_element(T** p_elements)
+inner_set<T>* $innerSetClassName<T>::retain_all_element(T* p_elements)
 {
     return this; //TODO
 }
