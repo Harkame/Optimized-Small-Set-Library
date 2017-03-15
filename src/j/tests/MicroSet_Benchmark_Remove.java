@@ -7,7 +7,7 @@ import com.google.caliper.api.VmOptions;
 import com.google.caliper.runner.CaliperMain;
 import j.implementation.TestObject;
 import j.implementation.microSet.MicroSet;
-import j.implementation.microSet.MicroSetFor;
+import j.implementation.microSet.InnerArraySet;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -20,7 +20,6 @@ public class MicroSet_Benchmark_Remove {
 
     MicroSet<TestObject> microSet = new MicroSet<>();
     HashSet<TestObject> hashSet = new HashSet<>();
-    MicroSetFor<TestObject> microSetFor = new MicroSetFor<>();
     TreeSet<TestObject> treeSet = new TreeSet<>();
 
 
@@ -38,7 +37,6 @@ public class MicroSet_Benchmark_Remove {
         for (int j = 0; j < NUMBER_OF_TEST_OBJECT /2; j++) {
             hashSet.add(testObjects[j]);
             microSet.add(testObjects[j]);
-            microSetFor.add(testObjects[j]);
             treeSet.add(testObjects[j]);
         }
 
@@ -71,15 +69,6 @@ public class MicroSet_Benchmark_Remove {
         for (int i = 0; i < reps; i++) {
             for (int j = 0; j < NUMBER_OF_TEST_OBJECT/4; j++) {
                 microSet.remove(testObjects[randomInt[j]]);
-            }
-        }
-    }
-
-    @Benchmark
-    public void testRemove_MicroSetFor(int reps) {
-        for (int i = 0; i < reps; i++) {
-            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
-                microSetFor.contains(testObjects[randomInt[j]]);
             }
         }
     }

@@ -1,12 +1,10 @@
 package j.implementation.microSet;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 
 public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
 {
-	private static final long serialVersionUID = 1L;
 
 	public InnerHashSet() {
         super();
@@ -25,7 +23,10 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
         return this;
     }
 
-
+    @Override
+    public InnerSet<T> addUnChecked(T p_element) {
+        return addElement(p_element);
+    }
 
     @Override
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
@@ -51,8 +52,13 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
         return null;
     }
 
-    public Iterator<T> getIterator() {
+    public Iterator<T> iterator() {
         return iterator();
+    }
+
+    @Override
+    public InnerSet<T> copy() {
+        return null;
     }
 
     @Override
@@ -76,18 +82,5 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
     @Override
     public int getSize() {
         return 0;
-    }
-    
-    public static void main(String[] Args)
-    {
-    	InnerHashSet<Integer> inner_hash_set = new InnerHashSet<Integer>();
-    	System.out.println(inner_hash_set.toString());
-    	inner_hash_set.add(12);
-    	System.out.println(inner_hash_set.toString());
-    	inner_hash_set.add(42);
-    	System.out.println(inner_hash_set.toString());
-    	System.out.println(inner_hash_set.contains(42));
-    	inner_hash_set.remove(12);
-    	System.out.println(inner_hash_set.toString());
     }
 }

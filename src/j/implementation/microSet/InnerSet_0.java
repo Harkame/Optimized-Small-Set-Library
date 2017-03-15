@@ -11,7 +11,12 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 	@Override
 	public InnerSet<T> addElement(T p_element)
 	{
-		return null;//new InnerSet_1(p_element);
+		return null;// new InnerSet_1(p_element);
+	}
+
+	@Override
+	public InnerSet<T> addUnChecked(T p_element) {
+		return addElement(p_element);
 	}
 
 	public InnerSet<T> addAllElements(InnerSet<T> innerSet) { return innerSet; }
@@ -50,8 +55,13 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 	}
 
 	@Override
-	public Iterator<T> getIterator() {
+	public Iterator<T> iterator() {
 		return new InnerSetIterator<>(this);
+	}
+
+	@Override
+	public InnerSet<T> copy() {
+		return null; // TODO ?
 	}
 
 	@Override

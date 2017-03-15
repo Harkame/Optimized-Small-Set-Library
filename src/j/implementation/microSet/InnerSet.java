@@ -6,6 +6,8 @@ import java.util.Iterator;
 public interface InnerSet<T> {
     InnerSet<T> addElement(T p_element);
 
+    InnerSet<T> addUnChecked(T p_element);
+
     InnerSet<T> addAllElements(InnerSet<T> innerSet);
 
     boolean containsElement(Object p_element);
@@ -22,5 +24,7 @@ public interface InnerSet<T> {
 
     int getSize();
 
-    Iterator<T> getIterator();
+    Iterator<T> iterator();
+
+    InnerSet<T> copy();
 }

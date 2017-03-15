@@ -1,6 +1,5 @@
 package j.implementation.microSet;
 
-import java.util.Collection;
 import java.util.Iterator;
 
 public class InnerSet_1 <T> extends AbstractInnerSet<T>
@@ -11,6 +10,15 @@ public class InnerSet_1 <T> extends AbstractInnerSet<T>
     {
                 element_1 = p_element_1;
             }
+
+    public InnerSet_1(InnerSet_1<T> i)
+    {
+            element_1 = i.element_1;
+        }
+
+    public InnerSet_1<T> copy() {
+        return new InnerSet_1(this);
+    }
 
     public InnerSet_1(InnerSet_0<T> i, T el)
     {
@@ -24,6 +32,11 @@ public class InnerSet_1 <T> extends AbstractInnerSet<T>
             return this;
         else
             return new InnerSet_2<>(this, p_element);    }
+
+    @Override
+    public InnerSet<T> addUnChecked(T p_element)
+    {
+        return new InnerSet_2<>(this, p_element);    }
 
     @Override
     public InnerSet<T> removeElement(Object p_element)
@@ -89,7 +102,7 @@ public class InnerSet_1 <T> extends AbstractInnerSet<T>
     }
 
     @Override
-    public Iterator<T> getIterator() {
+    public Iterator<T> iterator() {
         return new InnerSetIterator<>(this);
     }
 

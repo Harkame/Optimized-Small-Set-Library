@@ -1,7 +1,6 @@
 #set( $equals_p = '.equals(p_element)' )
 package j.implementation.microSet;
 
-import java.util.Collection;
 import java.util.Iterator;
 
 public class $innerSetClassName <T> extends AbstractInnerSet<T>
@@ -15,6 +14,17 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
         #foreach($element in $elements)
         $element = p_element_$foreach.count;
         #end
+    }
+
+    public $innerSetClassName($innerSetClassName<T> i)
+    {
+    #foreach($element in $elements)
+        $element = i.element_$foreach.count;
+    #end
+    }
+
+    public $innerSetClassName<T> copy() {
+        return new $innerSetClassName(this);
     }
 
     public $innerSetClassName($previousInnerSet<T> i, T el)
@@ -32,6 +42,12 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
             return this;
         else
             return new #if($innerSetOffset == $lastInnerSet)InnerHashSet<>(this);#else$nextInnerSet<>(this, p_element);#end
+    }
+
+    @Override
+    public InnerSet<T> addUnChecked(T p_element)
+    {
+        return new #if($innerSetOffset == $lastInnerSet)InnerHashSet<>(this);#else$nextInnerSet<>(this, p_element);#end
     }
 
     @Override
@@ -111,7 +127,7 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
     }
 
     @Override
-    public Iterator<T> getIterator() {
+    public Iterator<T> iterator() {
         return new InnerSetIterator<>(this);
     }
 

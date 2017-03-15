@@ -11,6 +11,10 @@ public class MicroSet<T> implements Set<T>
 {
 	private InnerSet<T> innerSet;
 
+	public MicroSet(MicroSet microSet) {
+		this.innerSet = microSet.innerSet.copy();
+	}
+
 	public MicroSet(InnerSet<T> innerSet) {
 		if (innerSet instanceof InnerHashSet) {
 			this.innerSet = new InnerHashSet<>(innerSet);
@@ -86,7 +90,7 @@ public class MicroSet<T> implements Set<T>
     @Override
 	public Iterator<T> iterator()
 	{
-		return this.innerSet.getIterator();
+		return this.innerSet.iterator();
 	}
 
 	@Override
