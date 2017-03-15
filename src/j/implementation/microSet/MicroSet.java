@@ -11,6 +11,10 @@ public class MicroSet<T> implements Set<T>
 {
 	private InnerSet<T> innerSet;
 
+	public static enum Use {
+		INNER_SET, ARRAY_SET, HASH_SET
+	}
+
 	public MicroSet(MicroSet microSet) {
 		this.innerSet = microSet.innerSet.copy();
 	}
@@ -25,6 +29,22 @@ public class MicroSet<T> implements Set<T>
 
 	public MicroSet() {
 		this.innerSet = new InnerSet_0<>();
+	}
+
+	public MicroSet(Use use) {
+		switch (use) {
+			case ARRAY_SET:
+				this.innerSet = new InnerArraySet<>();
+				break;
+			case HASH_SET:
+				this.innerSet = new InnerHashSet<>();
+				break;
+			case INNER_SET:
+				this.innerSet = new InnerSet_0<>();
+				break;
+			default:
+				this.innerSet = new InnerSet_0<>();
+		}
 	}
 
 	@Override
