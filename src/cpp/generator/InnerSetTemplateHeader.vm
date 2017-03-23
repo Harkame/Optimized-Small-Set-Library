@@ -1,0 +1,40 @@
+#[[#]]#ifndef $innerSetClassNameDefine
+#[[#]]#define $innerSetClassNameDefine
+
+
+#[[#include]]# "inner_set.hpp"
+#[[#include]]# "$previousInnerSetInclude"
+
+using namespace std;
+
+template<typename T>
+class $innerSetClassName : public inner_set<T>
+{
+    public :
+        struct values
+        {
+            #foreach($element in $elements) T $element#if( $foreach.hasNext); #end#end;
+        } a_values;
+
+        $innerSetClassName<T>();
+        $innerSetClassName<T>(#foreach($element in $elements)T #if( $foreach.hasNext ), #end#end);
+        $innerSetClassName<T>($previousInnerSet<T>, T);
+
+        virtual ~$innerSetClassName<T>();
+
+        virtual inner_set<T>* add_element(T);
+        virtual inner_set<T>* add_elements(T*);
+
+        virtual bool contains_element(T);
+        virtual bool contains_all_elements(T*);
+
+        virtual T get_element(int);
+
+        virtual inner_set<T>* remove_element(T);
+
+        virtual inner_set<T>* retain_all_element(T*);
+
+        virtual int get_size();
+};
+
+#endif
