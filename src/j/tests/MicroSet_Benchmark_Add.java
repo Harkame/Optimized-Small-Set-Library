@@ -16,9 +16,11 @@ import java.util.TreeSet;
 @VmOptions("-XX:-TieredCompilation")
 public class MicroSet_Benchmark_Add {
 
-    public static final int NUMBER_OF_TEST_OBJECT = 10;
+    public static final int NUMBER_OF_TEST_OBJECT = 30;
 
-    MicroSet<TestObject> microSet = new MicroSet<>();
+    MicroSet<TestObject> microInnerSet = new MicroSet<>(MicroSet.Use.INNER_SET, NUMBER_OF_TEST_OBJECT);
+    MicroSet<TestObject> microArraySet = new MicroSet<>(MicroSet.Use.ARRAY_SET, NUMBER_OF_TEST_OBJECT);
+    MicroSet<TestObject> microHashSet = new MicroSet<>(MicroSet.Use.HASH_SET, NUMBER_OF_TEST_OBJECT);
     HashSet<TestObject> hashSet = new HashSet<>();
     TreeSet<TestObject> treeSet = new TreeSet<>();
 
@@ -56,16 +58,33 @@ public class MicroSet_Benchmark_Add {
     }
 
     @Benchmark
-    public void testAdd_MicroSet(int reps) {
+    public void testAdd_MicroHashSet(int reps) {
         for (int i = 0; i < reps; i++) {
             for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
-                microSet.add(testObjects[randomInt[j]]);
+                microHashSet.add(testObjects[randomInt[j]]);
+            }
+        }
+    }
+
+    @Benchmark
+    public void testAdd_MicroArraySet(int reps) {
+        for (int i = 0; i < reps; i++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
+                microArraySet.add(testObjects[randomInt[j]]);
+            }
+        }
+    }
+    @Benchmark
+    public void testAdd_MicroInnerSet(int reps) {
+        for (int i = 0; i < reps; i++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
+                microInnerSet.add(testObjects[randomInt[j]]);
             }
         }
     }
 
     public static void main(String[] args) {
-        args = new String[]{ "-i", "runtime" };
+        args = new String[]{ "-i", "runtime", "-r", "ADD scale=" + NUMBER_OF_TEST_OBJECT + ", object_number=" + NUMBER_OF_TEST_OBJECT};
         CaliperMain.main(MicroSet_Benchmark_Add.class, args);
     }
 }

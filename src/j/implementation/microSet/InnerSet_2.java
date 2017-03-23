@@ -115,4 +115,8 @@ public class InnerSet_2 <T> extends AbstractInnerSet<T>
         return new InnerSetIterator<>(this);
     }
 
+    @Override
+    public InnerSet<T> clear(boolean unused) {
+        return (InnerSet<T>) InnerSet_0.singleton;
+    }
 }

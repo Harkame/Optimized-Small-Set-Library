@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 public interface InnerSet<T> {
+
     InnerSet<T> addElement(T p_element);
 
     InnerSet<T> addUnChecked(T p_element);
@@ -27,4 +28,7 @@ public interface InnerSet<T> {
     Iterator<T> iterator();
 
     InnerSet<T> copy();
+
+    InnerSet<T> clear(boolean unused);
+
 }

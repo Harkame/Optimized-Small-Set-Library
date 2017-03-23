@@ -1,8 +1,5 @@
 package j.implementation.microSet;
 
-
-import javafx.beans.Observable;
-
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
@@ -10,8 +7,9 @@ import java.util.Set;
 public class MicroSet<T> implements Set<T>
 {
 	private InnerSet<T> innerSet;
+	private int scale;
 
-	public static enum Use {
+	public enum Use {
 		INNER_SET, ARRAY_SET, HASH_SET
 	}
 
@@ -20,18 +18,14 @@ public class MicroSet<T> implements Set<T>
 	}
 
 	public MicroSet(InnerSet<T> innerSet) {
-		if (innerSet instanceof InnerHashSet) {
-			this.innerSet = new InnerHashSet<>(innerSet);
-		} else {
-			this.innerSet = innerSet;
-		}
+		this.innerSet = innerSet.copy();
 	}
 
 	public MicroSet() {
 		this.innerSet = new InnerSet_0<>();
 	}
 
-	public MicroSet(Use use) {
+	public MicroSet(Use use, int k) {
 		switch (use) {
 			case ARRAY_SET:
 				this.innerSet = new InnerArraySet<>();
@@ -40,18 +34,23 @@ public class MicroSet<T> implements Set<T>
 				this.innerSet = new InnerHashSet<>();
 				break;
 			case INNER_SET:
-				this.innerSet = new InnerSet_0<>();
+				this.innerSet = (InnerSet<T>) InnerSet_0.singleton;
 				break;
 			default:
-				this.innerSet = new InnerSet_0<>();
+				this.innerSet = (InnerSet<T>) InnerSet_0.singleton;
 		}
+		scale = k;
 	}
 
 	@Override
 	public boolean add(T e)
 	{
 		InnerSet<T> oldInnerSet = this.innerSet;
-		this.innerSet = this.innerSet.addElement(e);
+		if (this.size() <= scale) {
+			this.innerSet = this.innerSet.addElement(e);
+		} else {
+			this.innerSet = new InnerHashSet<>(this.innerSet.addElement(e));
+		}
 		return (oldInnerSet.getSize() + 1) == this.innerSet.getSize();
 	}
 
@@ -77,7 +76,7 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public void clear()
 	{
-		this.innerSet = (InnerSet_0<T>) InnerSet_0.singleton;
+		this.innerSet = this.innerSet.clear(true); // The parameter is unused
 	}
 
 	@Override

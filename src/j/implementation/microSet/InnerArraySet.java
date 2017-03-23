@@ -13,7 +13,14 @@ import java.util.Set;
 public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
 
     public InnerArraySet() {
-        super(Generator.TO_GENERATE);
+        super(Generator.TO_GENERATE); // Optimise the array length to the size of InnerSet
+    }
+
+    public InnerArraySet(InnerSet i) {
+        this();
+        for (Iterator<T> it = i.iterator(); it.hasNext(); ) {
+            add(it.next());
+        }
     }
 
     @Override
@@ -60,6 +67,15 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
         return this;
     }
 
+/*    private void fastRemove(T p_element) {
+        modCount++;
+        for (int index = 0; index < size(); index++)
+            if (p_element.equals(super.elementData[index])) {
+                fastRemove(index);
+                return true;
+            }
+    }*/
+
     @Override
     public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
         Iterator<T> it = innerSet.iterator();
@@ -80,12 +96,13 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
     }
 
     @Override
-    public Iterator<T> iterator() {
-        return iterator();
+    public InnerSet<T> copy() {
+        return new InnerArraySet<>(this);
     }
 
     @Override
-    public InnerSet<T> copy() {
-        return copy();
+    public InnerSet<T> clear(boolean unused) {
+        this.clear();
+        return this;
     }
 }

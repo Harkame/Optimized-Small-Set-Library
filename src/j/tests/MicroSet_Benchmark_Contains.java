@@ -16,9 +16,12 @@ import java.util.TreeSet;
 @VmOptions("-XX:-TieredCompilation")
 public class MicroSet_Benchmark_Contains {
 
-    private int NUMBER_OF_TEST_OBJECT = MicroSet_Benchmark_Add.NUMBER_OF_TEST_OBJECT;
+    private static int NUMBER_OF_TEST_OBJECT = 30;
 
-    MicroSet<TestObject> microSet = new MicroSet<>();
+    MicroSet<TestObject> microInnerSet = new MicroSet<>(MicroSet.Use.INNER_SET, NUMBER_OF_TEST_OBJECT);
+    MicroSet<TestObject> microArraySet = new MicroSet<>(MicroSet.Use.ARRAY_SET, NUMBER_OF_TEST_OBJECT);
+    MicroSet<TestObject> microHashSet = new MicroSet<>(MicroSet.Use.HASH_SET, NUMBER_OF_TEST_OBJECT);
+
     HashSet<TestObject> hashSet = new HashSet<>();
     TreeSet<TestObject> treeSet = new TreeSet<>();
 
@@ -36,7 +39,9 @@ public class MicroSet_Benchmark_Contains {
 
         for (int j = 0; j < NUMBER_OF_TEST_OBJECT /2; j++) {
             hashSet.add(testObjects[j]);
-            microSet.add(testObjects[j]);
+            microArraySet.add(testObjects[j]);
+            microHashSet.add(testObjects[j]);
+            microInnerSet.add(testObjects[j]);
             treeSet.add(testObjects[j]);
         }
 
@@ -65,16 +70,34 @@ public class MicroSet_Benchmark_Contains {
     }
 
     @Benchmark
-    public void testContains_MicroSet(int reps) {
+    public void testContains_MicroArraySet(int reps) {
         for (int i = 0; i < reps; i++) {
             for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
-                microSet.contains(testObjects[randomInt[j]]);
+                microArraySet.contains(testObjects[randomInt[j]]);
+            }
+        }
+    }
+
+    @Benchmark
+    public void testContains_MicroHashSet(int reps) {
+        for (int i = 0; i < reps; i++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
+                microHashSet.contains(testObjects[randomInt[j]]);
+            }
+        }
+    }
+    @Benchmark
+    public void testContains_MicroInnerSet(int reps) {
+        for (int i = 0; i < reps; i++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
+                microInnerSet.contains(testObjects[randomInt[j]]);
             }
         }
     }
 
     public static void main(String[] args) {
-        args = new String[]{ "-i", "runtime" };
+        args = new String[]{ "-i", "runtime", "-r", "CONTAINS scale=" + MicroSet_Benchmark_Add.NUMBER_OF_TEST_OBJECT + ", object_number=" + MicroSet_Benchmark_Add.NUMBER_OF_TEST_OBJECT};
+
         CaliperMain.main(MicroSet_Benchmark_Contains.class, args);
     }
 }
