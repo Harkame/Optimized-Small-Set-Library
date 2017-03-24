@@ -39,7 +39,7 @@ public class Generator {
             context.put("previousInnerSet", "inner_set_" + (offset - 1));
             context.put("innerSetClassName", innerSetClassName);
             context.put("elements", elements);
-            context.put("innerSetClassNameDefine", innerSetClassName.toUpperCase() + "_H");
+            context.put("innerSetClassNameDefine", innerSetClassName.toUpperCase() + "_HPP");
             context.put("previousInnerSetInclude", "inner_set_" + (offset - 1) + ".hpp");
 
             Path dir = Paths.get(pathToGenerated);
