@@ -73,21 +73,77 @@ public class MicroSet_Test {
     }
 
     void addAllElements() {
-        //ToDo
+
+        MicroSet<TestObject> microSetAdd = new MicroSet<>();
+        TestObject testObject2 = new TestObject(2);
+        TestObject testObject3 = new TestObject(3);
+        microSetAdd.add(testObject2);
+        microSetAdd.add(testObject3);
+
+        assertEquals(microSet.size(),1);
+        microSet.addAll(microSetAdd);
+        assertEquals(microSet.size(),3);
+
     }
 
     void removeAllElements() {
-        //ToDo
+
+        TestObject testObject2 = new TestObject(2);
+        TestObject testObject3 = new TestObject(3);
+        //MicroSetRemove contains [testObject2 , testObject]
+        MicroSet<TestObject> microSetRemove = new MicroSet<>();
+        microSetRemove.add(testObject2);
+        microSetRemove.add(testObject);
+
+        //MicroSet contains [testObject, testObject2, testObject3]
+        microSet.add(testObject2);
+        microSet.add(testObject3);
+
+        assertEquals(microSet.size(),3);
+        microSet.removeAll(microSetRemove);
+        assertEquals(microSet.size(),1);
+
+        //MicroSet contains [testObject3]
+
     }
 
     void retainAllElements() {
-        //Todo
+
+        TestObject testObject2 = new TestObject(2);
+        TestObject testObject3 = new TestObject(3);
+
+        //MicroSetRetain contains [testObject2 , testObject]
+        MicroSet<TestObject> microSetRetain = new MicroSet<>();
+        microSetRetain.add(testObject2);
+        microSetRetain.add(testObject);
+
+        //MicroSet contains [testObject, testObject3]
+        microSet.add(testObject3);
+
+        assertEquals(microSet.size(),2);
+        microSet.retainAll(microSetRetain);
+        assertEquals(microSet.size(),1);
+
+        //MicroSet contains [testObject]
+
     }
 
     void containsAllElements() {
-        //Todo
-    }
 
+        TestObject testObject2 = new TestObject(2);
+        TestObject testObject3 = new TestObject(3);
+
+        //MicroSetRetain contains [testObject2 , testObject]
+        MicroSet<TestObject> microSetContains = new MicroSet<>();
+        microSetContains.add(testObject2);
+        microSetContains.add(testObject);
+
+        //MicroSet contains [testObject, testObject2, testObject3]
+        microSet.add(testObject2);
+        microSet.add(testObject3);
+
+        assertTrue(microSet.containsAll(microSetContains));
+    }
     void toArray(){
         //Todo
     }

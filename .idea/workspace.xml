@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b999aeaf-6daf-434a-aa0d-e91a20c3e6f9" name="Default" comment="Ajout des methodes ensembliste (paramétré par innerset)&#10;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_10.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_2.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_3.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_4.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_5.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_6.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_7.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_8.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_9.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/generator/Generator.java" afterPath="$PROJECT_DIR$/src/j/generator/Generator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm" afterPath="$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/AbstractInnerSet.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/AbstractInnerSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerHashSet.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerHashSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/MicroSet.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/MicroSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Add.java" afterPath="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Add.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Contains.java" afterPath="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Contains.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Remove.java" afterPath="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Remove.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" afterPath="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,20 +21,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MicroSet_Test.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/j/tests/MicroSet_Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="556">
+              <caret line="145" column="5" lean-forward="false" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Generator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/j/generator/Generator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-346">
+            <state relative-caret-position="108">
               <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InnerArraySet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InnerArraySet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="104">
               <caret line="72" column="13" lean-forward="false" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
               <folding />
             </state>
@@ -117,7 +106,6 @@
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_15.java" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_3.java" />
         <option value="$PROJECT_DIR$/Optimized-Small-Set-Library.iml" />
-        <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_2.java" />
         <option value="$PROJECT_DIR$/src/cpp/generator/Generator.java" />
@@ -136,6 +124,7 @@
         <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Contains.java" />
         <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Remove.java" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java" />
+        <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
       </list>
     </option>
   </component>
@@ -146,9 +135,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="30" />
-    <option name="width" value="1920" />
-    <option name="height" value="1050" />
+    <option name="x" value="-5" />
+    <option name="width" value="1376" />
+    <option name="height" value="748" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -165,7 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -176,6 +164,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -271,23 +273,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -923,6 +912,7 @@
       <workItem from="1489579937732" duration="1918000" />
       <workItem from="1489582747326" duration="1022000" />
       <workItem from="1490268487410" duration="8581000" />
+      <workItem from="1490352726614" duration="17000" />
     </task>
     <servers />
   </component>
@@ -959,39 +949,39 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74438000" />
+    <option name="totallyTimeSpent" value="74455000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
+    <frame x="-5" y="0" width="1376" height="748" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32524806" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32989064" sideWeight="0.50125" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32414553" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32414553" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20052083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19985358" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32524806" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1061,6 +1051,22 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/j/generator/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="72" column="13" lean-forward="false" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/generator/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="39" column="64" lean-forward="false" selection-start-line="39" selection-start-column="64" selection-end-line="39" selection-end-column="64" />
           <folding />
@@ -1097,7 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,7 +1142,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="e#318#319#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1153,7 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="26" column="32" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1253,7 +1259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="758">
           <caret line="135" column="50" lean-forward="false" selection-start-line="135" selection-start-column="50" selection-end-line="135" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1327,7 +1332,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/j/generator/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-346">
+        <state relative-caret-position="108">
           <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
           <folding />
         </state>
@@ -1341,18 +1346,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/util/ArrayList.class">
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/util/ArrayList.class" />
+    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="34" />
+        <state relative-caret-position="104">
+          <caret line="72" column="13" lean-forward="false" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java">
+    <entry file="file://$PROJECT_DIR$/src/j/tests/MicroSet_Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="72" column="13" lean-forward="false" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+        <state relative-caret-position="556">
+          <caret line="145" column="5" lean-forward="false" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
           <folding />
         </state>
       </provider>
