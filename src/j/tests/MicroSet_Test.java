@@ -72,6 +72,7 @@ public class MicroSet_Test {
         assertEquals(microSet.size(),1);
     }
 
+    @Test
     void addAllElements() {
 
         MicroSet<TestObject> microSetAdd = new MicroSet<>();
@@ -86,6 +87,7 @@ public class MicroSet_Test {
 
     }
 
+    @Test
     void removeAllElements() {
 
         TestObject testObject2 = new TestObject(2);
@@ -107,6 +109,7 @@ public class MicroSet_Test {
 
     }
 
+    @Test
     void retainAllElements() {
 
         TestObject testObject2 = new TestObject(2);
@@ -128,6 +131,7 @@ public class MicroSet_Test {
 
     }
 
+    @Test
     void containsAllElements() {
 
         TestObject testObject2 = new TestObject(2);

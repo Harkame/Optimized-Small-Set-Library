@@ -7,7 +7,6 @@ import java.util.Set;
 public class MicroSet<T> implements Set<T>
 {
 	private InnerSet<T> innerSet;
-	private int scale;
 
 	public enum Use {
 		INNER_SET, ARRAY_SET, HASH_SET
@@ -39,19 +38,14 @@ public class MicroSet<T> implements Set<T>
 			default:
 				this.innerSet = (InnerSet<T>) InnerSet_0.singleton;
 		}
-		scale = k;
 	}
 
 	@Override
 	public boolean add(T e)
 	{
 		InnerSet<T> oldInnerSet = this.innerSet;
-		if (this.size() <= scale) {
 			this.innerSet = this.innerSet.addElement(e);
-		} else {
-			this.innerSet = new InnerHashSet<>(this.innerSet.addElement(e));
-		}
-		return (oldInnerSet.getSize() + 1) == this.innerSet.getSize();
+		return oldInnerSet.getSize() + 1 == this.innerSet.getSize();
 	}
 
 	/**
@@ -163,10 +157,10 @@ public class MicroSet<T> implements Set<T>
 	}
 
 
-	public boolean retainAll(InnerSet<T> innerSet)
+	public boolean retainAll(MicroSet<T> microSet)
 	{
 		InnerSet<T> oldInnerSet = this.innerSet;
-		this.innerSet = this.innerSet.retainAllElements(innerSet);
+		this.innerSet = microSet.innerSet.retainAllElements(innerSet);
 		return this.innerSet.getSize() != oldInnerSet.getSize();
 	}
 
