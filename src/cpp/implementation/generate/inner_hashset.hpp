@@ -7,6 +7,7 @@
 
 #include "inner_set.hpp"
 #include "inner_set_10.hpp"
+#include "inner_array_set.hpp"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ class inner_hashset : public inner_set<T>
         inner_hashset<T>();
         inner_hashset<T>(T, T, T, T, T, T, T, T, T, T);
         inner_hashset<T>(inner_set_10<T>, T);
+        inner_hashset<T>(inner_array_set<T>, T);
 
         virtual ~inner_hashset<T>();
 
