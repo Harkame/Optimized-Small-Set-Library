@@ -70,7 +70,7 @@ class MicroSet[T]() extends Set[T] {
 
   def clear() = innerSet.clear(true)
 
-  override def toString: String = "MicroSet{" + "innerSet=" + innerSet + '}';
+  override def toString: String = "MicroSet { " + "innerSet = " + innerSet + " }" + "\n" + innerSet.toString
 
   override def removeAll(c: util.Collection[_]): Boolean = ??? //TODO
 

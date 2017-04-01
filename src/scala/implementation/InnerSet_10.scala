@@ -114,5 +114,5 @@ class InnerSet_10[T](element1: T, element2: T, element3: T, element4: T, element
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
 
-    override def toString : String = //TODO
+    override def toString : String = "{ " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + ", " + element5 + ", " + element6 + ", " + element7 + ", " + element8 + ", " + element9 + ", " + element10 + " }"
 }

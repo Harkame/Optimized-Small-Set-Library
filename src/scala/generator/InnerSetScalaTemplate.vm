@@ -84,5 +84,5 @@ class $innerSetClassName$t(#foreach($element in $elements)$element: T#if( $forea
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
 
-    override def toString : String = //TODO
+    override def toString : String = "{ " + #foreach($element in $elements)$element#if( $foreach.hasNext ) + ", " + #end#end + " }"
 }

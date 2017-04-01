@@ -32,4 +32,6 @@ class InnerSet_0[T] extends AbstractInnerSet[T]{
 
   override def clear(unused: Boolean): InnerSet[T] = this
 
+  override def toString: String = "{ }"
+
 }

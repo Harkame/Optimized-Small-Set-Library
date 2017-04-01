@@ -66,5 +66,5 @@ class InnerSet_2[T](element1: T, element2: T) extends AbstractInnerSet[T]
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
 
-    override def toString : String = //TODO
+    override def toString : String = "{ " + element1 + ", " + element2 + " }"
 }
