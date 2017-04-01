@@ -30,10 +30,10 @@ class $innerSetClassName$t(#foreach($element in $elements)$element: T#if( $forea
         #end
     }#end
 
-    override def containsElements(p_element: T): Boolean = #foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end
+    override def containsElement(p_element: Object): Boolean = #foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end
 
 
-    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean = #foreach($element in $elements) p_innerSet.containsElements($element)#if( $foreach.hasNext) &&#end#end
+    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean = #foreach($element in $elements) p_innerSet.containsElement($element)#if( $foreach.hasNext) &&#end#end
 
 
     override def getElement(p_index: Int): Option[T] = p_index match{
@@ -44,7 +44,7 @@ class $innerSetClassName$t(#foreach($element in $elements)$element: T#if( $forea
     }
 
 
-    override def removeElement(p_element: T): InnerSet[T] =
+    override def removeElement(p_element: Object): InnerSet[T] =
     {
     #foreach($el in $elements)
         #set( $f = $foreach )
@@ -71,7 +71,7 @@ class $innerSetClassName$t(#foreach($element in $elements)$element: T#if( $forea
     {
       var i: InnerSet[T] = this
       #foreach($element in $elements)
-      if(!p_innerSet.containsElements($element)) i = i.removeElement($element)
+      if(!p_innerSet.containsElement($element)) i = i.removeElement($element)
       #end
       i
     }

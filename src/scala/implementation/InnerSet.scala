@@ -8,13 +8,13 @@ trait InnerSet[T] {
 
   def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T]
 
-  def containsElements(p_element: T): Boolean
+  def containsElement(p_element: Object): Boolean
 
   def containsAllElements(p_innerSet: InnerSet[T]): Boolean
 
   def getElement(index: Int): Option[T]
 
-  def removeElement(p_element: T): InnerSet[T]
+  def removeElement(p_element: Object): InnerSet[T]
 
   def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T]
 

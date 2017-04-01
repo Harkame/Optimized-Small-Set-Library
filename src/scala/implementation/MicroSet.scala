@@ -27,35 +27,61 @@ class MicroSet[T]() extends Set[T] {
 
   def add(element: T): Boolean =
   {
-    var oldInnerSet: InnerSet[T] = innerSet
+    val oldInnerSet: InnerSet[T] = innerSet
     innerSet = innerSet.addElement(element)
     oldInnerSet.getSize + 1 != innerSet.getSize
   }
 
   def AddAll(microSet: MicroSet[T]): Boolean =
   {
-    var oldInnerSet: InnerSet[T] = innerSet
+    val oldInnerSet: InnerSet[T] = innerSet
     innerSet = microSet.innerSet.addAllElements(oldInnerSet)
     innerSet.getSize != microSet.innerSet.getSize
   }
 
-  def remove(element: T): Boolean =
+  override def addAll(c: util.Collection[_ <: T]): Boolean =
   {
-    var oldInnerSet: InnerSet[T] = innerSet
+    val oldInnerSet = this.innerSet
+    for (el <- c) {
+      innerSet.addElement(el)
+    }
+    innerSet.getSize != oldInnerSet.getSize
+  }
+
+  def remove(element: Object): Boolean =
+  {
+    val oldInnerSet: InnerSet[T] = innerSet
     innerSet = innerSet.removeElement(element)
     (oldInnerSet.getSize -1) != innerSet.getSize
   }
 
   def removeAll(microSet: MicroSet[T]): Boolean =
   {
-    var oldInnerSet: InnerSet[T] = innerSet
+    val oldInnerSet: InnerSet[T] = innerSet
     innerSet = microSet.innerSet.removeAllElements(oldInnerSet)
     innerSet.getSize != microSet.innerSet.getSize
   }
 
-  def contains(element: T): Boolean = innerSet.containsElements(element)
+  override def removeAll(c: util.Collection[_]): Boolean =
+  {
+    val oldInnerSet = innerSet
+    for (el <- c) {
+      if(innerSet.containsElement(el)) innerSet.removeElement(el)
+    }
+    innerSet.getSize != oldInnerSet.getSize
+  }
+
+  override def contains(element: Object): Boolean = innerSet.containsElement(element)
 
   def containsAll(microSet: MicroSet[T]): Boolean = microSet.innerSet.containsAllElements(innerSet)
+
+  override def containsAll(c: util.Collection[_]): Boolean =
+  {
+    for (el <- c) {
+      if(!innerSet.containsElement(el)) false
+    }
+    true
+  }
 
   def retainsAll(microSet: MicroSet[T]): Boolean =
   {
@@ -64,29 +90,28 @@ class MicroSet[T]() extends Set[T] {
     innerSet.getSize != microSet.innerSet.getSize
   }
 
+  override def retainAll(c: util.Collection[_]): Boolean =
+  {
+    val oldInnerSet: InnerSet[T] = innerSet
+    this.innerSet = InnerSet_0[T]
+    for (el <- c) {
+      if (oldInnerSet.containsElement(el)) innerSet = innerSet.addElement(el)
+    }
+    innerSet.getSize != oldInnerSet.getSize
+  }
+
   def size(): Int = innerSet.getSize
 
   def isEmpty(): Boolean = innerSet.getSize == 0
 
   def clear() = innerSet.clear(true)
 
+  override def iterator(): util.Iterator[T] = ??? //TODO
+
   override def toString: String = "MicroSet { " + "innerSet = " + innerSet + " }" + "\n" + innerSet.toString
-
-  override def removeAll(c: util.Collection[_]): Boolean = ??? //TODO
-
-  override def retainAll(c: util.Collection[_]): Boolean = ??? //TODO
 
   override def toArray: Array[AnyRef] = ??? //TODO
 
   override def toArray[T](a: Array[T]): Array[T] = ??? //TODO
 
-  override def remove(o: scala.Any): Boolean = ??? //TODO
-
-  override def contains(o: scala.Any): Boolean = ??? //TODO
-
-  override def iterator(): util.Iterator[T] = ??? //TODO
-
-  override def addAll(c: util.Collection[_ <: T]): Boolean = ??? //TODO
-
-  override def containsAll(c: util.Collection[_]): Boolean = ??? //TODO
 }

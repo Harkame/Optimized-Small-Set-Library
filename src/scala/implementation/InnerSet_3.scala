@@ -25,9 +25,9 @@ class InnerSet_3[T](element1: T, element2: T, element3: T) extends AbstractInner
                 p_innerSet.addElement(element2)
                 p_innerSet.addElement(element3)
             }
-    override def containsElements(p_element: T): Boolean = element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element)
+    override def containsElement(p_element: Object): Boolean = element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element)
 
-    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElements(element1) && p_innerSet.containsElements(element2) && p_innerSet.containsElements(element3)
+    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1) && p_innerSet.containsElement(element2) && p_innerSet.containsElement(element3)
 
     override def getElement(p_index: Int): Option[T] = p_index match{
         case 1 => Option(element1)
@@ -37,7 +37,7 @@ class InnerSet_3[T](element1: T, element2: T, element3: T) extends AbstractInner
     }
 
 
-    override def removeElement(p_element: T): InnerSet[T] =
+    override def removeElement(p_element: Object): InnerSet[T] =
     {
             if(element1.equals(p_element))
          InnerSet_2(element2, element3)
@@ -58,9 +58,9 @@ class InnerSet_3[T](element1: T, element2: T, element3: T) extends AbstractInner
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
     {
       var i: InnerSet[T] = this
-            if(!p_innerSet.containsElements(element1)) i = i.removeElement(element1)
-            if(!p_innerSet.containsElements(element2)) i = i.removeElement(element2)
-            if(!p_innerSet.containsElements(element3)) i = i.removeElement(element3)
+            if(!p_innerSet.containsElement(element1)) i = i.removeElement(element1)
+            if(!p_innerSet.containsElement(element2)) i = i.removeElement(element2)
+            if(!p_innerSet.containsElement(element3)) i = i.removeElement(element3)
             i
     }
 

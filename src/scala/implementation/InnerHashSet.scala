@@ -40,20 +40,20 @@ object InnerHashSet
     this
   }
 
-  override def containsElements(p_element: T): Boolean = contains(p_element)
+  override def containsElements(p_element: Object): Boolean = contains(p_element)
 
   override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =
   {
     val it: InnerSetIterator[T] = p_innerSet.iterator
     while(it.hasNext){
-      if(!containsElements(it.next())) false
+      if(!contains(it.next())) false
     }
     true
   }
 
   override def getElement(index: Int): Option[T] = ??? //TODO
 
-  override def removeElement(p_element: T): InnerSet[T] =
+  override def removeElement(p_element: Object): InnerSet[T] =
   {
     remove(p_element)
     this
@@ -63,7 +63,7 @@ object InnerHashSet
   {
     val it: InnerSetIterator[T] = p_innerSet.iterator
     while(it.hasNext){
-      if(containsElements(it.next())) removeElement(it.next())
+      if(contains(it.next())) remove(it.next())
     }
     this
   }

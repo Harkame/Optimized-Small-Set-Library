@@ -32,9 +32,9 @@ class InnerSet_10[T](element1: T, element2: T, element3: T, element4: T, element
                 p_innerSet.addElement(element9)
                 p_innerSet.addElement(element10)
             }
-    override def containsElements(p_element: T): Boolean = element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element) || element4.equals(p_element) || element5.equals(p_element) || element6.equals(p_element) || element7.equals(p_element) || element8.equals(p_element) || element9.equals(p_element) || element10.equals(p_element)
+    override def containsElement(p_element: Object): Boolean = element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element) || element4.equals(p_element) || element5.equals(p_element) || element6.equals(p_element) || element7.equals(p_element) || element8.equals(p_element) || element9.equals(p_element) || element10.equals(p_element)
 
-    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElements(element1) && p_innerSet.containsElements(element2) && p_innerSet.containsElements(element3) && p_innerSet.containsElements(element4) && p_innerSet.containsElements(element5) && p_innerSet.containsElements(element6) && p_innerSet.containsElements(element7) && p_innerSet.containsElements(element8) && p_innerSet.containsElements(element9) && p_innerSet.containsElements(element10)
+    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1) && p_innerSet.containsElement(element2) && p_innerSet.containsElement(element3) && p_innerSet.containsElement(element4) && p_innerSet.containsElement(element5) && p_innerSet.containsElement(element6) && p_innerSet.containsElement(element7) && p_innerSet.containsElement(element8) && p_innerSet.containsElement(element9) && p_innerSet.containsElement(element10)
 
     override def getElement(p_index: Int): Option[T] = p_index match{
         case 1 => Option(element1)
@@ -51,7 +51,7 @@ class InnerSet_10[T](element1: T, element2: T, element3: T, element4: T, element
     }
 
 
-    override def removeElement(p_element: T): InnerSet[T] =
+    override def removeElement(p_element: Object): InnerSet[T] =
     {
             if(element1.equals(p_element))
          InnerSet_9(element2, element3, element4, element5, element6, element7, element8, element9, element10)
@@ -93,16 +93,16 @@ class InnerSet_10[T](element1: T, element2: T, element3: T, element4: T, element
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
     {
       var i: InnerSet[T] = this
-            if(!p_innerSet.containsElements(element1)) i = i.removeElement(element1)
-            if(!p_innerSet.containsElements(element2)) i = i.removeElement(element2)
-            if(!p_innerSet.containsElements(element3)) i = i.removeElement(element3)
-            if(!p_innerSet.containsElements(element4)) i = i.removeElement(element4)
-            if(!p_innerSet.containsElements(element5)) i = i.removeElement(element5)
-            if(!p_innerSet.containsElements(element6)) i = i.removeElement(element6)
-            if(!p_innerSet.containsElements(element7)) i = i.removeElement(element7)
-            if(!p_innerSet.containsElements(element8)) i = i.removeElement(element8)
-            if(!p_innerSet.containsElements(element9)) i = i.removeElement(element9)
-            if(!p_innerSet.containsElements(element10)) i = i.removeElement(element10)
+            if(!p_innerSet.containsElement(element1)) i = i.removeElement(element1)
+            if(!p_innerSet.containsElement(element2)) i = i.removeElement(element2)
+            if(!p_innerSet.containsElement(element3)) i = i.removeElement(element3)
+            if(!p_innerSet.containsElement(element4)) i = i.removeElement(element4)
+            if(!p_innerSet.containsElement(element5)) i = i.removeElement(element5)
+            if(!p_innerSet.containsElement(element6)) i = i.removeElement(element6)
+            if(!p_innerSet.containsElement(element7)) i = i.removeElement(element7)
+            if(!p_innerSet.containsElement(element8)) i = i.removeElement(element8)
+            if(!p_innerSet.containsElement(element9)) i = i.removeElement(element9)
+            if(!p_innerSet.containsElement(element10)) i = i.removeElement(element10)
             i
     }
 
