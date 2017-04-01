@@ -25,14 +25,20 @@ object InnerHashSet
     }
   }
 
-  override def addElement(p_element: T): InnerSet[T] = {
+  override def addElement(p_element: T): InnerSet[T] =
+  {
+    if(!contains(p_element)) add(p_element)
+    this
+  }
+
+  override def addUnchecked(p_element: T): InnerSet[T] =
+  {
     add(p_element)
     this
   }
 
-  override def addUnchecked(p_element: T): InnerSet[T] = addElement(p_element)
-
-  override def addAllElements(innerSet: InnerSet[T]): InnerSet[T] = {
+  override def addAllElements(innerSet: InnerSet[T]): InnerSet[T] =
+  {
     for(el: T <- this ){
       innerSet.addElement(el)
     }
@@ -45,7 +51,8 @@ object InnerHashSet
 
   override def getElement(index: Int): Option[T] = ???
 
-  override def removeElement(p_element: T): InnerSet[T] = {
+  override def removeElement(p_element: T): InnerSet[T] =
+  {
     remove(p_element)
     this
   }
@@ -56,7 +63,8 @@ object InnerHashSet
 
   override def getSize: Int = ???
 
-  override def copy: InnerSet[T] = {
+  override def copy: InnerSet[T] =
+  {
     val innerSet: InnerSet[T] = this
     return InnerHashSet(innerSet)
   }
