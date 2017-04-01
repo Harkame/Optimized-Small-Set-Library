@@ -14,7 +14,7 @@ class InnerSet_8[T](element1: T, element2: T, element3: T, element4: T, element5
         {
             this
         }
-        else  new InnerSet_9(element1, element2, element3, element4, element5, element6, element7, element8, p_element)
+        else  InnerSet_9(element1, element2, element3, element4, element5, element6, element7, element8, p_element)
     }
 
     override def addUnchecked(p_element: T): InnerSet[T] = InnerSet_9(element1, element2, element3, element4, element5, element6, element7, element8, p_element)
@@ -50,21 +50,21 @@ class InnerSet_8[T](element1: T, element2: T, element3: T, element4: T, element5
     override def removeElement(p_element: T): InnerSet[T] =
     {
             if(element1.equals(p_element))
-         new InnerSet_7(element2, element3, element4, element5, element6, element7, element8)
+         InnerSet_7(element2, element3, element4, element5, element6, element7, element8)
                   else             if(element2.equals(p_element))
-         new InnerSet_7(element1, element3, element4, element5, element6, element7, element8)
+         InnerSet_7(element1, element3, element4, element5, element6, element7, element8)
                   else             if(element3.equals(p_element))
-         new InnerSet_7(element1, element2, element4, element5, element6, element7, element8)
+         InnerSet_7(element1, element2, element4, element5, element6, element7, element8)
                   else             if(element4.equals(p_element))
-         new InnerSet_7(element1, element2, element3, element5, element6, element7, element8)
+         InnerSet_7(element1, element2, element3, element5, element6, element7, element8)
                   else             if(element5.equals(p_element))
-         new InnerSet_7(element1, element2, element3, element4, element6, element7, element8)
+         InnerSet_7(element1, element2, element3, element4, element6, element7, element8)
                   else             if(element6.equals(p_element))
-         new InnerSet_7(element1, element2, element3, element4, element5, element7, element8)
+         InnerSet_7(element1, element2, element3, element4, element5, element7, element8)
                   else             if(element7.equals(p_element))
-         new InnerSet_7(element1, element2, element3, element4, element5, element6, element8)
+         InnerSet_7(element1, element2, element3, element4, element5, element6, element8)
                   else             if(element8.equals(p_element))
-         new InnerSet_7(element1, element2, element3, element4, element5, element6, element7)
+         InnerSet_7(element1, element2, element3, element4, element5, element6, element7)
                             else this
     }
 
@@ -96,9 +96,9 @@ class InnerSet_8[T](element1: T, element2: T, element3: T, element4: T, element5
 
     override def getSize: Int = 8
 
-    override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
+    override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option(new InnerSet_8(element1: T, element2: T, element3: T, element4: T, element5: T, element6: T, element7: T, element8: T))
+    override def copy: Option[InnerSet[T]] = Option(InnerSet_8(element1: T, element2: T, element3: T, element4: T, element5: T, element6: T, element7: T, element8: T))
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
 }

@@ -14,7 +14,7 @@ class InnerSet_2[T](element1: T, element2: T) extends InnerSet[T]
         {
             this
         }
-        else  new InnerSet_3(element1, element2, p_element)
+        else  InnerSet_3(element1, element2, p_element)
     }
 
     override def addUnchecked(p_element: T): InnerSet[T] = InnerSet_3(element1, element2, p_element)
@@ -38,9 +38,9 @@ class InnerSet_2[T](element1: T, element2: T) extends InnerSet[T]
     override def removeElement(p_element: T): InnerSet[T] =
     {
             if(element1.equals(p_element))
-         new InnerSet_1(element2)
+         InnerSet_1(element2)
                   else             if(element2.equals(p_element))
-         new InnerSet_1(element1)
+         InnerSet_1(element1)
                             else this
     }
 
@@ -60,9 +60,9 @@ class InnerSet_2[T](element1: T, element2: T) extends InnerSet[T]
 
     override def getSize: Int = 2
 
-    override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
+    override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option(new InnerSet_2(element1: T, element2: T))
+    override def copy: Option[InnerSet[T]] = Option(InnerSet_2(element1: T, element2: T))
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
 }

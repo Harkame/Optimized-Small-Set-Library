@@ -37,17 +37,25 @@ object InnerHashSet
     this
   }
 
-  override def addAllElements(innerSet: InnerSet[T]): InnerSet[T] =
+  override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
   {
-    for(el: T <- this ){
-      innerSet.addElement(el)
+    val it: InnerSetIterator[T] = p_innerSet.iterator
+    while(it.hasNext){
+      addElement(it.next())
     }
-    innerSet
+    this
   }
 
   override def containsElements(p_element: T): Boolean = contains(p_element)
 
-  override def containsAllElements(innerSet: InnerSet[T]): Boolean = ???
+  override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =
+  {
+    val it: InnerSetIterator[T] = p_innerSet.iterator
+    while(it.hasNext){
+      if(!containsElements(it.next())) false
+    }
+    true
+  }
 
   override def getElement(index: Int): Option[T] = ???
 
@@ -57,9 +65,16 @@ object InnerHashSet
     this
   }
 
-  override def removeAllElements(innerSet: InnerSet[T]): InnerSet[T] = ???
+  override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
+  {
+    val it: InnerSetIterator[T] = p_innerSet.iterator
+    while(it.hasNext){
+      if(containsElements(it.next())) removeElement(it.next())
+    }
+    this
+  }
 
-  override def retainAllElements(innerSet: InnerSet[T]): InnerSet[T] = ???
+  override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = ???
 
   override def getSize: Int = ???
 

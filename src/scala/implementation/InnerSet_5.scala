@@ -14,7 +14,7 @@ class InnerSet_5[T](element1: T, element2: T, element3: T, element4: T, element5
         {
             this
         }
-        else  new InnerSet_6(element1, element2, element3, element4, element5, p_element)
+        else  InnerSet_6(element1, element2, element3, element4, element5, p_element)
     }
 
     override def addUnchecked(p_element: T): InnerSet[T] = InnerSet_6(element1, element2, element3, element4, element5, p_element)
@@ -44,15 +44,15 @@ class InnerSet_5[T](element1: T, element2: T, element3: T, element4: T, element5
     override def removeElement(p_element: T): InnerSet[T] =
     {
             if(element1.equals(p_element))
-         new InnerSet_4(element2, element3, element4, element5)
+         InnerSet_4(element2, element3, element4, element5)
                   else             if(element2.equals(p_element))
-         new InnerSet_4(element1, element3, element4, element5)
+         InnerSet_4(element1, element3, element4, element5)
                   else             if(element3.equals(p_element))
-         new InnerSet_4(element1, element2, element4, element5)
+         InnerSet_4(element1, element2, element4, element5)
                   else             if(element4.equals(p_element))
-         new InnerSet_4(element1, element2, element3, element5)
+         InnerSet_4(element1, element2, element3, element5)
                   else             if(element5.equals(p_element))
-         new InnerSet_4(element1, element2, element3, element4)
+         InnerSet_4(element1, element2, element3, element4)
                             else this
     }
 
@@ -78,9 +78,9 @@ class InnerSet_5[T](element1: T, element2: T, element3: T, element4: T, element5
 
     override def getSize: Int = 5
 
-    override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
+    override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option(new InnerSet_5(element1: T, element2: T, element3: T, element4: T, element5: T))
+    override def copy: Option[InnerSet[T]] = Option(InnerSet_5(element1: T, element2: T, element3: T, element4: T, element5: T))
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
 }
