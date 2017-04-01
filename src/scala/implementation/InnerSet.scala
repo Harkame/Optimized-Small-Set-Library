@@ -7,7 +7,7 @@ trait InnerSet[T] {
 
   def addElement(p_element: T): InnerSet[T]
   def addUnchecked(p_element: T): InnerSet[T]
-  def addAllElements(p_element: InnerSet[T]): InnerSet[T]
+  def addAllElements(innerSet: InnerSet[T]): InnerSet[T]
 
   def containsElements(p_element: T): Boolean
   def containsAllElements(innerSet: InnerSet[T]): Boolean
@@ -20,7 +20,7 @@ trait InnerSet[T] {
   def retainAllElements(innerSet: InnerSet[T]): InnerSet[T]
 
   def getSize: Int
-  def iterator: Iterator[T]
+  def iterator: InnerSetIterator[T]
   def copy: Option[InnerSet[T]]
   def clear(unused: Boolean): InnerSet[T]
 }

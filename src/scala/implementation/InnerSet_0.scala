@@ -31,7 +31,7 @@ class InnerSet_0[T] extends InnerSet[T]{
 
   override def getSize: Int = 0
 
-  override def iterator: Iterator[T] = ???
+  override def iterator: InnerSetIterator[T] = new InnerSetIterator[T](this)
 
   override def copy: Option[InnerSet[T]] = null
 

@@ -19,23 +19,23 @@ class InnerSet_1[T](element1: T) extends InnerSet[T]
 
     override def addUnchecked(p_element: T): InnerSet[T] = InnerSet_2(element1, p_element)
 
+
     override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.addElement(element1)
     override def containsElements(p_element: T): Boolean = element1.equals(p_element)
 
     override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElements(element1)
 
     override def getElement(p_index: Int): Option[T] = p_index match{
-    case 1 => Option(element1)
-    case _ => null
+        case 1 => Option(element1)
+        case _ => None
     }
 
 
     override def removeElement(p_element: T): InnerSet[T] =
     {
-            if(element1.equals(p_element)){
-             new InnerSet_0
-                        }
-        else this
+            if(element1.equals(p_element))
+         new InnerSet_0
+                            else this
     }
 
 
@@ -43,14 +43,14 @@ class InnerSet_1[T](element1: T) extends InnerSet[T]
 
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
     {
-        var i: InnerSet[T] = this
-        if(!p_innerSet.containsElements(element1)) i = i.removeElement(element1)
-        i
+      var i: InnerSet[T] = this
+            if(!p_innerSet.containsElements(element1)) i = i.removeElement(element1)
+            i
     }
 
     override def getSize: Int = 1
 
-    override def iterator: Iterator[T] = ???
+    override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
     override def copy: Option[InnerSet[T]] = Option(new InnerSet_1(element1: T))
 
