@@ -1,12 +1,6 @@
 package scala.implementation
 
-
 import java.util.HashSet
-import java.util.Iterator
-
-/**
-  * Created by pxl on 29/03/17.
-  */
 
 object InnerHashSet
 {
@@ -57,7 +51,7 @@ object InnerHashSet
     true
   }
 
-  override def getElement(index: Int): Option[T] = ???
+  override def getElement(index: Int): Option[T] = ??? //TODO
 
   override def removeElement(p_element: T): InnerSet[T] =
   {
@@ -74,9 +68,9 @@ object InnerHashSet
     this
   }
 
-  override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = ???
+  override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = ??? //TODO
 
-  override def getSize: Int = ???
+  override def getSize: Int = ??? //TODO
 
   override def copy: InnerSet[T] =
   {

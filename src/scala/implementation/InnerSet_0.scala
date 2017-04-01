@@ -1,10 +1,5 @@
 package scala.implementation
 
-/**
-  * Created by pxl on 28/03/17.
-  */
-
-
 object InnerSet_0{
   def apply[T]: InnerSet_0[T] = new InnerSet_0[T]
 }

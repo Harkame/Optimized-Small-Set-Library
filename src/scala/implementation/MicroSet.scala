@@ -1,10 +1,7 @@
 package scala.implementation
+
 import java.util
 import java.util.Set
-
-/**
-  * Created by pxl on 28/03/17.
-  */
 
 object MicroSet {
   def apply[T]: MicroSet[T] = new MicroSet[T]
@@ -73,21 +70,23 @@ class MicroSet[T]() extends Set[T] {
 
   def clear() = innerSet.clear(true)
 
-  override def removeAll(c: util.Collection[_]): Boolean = ???
+  override def toString: String = "MicroSet{" + "innerSet=" + innerSet + '}';
 
-  override def retainAll(c: util.Collection[_]): Boolean = ???
+  override def removeAll(c: util.Collection[_]): Boolean = ??? //TODO
 
-  override def toArray: Array[AnyRef] = ???
+  override def retainAll(c: util.Collection[_]): Boolean = ??? //TODO
 
-  override def toArray[T](a: Array[T]): Array[T] = ???
+  override def toArray: Array[AnyRef] = ??? //TODO
 
-  override def remove(o: scala.Any): Boolean = ???
+  override def toArray[T](a: Array[T]): Array[T] = ??? //TODO
 
-  override def contains(o: scala.Any): Boolean = ???
+  override def remove(o: scala.Any): Boolean = ??? //TODO
 
-  override def iterator(): util.Iterator[T] = ???
+  override def contains(o: scala.Any): Boolean = ??? //TODO
 
-  override def addAll(c: util.Collection[_ <: T]): Boolean = ???
+  override def iterator(): util.Iterator[T] = ??? //TODO
 
-  override def containsAll(c: util.Collection[_]): Boolean = ???
+  override def addAll(c: util.Collection[_ <: T]): Boolean = ??? //TODO
+
+  override def containsAll(c: util.Collection[_]): Boolean = ??? //TODO
 }

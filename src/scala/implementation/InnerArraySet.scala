@@ -1,10 +1,6 @@
 package scala.implementation
 
 import java.util.ArrayList
-import j.generator.Generator
-/**
-  * Created by pxl on 01/04/17.
-  */
 
 object InnerArraySet{
   def apply[T](p_innerSet:InnerSet[T]): InnerArraySet[T] = new InnerArraySet(p_innerSet)
@@ -71,7 +67,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
     this
   }
 
-  override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = ???
+  override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = ??? //TODO
 
   override def getSize: Int = size()
 
