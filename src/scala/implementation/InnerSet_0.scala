@@ -4,7 +4,7 @@ object InnerSet_0{
   def apply[T]: InnerSet_0[T] = new InnerSet_0[T]
 }
 
-class InnerSet_0[T] extends InnerSet[T]{
+class InnerSet_0[T] extends AbstractInnerSet[T]{
 
   override def addElement(p_element: T): InnerSet[T] = InnerSet_1(p_element)
 

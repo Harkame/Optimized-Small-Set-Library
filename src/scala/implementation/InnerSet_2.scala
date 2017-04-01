@@ -5,7 +5,7 @@ object InnerSet_2
     def apply[T](element1: T, element2: T): InnerSet_2[T] = new InnerSet_2[T](element1, element2)
 }
 
-class InnerSet_2[T](element1: T, element2: T) extends InnerSet[T]
+class InnerSet_2[T](element1: T, element2: T) extends AbstractInnerSet[T]
 {
 
     override def addElement(p_element: T): InnerSet[T] =
@@ -65,4 +65,6 @@ class InnerSet_2[T](element1: T, element2: T) extends InnerSet[T]
     override def copy: Option[InnerSet[T]] = Option(InnerSet_2(element1: T, element2: T))
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
+
+    override def toString : String = //TODO
 }

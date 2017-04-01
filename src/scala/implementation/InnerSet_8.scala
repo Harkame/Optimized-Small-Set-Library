@@ -5,7 +5,7 @@ object InnerSet_8
     def apply[T](element1: T, element2: T, element3: T, element4: T, element5: T, element6: T, element7: T, element8: T): InnerSet_8[T] = new InnerSet_8[T](element1, element2, element3, element4, element5, element6, element7, element8)
 }
 
-class InnerSet_8[T](element1: T, element2: T, element3: T, element4: T, element5: T, element6: T, element7: T, element8: T) extends InnerSet[T]
+class InnerSet_8[T](element1: T, element2: T, element3: T, element4: T, element5: T, element6: T, element7: T, element8: T) extends AbstractInnerSet[T]
 {
 
     override def addElement(p_element: T): InnerSet[T] =
@@ -101,4 +101,6 @@ class InnerSet_8[T](element1: T, element2: T, element3: T, element4: T, element5
     override def copy: Option[InnerSet[T]] = Option(InnerSet_8(element1: T, element2: T, element3: T, element4: T, element5: T, element6: T, element7: T, element8: T))
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
+
+    override def toString : String = //TODO
 }
