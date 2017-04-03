@@ -3,8 +3,7 @@ package scala.implementation
 import java.util
 import java.util.Set
 
-import j.implementation.microSet.InnerSet
-import j.implementation.microSet.MicroSet.Use
+import scala.implementation.Use.Use
 
 object MicroSet {
   def apply[T]: MicroSet[T] = new MicroSet[T]

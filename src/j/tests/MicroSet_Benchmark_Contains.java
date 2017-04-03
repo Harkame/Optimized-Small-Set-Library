@@ -7,7 +7,6 @@ import com.google.caliper.api.VmOptions;
 import com.google.caliper.runner.CaliperMain;
 import j.implementation.TestObject;
 import j.implementation.microSet.MicroSet;
-import j.implementation.microSet.InnerArraySet;
 
 import java.util.HashSet;
 import java.util.Random;
