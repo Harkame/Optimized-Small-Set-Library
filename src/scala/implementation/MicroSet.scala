@@ -3,10 +3,20 @@ package scala.implementation
 import java.util
 import java.util.Set
 
+import j.implementation.microSet.InnerSet
+import j.implementation.microSet.MicroSet.Use
+
 object MicroSet {
   def apply[T]: MicroSet[T] = new MicroSet[T]
   def apply[T](innerSet: InnerSet[T]): MicroSet[T] = new MicroSet[T](innerSet)
   def apply[T](microSet: MicroSet[T]): MicroSet[T] = new MicroSet[T](microSet)
+  def apply[T](use: Use, k: Int): MicroSet[T] = new MicroSet[T](use,k)
+}
+
+object Use extends Enumeration
+{
+  type Use = Value
+  val INNER_SET, ARRAY_SET, HASH_SET = Value
 }
 
 class MicroSet[T]() extends Set[T] {
@@ -24,6 +34,14 @@ class MicroSet[T]() extends Set[T] {
     this
     innerSet = p_innerSet
   }
+
+  def this(use: Use, nb: Int) =
+  {
+    this
+    if(use == Use.HASH_SET) innerSet = new InnerHashSet[T]
+    if(use == Use.ARRAY_SET) innerSet = new InnerArraySet[T]
+  }
+
 
   def add(element: T): Boolean =
   {
