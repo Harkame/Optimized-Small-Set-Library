@@ -2,12 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b999aeaf-6daf-434a-aa0d-e91a20c3e6f9" name="Default" comment="Ajout des methodes ensembliste (paramétré par innerset)&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmarck_Add.scala" afterPath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_21.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_22.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_23.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_24.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_25.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_26.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_27.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_28.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_29.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_30.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_31.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_32.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_33.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_34.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_35.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_36.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_37.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_38.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_39.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_40.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_41.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_42.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_43.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_44.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_45.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_46.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_47.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_48.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_49.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_50.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Contains.java" afterPath="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Contains.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/generator/Generator.java" afterPath="$PROJECT_DIR$/src/j/generator/Generator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm" afterPath="$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_10.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_10.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_11.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_11.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_12.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_12.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_13.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_13.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_14.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_14.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_15.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_15.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_16.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_16.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_17.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_17.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_18.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_18.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_19.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_19.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_2.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_20.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_20.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_3.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_4.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_4.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_5.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_5.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_6.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_6.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_7.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_7.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_8.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_8.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_9.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_9.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +72,107 @@
     <favorites_list name="Optimized-Small-Set-Library" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="InnerSet_4.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_4.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <marker date="1492080986629" expanded="true" signature="3120:3543" ph="{...}" />
+                <marker date="1492080986629" expanded="true" signature="3620:3797" ph="{...}" />
+                <marker date="1492080986629" expanded="false" signature="3841:3856" ph=" { " />
+                <marker date="1492080986629" expanded="false" signature="3943:3949" ph=" }" />
+                <marker date="1492080986629" expanded="false" signature="3993:4008" ph=" { " />
+                <marker date="1492080986629" expanded="false" signature="4017:4023" ph=" }" />
+                <marker date="1492080986629" expanded="false" signature="4072:4083" ph=" { " />
+                <marker date="1492080986629" expanded="false" signature="4119:4125" ph=" }" />
+                <marker date="1492080986629" expanded="false" signature="4185:4196" ph=" { " />
+                <marker date="1492080986629" expanded="false" signature="4238:4244" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerSetTemplate.vm" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="93" column="68" lean-forward="false" selection-start-line="93" selection-start-column="68" selection-end-line="93" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerSet_6.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_6.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1440">
+              <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerSet_1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="972">
+              <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+              <folding>
+                <marker date="1492080986566" expanded="true" signature="1529:1536" ph="{...}" />
+                <marker date="1492080986566" expanded="true" signature="1616:1673" ph="{...}" />
+                <marker date="1492080986566" expanded="true" signature="1752:1905" ph="{...}" />
+                <marker date="1492080986566" expanded="false" signature="1981:1992" ph=" { " />
+                <marker date="1492080986566" expanded="false" signature="2036:2042" ph=" }" />
+                <marker date="1492080986566" expanded="false" signature="2086:2101" ph=" { " />
+                <marker date="1492080986566" expanded="false" signature="2131:2137" ph=" }" />
+                <marker date="1492080986566" expanded="false" signature="2181:2196" ph=" { " />
+                <marker date="1492080986566" expanded="false" signature="2205:2211" ph=" }" />
+                <marker date="1492080986566" expanded="false" signature="2260:2271" ph=" { " />
+                <marker date="1492080986566" expanded="false" signature="2307:2313" ph=" }" />
+                <marker date="1492080986566" expanded="false" signature="2373:2384" ph=" { " />
+                <marker date="1492080986566" expanded="false" signature="2426:2432" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerSet_3.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_3.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="74" column="24" lean-forward="false" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+              <folding>
+                <marker date="1492080986609" expanded="true" signature="2631:2964" ph="{...}" />
+                <marker date="1492080986609" expanded="true" signature="3041:3179" ph="{...}" />
+                <marker date="1492080986609" expanded="false" signature="3223:3238" ph=" { " />
+                <marker date="1492080986609" expanded="false" signature="3306:3312" ph=" }" />
+                <marker date="1492080986609" expanded="false" signature="3356:3371" ph=" { " />
+                <marker date="1492080986609" expanded="false" signature="3380:3386" ph=" }" />
+                <marker date="1492080986609" expanded="false" signature="3435:3446" ph=" { " />
+                <marker date="1492080986609" expanded="false" signature="3482:3488" ph=" }" />
+                <marker date="1492080986609" expanded="false" signature="3548:3559" ph=" { " />
+                <marker date="1492080986609" expanded="false" signature="3601:3607" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerSet_0.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+              <folding>
+                <element signature="e#743#744#0" expanded="true" />
+                <element signature="e#761#762#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -75,10 +222,8 @@
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_10.java" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/AbstractInnerSet.java" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet.java" />
-        <option value="$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerHashSet.java" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java" />
-        <option value="$PROJECT_DIR$/src/j/generator/Generator.java" />
         <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Add.java" />
         <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Remove.java" />
         <option value="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java" />
@@ -109,6 +254,8 @@
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" />
+        <option value="$PROJECT_DIR$/src/j/generator/Generator.java" />
+        <option value="$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm" />
       </list>
     </option>
   </component>
@@ -119,9 +266,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-5" />
-    <option name="width" value="1376" />
-    <option name="height" value="748" />
+    <option name="y" value="30" />
+    <option name="width" value="1920" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -138,6 +285,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -163,158 +311,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestObject.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="implementation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MicroSet.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="implementation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="implementation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InnerSet_1.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="implementation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InnerHashSet.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Optimized-Small-Set-Library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -377,6 +373,14 @@
               <option name="myItemId" value="j" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="microSet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -389,13 +393,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="j" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cpp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -436,7 +465,19 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Scala generator ">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Generator">
     <configuration default="false" name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -859,49 +900,12 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -954,40 +958,10 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
-      <method />
-    </configuration>
-    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
       <method />
     </configuration>
     <configuration default="false" name="Scala generator " type="Application" factoryName="Application">
@@ -1015,11 +989,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MicroSet_Test" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Remove" />
-        <item index="2" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Contains" />
-        <item index="3" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Add" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Generator" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Generator" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MicroSet_Test" />
+        <item index="2" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Remove" />
+        <item index="3" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Contains" />
+        <item index="4" class="java.lang.String" itemvalue="Application.MicroSet_Benchmark_Add" />
       </list>
     </recent_temporary>
   </component>
@@ -1115,41 +1089,62 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124643000" />
+    <option name="totallyTimeSpent" value="124899000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="0" width="1376" height="748" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32253087" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32989064" sideWeight="0.50125" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.323043" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32253087" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2035139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20416667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32989064" sideWeight="0.50125" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32253087" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32253087" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2035139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1215,24 +1210,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_6.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_5.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1906">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1295,13 +1276,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/j/generator/Generator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_1.java" />
     <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_8.scala">
       <provider selected="true" editor-type-id="text-editor">
@@ -1310,38 +1284,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/jdk1.8.0_121/src.zip!/java/util/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3133">
-          <caret line="84" column="17" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/jdk1.8.0_121/src.zip!/java/util/HashSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="103" column="11" lean-forward="false" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/jdk1.8.0_121/src.zip!/java/util/Iterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="53" column="17" lean-forward="false" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/jdk1.8.0_121/src.zip!/java/util/Set.java" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/jdk1.8.0_121/src.zip!/java/util/HashSet.java" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/jdk1.8.0_121/src.zip!/java/util/Iterator.java" />
     <entry file="file://$PROJECT_DIR$/src/scala/generator/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
           <caret line="46" column="101" lean-forward="false" selection-start-line="46" selection-start-column="101" selection-end-line="46" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-468">
-          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1352,13 +1301,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="518" column="19" lean-forward="false" selection-start-line="518" selection-start-column="19" selection-end-line="518" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/jdk1.8.0_121/src.zip!/java/util/ArrayList.java" />
     <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_3.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1369,8 +1312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-362">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="29" />
+        <state relative-caret-position="1026">
+          <caret line="70" column="9" lean-forward="false" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1394,31 +1337,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="54" lean-forward="false" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        <state relative-caret-position="432">
+          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
           <folding>
-            <element signature="e#318#319#0" expanded="false" />
+            <element signature="e#743#744#0" expanded="true" />
+            <element signature="e#761#762#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="119" column="108" lean-forward="true" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="83" column="25" lean-forward="false" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+        <state relative-caret-position="972">
+          <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+          <folding>
+            <marker date="1492080986566" expanded="true" signature="1529:1536" ph="{...}" />
+            <marker date="1492080986566" expanded="true" signature="1616:1673" ph="{...}" />
+            <marker date="1492080986566" expanded="true" signature="1752:1905" ph="{...}" />
+            <marker date="1492080986566" expanded="false" signature="1981:1992" ph=" { " />
+            <marker date="1492080986566" expanded="false" signature="2036:2042" ph=" }" />
+            <marker date="1492080986566" expanded="false" signature="2086:2101" ph=" { " />
+            <marker date="1492080986566" expanded="false" signature="2131:2137" ph=" }" />
+            <marker date="1492080986566" expanded="false" signature="2181:2196" ph=" { " />
+            <marker date="1492080986566" expanded="false" signature="2205:2211" ph=" }" />
+            <marker date="1492080986566" expanded="false" signature="2260:2271" ph=" { " />
+            <marker date="1492080986566" expanded="false" signature="2307:2313" ph=" }" />
+            <marker date="1492080986566" expanded="false" signature="2373:2384" ph=" { " />
+            <marker date="1492080986566" expanded="false" signature="2426:2432" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1426,7 +1377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1448,7 +1398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1463,7 +1412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1471,7 +1419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1479,15 +1426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-56">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerHashSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1495,7 +1433,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1513,7 +1450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1527,8 +1463,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Add.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="87" column="61" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="87" selection-end-column="61" />
+        <state relative-caret-position="1170">
+          <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1537,11 +1473,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Remove.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-302">
-          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <element signature="method#setUp#0;class#MicroSet_Benchmark_Remove#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="77">
+          <caret line="64" column="53" lean-forward="false" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1549,27 +1483,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#2513#2724#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/tests/SimpleScalaBenchmark.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/tests/SimpleScalaBenchmark.scala" />
     <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="e#21#64#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1577,16 +1498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="e#21#63#0" expanded="true" />
-            <element signature="e#944#1203#0" expanded="false" />
-            <element signature="e#1207#1387#0" expanded="false" />
-            <element signature="e#1391#1567#0" expanded="false" />
-            <element signature="e#1571#1754#0" expanded="false" />
-            <element signature="e#1650#1750#0" expanded="false" />
-            <element signature="e#1758#1946#0" expanded="false" />
-            <element signature="e#1950#2136#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1594,16 +1505,92 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding>
-            <element signature="e#21#64#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/j/tests/MicroSet_Benchmark_Contains.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1136">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="594">
+          <caret line="101" column="5" lean-forward="false" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+          <folding>
+            <marker date="1492080754912" expanded="true" signature="1208:1814" ph="{...}" />
+            <marker date="1492080754912" expanded="true" signature="1878:2073" ph="{...}" />
+            <marker date="1492080754912" expanded="true" signature="2137:2332" ph="{...}" />
+            <marker date="1492080754912" expanded="true" signature="2402:2603" ph="{...}" />
+            <marker date="1492080754912" expanded="true" signature="2672:2872" ph="{...}" />
+            <marker date="1492080754912" expanded="true" signature="2941:3142" ph="{...}" />
+            <marker date="1492080754912" expanded="true" signature="3260:3268" ph="{...}" />
+            <marker date="1492080754912" expanded="true" signature="3313:3575" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/generator/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="74" column="24" lean-forward="false" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+          <folding>
+            <marker date="1492080986609" expanded="true" signature="2631:2964" ph="{...}" />
+            <marker date="1492080986609" expanded="true" signature="3041:3179" ph="{...}" />
+            <marker date="1492080986609" expanded="false" signature="3223:3238" ph=" { " />
+            <marker date="1492080986609" expanded="false" signature="3306:3312" ph=" }" />
+            <marker date="1492080986609" expanded="false" signature="3356:3371" ph=" { " />
+            <marker date="1492080986609" expanded="false" signature="3380:3386" ph=" }" />
+            <marker date="1492080986609" expanded="false" signature="3435:3446" ph=" { " />
+            <marker date="1492080986609" expanded="false" signature="3482:3488" ph=" }" />
+            <marker date="1492080986609" expanded="false" signature="3548:3559" ph=" { " />
+            <marker date="1492080986609" expanded="false" signature="3601:3607" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerHashSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <marker date="1492080986629" expanded="true" signature="3120:3543" ph="{...}" />
+            <marker date="1492080986629" expanded="true" signature="3620:3797" ph="{...}" />
+            <marker date="1492080986629" expanded="false" signature="3841:3856" ph=" { " />
+            <marker date="1492080986629" expanded="false" signature="3943:3949" ph=" }" />
+            <marker date="1492080986629" expanded="false" signature="3993:4008" ph=" { " />
+            <marker date="1492080986629" expanded="false" signature="4017:4023" ph=" }" />
+            <marker date="1492080986629" expanded="false" signature="4072:4083" ph=" { " />
+            <marker date="1492080986629" expanded="false" signature="4119:4125" ph=" }" />
+            <marker date="1492080986629" expanded="false" signature="4185:4196" ph=" { " />
+            <marker date="1492080986629" expanded="false" signature="4238:4244" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="93" column="68" lean-forward="false" selection-start-line="93" selection-start-column="68" selection-end-line="93" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1440">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
         </state>
       </provider>

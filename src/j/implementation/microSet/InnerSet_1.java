@@ -31,7 +31,7 @@ public class InnerSet_1 <T> extends AbstractInnerSet<T>
         if(element_1.equals(p_element))
             return this;
         else
-            return new InnerSet_2<>(this.element_1, p_element);    }
+            return new InnerSet_2<>(this, p_element);    }
 
     @Override
     public InnerSet<T> addUnChecked(T p_element)
@@ -66,15 +66,13 @@ public class InnerSet_1 <T> extends AbstractInnerSet<T>
 
 
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-                    innerSet = innerSet.addElement(element_1);
-                return innerSet;
+        return innerSet.addElement(element_1);
     }
 
 
     @Override
     public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
-                   innerSet = innerSet.removeElement(element_1);
-                  return innerSet;
+        return innerSet.removeElement(element_1);
     }
 
     @Override

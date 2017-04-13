@@ -170,45 +170,13 @@ public class InnerSet_16 <T> extends AbstractInnerSet<T>
 
 
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-                    innerSet = innerSet.addElement(element_1);
-                    innerSet = innerSet.addElement(element_2);
-                    innerSet = innerSet.addElement(element_3);
-                    innerSet = innerSet.addElement(element_4);
-                    innerSet = innerSet.addElement(element_5);
-                    innerSet = innerSet.addElement(element_6);
-                    innerSet = innerSet.addElement(element_7);
-                    innerSet = innerSet.addElement(element_8);
-                    innerSet = innerSet.addElement(element_9);
-                    innerSet = innerSet.addElement(element_10);
-                    innerSet = innerSet.addElement(element_11);
-                    innerSet = innerSet.addElement(element_12);
-                    innerSet = innerSet.addElement(element_13);
-                    innerSet = innerSet.addElement(element_14);
-                    innerSet = innerSet.addElement(element_15);
-                    innerSet = innerSet.addElement(element_16);
-                return innerSet;
+        return innerSet.addElement(element_1).addElement(element_2).addElement(element_3).addElement(element_4).addElement(element_5).addElement(element_6).addElement(element_7).addElement(element_8).addElement(element_9).addElement(element_10).addElement(element_11).addElement(element_12).addElement(element_13).addElement(element_14).addElement(element_15).addElement(element_16);
     }
 
 
     @Override
     public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
-                   innerSet = innerSet.removeElement(element_1);
-                      innerSet = innerSet.removeElement(element_2);
-                      innerSet = innerSet.removeElement(element_3);
-                      innerSet = innerSet.removeElement(element_4);
-                      innerSet = innerSet.removeElement(element_5);
-                      innerSet = innerSet.removeElement(element_6);
-                      innerSet = innerSet.removeElement(element_7);
-                      innerSet = innerSet.removeElement(element_8);
-                      innerSet = innerSet.removeElement(element_9);
-                      innerSet = innerSet.removeElement(element_10);
-                      innerSet = innerSet.removeElement(element_11);
-                      innerSet = innerSet.removeElement(element_12);
-                      innerSet = innerSet.removeElement(element_13);
-                      innerSet = innerSet.removeElement(element_14);
-                      innerSet = innerSet.removeElement(element_15);
-                      innerSet = innerSet.removeElement(element_16);
-                  return innerSet;
+        return innerSet.removeElement(element_1).removeElement(element_2).removeElement(element_3).removeElement(element_4).removeElement(element_5).removeElement(element_6).removeElement(element_7).removeElement(element_8).removeElement(element_9).removeElement(element_10).removeElement(element_11).removeElement(element_12).removeElement(element_13).removeElement(element_14).removeElement(element_15).removeElement(element_16);
     }
 
     @Override

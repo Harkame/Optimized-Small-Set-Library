@@ -72,17 +72,13 @@ public class InnerSet_2 <T> extends AbstractInnerSet<T>
 
 
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-                    innerSet = innerSet.addElement(element_1);
-                    innerSet = innerSet.addElement(element_2);
-                return innerSet;
+        return innerSet.addElement(element_1).addElement(element_2);
     }
 
 
     @Override
     public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
-                   innerSet = innerSet.removeElement(element_1);
-                      innerSet = innerSet.removeElement(element_2);
-                  return innerSet;
+        return innerSet.removeElement(element_1).removeElement(element_2);
     }
 
     @Override

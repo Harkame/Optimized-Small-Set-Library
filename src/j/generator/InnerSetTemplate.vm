@@ -85,19 +85,13 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
 
 
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-        #foreach($element in $elements)
-            innerSet = innerSet.addElement($element);
-        #end
-        return innerSet;
+        return innerSet#foreach($element in $elements).addElement($element)#end;
     }
 
 
     @Override
     public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
-        #foreach($element in $elements)
-           innerSet = innerSet.removeElement($element);
-           #end
-       return innerSet;
+        return innerSet#foreach($element in $elements).removeElement($element)#end;
     }
 
     @Override

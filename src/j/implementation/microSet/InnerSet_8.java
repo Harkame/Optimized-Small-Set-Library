@@ -114,29 +114,13 @@ public class InnerSet_8 <T> extends AbstractInnerSet<T>
 
 
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-                    innerSet = innerSet.addElement(element_1);
-                    innerSet = innerSet.addElement(element_2);
-                    innerSet = innerSet.addElement(element_3);
-                    innerSet = innerSet.addElement(element_4);
-                    innerSet = innerSet.addElement(element_5);
-                    innerSet = innerSet.addElement(element_6);
-                    innerSet = innerSet.addElement(element_7);
-                    innerSet = innerSet.addElement(element_8);
-                return innerSet;
+        return innerSet.addElement(element_1).addElement(element_2).addElement(element_3).addElement(element_4).addElement(element_5).addElement(element_6).addElement(element_7).addElement(element_8);
     }
 
 
     @Override
     public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
-                   innerSet = innerSet.removeElement(element_1);
-                      innerSet = innerSet.removeElement(element_2);
-                      innerSet = innerSet.removeElement(element_3);
-                      innerSet = innerSet.removeElement(element_4);
-                      innerSet = innerSet.removeElement(element_5);
-                      innerSet = innerSet.removeElement(element_6);
-                      innerSet = innerSet.removeElement(element_7);
-                      innerSet = innerSet.removeElement(element_8);
-                  return innerSet;
+        return innerSet.removeElement(element_1).removeElement(element_2).removeElement(element_3).removeElement(element_4).removeElement(element_5).removeElement(element_6).removeElement(element_7).removeElement(element_8);
     }
 
     @Override
