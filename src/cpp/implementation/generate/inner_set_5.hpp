@@ -13,11 +13,15 @@ class inner_set_5 : public inner_set<T>
     public :
         struct values
         {
-             T element_1;  T element_2;  T element_3;  T element_4;  T element_5;
+             T element_1;
+             T element_2;
+             T element_3;
+             T element_4;
+             T element_5;
         } a_values;
 
         inner_set_5<T>();
-        inner_set_5<T>(T , T , T , T , T );
+        inner_set_5<T>(T , T , T , T , T);
         inner_set_5<T>(inner_set_4<T>, T);
 
         virtual ~inner_set_5<T>();
