@@ -29,12 +29,12 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 
 	@Override
 	public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {
-		return null;
+		return this;
 	}
 
 	@Override
 	public InnerSet<T> retainAllElements(InnerSet<T> innerSet) {
-		return null;
+		return this;
 	}
 
 	public T getElement(int index)

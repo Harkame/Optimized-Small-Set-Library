@@ -16,7 +16,7 @@ import java.util.TreeSet;
 @VmOptions("-XX:-TieredCompilation")
 public class MicroSet_Benchmark_Remove {
 
-    private static int NUMBER_OF_TEST_OBJECT = 30;
+    private static int NUMBER_OF_TEST_OBJECT = 10;
 
     MicroSet<TestObject> microInnerSet = new MicroSet<>(MicroSet.Use.INNER_SET, NUMBER_OF_TEST_OBJECT);
     MicroSet<TestObject> microArraySet = new MicroSet<>(MicroSet.Use.ARRAY_SET, NUMBER_OF_TEST_OBJECT);
@@ -53,7 +53,7 @@ public class MicroSet_Benchmark_Remove {
     @Benchmark
     public void testRemove_HashSet(int reps) {
         for (int i = 0; i < reps; i++) {
-            for (int j = 0; j < NUMBER_OF_TEST_OBJECT/4; j++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 hashSet.remove(testObjects[randomInt[j]]);
             }
         }
@@ -62,7 +62,7 @@ public class MicroSet_Benchmark_Remove {
     @Benchmark
     public void testRemove_TreeSet(int reps) {
         for (int i = 0; i < reps; i++) {
-            for (int j = 0; j < NUMBER_OF_TEST_OBJECT/4; j++) {
+            for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 treeSet.remove(testObjects[randomInt[j]]);
             }
         }

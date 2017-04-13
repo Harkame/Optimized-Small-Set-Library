@@ -63,18 +63,14 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
 
     @Override
     public InnerSet<T> removeElement(Object p_element) {
-        remove(p_element);
+        for (int index = 0; index < size(); index++) {
+            if (p_element.equals(get(index))) {
+                set(index, get(size() - 1));
+                remove(size() - 1);
+            }
+        }
         return this;
     }
-
-/*    private void fastRemove(T p_element) {
-        modCount++;
-        for (int index = 0; index < size(); index++)
-            if (p_element.equals(super.elementData[index])) {
-                fastRemove(index);
-                return true;
-            }
-    }*/
 
     @Override
     public InnerSet<T> removeAllElements(InnerSet<T> innerSet) {

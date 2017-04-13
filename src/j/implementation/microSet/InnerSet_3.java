@@ -79,10 +79,7 @@ public class InnerSet_3 <T> extends AbstractInnerSet<T>
 
 
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-                    innerSet = innerSet.addElement(element_1);
-                    innerSet = innerSet.addElement(element_2);
-                    innerSet = innerSet.addElement(element_3);
-                return innerSet;
+        return innerSet.addElement(element_1).addElement(element_2).addElement(element_3);
     }
 
 

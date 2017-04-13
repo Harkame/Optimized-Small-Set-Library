@@ -4,6 +4,8 @@ package j.tests;
 import com.google.caliper.BeforeExperiment;
 import com.google.caliper.Benchmark;
 import com.google.caliper.api.VmOptions;
+import com.google.caliper.model.ArbitraryMeasurement;
+import com.google.caliper.model.Measurement;
 import com.google.caliper.runner.CaliperMain;
 import j.implementation.TestObject;
 import j.implementation.microSet.MicroSet;
@@ -93,6 +95,11 @@ public class MicroSet_Benchmark_Contains {
                 microInnerSet.contains(testObjects[randomInt[j]]);
             }
         }
+    }
+
+    @ArbitraryMeasurement(units = ":1", description = "ratio of uncompressed to compressed")
+    public void size() {
+
     }
 
     public static void main(String[] args) {

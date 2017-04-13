@@ -12,9 +12,7 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
 
     public InnerHashSet(InnerSet<T> i) {
         super();
-        for (Iterator<T> it = i.iterator(); it.hasNext(); ) {
-            add(it.next());
-        }
+        addAllElements(i);
     }
 
     @Override
@@ -77,7 +75,7 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
 
     @Override
     public int getSize() {
-        return 0;
+        return size();
     }
 
     @Override
