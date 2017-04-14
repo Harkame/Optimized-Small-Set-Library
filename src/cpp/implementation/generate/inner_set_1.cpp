@@ -1,4 +1,5 @@
 #include "inner_set_1.hpp"
+#include "inner_set_2.hpp"
 
 template<typename T>
 inner_set_1<T>::inner_set_1()
@@ -7,15 +8,9 @@ inner_set_1<T>::inner_set_1()
 }
 
 template<typename T>
-inner_set_1<T>::inner_set_1(T p_element_1)
+inner_set_1<T>::inner_set_1(T p_element)
 {
-            a_values.element_1 = p_element_1;
-    }
-
-template<typename T>
-inner_set_1<T>::inner_set_1(inner_set_0<T> p_inner_set, T p_element)
-{
-                    a_values.element_1 = p_element;
+  a_values.element_1 = p_element;
 }
 
 template<typename T>
@@ -24,7 +19,7 @@ inner_set_1<T>::~inner_set_1()
 
 }
 
-                                                template<typename T>
+template<typename T>
 inner_set<T>* inner_set_1<T>::add_element(T p_element)
 {
     if(!contains_element(p_element))
@@ -34,9 +29,9 @@ inner_set<T>* inner_set_1<T>::add_element(T p_element)
 }
 
 template<typename T>
-inner_set<T>* inner_set_1<T>::add_elements(T* p_elements)
+inner_set<T>* inner_set_1<T>::add_all_elements(inner_set<T>* p_inner_set)
 {
-    return nullptr; //TODO
+    return p_inner_set->add_element(a_values.element_1);
 }
 
 template<typename T>
@@ -46,9 +41,9 @@ bool inner_set_1<T>::contains_element(T p_element)
 }
 
 template<typename T>
-bool inner_set_1<T>::contains_all_elements(T* p_elements)
+bool inner_set_1<T>::contains_all_elements(inner_set<T>* p_inner_set)
 {
-    return false; //TODO
+  return p_inner_set->contains_element(a_values.element_1);
 }
 
 template<typename T>
@@ -60,16 +55,22 @@ T inner_set_1<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_set_1<T>::remove_element(T p_element)
 {
-            if(a_values.element_1 == p_element)
-            return new inner_set_0<T>();
-                else
-        return this;
+  if(a_values.element_1 == p_element)
+    return new inner_set_0<T>();
+  else
+    return this;
 }
 
 template<typename T>
-inner_set<T>* inner_set_1<T>::retain_all_element(T* p_elements)
+inner_set<T>* inner_set_1<T>::remove_all_elements(inner_set<T>* p_inner_set)
 {
-    return this; //TODO
+  return p_inner_set->remove_element(a_values.element_1);
+}
+
+template<typename T>
+inner_set<T>* inner_set_1<T>::retain_all_element(inner_set<T>* p_inner_set)
+{
+  return p_inner_set; //TODO
 }
 
 template<typename T>

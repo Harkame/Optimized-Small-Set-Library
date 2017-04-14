@@ -1,5 +1,7 @@
 #include "inner_array_set.hpp"
 
+#include "inner_set_5.hpp"
+
 template<typename T>
 inner_array_set<T>::inner_array_set()
 {
@@ -9,19 +11,22 @@ inner_array_set<T>::inner_array_set()
 }
 
 template<typename T>
-inner_array_set<T>::inner_array_set(inner_set_5<T> p_inner_set, T p_element)
+inner_array_set<T>::inner_array_set(inner_set_5<T>* p_inner_set, T p_element)
 {
   a_values = new T[20];
 
-  a_values[0] = p_inner_set.a_values.element_1;
-  a_values[1] = p_inner_set.a_values.element_2;
-  a_values[2] = p_inner_set.a_values.element_3;
-  a_values[3] = p_inner_set.a_values.element_4;
-  a_values[4] = p_inner_set.a_values.element_5;
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
 
   a_values[5] = p_element;
 
   a_index = 6;
+
+  for(int index = 0; index < a_index; index++)
+    cout << a_values[index] << endl;
 }
 
 template<typename T>
@@ -36,7 +41,9 @@ inner_set<T>* inner_array_set<T>::add_element(T p_element)
   if(a_index == 19)
   {
     if(!contains_element(p_element))
-        return new inner_hashset<T>(this, p_element);
+        //return new inner_hashset<T>(this, p_element);
+      //  return new inner_hashset<T>();
+      return new inner_set_0<T>();
   }
   else
     if(!contains_element(p_element))
@@ -54,7 +61,8 @@ inner_set<T>* inner_array_set<T>::add_elements(T* p_elements)
 template<typename T>
 bool inner_array_set<T>::contains_element(T p_element)
 {
-    return a_values.element_1 == p_element;
+    //return a_values.element_1 == p_element;
+    return true;
 }
 
 template<typename T>
@@ -101,11 +109,4 @@ template<typename T>
 int inner_array_set<T>::get_size()
 {
     return a_index;
-}
-
-int main()
-{
-  inner_array_set<int>* i0 = new inner_array_set<int>();
-
-  return 0;
 }

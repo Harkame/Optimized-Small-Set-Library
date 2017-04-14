@@ -98,7 +98,10 @@ int micro_set<T>::max_size() const
 /* Modifiers */
 
 template<typename T>
-void micro_set<T>:: insert(){}
+void micro_set<T>:: insert(T p_element)
+{
+	a_inner_set = a_inner_set->add_element(p_element);
+}
 
 template<typename T>
 void micro_set<T>:: erase(){}
@@ -145,10 +148,3 @@ void micro_set<T>:: equal_range(){}
 
 template<typename T>
 void micro_set<T>:: get_allocator(){}
-
-int main()
-{
-	micro_set<int>* ms = new micro_set<int>();
-
-	return 0;
-}

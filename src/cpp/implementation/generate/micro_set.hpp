@@ -4,10 +4,26 @@
 #include <map>
 #include <set>
 
-#include "inner_set.hpp"
 #include "inner_set_0.hpp"
+#include "inner_set_1.hpp"
+#include "inner_set_2.hpp"
+#include "inner_set_3.hpp"
+#include "inner_set_4.hpp"
+#include "inner_set_5.hpp"
 
-#include "source.cpp"
+#include "inner_array_set.hpp"
+#include "inner_hash_set.hpp"
+
+#include "inner_set_0.cpp"
+#include "inner_set_1.cpp"
+#include "inner_set_2.cpp"
+#include "inner_set_3.cpp"
+#include "inner_set_4.cpp"
+#include "inner_set_5.cpp"
+
+#include "inner_array_set.cpp"
+#include "inner_hash_set.cpp"
+
 
 using namespace std;
 
@@ -52,7 +68,7 @@ class micro_set : public set<T>
 
         /* Modifiers */
 
-        virtual void insert();
+        virtual void insert(T);
 
         virtual void erase();
 

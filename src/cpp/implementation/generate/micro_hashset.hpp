@@ -6,9 +6,7 @@
 
 #include "inner_set.hpp"
 #include "inner_set_0.hpp"
-#include "inner_hashset.hpp"
-
-#include "source.cpp"
+#include "inner_hash_set.hpp"
 
 using namespace std;
 

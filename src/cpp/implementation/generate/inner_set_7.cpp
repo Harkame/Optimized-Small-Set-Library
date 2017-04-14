@@ -30,7 +30,7 @@ inner_set_7<T>::~inner_set_7()
 
 }
 
-                                                template<typename T>
+template<typename T>
 inner_set<T>* inner_set_7<T>::add_element(T p_element)
 {
     if(!contains_element(p_element))

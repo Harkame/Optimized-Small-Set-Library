@@ -4,6 +4,7 @@
 
 #include "inner_set.hpp"
 #include "inner_set_8.hpp"
+#include "inner_set_10.hpp"
 
 using namespace std;
 

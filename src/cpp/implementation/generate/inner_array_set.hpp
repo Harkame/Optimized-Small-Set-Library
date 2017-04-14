@@ -7,21 +7,20 @@
 
 #include "inner_set.hpp"
 #include "inner_set_5.hpp"
-#include "inner_hashset.hpp"
+#include "inner_hash_set.hpp"
 
 using namespace std;
 
 template<typename T>
 class inner_array_set : public inner_set<T>
 {
-    private :
-      T* a_values;
-      int a_index;
-
     public :
+        T* a_values;
+        int a_index;
+
         inner_array_set<T>();
 
-        inner_array_set<T>(inner_set_5<T>, T);
+        inner_array_set<T>(inner_set_5<T>*, T);
 
         virtual ~inner_array_set<T>();
 

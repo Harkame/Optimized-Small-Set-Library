@@ -3,7 +3,6 @@
 
 
 #include "inner_set.hpp"
-#include "inner_set_0.hpp"
 
 using namespace std;
 
@@ -18,21 +17,21 @@ class inner_set_1 : public inner_set<T>
 
         inner_set_1<T>();
         inner_set_1<T>(T);
-        //inner_set_1<T>(inner_set_0<T>, T);
 
         virtual ~inner_set_1<T>();
 
         virtual inner_set<T>* add_element(T);
-        virtual inner_set<T>* add_elements(T*);
+        virtual inner_set<T>* add_all_elements(inner_set<T>*);
 
         virtual bool contains_element(T);
-        virtual bool contains_all_elements(T*);
+        virtual bool contains_all_elements(inner_set<T>*);
 
         virtual T get_element(int);
 
         virtual inner_set<T>* remove_element(T);
+        virtual inner_set<T>* remove_all_elements(inner_set<T>*);
 
-        virtual inner_set<T>* retain_all_element(T*);
+        virtual inner_set<T>* retain_all_element(inner_set<T>*);
 
         virtual int get_size();
 };
