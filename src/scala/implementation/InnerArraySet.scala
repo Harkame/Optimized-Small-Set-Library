@@ -39,7 +39,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
     this
   }
 
-  override def containsElements(p_element: Object): Boolean = contains(p_element)
+  override def containsElement(p_element: Object): Boolean = contains(p_element)
 
   override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =
   {
@@ -54,7 +54,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
   override def removeElement(p_element: Object): InnerSet[T] =
   {
-    if(containsElements(p_element)) remove(p_element)
+    if(containsElement(p_element)) remove(p_element)
     this
   }
 

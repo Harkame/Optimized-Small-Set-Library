@@ -6,11 +6,13 @@ package scala.tests
 
 object TestObject
 {
-  def apply(id: Int): TestObject = new TestObject(id)
+  def apply(p_id: Int): TestObject = new TestObject(p_id)
 }
 
-class TestObject(id: Int) extends Comparable[TestObject]
+class TestObject(p_id: Int) extends Comparable[TestObject]
 {
+  val id: Int = p_id
+
   override def compareTo(p_testObject: TestObject): Int =
   {
     var res: Int = 0

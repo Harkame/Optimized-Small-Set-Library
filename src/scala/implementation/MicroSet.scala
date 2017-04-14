@@ -1,6 +1,6 @@
 package scala.implementation
 
-import java.util
+import scala.collection._
 import java.util.Set
 
 import scala.implementation.Use.Use

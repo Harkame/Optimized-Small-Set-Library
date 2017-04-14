@@ -20,5 +20,6 @@
     <orderEntry type="library" name="com.google.caliper:caliper:1.0-beta-2" level="project" />
     <orderEntry type="library" name="org.junit.jupiter:junit-jupiter-api:5.0.0-M3" level="project" />
     <orderEntry type="library" name="scala-sdk-2.12.1" level="application" />
+    <orderEntry type="library" exported="" name="scalatest_2.11-3.0.1-sources" level="project" />
   </component>
 </module>

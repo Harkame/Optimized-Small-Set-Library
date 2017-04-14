@@ -26,8 +26,7 @@ class InnerSet_3[T](element1: T, element2: T, element3: T) extends AbstractInner
                 p_innerSet.addElement(element3)
             }
     override def containsElement(p_element: Object): Boolean = element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element)
-
-    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1) && p_innerSet.containsElement(element2) && p_innerSet.containsElement(element3)
+    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object]) && p_innerSet.containsElement(element2.asInstanceOf[Object]) && p_innerSet.containsElement(element3.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
         case 1 => Option(element1)
@@ -45,22 +44,21 @@ class InnerSet_3[T](element1: T, element2: T, element3: T) extends AbstractInner
          InnerSet_2(element1, element3)
                   else             if(element3.equals(p_element))
          InnerSet_2(element1, element2)
-                            else this
+                        else this
     }
 
-
     override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =     {
-                p_innerSet.removeElement(element1)
-                p_innerSet.removeElement(element2)
-                p_innerSet.removeElement(element3)
+                p_innerSet.removeElement(element1.asInstanceOf[Object])
+                p_innerSet.removeElement(element2.asInstanceOf[Object])
+                p_innerSet.removeElement(element3.asInstanceOf[Object])
             }
 
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
     {
       var i: InnerSet[T] = this
-            if(!p_innerSet.containsElement(element1)) i = i.removeElement(element1)
-            if(!p_innerSet.containsElement(element2)) i = i.removeElement(element2)
-            if(!p_innerSet.containsElement(element3)) i = i.removeElement(element3)
+            if(!p_innerSet.containsElement(element1.asInstanceOf[Object])) i = i.removeElement(element1.asInstanceOf[Object])
+            if(!p_innerSet.containsElement(element2.asInstanceOf[Object])) i = i.removeElement(element2.asInstanceOf[Object])
+            if(!p_innerSet.containsElement(element3.asInstanceOf[Object])) i = i.removeElement(element3.asInstanceOf[Object])
             i
     }
 

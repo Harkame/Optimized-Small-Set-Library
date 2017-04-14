@@ -27,8 +27,7 @@ class InnerSet_4[T](element1: T, element2: T, element3: T, element4: T) extends 
                 p_innerSet.addElement(element4)
             }
     override def containsElement(p_element: Object): Boolean = element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element) || element4.equals(p_element)
-
-    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1) && p_innerSet.containsElement(element2) && p_innerSet.containsElement(element3) && p_innerSet.containsElement(element4)
+    override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object]) && p_innerSet.containsElement(element2.asInstanceOf[Object]) && p_innerSet.containsElement(element3.asInstanceOf[Object]) && p_innerSet.containsElement(element4.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
         case 1 => Option(element1)
@@ -49,24 +48,23 @@ class InnerSet_4[T](element1: T, element2: T, element3: T, element4: T) extends 
          InnerSet_3(element1, element2, element4)
                   else             if(element4.equals(p_element))
          InnerSet_3(element1, element2, element3)
-                            else this
+                        else this
     }
 
-
     override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =     {
-                p_innerSet.removeElement(element1)
-                p_innerSet.removeElement(element2)
-                p_innerSet.removeElement(element3)
-                p_innerSet.removeElement(element4)
+                p_innerSet.removeElement(element1.asInstanceOf[Object])
+                p_innerSet.removeElement(element2.asInstanceOf[Object])
+                p_innerSet.removeElement(element3.asInstanceOf[Object])
+                p_innerSet.removeElement(element4.asInstanceOf[Object])
             }
 
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
     {
       var i: InnerSet[T] = this
-            if(!p_innerSet.containsElement(element1)) i = i.removeElement(element1)
-            if(!p_innerSet.containsElement(element2)) i = i.removeElement(element2)
-            if(!p_innerSet.containsElement(element3)) i = i.removeElement(element3)
-            if(!p_innerSet.containsElement(element4)) i = i.removeElement(element4)
+            if(!p_innerSet.containsElement(element1.asInstanceOf[Object])) i = i.removeElement(element1.asInstanceOf[Object])
+            if(!p_innerSet.containsElement(element2.asInstanceOf[Object])) i = i.removeElement(element2.asInstanceOf[Object])
+            if(!p_innerSet.containsElement(element3.asInstanceOf[Object])) i = i.removeElement(element3.asInstanceOf[Object])
+            if(!p_innerSet.containsElement(element4.asInstanceOf[Object])) i = i.removeElement(element4.asInstanceOf[Object])
             i
     }
 

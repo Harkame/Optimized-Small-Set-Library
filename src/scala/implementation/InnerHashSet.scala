@@ -40,7 +40,7 @@ object InnerHashSet
     this
   }
 
-  override def containsElements(p_element: Object): Boolean = contains(p_element)
+  override def containsElement(p_element: Object): Boolean = contains(p_element)
 
   override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =
   {
@@ -79,4 +79,5 @@ object InnerHashSet
   }
 
   override def clear(unused: Boolean): InnerSet[T] = this.clear(unused)
-}
+
+ }
