@@ -72,10 +72,12 @@ object InnerHashSet
 
   override def getSize: Int = ??? //TODO
 
-  override def copy: InnerSet[T] =
+   override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
+
+  override def copy: Option[InnerHashSet[T]] =
   {
     val innerSet: InnerSet[T] = this
-    return InnerHashSet(innerSet)
+    Option(InnerHashSet(innerSet))
   }
 
   override def clear(unused: Boolean): InnerSet[T] = this.clear(unused)

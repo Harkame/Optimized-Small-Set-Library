@@ -1,6 +1,6 @@
 package scala.implementation
 
-import scala.collection._
+import java.util
 import java.util.Set
 
 import scala.implementation.Use.Use
@@ -59,7 +59,9 @@ class MicroSet[T]() extends Set[T] {
   override def addAll(c: util.Collection[_ <: T]): Boolean =
   {
     val oldInnerSet = this.innerSet
-    for (el <- c) {
+    val scalaList: List[_ <: T] = c.asInstanceOf[List[_ <: T]]
+
+    for (el <- scalaList) {
       innerSet.addElement(el)
     }
     innerSet.getSize != oldInnerSet.getSize
@@ -82,7 +84,9 @@ class MicroSet[T]() extends Set[T] {
   override def removeAll(c: util.Collection[_]): Boolean =
   {
     val oldInnerSet = innerSet
-    for (el <- c) {
+    val scalaList: List[_ <: Object] = c.asInstanceOf[List[_ <: Object]]
+
+    for (el <- scalaList) {
       if(innerSet.containsElement(el)) innerSet.removeElement(el)
     }
     innerSet.getSize != oldInnerSet.getSize
@@ -94,7 +98,8 @@ class MicroSet[T]() extends Set[T] {
 
   override def containsAll(c: util.Collection[_]): Boolean =
   {
-    for (el <- c) {
+    val scalaList: List[_ <: Object] = c.asInstanceOf[List[_ <: Object]]
+    for (el <- scalaList) {
       if(!innerSet.containsElement(el)) false
     }
     true
@@ -110,9 +115,11 @@ class MicroSet[T]() extends Set[T] {
   override def retainAll(c: util.Collection[_]): Boolean =
   {
     val oldInnerSet: InnerSet[T] = innerSet
+    val scalaList: List[_ <: T] = c.asInstanceOf[List[_ <: T]]
     this.innerSet = InnerSet_0[T]
-    for (el <- c) {
-      if (oldInnerSet.containsElement(el)) innerSet = innerSet.addElement(el)
+
+    for (el <- scalaList) {
+      if (oldInnerSet.containsElement(el.asInstanceOf[Object])) innerSet = innerSet.addElement(el)
     }
     innerSet.getSize != oldInnerSet.getSize
   }
@@ -126,9 +133,6 @@ class MicroSet[T]() extends Set[T] {
   override def iterator(): util.Iterator[T] = ??? //TODO
 
   override def toString: String = "MicroSet { " + "innerSet = " + innerSet + " }" + "\n" + innerSet.toString
-
-  override def toArray: Array[AnyRef] = ??? //TODO
-
-  override def toArray[T](a: Array[T]): Array[T] = ??? //TODO
-
+  override def toArray[T](a: Array[T]): Array[T] = ???
+  override def toArray: Array[AnyRef] = ???
 }

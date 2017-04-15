@@ -71,6 +71,8 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
   override def getSize: Int = size()
 
+  override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
+
   override def copy: Option[InnerSet[T]] = Option(InnerArraySet(this))
 
   override def clear(unused: Boolean): InnerSet[T] = clear(unused)
