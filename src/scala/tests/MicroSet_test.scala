@@ -1,8 +1,9 @@
 package scala.tests
 
-import org.junit.jupiter.api.{BeforeEach, Test}
-import scala.implementation.MicroSet
 import org.junit.jupiter.api.Assertions._
+import org.junit.jupiter.api.{BeforeEach, Test}
+
+import scala.implementation.MicroSet
 
 object MicroSet_test {
 
@@ -10,73 +11,80 @@ object MicroSet_test {
   private[tests] val testObject = TestObject(1)
 
   @BeforeEach
-  private[tests] def setUp()
+  def setUp()
   {
     microSet = MicroSet[TestObject]
     microSet.add(testObject)
   }
 
   @Test
-  private[tests] def test_addElement_Already_in()
+  def test_addElement_Already_in()
   {
     val res = microSet.add(testObject)
+    print(res)
+    print(microSet.toString)
     assertFalse(res)
   }
 
   @Test
-  private[tests] def test_addElement()
+  def test_addElement()
   {
     val res2 = microSet.add(new TestObject(2))
+    print(microSet.toString)
     assertTrue(res2)
   }
 
   @Test
-  private[tests] def test_removeElement_Not_in_Microset()
+  def test_removeElement_Not_in_Microset()
   {
     val res = microSet.remove(new TestObject(1))
+    print(microSet.toString)
     assertFalse(res)
   }
 
   @Test
-  private[tests] def test_removeElement()
+  def test_removeElement()
   {
     val res2 = microSet.remove(testObject)
+    print(microSet.toString)
     assertTrue(res2)
   }
 
   @Test
-  private[tests] def test_contains_wrongElem()
+  def test_contains_wrongElem()
   {
     val res = microSet.contains(new TestObject(1))
     assertFalse(res)
   }
 
-  @Test private[tests] def test_contains_goodElem()
+  @Test
+  def test_contains_goodElem()
   {
     val res2 = microSet.contains(testObject)
     assertTrue(res2)
   }
 
   @Test
-  private[tests] def clear()
+  def clear()
   {
     microSet.clear()
-    assertFalse(microSet.contains(testObject))
+    assertTrue(microSet.isEmpty())
   }
 
-  @Test private[tests] def isEmpty()
+  @Test
+  def isEmpty()
   {
     assertFalse(microSet.isEmpty)
   }
 
   @Test
-  private[tests] def size()
+  def size()
   {
     assertEquals(microSet.size, 1)
   }
 
   @Test
-  private[tests] def addAllElements()
+  def addAllElements()
   {
     val microSetAdd = new MicroSet[TestObject]
     val testObject2 = new TestObject(2)
@@ -87,11 +95,12 @@ object MicroSet_test {
 
     assertEquals(microSet.size, 1)
     microSet.addAll(microSetAdd)
+    print(microSet.toString)
     assertEquals(microSet.size, 3)
   }
 
   @Test
-  private[tests] def removeAllElements()
+  def removeAllElements()
   {
     val testObject2 = new TestObject(2)
     val testObject3 = new TestObject(3)
@@ -113,7 +122,7 @@ object MicroSet_test {
   }
 
   @Test
-  private[tests] def retainAllElements()
+  def retainAllElements()
   {
     val testObject2 = new TestObject(2)
     val testObject3 = new TestObject(3)
@@ -134,7 +143,7 @@ object MicroSet_test {
   }
 
   @Test
-  private[tests] def containsAllElements()
+  def containsAllElements()
   {
     val testObject2 = new TestObject(2)
     val testObject3 = new TestObject(3)
@@ -151,7 +160,7 @@ object MicroSet_test {
     assertTrue(microSet.containsAll(microSetContains))
   }
 
-  private[tests] def toArray()
+  def toArray()
   {
     //Todo
   }

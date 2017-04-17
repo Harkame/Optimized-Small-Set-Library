@@ -46,14 +46,14 @@ class MicroSet[T]() extends Set[T] {
   {
     val oldInnerSet: InnerSet[T] = innerSet
     innerSet = innerSet.addElement(element)
-    oldInnerSet.getSize + 1 != innerSet.getSize
+    !innerSet.getSize.equals(oldInnerSet.getSize)
   }
 
-  def AddAll(microSet: MicroSet[T]): Boolean =
+  def addAll(microSet: MicroSet[T]): Boolean =
   {
     val oldInnerSet: InnerSet[T] = innerSet
     innerSet = microSet.innerSet.addAllElements(oldInnerSet)
-    innerSet.getSize != microSet.innerSet.getSize
+    !innerSet.getSize.equals(microSet.innerSet.getSize)
   }
 
   override def addAll(c: util.Collection[_ <: T]): Boolean =
@@ -61,17 +61,16 @@ class MicroSet[T]() extends Set[T] {
     val oldInnerSet = this.innerSet
     val scalaList: List[_ <: T] = c.asInstanceOf[List[_ <: T]]
 
-    for (el <- scalaList) {
-      innerSet.addElement(el)
-    }
-    innerSet.getSize != oldInnerSet.getSize
+    scalaList foreach innerSet.addElement
+
+    !innerSet.getSize.equals(oldInnerSet.getSize)
   }
 
   def remove(element: Object): Boolean =
   {
     val oldInnerSet: InnerSet[T] = innerSet
     innerSet = innerSet.removeElement(element)
-    (oldInnerSet.getSize -1) != innerSet.getSize
+    !innerSet.getSize.equals(oldInnerSet.getSize)
   }
 
   def removeAll(microSet: MicroSet[T]): Boolean =
@@ -86,9 +85,10 @@ class MicroSet[T]() extends Set[T] {
     val oldInnerSet = innerSet
     val scalaList: List[_ <: Object] = c.asInstanceOf[List[_ <: Object]]
 
-    for (el <- scalaList) {
-      if(innerSet.containsElement(el)) innerSet.removeElement(el)
-    }
+    def removeEl(el: Object) = if(innerSet.containsElement(el)) innerSet.removeElement(el)
+
+    scalaList foreach removeEl
+
     innerSet.getSize != oldInnerSet.getSize
   }
 
@@ -98,14 +98,14 @@ class MicroSet[T]() extends Set[T] {
 
   override def containsAll(c: util.Collection[_]): Boolean =
   {
-    val scalaList: List[_ <: Object] = c.asInstanceOf[List[_ <: Object]]
-    for (el <- scalaList) {
-      if(!innerSet.containsElement(el)) false
+    val scalaList: List[_] = c.asInstanceOf[List[_]]
+    for(el <-  scalaList) {
+      if(!innerSet.containsElement(el.asInstanceOf[Object])) return false
     }
     true
   }
 
-  def retainsAll(microSet: MicroSet[T]): Boolean =
+  def retainAll(microSet: MicroSet[T]): Boolean =
   {
     var oldInnerSet: InnerSet[T] = innerSet
     innerSet = microSet.innerSet.retainAllElements(innerSet)
@@ -132,7 +132,8 @@ class MicroSet[T]() extends Set[T] {
 
   override def iterator(): util.Iterator[T] = ??? //TODO
 
-  override def toString: String = "MicroSet { " + "innerSet = " + innerSet + " }" + "\n" + innerSet.toString
-  override def toArray[T](a: Array[T]): Array[T] = ???
-  override def toArray: Array[AnyRef] = ???
+  override def toString: String = "MicroSet { " + "innerSet = " + innerSet + " }" + "\n"
+
+  override def toArray[T](a: Array[T with Object ]): Array[T with Object] = ??? //TODO
+  override def toArray: Array[AnyRef] = ??? //TODO
 }
