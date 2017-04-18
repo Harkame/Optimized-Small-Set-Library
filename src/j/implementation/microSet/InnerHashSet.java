@@ -11,8 +11,14 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
     }
 
     public InnerHashSet(InnerSet<T> i) {
-        super();
+        this();
         addAllElements(i);
+    }
+
+    public InnerHashSet(InnerSet i, T p_element) {
+        this();
+        addAllElements(i);
+        addElement(p_element);
     }
 
     @Override
