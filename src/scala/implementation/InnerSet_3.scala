@@ -17,15 +17,12 @@ class InnerSet_3[T](element1: T, element2: T, element3: T) extends AbstractInner
         else  InnerSet_4(element1, element2, element3, p_element)
     }
 
-    override def addUnchecked(p_element: T): InnerSet[T] = InnerSet_4(element1, element2, element3, p_element)
+    override def addUnchecked(p_element: T): InnerSet[T] =  InnerSet_4(element1, element2, element3, p_element)
 
+    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.addElement(element1).addElement(element2).addElement(element3)
 
-    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =     {
-                p_innerSet.addElement(element1)
-                p_innerSet.addElement(element2)
-                p_innerSet.addElement(element3)
-            }
     override def containsElement(p_element: Object): Boolean = element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element)
+
     override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object]) && p_innerSet.containsElement(element2.asInstanceOf[Object]) && p_innerSet.containsElement(element3.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
@@ -47,11 +44,7 @@ class InnerSet_3[T](element1: T, element2: T, element3: T) extends AbstractInner
                         else this
     }
 
-    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =     {
-                p_innerSet.removeElement(element1.asInstanceOf[Object])
-                p_innerSet.removeElement(element2.asInstanceOf[Object])
-                p_innerSet.removeElement(element3.asInstanceOf[Object])
-            }
+    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.removeElement(element1.asInstanceOf[Object]).removeElement(element2.asInstanceOf[Object]).removeElement(element3.asInstanceOf[Object])
 
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
     {
@@ -68,7 +61,7 @@ class InnerSet_3[T](element1: T, element2: T, element3: T) extends AbstractInner
 
     override def copy: Option[InnerSet[T]] = Option(InnerSet_3(element1: T, element2: T, element3: T))
 
-    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
+    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
     override def toString : String = "{ " + element1 + ", " + element2 + ", " + element3 + " }"
 }

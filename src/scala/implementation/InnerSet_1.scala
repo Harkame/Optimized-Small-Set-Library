@@ -17,11 +17,12 @@ class InnerSet_1[T](element1: T) extends AbstractInnerSet[T]
         else  InnerSet_2(element1, p_element)
     }
 
-    override def addUnchecked(p_element: T): InnerSet[T] = InnerSet_2(element1, p_element)
-
+    override def addUnchecked(p_element: T): InnerSet[T] =  InnerSet_2(element1, p_element)
 
     override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.addElement(element1)
+
     override def containsElement(p_element: Object): Boolean = element1.equals(p_element)
+
     override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
@@ -52,7 +53,7 @@ class InnerSet_1[T](element1: T) extends AbstractInnerSet[T]
 
     override def copy: Option[InnerSet[T]] = Option(InnerSet_1(element1: T))
 
-    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
+    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
     override def toString : String = "{ " + element1 + " }"
 }
