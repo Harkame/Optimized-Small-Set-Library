@@ -15,93 +15,109 @@ object MicroSet_test {
   {
     microSet = MicroSet[TestObject]
     microSet.add(testObject)
+    println("====================")
+    println("Début : " + microSet.toString)
   }
 
   @Test
   def test_addElement_Already_in()
   {
+    println("Test : addElement_Already_in")
     val res = microSet.add(testObject)
-    print(res)
-    print(microSet.toString)
+    println("Résultat : " + microSet.toString)
     assertFalse(res)
   }
 
   @Test
   def test_addElement()
   {
+    println("Test : addElement")
     val res2 = microSet.add(new TestObject(2))
-    print(microSet.toString)
+    println("Résultat : " + microSet.toString)
     assertTrue(res2)
   }
 
   @Test
   def test_removeElement_Not_in_Microset()
   {
+    println("Test : removeElement_Not_in_Microset")
     val res = microSet.remove(new TestObject(1))
-    print(microSet.toString)
+    println("Résultat : " + microSet.toString)
     assertFalse(res)
   }
 
   @Test
   def test_removeElement()
   {
+    println("Test : removeElement")
     val res2 = microSet.remove(testObject)
-    print(microSet.toString)
+    println("Résultat : " + microSet.toString)
     assertTrue(res2)
   }
 
   @Test
   def test_contains_wrongElem()
   {
+    println("Test : contains_wrongElem")
     val res = microSet.contains(new TestObject(1))
+    println("Résultat : " + res)
     assertFalse(res)
   }
 
   @Test
   def test_contains_goodElem()
   {
-    val res2 = microSet.contains(testObject)
-    assertTrue(res2)
+    println("Test : contains_goodElem")
+    val res = microSet.contains(testObject)
+    println("Résultat : " + res)
+    assertTrue(res)
   }
 
   @Test
   def clear()
   {
+    println("Test : clear")
     microSet.clear()
+    println("Résultat : " + microSet.toString)
     assertTrue(microSet.isEmpty())
   }
 
   @Test
   def isEmpty()
   {
+    println("Test : isEmpty")
     assertFalse(microSet.isEmpty)
   }
 
   @Test
   def size()
   {
+    println("Test : size")
     assertEquals(microSet.size, 1)
   }
 
   @Test
   def addAllElements()
   {
+    println("Test : addAllElements")
     val microSetAdd = new MicroSet[TestObject]
     val testObject2 = new TestObject(2)
     val testObject3 = new TestObject(3)
 
     microSetAdd.add(testObject2)
     microSetAdd.add(testObject3)
+    println("MicroSet à Add : " + microSetAdd.toString)
 
     assertEquals(microSet.size, 1)
     microSet.addAll(microSetAdd)
-    print(microSet.toString)
+    println("Résultat : " + microSet.toString)
     assertEquals(microSet.size, 3)
   }
 
   @Test
   def removeAllElements()
   {
+    println("Test : removeAllElements")
     val testObject2 = new TestObject(2)
     val testObject3 = new TestObject(3)
 
@@ -109,6 +125,7 @@ object MicroSet_test {
     val microSetRemove = new MicroSet[TestObject]
     microSetRemove.add(testObject2)
     microSetRemove.add(testObject)
+    println("MicroSet à Remove : " + microSetRemove.toString)
 
     //MicroSet contains [testObject, testObject2, testObject3]
     microSet.add(testObject2)
@@ -116,6 +133,7 @@ object MicroSet_test {
 
     assertEquals(microSet.size, 3)
     microSet.removeAll(microSetRemove)
+    println("Résultat : " + microSet.toString)
     assertEquals(microSet.size, 1)
 
     //MicroSet contains [testObject3]
@@ -124,6 +142,7 @@ object MicroSet_test {
   @Test
   def retainAllElements()
   {
+    println("Test : retainAllElements")
     val testObject2 = new TestObject(2)
     val testObject3 = new TestObject(3)
 
@@ -131,12 +150,14 @@ object MicroSet_test {
     val microSetRetain = new MicroSet[TestObject]
     microSetRetain.add(testObject2)
     microSetRetain.add(testObject)
+    println("MicroSet à Retain : " + microSetRetain.toString)
 
     //MicroSet contains [testObject, testObject3]
     microSet.add(testObject3)
 
     assertEquals(microSet.size, 2)
     microSet.retainAll(microSetRetain)
+    println("Résultat : " + microSet.toString)
     assertEquals(microSet.size, 1)
 
     //MicroSet contains [testObject]
@@ -145,6 +166,7 @@ object MicroSet_test {
   @Test
   def containsAllElements()
   {
+    println("Test : containsAllElements")
     val testObject2 = new TestObject(2)
     val testObject3 = new TestObject(3)
 
@@ -152,6 +174,7 @@ object MicroSet_test {
     val microSetContains = new MicroSet[TestObject]
     microSetContains.add(testObject2)
     microSetContains.add(testObject)
+    println("MicroSet à Contains : " + microSetContains.toString)
 
     //MicroSet contains [testObject, testObject2, testObject3]
     microSet.add(testObject2)

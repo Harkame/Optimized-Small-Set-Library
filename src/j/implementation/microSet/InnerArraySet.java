@@ -12,29 +12,43 @@ import java.util.Set;
  */
 public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
 
+    private static final int MAX_SIZE = 20;
+
     public InnerArraySet() {
         super(Generator.TO_GENERATE); // Optimise the array length to the size of InnerSet
     }
 
     public InnerArraySet(InnerSet i) {
         this();
-        for (Iterator<T> it = i.iterator(); it.hasNext(); ) {
-            add(it.next());
-        }
+        addAllElements(i);
+    }
+
+    public InnerArraySet(InnerSet i, T p_element) {
+        this();
+        addAllElements(i);
+        addElement(p_element);
     }
 
     @Override
     public InnerSet<T> addElement(T p_element) {
         if (!contains(p_element)) {
-            add(p_element);
+            if (getSize() == MAX_SIZE) {
+                return new InnerHashSet<T>(this, p_element);
+            } else {
+                add(p_element);
+            }
         }
         return this;
     }
 
     @Override
     public InnerSet<T> addUnChecked(T p_element) {
-        add(p_element);
-        return this;
+        if (getSize() == MAX_SIZE) {
+            return new InnerHashSet<T>(this, p_element);
+        } else {
+            add(p_element);
+            return this;
+        }
     }
 
     @Override

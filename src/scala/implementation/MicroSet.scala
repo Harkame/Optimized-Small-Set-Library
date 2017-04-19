@@ -5,7 +5,8 @@ import java.util.Set
 
 import scala.implementation.Use.Use
 
-object MicroSet {
+object MicroSet
+{
   def apply[T]: MicroSet[T] = new MicroSet[T]
   def apply[T](innerSet: InnerSet[T]): MicroSet[T] = new MicroSet[T](innerSet)
   def apply[T](microSet: MicroSet[T]): MicroSet[T] = new MicroSet[T](microSet)
@@ -46,14 +47,15 @@ class MicroSet[T]() extends Set[T] {
   {
     val oldInnerSet: InnerSet[T] = innerSet
     innerSet = innerSet.addElement(element)
-    !innerSet.getSize.equals(oldInnerSet.getSize)
+    innerSet.getSize == oldInnerSet.getSize + 1
   }
 
   def addAll(microSet: MicroSet[T]): Boolean =
   {
     val oldInnerSet: InnerSet[T] = innerSet
+    println("1 " + oldInnerSet.toString)
     innerSet = microSet.innerSet.addAllElements(oldInnerSet)
-    !innerSet.getSize.equals(microSet.innerSet.getSize)
+    !innerSet.getSize.equals(oldInnerSet.getSize)
   }
 
   override def addAll(c: util.Collection[_ <: T]): Boolean =
@@ -70,14 +72,14 @@ class MicroSet[T]() extends Set[T] {
   {
     val oldInnerSet: InnerSet[T] = innerSet
     innerSet = innerSet.removeElement(element)
-    !innerSet.getSize.equals(oldInnerSet.getSize)
+    innerSet.getSize == oldInnerSet.getSize - 1
   }
 
   def removeAll(microSet: MicroSet[T]): Boolean =
   {
     val oldInnerSet: InnerSet[T] = innerSet
     innerSet = microSet.innerSet.removeAllElements(oldInnerSet)
-    innerSet.getSize != microSet.innerSet.getSize
+    innerSet.getSize != oldInnerSet.getSize
   }
 
   override def removeAll(c: util.Collection[_]): Boolean =
@@ -128,7 +130,7 @@ class MicroSet[T]() extends Set[T] {
 
   def isEmpty(): Boolean = innerSet.getSize == 0
 
-  def clear() = innerSet.clear(true)
+  def clear() = innerSet = innerSet.clear(false)
 
   override def iterator(): util.Iterator[T] = ??? //TODO
 

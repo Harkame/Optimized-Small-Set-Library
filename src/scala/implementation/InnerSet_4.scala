@@ -17,16 +17,12 @@ class InnerSet_4[T](element1: T, element2: T, element3: T, element4: T) extends 
         else  InnerSet_5(element1, element2, element3, element4, p_element)
     }
 
-    override def addUnchecked(p_element: T): InnerSet[T] = InnerSet_5(element1, element2, element3, element4, p_element)
+    override def addUnchecked(p_element: T): InnerSet[T] =  InnerSet_5(element1, element2, element3, element4, p_element)
 
+    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.addElement(element1).addElement(element2).addElement(element3).addElement(element4)
 
-    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =     {
-                p_innerSet.addElement(element1)
-                p_innerSet.addElement(element2)
-                p_innerSet.addElement(element3)
-                p_innerSet.addElement(element4)
-            }
     override def containsElement(p_element: Object): Boolean = element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element) || element4.equals(p_element)
+
     override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object]) && p_innerSet.containsElement(element2.asInstanceOf[Object]) && p_innerSet.containsElement(element3.asInstanceOf[Object]) && p_innerSet.containsElement(element4.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
@@ -51,12 +47,7 @@ class InnerSet_4[T](element1: T, element2: T, element3: T, element4: T) extends 
                         else this
     }
 
-    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =     {
-                p_innerSet.removeElement(element1.asInstanceOf[Object])
-                p_innerSet.removeElement(element2.asInstanceOf[Object])
-                p_innerSet.removeElement(element3.asInstanceOf[Object])
-                p_innerSet.removeElement(element4.asInstanceOf[Object])
-            }
+    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.removeElement(element1.asInstanceOf[Object]).removeElement(element2.asInstanceOf[Object]).removeElement(element3.asInstanceOf[Object]).removeElement(element4.asInstanceOf[Object])
 
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
     {
@@ -74,7 +65,7 @@ class InnerSet_4[T](element1: T, element2: T, element3: T, element4: T) extends 
 
     override def copy: Option[InnerSet[T]] = Option(InnerSet_4(element1: T, element2: T, element3: T, element4: T))
 
-    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
+    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
     override def toString : String = "{ " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + " }"
 }

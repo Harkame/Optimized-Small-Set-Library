@@ -17,14 +17,12 @@ class InnerSet_2[T](element1: T, element2: T) extends AbstractInnerSet[T]
         else  InnerSet_3(element1, element2, p_element)
     }
 
-    override def addUnchecked(p_element: T): InnerSet[T] = InnerSet_3(element1, element2, p_element)
+    override def addUnchecked(p_element: T): InnerSet[T] =  InnerSet_3(element1, element2, p_element)
 
+    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.addElement(element1).addElement(element2)
 
-    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =     {
-                p_innerSet.addElement(element1)
-                p_innerSet.addElement(element2)
-            }
     override def containsElement(p_element: Object): Boolean = element1.equals(p_element) || element2.equals(p_element)
+
     override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object]) && p_innerSet.containsElement(element2.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
@@ -43,10 +41,7 @@ class InnerSet_2[T](element1: T, element2: T) extends AbstractInnerSet[T]
                         else this
     }
 
-    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =     {
-                p_innerSet.removeElement(element1.asInstanceOf[Object])
-                p_innerSet.removeElement(element2.asInstanceOf[Object])
-            }
+    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.removeElement(element1.asInstanceOf[Object]).removeElement(element2.asInstanceOf[Object])
 
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
     {
@@ -62,7 +57,7 @@ class InnerSet_2[T](element1: T, element2: T) extends AbstractInnerSet[T]
 
     override def copy: Option[InnerSet[T]] = Option(InnerSet_2(element1: T, element2: T))
 
-    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0
+    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
     override def toString : String = "{ " + element1 + ", " + element2 + " }"
 }
