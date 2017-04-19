@@ -8,6 +8,8 @@ object InnerArraySet{
 
 class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
+  private val maxSize = 20
+
   def this(p_innerSet: InnerSet[T]) =
   {
     this
@@ -20,13 +22,22 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
   override def addElement(p_element: T): InnerSet[T] =
   {
-    if(!contains(p_element)) add(p_element)
+    if(!contains(p_element))
+    {
+      if(getSize == maxSize){
+        return InnerHashSet[T](this, p_element)
+      }
+      else add(p_element)
+    }
     this
   }
 
   override def addUnchecked(p_element: T): InnerSet[T] =
   {
-    add(p_element)
+    if(getSize == maxSize){
+      return InnerHashSet[T](this, p_element)
+    }
+    else add(p_element)
     this
   }
 
@@ -45,7 +56,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
   {
     val it: InnerSetIterator[T] = p_innerSet.iterator
     while(it.hasNext){
-      if(!contains(it.next())) false
+      if(!contains(it.next())) return false
     }
     true
   }

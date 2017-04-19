@@ -54,7 +54,6 @@ class MicroSet[T]() extends Set[T] {
   def addAll(microSet: MicroSet[T]): Boolean =
   {
     val oldInnerSet: InnerSet[T] = innerSet
-    println("1 " + oldInnerSet.toString)
     innerSet = microSet.innerSet.addAllElements(oldInnerSet)
     !innerSet.getSize.equals(oldInnerSet.getSize)
   }
@@ -63,7 +62,6 @@ class MicroSet[T]() extends Set[T] {
   {
     val oldInnerSet = this.innerSet
     val scalaIterable: Iterable[_ <: T] = c.asInstanceOf[Iterable[_ <: T]]
-
 
     scalaIterable foreach innerSet.addElement
 

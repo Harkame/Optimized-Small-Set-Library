@@ -5,6 +5,8 @@ import java.util.HashSet
 object InnerHashSet
 {
   def apply[T](innerSet: InnerSet[T]): InnerHashSet[T] = new InnerHashSet[T](innerSet)
+  def apply[T](innerSet: InnerSet[T],element: T): InnerHashSet[T] = new InnerHashSet[T](innerSet,element)
+
 }
 
  class InnerHashSet[T] extends HashSet[T] with InnerSet[T]{
@@ -17,6 +19,18 @@ object InnerHashSet
     {
       add(it.next())
     }
+  }
+
+  def this(p_innerSet: InnerSet[T], p_element: T) =
+  {
+    this
+    val it: InnerSetIterator[T] = p_innerSet.iterator
+    while(it.hasNext)
+    {
+      add(it.next())
+    }
+    add(p_element)
+
   }
 
   override def addElement(p_element: T): InnerSet[T] =
@@ -46,7 +60,7 @@ object InnerHashSet
   {
     val it: InnerSetIterator[T] = p_innerSet.iterator
     while(it.hasNext){
-      if(!contains(it.next())) false
+      if(!contains(it.next())) return false
     }
     true
   }
