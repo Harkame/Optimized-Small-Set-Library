@@ -15,7 +15,7 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
     private static final int MAX_SIZE = 20;
 
     public InnerArraySet() {
-        super(Generator.TO_GENERATE); // Optimise the array length to the size of InnerSet
+        super(MAX_SIZE); // Optimise the array length to the size of InnerSet
     }
 
     public InnerArraySet(InnerSet i) {
@@ -32,7 +32,7 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
     @Override
     public InnerSet<T> addElement(T p_element) {
         if (!contains(p_element)) {
-            if (getSize() == MAX_SIZE) {
+            if (getSize() >= MAX_SIZE) {
                 return new InnerHashSet<T>(this, p_element);
             } else {
                 add(p_element);
@@ -43,7 +43,7 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
 
     @Override
     public InnerSet<T> addUnChecked(T p_element) {
-        if (getSize() == MAX_SIZE) {
+        if (getSize() >= MAX_SIZE) {
             return new InnerHashSet<T>(this, p_element);
         } else {
             add(p_element);
@@ -98,6 +98,28 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
     @Override
     public InnerSet<T> retainAllElements(InnerSet<T> innerSet) {
         return null;
+    }
+
+    @Override
+    public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSet) {
+        if (!contains(p_element)) {
+            microSet.add(p_element);
+            if (getSize() == MAX_SIZE) {
+                return new InnerHashSet<T>(this, p_element);
+            } else {
+                add(p_element);
+            }
+        }
+        return this;
+    }
+
+    @Override
+    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
+        Iterator<T> it = innerSet.iterator();
+        while (it.hasNext()) {
+            addElement(it.next());
+        }
+        return this;
     }
 
     @Override

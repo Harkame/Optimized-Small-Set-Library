@@ -18,29 +18,35 @@ public class CustomBenchmark
         return bytes / MEGABYTE;
     }
 
-    public static void main(String[] args) {
+    public static int randomBetween(int low, int max) {
         Random random = new Random();
-        ArrayList<MicroSet> arrayList = new ArrayList<>();
+        return random.nextInt(max-low) + low;
+    }
 
+    public static void main(String[] args) {
+        ArrayList<MicroSet> arrayList = new ArrayList<>();
+        Random random = new Random();
         for (int i = 0; i < POOL_SIZE; i++) {
             int numberOfObject;
             MicroSet m = new MicroSet();
 
             if (i < POOL_SIZE * 0.8) {
-                numberOfObject = random.nextInt(8);
+                numberOfObject = randomBetween(1,8);
                 for (int j = 0; j < numberOfObject; j++) {
                     m.add(new TestObject(random.nextInt()));
                 }
-
                 arrayList.add(m);
-            }
-
-            if (i >= POOL_SIZE * 0.8) {
-                numberOfObject = random.nextInt(100);
+            } else if (i < POOL_SIZE * 0.9) {
+                numberOfObject = randomBetween(10, 100);
                 for (int j = 0; j < numberOfObject; j++) {
                     m.add(new TestObject(random.nextInt()));
                 }
-
+                arrayList.add(m);
+            } else {
+                numberOfObject = randomBetween(100, 1000);
+                for (int j = 0; j < numberOfObject; j++) {
+                    m.add(new TestObject(random.nextInt()));
+                }
                 arrayList.add(m);
             }
         }
