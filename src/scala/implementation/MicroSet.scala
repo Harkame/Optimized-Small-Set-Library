@@ -1,7 +1,8 @@
 package scala.implementation
 
-import java.util
 import java.util.Set
+import java.util
+
 
 import scala.implementation.Use.Use
 
@@ -61,9 +62,10 @@ class MicroSet[T]() extends Set[T] {
   override def addAll(c: util.Collection[_ <: T]): Boolean =
   {
     val oldInnerSet = this.innerSet
-    val scalaList: List[_ <: T] = c.asInstanceOf[List[_ <: T]]
+    val scalaIterable: Iterable[_ <: T] = c.asInstanceOf[Iterable[_ <: T]]
 
-    scalaList foreach innerSet.addElement
+
+    scalaIterable foreach innerSet.addElement
 
     !innerSet.getSize.equals(oldInnerSet.getSize)
   }
@@ -85,11 +87,11 @@ class MicroSet[T]() extends Set[T] {
   override def removeAll(c: util.Collection[_]): Boolean =
   {
     val oldInnerSet = innerSet
-    val scalaList: List[_ <: Object] = c.asInstanceOf[List[_ <: Object]]
+    val scalaIterable: Iterable[_ <: Object] = c.asInstanceOf[Iterable[_ <: Object]]
 
     def removeEl(el: Object) = if(innerSet.containsElement(el)) innerSet.removeElement(el)
 
-    scalaList foreach removeEl
+    scalaIterable foreach removeEl
 
     innerSet.getSize != oldInnerSet.getSize
   }
@@ -100,8 +102,8 @@ class MicroSet[T]() extends Set[T] {
 
   override def containsAll(c: util.Collection[_]): Boolean =
   {
-    val scalaList: List[_] = c.asInstanceOf[List[_]]
-    for(el <-  scalaList) {
+    val scalaIterable: Iterable[_] = c.asInstanceOf[Iterable[_]]
+    for(el <-  scalaIterable) {
       if(!innerSet.containsElement(el.asInstanceOf[Object])) return false
     }
     true
@@ -117,10 +119,10 @@ class MicroSet[T]() extends Set[T] {
   override def retainAll(c: util.Collection[_]): Boolean =
   {
     val oldInnerSet: InnerSet[T] = innerSet
-    val scalaList: List[_ <: T] = c.asInstanceOf[List[_ <: T]]
+    val scalaIterable: Iterable[_ <: T] = c.asInstanceOf[Iterable[_ <: T]]
     this.innerSet = InnerSet_0[T]
 
-    for (el <- scalaList) {
+    for (el <- scalaIterable) {
       if (oldInnerSet.containsElement(el.asInstanceOf[Object])) innerSet = innerSet.addElement(el)
     }
     innerSet.getSize != oldInnerSet.getSize
