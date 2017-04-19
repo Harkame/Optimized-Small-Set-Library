@@ -23,6 +23,10 @@ public interface InnerSet<T> {
 
     InnerSet<T> retainAllElements(InnerSet<T> innerSet);
 
+    InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSet);
+
+    InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet);
+
     int getSize();
 
     Iterator<T> iterator();

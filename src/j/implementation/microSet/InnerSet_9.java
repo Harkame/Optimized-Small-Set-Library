@@ -150,6 +150,18 @@ public class InnerSet_9 <T> extends AbstractInnerSet<T>
         return  innerSet.containsElement(element_1) && innerSet.containsElement(element_2) && innerSet.containsElement(element_3) && innerSet.containsElement(element_4) && innerSet.containsElement(element_5) && innerSet.containsElement(element_6) && innerSet.containsElement(element_7) && innerSet.containsElement(element_8) && innerSet.containsElement(element_9);
     }
 
+    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
+        return innerSet.addAndPropagate(element_1, microSet).addAndPropagate(element_2, microSet).addAndPropagate(element_3, microSet).addAndPropagate(element_4, microSet).addAndPropagate(element_5, microSet).addAndPropagate(element_6, microSet).addAndPropagate(element_7, microSet).addAndPropagate(element_8, microSet).addAndPropagate(element_9, microSet);
+    }
+
+    public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSet) {
+        if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element) || element_4.equals(p_element) || element_5.equals(p_element) || element_6.equals(p_element) || element_7.equals(p_element) || element_8.equals(p_element) || element_9.equals(p_element))
+            return this;
+        else {
+            microSet.add(p_element);
+            return new InnerSet_10<>(this, p_element);        }
+    }
+
     @Override
     public String toString()
     {
