@@ -14,7 +14,7 @@ class iterator_inner_set
     inner_set<T>* a_inner_set;
 
   public:
-    iterator_micro_set(inner_set<T>*);
+    iterator_micro_set(inner_set<T>*, bool);
 
     virtual ~iterator_micro_set();
 

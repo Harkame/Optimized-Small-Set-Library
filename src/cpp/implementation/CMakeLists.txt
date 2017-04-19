@@ -79,8 +79,7 @@ add_test(insert_test insert_test --benchmark_min_time=0.01)
 compile_benchmark_test(erase_test)
 add_test(erase_test erase_test --benchmark_min_time=0.01)
 
-compile_benchmark_test(contains_test)
-add_test(contains_test contains_test --benchmark_min_time=0.01)
+
 
 check_cxx_compiler_flag(-std=c++03 BENCHMARK_HAS_CXX03_FLAG)
 if (BENCHMARK_HAS_CXX03_FLAG)

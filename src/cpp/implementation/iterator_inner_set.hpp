@@ -18,6 +18,8 @@ class iterator_inner_set
 
     virtual ~iterator_inner_set();
 
+    void set_end();
+
     virtual T begin();
 
     virtual T end();
