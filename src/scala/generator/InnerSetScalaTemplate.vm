@@ -76,4 +76,20 @@ class $innerSetClassName$t(#foreach($element in $elements)$element: T#if( $forea
     override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
     override def toString : String = "{ " + #foreach($element in $elements)$element#if( $foreach.hasNext ) + ", " + #end#end + " }"
+
+    override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
+    {
+        if (#foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end)
+        {
+            this
+        }
+        else #if($innerSetOffset == $lastInnerSet)InnerHashSet(this)#else
+        {
+            p_microSet.add(p_element)
+            $nextInnerSet(#foreach($element in $elements)$element#if( $foreach.hasNext ), #end#end, p_element)#end
+        }
+    }
+
+    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.addAndPropagate(element1,p_microSet)#else p_innerSet#foreach($element in $elements).addAndPropagate($element,p_microSet)#end#end
+
 }

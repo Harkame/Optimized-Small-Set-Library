@@ -60,4 +60,17 @@ class InnerSet_2[T](element1: T, element2: T) extends AbstractInnerSet[T]
     override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
     override def toString : String = "{ " + element1 + ", " + element2 + " }"
+
+    override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
+    {
+        if (element1.equals(p_element) || element2.equals(p_element))
+        {
+            this
+        }
+        else         {
+            p_microSet.add(p_element)
+            InnerSet_3(element1, element2, p_element)        }
+    }
+
+    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet.addAndPropagate(element1,p_microSet).addAndPropagate(element2,p_microSet)
 }

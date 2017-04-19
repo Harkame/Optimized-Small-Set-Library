@@ -63,6 +63,7 @@ class MicroSet[T]() extends Set[T] {
     val oldInnerSet = this.innerSet
     val scalaIterable: Iterable[_ <: T] = c.asInstanceOf[Iterable[_ <: T]]
 
+
     scalaIterable foreach innerSet.addElement
 
     !innerSet.getSize.equals(oldInnerSet.getSize)

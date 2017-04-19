@@ -76,4 +76,17 @@ class InnerSet_6[T](element1: T, element2: T, element3: T, element4: T, element5
     override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
     override def toString : String = "{ " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + ", " + element5 + ", " + element6 + " }"
+
+    override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
+    {
+        if (element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element) || element4.equals(p_element) || element5.equals(p_element) || element6.equals(p_element))
+        {
+            this
+        }
+        else         {
+            p_microSet.add(p_element)
+            InnerSet_7(element1, element2, element3, element4, element5, element6, p_element)        }
+    }
+
+    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet.addAndPropagate(element1,p_microSet).addAndPropagate(element2,p_microSet).addAndPropagate(element3,p_microSet).addAndPropagate(element4,p_microSet).addAndPropagate(element5,p_microSet).addAndPropagate(element6,p_microSet)
 }
