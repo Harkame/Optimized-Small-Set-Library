@@ -37,6 +37,16 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 		return this;
 	}
 
+	@Override
+	public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSet) {
+		return null;
+	}
+
+	@Override
+	public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
+		return null;
+	}
+
 	public T getElement(int index)
 	{
 		return null;

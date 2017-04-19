@@ -80,6 +80,16 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
     }
 
     @Override
+    public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSet) {
+        return null;
+    }
+
+    @Override
+    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
+        return null;
+    }
+
+    @Override
     public int getSize() {
         return size();
     }

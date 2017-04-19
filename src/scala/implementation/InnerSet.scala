@@ -6,7 +6,11 @@ trait InnerSet[T] {
 
   def addUnchecked(p_element: T): InnerSet[T]
 
+  def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T]
+
   def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T]
+
+  def addAllAndPropagate(p_innerSet: InnerSet[T],p_microSet: MicroSet[T]): InnerSet[T]
 
   def containsElement(p_element: Object): Boolean
 

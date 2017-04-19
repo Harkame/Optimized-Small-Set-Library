@@ -45,6 +45,8 @@ object InnerHashSet
     this
   }
 
+   override def AddAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] = ???
+
   override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
   {
     val it: InnerSetIterator[T] = p_innerSet.iterator
@@ -53,8 +55,9 @@ object InnerHashSet
     }
     this
   }
+   override def AddAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = ???
 
-  override def containsElement(p_element: Object): Boolean = contains(p_element)
+   override def containsElement(p_element: Object): Boolean = contains(p_element)
 
   override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =
   {
@@ -95,5 +98,6 @@ object InnerHashSet
   }
 
   override def clear(unused: Boolean): InnerSet[T] = this.clear(unused)
+
 
  }

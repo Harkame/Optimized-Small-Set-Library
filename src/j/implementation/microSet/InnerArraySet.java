@@ -117,7 +117,7 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
     public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
         Iterator<T> it = innerSet.iterator();
         while (it.hasNext()) {
-            addElement(it.next());
+            addAndPropagate(it.next(),microSet);
         }
         return this;
     }

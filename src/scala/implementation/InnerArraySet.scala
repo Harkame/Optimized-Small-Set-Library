@@ -89,4 +89,26 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
   override def clear(unused: Boolean): InnerSet[T] = clear(unused)
 
   override def toString(): String = ???
+
+  override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
+  {
+    if(!contains(p_element))
+    {
+      p_microSet.add(p_element)
+      if(getSize == maxSize){
+        return InnerHashSet[T](this, p_element)
+      }
+      else add(p_element)
+    }
+    this
+  }
+
+  override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =
+  {
+    val it: InnerSetIterator[T] = p_innerSet.iterator
+    while(it.hasNext){
+      addAndPropagate(it.next(),p_microSet)
+    }
+    this
+  }
 }
