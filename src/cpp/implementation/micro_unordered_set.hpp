@@ -27,69 +27,23 @@ class micro_unordered_set : public set<T>
 
         virtual ~micro_unordered_set();
 
-                /* Operator */
-                //virtual micro_set<T> operator=(micro_set<T>);
+        virtual iterator_inner_set<T>* begin();
 
-                /* Iterators */
+        virtual iterator_inner_set<T>* end();
 
-                virtual void begin();
+        virtual iterator_inner_set<T>* find(T);
 
-                virtual void end();
+        virtual bool empty() const;
 
-                virtual void rbegin();
+        virtual int size() const;
 
-                virtual void rend();
+        virtual int max_size() const;
 
-                virtual void cbegin();
+        virtual void insert(T);
 
-                virtual void cend();
+        virtual void erase(T);
 
-                virtual void crbegin();
-
-                virtual void crend();
-
-                /* Capacity */
-                virtual bool empty() const;
-
-                virtual int size() const;
-
-                virtual int max_size() const;
-
-                /* Modifiers */
-
-                virtual void insert(T);
-
-                virtual void erase(T);
-
-                virtual void swap();
-
-                virtual void clear();
-
-                virtual void emplace();
-
-                virtual void emplace_hint();
-
-                /* Observers */ //TODO
-
-                //virtual key_compare key_comp() const;
-
-                //virtual value_compare value_comp() const;
-
-                /* Operations */
-
-                //virtual iterator_inner_set<T>* find(const T*) const;
-
-                //virtual size_type count(const T*) const;
-
-                virtual void lower_bound();
-
-                virtual void upper_bound();
-
-                virtual void equal_range();
-
-        		/* Allocator */
-
-                virtual void get_allocator();
-        };
+        virtual void clear();
+  };
 
         #endif

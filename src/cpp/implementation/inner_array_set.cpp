@@ -1,6 +1,7 @@
 #include "inner_array_set.hpp"
 
 #include "inner_tree_set.hpp"
+#include <iostream>
 
 template<typename T>
 inner_array_set<T>::inner_array_set()
@@ -28,38 +29,6 @@ inner_array_set<T>::inner_array_set(inner_set_5<T>* p_inner_set, T p_element)
 
   delete p_inner_set;
 }
-/*
-template<typename T>
-inner_array_set<T>::inner_array_set(inner_tree_set<T>* p_inner_set, T p_element)
-{
-
-  a_index = 6;
-
-  a_values = new T[20];
-
-
-
-  a_values[5] = p_element;
-
-  delete p_inner_set;
-}
-*/
-/*
-template<typename T>
-inner_array_set<T>::inner_array_set(inner_unordered_set<T> p_inner_set, T p_element)
-{
-
-  a_index = 6;
-
-  a_values = new T[20];
-
-
-
-  a_values[5] = p_element;
-
-  delete p_inner_set;
-}
-*/
 
 template<typename T>
 inner_array_set<T>::~inner_array_set()
