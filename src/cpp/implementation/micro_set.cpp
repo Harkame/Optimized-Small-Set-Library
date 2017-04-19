@@ -1,11 +1,12 @@
 #include "micro_set.hpp"
+#include "iterator_inner_set.hpp"
+
 
 using namespace std;
 
 template<typename T>
 micro_set<T>::micro_set()
 {
-	//a_inner_set = (inner_set<T>*) inner_set_0<T>::INNER_SET_0;
 	a_inner_set = new inner_set_0<T>();
 }
 
@@ -15,65 +16,31 @@ micro_set<T>::~micro_set()
 
 }
 
-/* Operator */
-/*
-template<typename T>
-micro_set<T> micro_set<T>::operator=(micro_set<T> p_micro_set)
-{
-	//TODO
-	micro_set<T>* r_micro_set = new micro_set<T>(){}
-
-	return r_micro_set;
-}
-*/
-
-/* Iterators */
 
 template<typename T>
-void micro_set<T>::begin()
+iterator_inner_set<T>* micro_set<T>::begin()
 {
-
+	return new iterator_inner_set<T>(a_inner_set);
 }
 
 template<typename T>
-void micro_set<T>::end()
+iterator_inner_set<T>* micro_set<T>::end()
 {
+	iterator_inner_set<T>* r_iterator_inner_set = new iterator_inner_set<T>(a_inner_set);
 
+	r_iterator_inner_set->set_end();
+
+	return r_iterator_inner_set;
 }
 
 template<typename T>
-void micro_set<T>::rbegin()
+iterator_inner_set<T>* micro_set<T>::find(T p_element)
 {
+	iterator_inner_set<T>* r_iterator_inner_set = new iterator_inner_set<T>(a_inner_set);
 
-}
+	while(r_iterator_inner_set->next() != p_element);
 
-template<typename T>
-void micro_set<T>::rend()
-{
-
-}
-
-template<typename T>
-void micro_set<T>::cbegin()
-{
-
-}
-
-template<typename T>
-void micro_set<T>::cend()
-{
-
-}
-
-template<typename T>
-void micro_set<T>::crbegin()
-{
-
-}
-
-template<typename T>
-void micro_set<T>::crend()
-{
+	return r_iterator_inner_set;
 
 }
 
@@ -94,9 +61,6 @@ int micro_set<T>::max_size() const
 {
 	return -1; //Pas de taille max ?
 }
-
-/* Modifiers */
-
 template<typename T>
 void micro_set<T>:: insert(T p_element)
 {
@@ -106,51 +70,13 @@ void micro_set<T>:: insert(T p_element)
 template<typename T>
 void micro_set<T>:: erase(T p_element)
 {
-	a_inner_set->remove_element(p_element);
+	a_inner_set = a_inner_set->remove_element(p_element);
 }
 
 template<typename T>
-void micro_set<T>:: swap(){}
-
-template<typename T>
-void micro_set<T>:: clear(){}
-
-template<typename T>
-void micro_set<T>:: emplace(){}
-
-template<typename T>
-void micro_set<T>:: emplace_hint(){}
-
-/* Observers */ //TODO
-
-/* Operations */
-
-/*
-template<typename T>
-iterator_inner_set<T>* micro_set<T>:: find(T p_element)
+void micro_set<T>:: clear()
 {
-	return new iterator_inner_set(a_inner_set);
+	delete a_inner_set;
+
+	a_inner_set = new inner_set_0<T>();
 }
-*/
-
-/*
-template<typename T>
-void micro_set<T>:: count()
-{
-
-}
-*/
-
-template<typename T>
-void micro_set<T>:: lower_bound(){}
-
-template<typename T>
-void micro_set<T>:: upper_bound(){}
-
-template<typename T>
-void micro_set<T>:: equal_range(){}
-
-/* Allocator */
-
-template<typename T>
-void micro_set<T>:: get_allocator(){}

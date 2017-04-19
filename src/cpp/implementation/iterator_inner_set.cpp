@@ -1,31 +1,55 @@
-iterator_inner_set::iterator_micro_set(inner_set<T>* p_inner_set)
+#include "iterator_inner_set.hpp"
+
+template<typename T>
+iterator_inner_set<T>::iterator_inner_set(inner_set<T>* p_inner_set)
 {
   a_index = 0;
 
   a_inner_set = p_inner_set;
 }
 
-iterator_inner_set::~iterator_micro_set()
+template<typename T>
+iterator_inner_set<T>::~iterator_inner_set()
 {
 
 }
 
-iterator_inner_set::T begin()
+template<typename T>
+void iterator_inner_set<T>::set_end()
 {
+  a_index = a_inner_set->get_size();
+}
+
+template<typename T>
+T iterator_inner_set<T>::begin()
+{
+    a_index = 0;
+
   return a_inner_set->get_element(0);
 }
 
-iterator_inner_set::T end()
+template<typename T>
+T iterator_inner_set<T>::end()
 {
+  a_index = a_inner_set->get_size();;
+
   return a_inner_set->get_element(a_inner_set->get_size());
 }
 
-iterator_inner_set::T prev()
+template<typename T>
+T iterator_inner_set<T>::prev()
 {
-  return a_inner_set->get_element(a_index--);
+  if(a_index > 0)
+    a_index--;
+
+  return a_inner_set->get_element(a_index - 1);
 }
 
-iterator_inner_set::T next()
+template<typename T>
+T iterator_inner_set<T>::next()
 {
-  return a_inner_set->get_element(a_index++);
+  if(a_index < a_inner_set->get_size())
+    a_index++;
+
+  return a_inner_set->get_element(a_index - 1);
 }

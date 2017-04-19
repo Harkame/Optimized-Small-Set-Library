@@ -10,12 +10,10 @@ template<typename T>
 class inner_set_0 : public inner_set<T>
 {
     public :
-    struct values
-    {
+      struct values
+      {
 
-    } a_values;
-
-        static inner_set_0<T>* INNER_SET_0();
+      } a_values;
 
         inner_set_0<T>();
 

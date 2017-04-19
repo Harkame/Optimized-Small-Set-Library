@@ -25,19 +25,6 @@ micro_array_set<T>::~micro_array_set()
 
 }
 
-/* Operator */
-/*
-template<typename T>
-micro_hashset<T> micro_hashset<T>::operator=(micro_hashset<T> p_micro_hashset)
-{
-	//TODO
-	micro_hashset<T>* r_micro_hashset = new micro_hashset<T>(){}
-
-	return r_micro_hashset;
-}
-*/
-
-/* Iterators */
 
 template<typename T>
 void micro_array_set<T>::begin()

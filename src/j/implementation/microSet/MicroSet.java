@@ -24,7 +24,7 @@ public class MicroSet<T> implements Set<T>
 		this.innerSet = new InnerSet_0<>();
 	}
 
-	public MicroSet(Use use, int k) {
+	public MicroSet(Use use) {
 		switch (use) {
 			case ARRAY_SET:
 				this.innerSet = new InnerArraySet<>();
