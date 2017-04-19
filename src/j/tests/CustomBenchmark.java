@@ -36,7 +36,7 @@ public class CustomBenchmark
             }
 
             if (i >= POOL_SIZE * 0.8) {
-                numberOfObject = random.nextInt(100);
+                numberOfObject = random.nextInt(1000);
                 for (int j = 0; j < numberOfObject; j++) {
                     m.add(new TestObject(random.nextInt()));
                 }

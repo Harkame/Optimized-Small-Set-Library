@@ -15,7 +15,7 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
     private static final int MAX_SIZE = 20;
 
     public InnerArraySet() {
-        super(Generator.TO_GENERATE); // Optimise the array length to the size of InnerSet
+        super(MAX_SIZE); // Optimise the array length to the size of InnerSet
     }
 
     public InnerArraySet(InnerSet i) {

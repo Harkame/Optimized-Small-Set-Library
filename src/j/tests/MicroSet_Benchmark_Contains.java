@@ -19,9 +19,9 @@ public class MicroSet_Benchmark_Contains {
 
     private static int NUMBER_OF_TEST_OBJECT = 30;
 
-    MicroSet<TestObject> microInnerSet = new MicroSet<>(MicroSet.Use.INNER_SET, NUMBER_OF_TEST_OBJECT);
-    MicroSet<TestObject> microArraySet = new MicroSet<>(MicroSet.Use.ARRAY_SET, NUMBER_OF_TEST_OBJECT);
-    MicroSet<TestObject> microHashSet = new MicroSet<>(MicroSet.Use.HASH_SET, NUMBER_OF_TEST_OBJECT);
+    MicroSet<TestObject> microInnerSet = new MicroSet<>(MicroSet.Use.INNER_SET);
+    MicroSet<TestObject> microArraySet = new MicroSet<>(MicroSet.Use.ARRAY_SET);
+    MicroSet<TestObject> microHashSet = new MicroSet<>(MicroSet.Use.HASH_SET);
 
     HashSet<TestObject> hashSet = new HashSet<>();
     TreeSet<TestObject> treeSet = new TreeSet<>();
