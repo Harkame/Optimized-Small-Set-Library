@@ -142,6 +142,11 @@ public class MicroSet<T> implements Set<T>
 				'}';
 	}
 
+	public MicroSet<T> addAllAndPropagate(MicroSet<T> microSetToAdd) {
+		MicroSet<T> mReturn = new MicroSet();
+		this.innerSet = this.innerSet.addAllAndPropagate(microSetToAdd.innerSet, mReturn);
+		return mReturn;
+	}
 
 	@Override
 	public boolean retainAll(Collection<?> c)

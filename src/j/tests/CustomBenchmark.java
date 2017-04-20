@@ -24,7 +24,7 @@ public class CustomBenchmark
     }
 
     public static void main(String[] args) {
-        ArrayList<MicroSet> arrayList = new ArrayList<>();
+        ArrayList<MicroSet<TestObject>> arrayList = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < POOL_SIZE; i++) {
             int numberOfObject;
