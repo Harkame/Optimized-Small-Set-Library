@@ -51,16 +51,18 @@ public class CustomBenchmark
             }
         }
 
+        Runtime runtime = Runtime.getRuntime();
+        runtime.gc();// Run the garbage collector
         long startTime = System.currentTimeMillis();
 
+        // START TEST
+        for (int i=0; i< POOL_SIZE -1; i++) {
+            arrayList.set(i+1, arrayList.get(i).addAllAndPropagate(arrayList.get(i+1)));
+        }
+        // END TEST
 
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
-
-        // Get the Java runtime
-        Runtime runtime = Runtime.getRuntime();
-        // Run the garbage collector
-        // runtime.gc();
         // Calculate the used memory
         long memory = runtime.totalMemory() - runtime.freeMemory();
         System.out.println("Elapsed Time is: " + elapsedTime);
