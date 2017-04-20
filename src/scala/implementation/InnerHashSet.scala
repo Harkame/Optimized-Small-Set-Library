@@ -45,7 +45,7 @@ object InnerHashSet
     this
   }
 
-   override def AddAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] = ???
+   override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] = ???
 
   override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
   {
@@ -55,7 +55,7 @@ object InnerHashSet
     }
     this
   }
-   override def AddAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = ???
+   override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = ???
 
    override def containsElement(p_element: Object): Boolean = contains(p_element)
 

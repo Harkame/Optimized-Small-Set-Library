@@ -99,8 +99,8 @@ class InnerSet_10[T](element1: T, element2: T, element3: T, element4: T, element
         {
             this
         }
-        else InnerHashSet(this)        }
+        else InnerHashSet(this)
     }
 
-    override def addAllElements(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet.addAndPropagate(element1,p_microSet).addAndPropagate(element2,p_microSet).addAndPropagate(element3,p_microSet).addAndPropagate(element4,p_microSet).addAndPropagate(element5,p_microSet).addAndPropagate(element6,p_microSet).addAndPropagate(element7,p_microSet).addAndPropagate(element8,p_microSet).addAndPropagate(element9,p_microSet).addAndPropagate(element10,p_microSet)
+    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet.addAndPropagate(element1,p_microSet).addAndPropagate(element2,p_microSet).addAndPropagate(element3,p_microSet).addAndPropagate(element4,p_microSet).addAndPropagate(element5,p_microSet).addAndPropagate(element6,p_microSet).addAndPropagate(element7,p_microSet).addAndPropagate(element8,p_microSet).addAndPropagate(element9,p_microSet).addAndPropagate(element10,p_microSet)
 }
