@@ -132,6 +132,26 @@ public class MicroSet_Test {
     }
 
     @Test
+    void addAllPropagate() {
+
+        MicroSet<TestObject> microSetAdd = new MicroSet<>();
+        MicroSet<TestObject> microSetRes;
+
+        //microSetAdd contains [testObject2 , testObject3]
+        TestObject testObject2 = new TestObject(2);
+        TestObject testObject3 = new TestObject(3);
+        microSetAdd.add(testObject2);
+        microSetAdd.add(testObject3);
+
+        //MicroSet contains [testObject]
+        assertEquals(microSet.size(),1);
+        microSetRes = microSet.addAllAndPropagate(microSetAdd);
+        assertEquals(microSet.size(),3);
+        assertEquals(microSetRes.size(),1);
+
+    }
+
+    @Test
     void containsAllElements() {
 
         TestObject testObject2 = new TestObject(2);

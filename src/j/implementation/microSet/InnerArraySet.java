@@ -12,7 +12,7 @@ import java.util.Set;
  */
 public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
 
-    private static final int MAX_SIZE = 20;
+    private static final int MAX_SIZE = 15;
 
     public InnerArraySet() {
         super(MAX_SIZE); // Optimise the array length to the size of InnerSet
@@ -117,7 +117,7 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
     public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
         Iterator<T> it = innerSet.iterator();
         while (it.hasNext()) {
-            addAndPropagate(it.next(),microSet);
+            addAndPropagate(it.next(), microSet);
         }
         return this;
     }
