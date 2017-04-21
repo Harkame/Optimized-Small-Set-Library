@@ -6,27 +6,32 @@
 using namespace std;
 
 template<typename T>
-class iterator_inner_set
+class iterator_inner_set : iterator<bidirectional_iterator_tag, T>
 {
-  private:
+  public:
     int a_index;
 
     inner_set<T>* a_inner_set;
 
-  public:
     iterator_inner_set(inner_set<T>*);
 
     virtual ~iterator_inner_set();
 
     void set_end();
 
-    virtual T begin();
+    virtual iterator_inner_set<T> begin();
 
-    virtual T end();
+    virtual iterator_inner_set<T> end();
 
-    virtual T prev();
+    virtual iterator_inner_set<T> prev();
 
-    virtual T next();
+    virtual iterator_inner_set<T> next();
+
+    virtual iterator_inner_set<T> operator++();
+    virtual iterator_inner_set<T> operator++(int);
+
+    virtual iterator_inner_set<T> operator--();
+    virtual iterator_inner_set<T> operator--(int);
 };
 
 #endif
