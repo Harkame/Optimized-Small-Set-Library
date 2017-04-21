@@ -6,7 +6,8 @@ import java.util.Set;
 
 public class MicroSet<T> implements Set<T>
 {
-	private InnerSet<T> innerSet;
+	InnerSet<T> innerSet;
+	public static Use use;
 
 	public enum Use {
 		INNER_SET, ARRAY_SET, HASH_SET
@@ -21,10 +22,6 @@ public class MicroSet<T> implements Set<T>
 	}
 
 	public MicroSet() {
-		this.innerSet = new InnerSet_0<>();
-	}
-
-	public MicroSet(Use use) {
 		switch (use) {
 			case ARRAY_SET:
 				this.innerSet = new InnerArraySet<>();
@@ -43,6 +40,7 @@ public class MicroSet<T> implements Set<T>
 	@Override
 	public boolean add(T e)
 	{
+		assert e != null;
 		InnerSet<T> oldInnerSet = this.innerSet;
 			this.innerSet = this.innerSet.addElement(e);
 		return oldInnerSet.getSize() + 1 == this.innerSet.getSize();

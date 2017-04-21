@@ -49,12 +49,12 @@ public class InnerSet_7 <T> extends AbstractInnerSet<T>
         if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element) || element_4.equals(p_element) || element_5.equals(p_element) || element_6.equals(p_element) || element_7.equals(p_element))
             return this;
         else
-            return new InnerSet_8<>(this, p_element);    }
+            return new InnerArraySet<T>(this, p_element);    }
 
     @Override
     public InnerSet<T> addUnChecked(T p_element)
     {
-        return new InnerSet_8<>(this, p_element);    }
+        return new InnerArraySet<T>(this, p_element);    }
 
     @Override
     public InnerSet<T> removeElement(Object p_element)
@@ -143,7 +143,7 @@ public class InnerSet_7 <T> extends AbstractInnerSet<T>
             return this;
         else {
             microSet.add(p_element);
-            return new InnerSet_8<>(this, p_element);        }
+            return new InnerArraySet<T>(this, p_element);        }
     }
 
     @Override

@@ -33,8 +33,8 @@ class MicroSet_Benchmark_Add {
   def setUp() =
   {
     val rand: Random = new Random
-    for(i <- 0 to NUMBER_OF_TEST_OBJECT) tabTestObject(i) = TestObject(rand.nextInt())
-    for(i <- 0 to NUMBER_OF_TEST_OBJECT) tabRandomInt(i) = rand.nextInt(NUMBER_OF_TEST_OBJECT)
+    for(i <- 0 to NUMBER_OF_TEST_OBJECT -1) tabTestObject(i) = new TestObject(rand.nextInt(13))
+    for(i <- 0 to NUMBER_OF_TEST_OBJECT -1) tabRandomInt(i) = rand.nextInt(NUMBER_OF_TEST_OBJECT)
   }
 
   @Benchmark
@@ -81,9 +81,11 @@ class MicroSet_Benchmark_Add {
       for(j <- 0 to NUMBER_OF_TEST_OBJECT) microHAshSet.add(tabTestObject(tabRandomInt(j)))
     }
   }
+}
 
+object runner {
   def main(args: Array[String]): Unit = {
-    val args = Array[String]("-i", "runtime", "-r", "ADD scale=" + NUMBER_OF_TEST_OBJECT + ", object_number=" + NUMBER_OF_TEST_OBJECT)
+    //val args = Array[String]("-i", "runtime", "-r", "ADD scale=" + MiNUMBER_OF_TEST_OBJECT + ", object_number=" + NUMBER_OF_TEST_OBJECT)
     CaliperMain.main(classOf[MicroSet_Benchmark_Add], args)
   }
 }
