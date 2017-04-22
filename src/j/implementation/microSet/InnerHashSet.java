@@ -87,7 +87,7 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
         }
         return this;
     }
-git
+
     @Override
     public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSetToPropagate) {
         for (T el : this) {
