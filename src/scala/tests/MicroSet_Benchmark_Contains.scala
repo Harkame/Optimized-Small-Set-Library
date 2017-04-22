@@ -14,9 +14,9 @@ import scala.implementation.{MicroSet, Use}
 class MicroSet_Benchmark_Contains {
 
   val NUMBER_OF_TEST_OBJECT: Int = 30
-  val microInnerSet = new MicroSet[TestObject](Use.INNER_SET,NUMBER_OF_TEST_OBJECT)
-  val microArraySet = new MicroSet[TestObject](Use.ARRAY_SET,NUMBER_OF_TEST_OBJECT)
-  val microHAshSet = new MicroSet[TestObject](Use.HASH_SET,NUMBER_OF_TEST_OBJECT)
+  val microInnerSet = new MicroSet[TestObject](Use.INNER_SET)
+  val microArraySet = new MicroSet[TestObject](Use.ARRAY_SET)
+  val microHAshSet = new MicroSet[TestObject](Use.HASH_SET)
 
   val hashSet = new HashSet[TestObject]
   val treeSet = new TreeSet[TestObject]
