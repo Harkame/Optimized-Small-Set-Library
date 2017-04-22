@@ -11,7 +11,7 @@ object MicroSet
   def apply[T]: MicroSet[T] = new MicroSet[T]
   def apply[T](innerSet: InnerSet[T]): MicroSet[T] = new MicroSet[T](innerSet)
   def apply[T](microSet: MicroSet[T]): MicroSet[T] = new MicroSet[T](microSet)
-  def apply[T](use: Use, k: Int): MicroSet[T] = new MicroSet[T](use,k)
+  def apply[T](use: Use): MicroSet[T] = new MicroSet[T](use)
 }
 
 object Use extends Enumeration
@@ -36,7 +36,7 @@ class MicroSet[T]() extends Set[T] {
     innerSet = p_innerSet
   }
 
-  def this(use: Use, nb: Int) =
+  def this(use: Use) =
   {
     this
     if(use == Use.HASH_SET) innerSet = new InnerHashSet[T]
@@ -67,6 +67,13 @@ class MicroSet[T]() extends Set[T] {
     scalaIterable foreach innerSet.addElement
 
     !innerSet.getSize.equals(oldInnerSet.getSize)
+  }
+
+  def addAllAndPropagate(microSetToAdd: MicroSet[T]): MicroSet[T] =
+  {
+    var microSetReturn: MicroSet[T] = MicroSet[T]
+    innerSet = innerSet.addAllAndPropagate(microSetToAdd.innerSet, microSetReturn)
+    microSetReturn
   }
 
   def remove(element: Object): Boolean =

@@ -43,11 +43,11 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
   override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
   {
-    val it: InnerSetIterator[T] = p_innerSet.iterator
+    val it: InnerSetIterator[T] = this.iterator
     while(it.hasNext){
-      addElement(it.next())
+      p_innerSet.addElement(it.next())
     }
-    this
+    p_innerSet
   }
 
   override def containsElement(p_element: Object): Boolean = contains(p_element)
