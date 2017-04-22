@@ -46,7 +46,7 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 
 	@Override
 	public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSetToAdd, MicroSet<T> microSetPropagate) {
-		microSetPropagate.innerSet = innerSetToAdd;
+		microSetPropagate.innerSet.addAllElements(innerSetToAdd);
 		return innerSetToAdd;
 	}
 

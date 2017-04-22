@@ -16,9 +16,9 @@ import java.util.Random;
 public class CustomBenchmark
 {
     private static final long MEGABYTE = 1024L * 1024L;
-    private static final int POOL_SIZE = 20;
+    private static final int POOL_SIZE = 6;
     private static final int STOCK_SIZE = 5;
-    private static final int LISTE_CROISSANTE_SIZE = 5;
+    private static final int LISTE_CROISSANTE_SIZE = 3;
     private static final int NOMBRE_TIRAGE = 5;
     private static Random random = new Random(1);
 
@@ -77,8 +77,8 @@ public class CustomBenchmark
             int indice = randomIndiceListeCroissante[i];
             MicroSet<TestObject> increment = stock.get(randomIndiceStock[i]);
             for (int j = indice; j < LISTE_CROISSANTE_SIZE && !increment.isEmpty(); j++) {
-                //System.out.println(increment);
                 increment = listeCroissante.get(j).addAllAndPropagate(increment);
+                System.out.println(increment);
             }
         }
         // END TEST
@@ -107,8 +107,8 @@ public class CustomBenchmark
         System.out.println("====== INNER_SET ======");
         oneRun(MicroSet.Use.INNER_SET);
         System.out.println("====== ARRAY_SET ======");
-        oneRun(MicroSet.Use.ARRAY_SET);
+        //oneRun(MicroSet.Use.ARRAY_SET);
         System.out.println("====== HASH_SET ======");
-        oneRun(MicroSet.Use.HASH_SET);
+        //oneRun(MicroSet.Use.HASH_SET);
     }
 }
