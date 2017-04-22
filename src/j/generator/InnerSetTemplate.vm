@@ -108,15 +108,15 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
         return #foreach($element in $elements) innerSet.containsElement($element)#if( $foreach.hasNext) &&#end#end;
     }
 
-    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
-        return innerSet#foreach($element in $elements).addAndPropagate($element, microSet)#end;
+    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSetToPropagate) {
+        return innerSet#foreach($element in $elements).addAndPropagate($element, microSetToPropagate)#end;
     }
 
-    public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSet) {
+    public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSetToPropagate) {
         if(#foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end)
             return this;
         else {
-            microSet.add(p_element);
+            microSetToPropagate.add(p_element);
             return new #if($innerSetOffset == $lastInnerSet)InnerArraySet<T>(this, p_element);#else$nextInnerSet<>(this, p_element);#end
         }
     }

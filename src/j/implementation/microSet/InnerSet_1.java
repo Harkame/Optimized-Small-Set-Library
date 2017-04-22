@@ -87,15 +87,15 @@ public class InnerSet_1 <T> extends AbstractInnerSet<T>
         return  innerSet.containsElement(element_1);
     }
 
-    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
-        return innerSet.addAndPropagate(element_1, microSet);
+    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSetToPropagate) {
+        return innerSet.addAndPropagate(element_1, microSetToPropagate);
     }
 
-    public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSet) {
+    public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSetToPropagate) {
         if(element_1.equals(p_element))
             return this;
         else {
-            microSet.add(p_element);
+            microSetToPropagate.add(p_element);
             return new InnerSet_2<>(this, p_element);        }
     }
 

@@ -1,6 +1,7 @@
 package j.implementation.microSet;
 
 
+import javax.swing.*;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -38,14 +39,14 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 	}
 
 	@Override
-	public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSet) {
-		assert false;
-		return null;
+	public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSetPropagate) {
+		microSetPropagate.add(p_element);
+		return new InnerSet_1<>(p_element);
 	}
 
 	@Override
 	public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSetToAdd, MicroSet<T> microSetPropagate) {
-		microSetPropagate.innerSet = innerSetToAdd.addAllElements(microSetPropagate.innerSet);
+		microSetPropagate.innerSet = innerSetToAdd;
 		return innerSetToAdd;
 	}
 
@@ -73,7 +74,7 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 
 	@Override
 	public InnerSet<T> copy() {
-		return null; // TODO ?
+		return (InnerSet<T>) InnerSet_0.singleton;
 	}
 
 	@Override
