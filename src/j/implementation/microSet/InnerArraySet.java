@@ -53,11 +53,10 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
 
     @Override
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-        Iterator<T> it = innerSet.iterator();
-        while (it.hasNext()) {
-            addElement(it.next());
+        for (T el : this) {
+            innerSet = innerSet.addElement(el);
         }
-        return this;
+        return innerSet;
     }
 
     @Override
@@ -105,7 +104,7 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
         if (!contains(p_element)) {
             microSet.add(p_element);
             if (getSize() == MAX_SIZE) {
-                return new InnerHashSet<T>(this, p_element);
+                return new InnerHashSet<>(this, p_element);
             } else {
                 add(p_element);
             }
@@ -114,12 +113,11 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
     }
 
     @Override
-    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
-        Iterator<T> it = innerSet.iterator();
-        while (it.hasNext()) {
-            addAndPropagate(it.next(), microSet);
+    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSetToPropagate) {
+        for (T el : this) {
+            innerSet = innerSet.addAndPropagate(el, microSetToPropagate);
         }
-        return this;
+        return innerSet;
     }
 
     @Override

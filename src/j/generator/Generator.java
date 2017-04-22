@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Generator {
 
-    public final static int TO_GENERATE = 7;
+    public final static int TO_GENERATE = 10;
 
     public static void createOneFile(int offset) {
         String innerSetClassName = "InnerSet_" + offset;

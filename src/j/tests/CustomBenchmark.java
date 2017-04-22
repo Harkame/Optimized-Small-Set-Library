@@ -16,24 +16,23 @@ import java.util.Random;
 public class CustomBenchmark
 {
     private static final long MEGABYTE = 1024L * 1024L;
-    private static final int POOL_SIZE = 5;
-    private static final int STOCK_SIZE = 5;
-    private static final int LISTE_CROISSANTE_SIZE = 5;
-    private static final int NOMBRE_TIRAGE = 10;
+    private static final int POOL_SIZE = 20;
+    private static final int STOCK_SIZE = 1000;
+    private static final int LISTE_CROISSANTE_SIZE = 10;
+    private static final int NOMBRE_TIRAGE = 1000;
+    private static Random random = new Random(1);
 
     public static long bytesToMegabytes(long bytes) {
         return bytes / MEGABYTE;
     }
 
     public static int randomBetween(int low, int max) {
-        Random random = new Random();
         return random.nextInt(max-low) + low;
     }
 
     public static void oneRun(MicroSet.Use use) {
         MicroSet.use = use;
-
-        Random random = new Random(1000);
+        random = new Random(1);
 
         ArrayList<TestObject> testObjects = new ArrayList<>();
         for (int i =  0; i< POOL_SIZE; i++) {
@@ -44,24 +43,27 @@ public class CustomBenchmark
         for (int i =  0; i< NOMBRE_TIRAGE; i++) {
             randomIndiceListeCroissante[i] = randomBetween(0, LISTE_CROISSANTE_SIZE);
         }
-        System.out.print("\n");
 
         int[] randomIndiceStock = new int[NOMBRE_TIRAGE];
         for (int i =  0; i< NOMBRE_TIRAGE; i++) {
             randomIndiceStock[i] = randomBetween(0, STOCK_SIZE);
         }
 
+        int[] numberOfObject = new int[STOCK_SIZE];
+        for (int i =  0; i< STOCK_SIZE; i++) {
+            numberOfObject[i] = randomBetween(1,4);
+        }
+
         // Remplie le stock
         ArrayList<MicroSet<TestObject>> stock = new ArrayList<>();
         for (int i = 0; i < STOCK_SIZE; i++) {
-            int numberOfObject;
             MicroSet<TestObject> microSet = new MicroSet<>();
-            numberOfObject = randomBetween(1,4);
-            for (int j = 0; j < numberOfObject; j++) {
+            for (int j = 0; j < numberOfObject[i]; j++) {
                 microSet.add(testObjects.get(randomBetween(0,POOL_SIZE)));
             }
             stock.add(microSet);
         }
+        System.out.println(random.nextInt());
 
         ArrayList<MicroSet<TestObject>> listeCroissante = new ArrayList<>();
         for (int i = 0; i < LISTE_CROISSANTE_SIZE; i++) {
@@ -104,9 +106,9 @@ public class CustomBenchmark
     public static void main(String[] args) {
         System.out.println("====== INNER_SET ======");
         oneRun(MicroSet.Use.INNER_SET);
-        /*System.out.println("====== ARRAY_SET ======");
+        System.out.println("====== ARRAY_SET ======");
         oneRun(MicroSet.Use.ARRAY_SET);
         System.out.println("====== HASH_SET ======");
-        oneRun(MicroSet.Use.HASH_SET);*/
+        oneRun(MicroSet.Use.HASH_SET);
     }
 }

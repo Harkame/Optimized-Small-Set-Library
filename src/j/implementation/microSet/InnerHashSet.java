@@ -80,21 +80,20 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
     }
 
     @Override
-    public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSet) {
+    public InnerSet<T> addAndPropagate(T p_element, MicroSet<T> microSetToPropagate) {
         if (!contains(p_element)) {
-            microSet.add(p_element);
+            microSetToPropagate.add(p_element);
             add(p_element);
         }
         return this;
     }
-
+git
     @Override
-    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet) {
-        Iterator<T> it = innerSet.iterator();
-        while (it.hasNext()) {
-            addAndPropagate(it.next(), microSet);
+    public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSetToPropagate) {
+        for (T el : this) {
+            innerSet = innerSet.addAndPropagate(el, microSetToPropagate);
         }
-        return this;
+        return innerSet;
     }
 
     @Override
