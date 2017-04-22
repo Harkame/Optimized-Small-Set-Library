@@ -17,9 +17,9 @@ public class CustomBenchmark
 {
     private static final long MEGABYTE = 1024L * 1024L;
     private static final int POOL_SIZE = 20;
-    private static final int STOCK_SIZE = 1000;
-    private static final int LISTE_CROISSANTE_SIZE = 10;
-    private static final int NOMBRE_TIRAGE = 1000;
+    private static final int STOCK_SIZE = 5;
+    private static final int LISTE_CROISSANTE_SIZE = 5;
+    private static final int NOMBRE_TIRAGE = 5;
     private static Random random = new Random(1);
 
     public static long bytesToMegabytes(long bytes) {
@@ -63,7 +63,6 @@ public class CustomBenchmark
             }
             stock.add(microSet);
         }
-        System.out.println(random.nextInt());
 
         ArrayList<MicroSet<TestObject>> listeCroissante = new ArrayList<>();
         for (int i = 0; i < LISTE_CROISSANTE_SIZE; i++) {
@@ -78,6 +77,7 @@ public class CustomBenchmark
             int indice = randomIndiceListeCroissante[i];
             MicroSet<TestObject> increment = stock.get(randomIndiceStock[i]);
             for (int j = indice; j < LISTE_CROISSANTE_SIZE && !increment.isEmpty(); j++) {
+                //System.out.println(increment);
                 increment = listeCroissante.get(j).addAllAndPropagate(increment);
             }
         }

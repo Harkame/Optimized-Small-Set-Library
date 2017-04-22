@@ -13,7 +13,7 @@ public class MicroSet<T> implements Set<T>
 		INNER_SET, ARRAY_SET, HASH_SET
 	}
 
-	public MicroSet(MicroSet microSet) {
+	public MicroSet(MicroSet<T> microSet) {
 		this.innerSet = microSet.innerSet.copy();
 	}
 
@@ -135,8 +135,8 @@ public class MicroSet<T> implements Set<T>
 
 	@Override
 	public String toString() {
-		return "MicroSet{" +
-				"innerSet=" + innerSet +
+		return "MicroSet{" + innerSet.getClass().getSimpleName() +
+				"=" + innerSet +
 				'}';
 	}
 
