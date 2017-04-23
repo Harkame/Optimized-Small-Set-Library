@@ -67,3 +67,13 @@ void micro_unordered_set<T>:: clear()
 
 	a_inner_set = new inner_unordered_set<T>();
 }
+
+template<typename T>
+bool micro_unordered_set<T>::retain_all(micro_unordered_set<T> p_micro_unordered_set)
+{
+	int t_size = size();
+
+	a_inner_set = p_micro_unordered_set.a_inner_set->retain_all_elements(a_inner_set);
+
+	return a_inner_set->get_size() != t_size;
+}

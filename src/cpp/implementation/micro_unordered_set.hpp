@@ -31,7 +31,7 @@ class micro_unordered_set : public set<T>
 
         virtual iterator_inner_set<T>* end();
 
-        virtual iterator_inner_set<T>* find(T);
+//        virtual iterator_inner_set<T>* find(T);
 
         virtual bool empty() const;
 
@@ -44,6 +44,10 @@ class micro_unordered_set : public set<T>
         virtual void erase(T);
 
         virtual void clear();
+
+        virtual bool retain_all(micro_unordered_set<T>);
+
+        bool operator==(micro_set<T>*);
   };
 
         #endif

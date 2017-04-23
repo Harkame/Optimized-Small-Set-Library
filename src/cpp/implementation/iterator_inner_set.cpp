@@ -25,7 +25,6 @@ iterator_inner_set<T> iterator_inner_set<T>::begin()
 {
     a_index = 0;
 
-    return *this;
 }
 
 template<typename T>
@@ -33,7 +32,7 @@ iterator_inner_set<T> iterator_inner_set<T>::end()
 {
   a_index = a_inner_set->get_size();;
 
-    return *this;
+  return *this;
 }
 
 template<typename T>
@@ -57,29 +56,31 @@ iterator_inner_set<T> iterator_inner_set<T>::next()
 template<typename T>
 bool operator==(const iterator_inner_set<T> p_iterator_inner_set_a, const iterator_inner_set<T> p_iterator_inner_set_b)
 {
-  return p_iterator_inner_set_a.a_index == p_iterator_inner_set_b.a_index;
+  return p_iterator_inner_set_a.a_index == p_iterator_inner_set_b.a_index &&
+    *p_iterator_inner_set_a ==* p_iterator_inner_set_b;
 }
 
 template<typename T>
 bool operator!=(const iterator_inner_set<T> p_iterator_inner_set_a, const iterator_inner_set<T> p_iterator_inner_set_b)
 {
-  return p_iterator_inner_set_a.a_index != p_iterator_inner_set_b.a_index;
+  return p_iterator_inner_set_a.a_index != p_iterator_inner_set_b.a_index &&
+    *p_iterator_inner_set_a != *p_iterator_inner_set_b;
 }
 
 template<typename T>
 T operator*(const iterator_inner_set<T> p_iterator_inner_set)
 {
-  return p_iterator_inner_set.a_inner_set->get_element(p_iterator_inner_set.a_index);
+  return p_iterator_inner_set.a_inner_set->get_element(p_iterator_inner_set.a_index - 1);
 }
 
 template<typename T>
-iterator_inner_set<T> iterator_inner_set<T>::operator++()
+iterator_inner_set<T>iterator_inner_set<T>::operator++()
 {
-   return next();
+  return next();
 }
 
 template<typename T>
-iterator_inner_set<T> iterator_inner_set<T>::operator++(int)
+iterator_inner_set<T>iterator_inner_set<T>::operator++(int)
 {
   return operator++();
 }

@@ -32,7 +32,7 @@ class micro_tree_set
 
         virtual iterator_inner_set<T>* end();
 
-        virtual iterator_inner_set<T>* find(T);
+//        virtual iterator_inner_set<T>* find(T);
 
         virtual bool empty() const;
 
@@ -45,6 +45,8 @@ class micro_tree_set
         virtual void erase(T);
 
         virtual void clear();
+
+        virtual bool retain_all(micro_tree_set<T>);
 };
 
         #endif

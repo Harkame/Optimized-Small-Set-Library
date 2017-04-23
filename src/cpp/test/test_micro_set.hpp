@@ -37,6 +37,10 @@ public:
   void test_insert();
 
   void test_erase();
+
+  void test_retain_all();
+
+  void test_iterator();
 };
 
 #endif

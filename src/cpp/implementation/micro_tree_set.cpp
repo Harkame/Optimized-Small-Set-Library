@@ -65,5 +65,15 @@ void micro_tree_set<T>:: clear()
 {
 	delete a_inner_set;
 
-	a_inner_set = new inner_set_0<T>();
+	a_inner_set = new inner_tree_set<T>();
+}
+
+template<typename T>
+bool micro_tree_set<T>::retain_all(micro_tree_set<T> p_micro_tree_set)
+{
+	int t_size= size();
+
+	a_inner_set = p_micro_tree_set.a_inner_set->retain_all_elements(a_inner_set);
+
+	return a_inner_set->get_size() != t_size;
 }
