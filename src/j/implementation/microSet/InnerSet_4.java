@@ -111,6 +111,11 @@ public class InnerSet_4 <T> extends AbstractInnerSet<T>
     }
 
     public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSetToPropagate) {
+        return innerSet.addAllAndPropagateReverse(this, microSetToPropagate);
+    }
+
+
+    public InnerSet<T> addAllAndPropagateReverse(InnerSet<T> innerSet, MicroSet<T> microSetToPropagate) {
         return innerSet.addAndPropagate(element_1, microSetToPropagate).addAndPropagate(element_2, microSetToPropagate).addAndPropagate(element_3, microSetToPropagate).addAndPropagate(element_4, microSetToPropagate);
     }
 

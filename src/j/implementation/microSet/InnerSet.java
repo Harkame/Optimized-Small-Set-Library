@@ -27,6 +27,8 @@ public interface InnerSet<T> {
 
     InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSet);
 
+    InnerSet<T> addAllAndPropagateReverse(InnerSet<T> innerSet, MicroSet<T> microSet);
+
     int getSize();
 
     Iterator<T> iterator();

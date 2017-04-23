@@ -10,15 +10,19 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
         super();
     }
 
-    public InnerHashSet(InnerSet<T> i) {
+    public InnerHashSet(InnerSet i) {
         this();
-        addAllElements(i);
+        for (InnerSetIterator<T> iterator = new InnerSetIterator<>(i); iterator.hasNext(); ) {
+            add(iterator.next());
+        }
     }
 
-    public InnerHashSet(InnerSet i, T p_element) {
+    public InnerHashSet(InnerSet<T> i, T p_element) {
         this();
-        addAllElements(i);
-        addElement(p_element);
+        for (InnerSetIterator<T> iterator = new InnerSetIterator<>(i); iterator.hasNext(); ) {
+            add(iterator.next());
+        }
+        add(p_element);
     }
 
     @Override
@@ -88,13 +92,14 @@ public class InnerHashSet<T> extends HashSet<T> implements InnerSet<T>
         return this;
     }
 
-    @Override
     public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSetToPropagate) {
-	    if (this.isEmpty()) {
-	        microSetToPropagate.innerSet.addAllElements(innerSet);
-        }
+        return innerSet.addAllAndPropagateReverse(this, microSetToPropagate);
+    }
+
+    @Override
+    public InnerSet<T> addAllAndPropagateReverse(InnerSet<T> innerSet, MicroSet<T> microSetPropagate) {
         for (T el : this) {
-            innerSet = innerSet.addAndPropagate(el, microSetToPropagate);
+            innerSet = innerSet.addAndPropagate(el, microSetPropagate);
         }
         return innerSet;
     }
