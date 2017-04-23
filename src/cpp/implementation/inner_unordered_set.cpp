@@ -63,7 +63,7 @@ inner_set<T>* inner_unordered_set<T>::add_all_elements(inner_set<T>* p_inner_set
 template<typename T>
 bool inner_unordered_set<T>::contains_element(T p_element)
 {
-  auto t_iterator = a_values->begin();
+  auto t_iterator = a_values->find(p_element);
 
   return t_iterator != a_values->end();
 }
@@ -106,9 +106,15 @@ inner_set<T>* inner_unordered_set<T>::remove_all_elements(inner_set<T>* p_inner_
 }
 
 template<typename T>
-inner_set<T>* inner_unordered_set<T>::retain_all_element(inner_set<T>* p_inner_set)
+inner_set<T>* inner_unordered_set<T>::retain_all_elements(inner_set<T>* p_inner_set)
 {
-  return p_inner_set;
+  inner_set<T>* r_inner_set = new inner_set_0<T>();
+
+  for(auto t_iterator = a_values->begin(); t_iterator != a_values->end(); t_iterator++)
+    if(p_inner_set->contains_element(*t_iterator))
+      r_inner_set->add_element(*t_iterator);
+
+  return r_inner_set;
 }
 
 template<typename T>

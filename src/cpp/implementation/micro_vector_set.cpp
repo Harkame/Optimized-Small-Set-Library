@@ -15,17 +15,17 @@ micro_vector_set<T>::~micro_vector_set()
 }
 
 template<typename T>
-iterator_inner_set<T>* micro_vector_set<T>::begin()
+iterator_inner_set<T> micro_vector_set<T>::begin()
 {
-	return new iterator_inner_set<T>(a_inner_set);
+	return iterator_inner_set<T>(a_inner_set);
 }
 
 template<typename T>
-iterator_inner_set<T>* micro_vector_set<T>::end()
+iterator_inner_set<T> micro_vector_set<T>::end()
 {
-	iterator_inner_set<T>* r_iterator_inner_set = new iterator_inner_set<T>(a_inner_set);
+	iterator_inner_set<T> r_iterator_inner_set(a_inner_set);
 
-	r_iterator_inner_set->set_end();
+	r_iterator_inner_set.set_end();
 
 	return r_iterator_inner_set;
 }
@@ -66,4 +66,14 @@ void micro_vector_set<T>:: clear()
 	delete a_inner_set;
 
 	a_inner_set = new inner_vector_set<T>();
+}
+
+template<typename T>
+bool micro_vector_set<T>::retain_all(micro_vector_set<T> p_micro_vector_set)
+{
+	int t_size = size();;
+
+	a_inner_set = p_micro_vector_set.a_inner_set->retain_all_elements(a_inner_set);
+
+	return a_inner_set->get_size() != t_size;
 }

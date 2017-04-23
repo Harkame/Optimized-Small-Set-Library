@@ -11,24 +11,24 @@ inner_set_5<T>::inner_set_5()
 template<typename T>
 inner_set_5<T>::inner_set_5(T p_element_1, T p_element_2, T p_element_3, T p_element_4, T p_element_5)
 {
-            a_values.element_1 = p_element_1;
-            a_values.element_2 = p_element_2;
-            a_values.element_3 = p_element_3;
-            a_values.element_4 = p_element_4;
-            a_values.element_5 = p_element_5;
-    }
+  a_values.element_1 = p_element_1;
+  a_values.element_2 = p_element_2;
+  a_values.element_3 = p_element_3;
+  a_values.element_4 = p_element_4;
+  a_values.element_5 = p_element_5;
+}
 
 template<typename T>
 inner_set_5<T>::inner_set_5(inner_set_4<T>* p_inner_set, T p_element)
 {
-            a_values.element_1 = p_inner_set->a_values.element_1;
-            a_values.element_2 = p_inner_set->a_values.element_2;
-            a_values.element_3 = p_inner_set->a_values.element_3;
-            a_values.element_4 = p_inner_set->a_values.element_4;
+  a_values.element_1 = p_inner_set->a_values.element_1;
+  a_values.element_2 = p_inner_set->a_values.element_2;
+  a_values.element_3 = p_inner_set->a_values.element_3;
+  a_values.element_4 = p_inner_set->a_values.element_4;
 
-            a_values.element_5 = p_element;
+  a_values.element_5 = p_element;
 
-            delete p_inner_set;
+  delete p_inner_set;
 }
 
 template<typename T>
@@ -104,22 +104,24 @@ inner_set<T>* inner_set_5<T>::remove_all_elements(inner_set<T>* p_inner_set)
 template<typename T>
 inner_set<T>* inner_set_5<T>::retain_all_elements(inner_set<T>* p_inner_set)
 {
-  inner_set<T>* r_inner_set = this;
+  inner_set<T>* r_inner_set = new inner_set_0<T>();
 
   if(p_inner_set->contains_element(a_values.element_1))
-    r_inner_set->remove_element(a_values.element_1);
+  {
+    r_inner_set = r_inner_set->add_element(a_values.element_1);
+  }
 
   if(p_inner_set->contains_element(a_values.element_2))
-    r_inner_set->remove_element(a_values.element_2);
+    r_inner_set = r_inner_set->add_element(a_values.element_2);
 
   if(p_inner_set->contains_element(a_values.element_3))
-    r_inner_set->remove_element(a_values.element_3);
+    r_inner_set = r_inner_set->add_element(a_values.element_3);
 
   if(p_inner_set->contains_element(a_values.element_4))
-    r_inner_set->remove_element(a_values.element_4);
+    r_inner_set = r_inner_set->add_element(a_values.element_4);
 
   if(p_inner_set->contains_element(a_values.element_5))
-    r_inner_set->remove_element(a_values.element_5);
+    r_inner_set = r_inner_set->add_element(a_values.element_5);
 
   return r_inner_set;
 }

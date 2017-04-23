@@ -32,7 +32,7 @@ class inner_unordered_set : public inner_set<T>
         virtual inner_set<T>* remove_element(T);
         virtual inner_set<T>* remove_all_elements(inner_set<T>*);
 
-        virtual inner_set<T>* retain_all_element(inner_set<T>*);
+        virtual inner_set<T>* retain_all_elements(inner_set<T>*);
 
         virtual int get_size();
 };

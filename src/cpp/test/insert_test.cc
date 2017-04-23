@@ -23,7 +23,7 @@
 
 #include "iterator_inner_set.cpp"
 
-#define G_POOL_SIZE 3
+#define G_POOL_SIZE 5
 #define G_POOL_RANDOM true
 
 int g_array_random_insert[G_POOL_SIZE];
@@ -35,17 +35,14 @@ micro_vector_set<int>*         g_micro_vector_set         = new micro_vector_set
 
 void generate_random(benchmark::State& state)
 {
+  srand( (unsigned) time(nullptr));
   while (state.KeepRunning())
-  {
-    srand( (unsigned) time(nullptr));
-
     if(G_POOL_RANDOM)
       for(int t_index=0; t_index < G_POOL_SIZE; t_index++)
         g_array_random_insert[t_index] = (rand() % G_POOL_SIZE) + 1;
       else
         for(int t_index=0; t_index < G_POOL_SIZE; t_index++)
           g_array_random_insert[t_index] = t_index;
-  }
 }
 
 BENCHMARK(generate_random);
@@ -53,8 +50,14 @@ BENCHMARK(generate_random);
 void insert_micro_set(benchmark::State& state)
 {
   while (state.KeepRunning())
+  {
+    state.PauseTiming();
+    g_micro_set->clear();
+    state.ResumeTiming();
+
     for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
       g_micro_set->insert(g_array_random_insert[t_index]);
+    }
 }
 
 BENCHMARK(insert_micro_set);
@@ -62,8 +65,14 @@ BENCHMARK(insert_micro_set);
 void insert_micro_tree_set(benchmark::State& state)
 {
   while (state.KeepRunning())
+  {
+    state.PauseTiming();
+    g_micro_tree_set->clear();
+    state.ResumeTiming();
+
     for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
       g_micro_tree_set->insert(g_array_random_insert[t_index]);
+    }
 }
 
 BENCHMARK(insert_micro_tree_set);
@@ -71,8 +80,14 @@ BENCHMARK(insert_micro_tree_set);
 void insert_micro_unordered_set(benchmark::State& state)
 {
   while (state.KeepRunning())
+  {
+    state.PauseTiming();
+    g_micro_unordered_set->clear();
+    state.ResumeTiming();
+
     for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
       g_micro_unordered_set->insert(g_array_random_insert[t_index]);
+  }
 }
 
 BENCHMARK(insert_micro_unordered_set);
@@ -80,8 +95,14 @@ BENCHMARK(insert_micro_unordered_set);
 void insert_micro_vector_set(benchmark::State& state)
 {
   while (state.KeepRunning())
-    for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
-      g_micro_vector_set->insert(g_array_random_insert[t_index]);
+  {
+    state.PauseTiming();
+    g_micro_vector_set->clear();
+    state.ResumeTiming();
+    
+      for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
+        g_micro_vector_set->insert(g_array_random_insert[t_index]);
+  }
 }
 
 BENCHMARK(insert_micro_vector_set);

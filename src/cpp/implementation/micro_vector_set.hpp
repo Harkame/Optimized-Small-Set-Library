@@ -22,11 +22,11 @@ class micro_vector_set : public set<T>
 
         virtual ~micro_vector_set();
 
-        virtual iterator_inner_set<T>* begin();
+        virtual iterator_inner_set<T> begin();
 
-        virtual iterator_inner_set<T>* end();
+        virtual iterator_inner_set<T> end();
 
-        virtual iterator_inner_set<T>* find(T);
+//        virtual iterator_inner_set<T>* find(T);
 
         virtual bool empty() const;
 
@@ -39,6 +39,8 @@ class micro_vector_set : public set<T>
         virtual void erase(T);
 
         virtual void clear();
-};
+
+        virtual bool retain_all(micro_vector_set<T>);
+  };
 
 #endif

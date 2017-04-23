@@ -14,7 +14,6 @@ inner_array_set<T>::inner_array_set()
 template<typename T>
 inner_array_set<T>::inner_array_set(inner_set_5<T>* p_inner_set, T p_element)
 {
-
   a_index = 6;
 
   a_values = new T[20];
@@ -144,73 +143,73 @@ inner_set<T>* inner_array_set<T>::remove_element(T p_element)
 template<typename T>
 inner_set<T>* inner_array_set<T>::remove_all_elements(inner_set<T>* p_inner_set)
 {
-    return p_inner_set->remove_element(a_values[0])->remove_element(a_values[1])->remove_element(a_values[2])->remove_element(a_values[3])->remove_element(a_values[4])->remove_element(a_values[5])->remove_element(a_values[6])->remove_element(a_values[7])->remove_element(a_values[8])->remove_element(a_values[9])->remove_element(a_values[10])->remove_element(a_values[11])->remove_element(a_values[12])->remove_element(a_values[13])->remove_element(a_values[14])->remove_element(a_values[15])->remove_element(a_values[16])->remove_element(a_values[17])->remove_element(a_values[18])->remove_element(a_values[19]);
+    return p_inner_set->add_element(a_values[0])->add_element(a_values[1])->add_element(a_values[2])->add_element(a_values[3])->add_element(a_values[4])->add_element(a_values[5])->add_element(a_values[6])->add_element(a_values[7])->add_element(a_values[8])->add_element(a_values[9])->add_element(a_values[10])->add_element(a_values[11])->add_element(a_values[12])->add_element(a_values[13])->add_element(a_values[14])->add_element(a_values[15])->add_element(a_values[16])->add_element(a_values[17])->add_element(a_values[18])->add_element(a_values[19]);
 }
 
 template<typename T>
 inner_set<T>* inner_array_set<T>::retain_all_element(inner_set<T>* p_inner_set)
 {
-  inner_set<T>* r_inner_set = this;
+  inner_set<T>* r_inner_set = new inner_array_set<T>;
 
   if(p_inner_set->contains_element(a_values[0]))
-    r_inner_set->remove_element(a_values[0]);
+    r_inner_set->add_element(a_values[0]);
 
   if(p_inner_set->contains_element(a_values[1]))
-    r_inner_set->remove_element(a_values[1]);
+    r_inner_set->add_element(a_values[1]);
 
   if(p_inner_set->contains_element(a_values[2]))
-    r_inner_set->remove_element(a_values[2]);
+    r_inner_set->add_element(a_values[2]);
 
   if(p_inner_set->contains_element(a_values[3]))
-    r_inner_set->remove_element(a_values[3]);
+    r_inner_set->add_element(a_values[3]);
 
   if(p_inner_set->contains_element(a_values[4]))
-    r_inner_set->remove_element(a_values[4]);
+    r_inner_set->add_element(a_values[4]);
 
   if(p_inner_set->contains_element(a_values[5]))
-    r_inner_set->remove_element(a_values[5]);
+    r_inner_set->add_element(a_values[5]);
 
   if(p_inner_set->contains_element(a_values[6]))
-    r_inner_set->remove_element(a_values[6]);
+    r_inner_set->add_element(a_values[6]);
 
   if(p_inner_set->contains_element(a_values[7]))
-    r_inner_set->remove_element(a_values[7]);
+    r_inner_set->add_element(a_values[7]);
 
   if(p_inner_set->contains_element(a_values[8]))
-    r_inner_set->remove_element(a_values[8]);
+    r_inner_set->add_element(a_values[8]);
 
   if(p_inner_set->contains_element(a_values[9]))
-    r_inner_set->remove_element(a_values[9]);
+    r_inner_set->add_element(a_values[9]);
 
   if(p_inner_set->contains_element(a_values[10]))
-    r_inner_set->remove_element(a_values[10]);
+    r_inner_set->add_element(a_values[10]);
 
   if(p_inner_set->contains_element(a_values[11]))
-    r_inner_set->remove_element(a_values[11]);
+    r_inner_set->add_element(a_values[11]);
 
   if(p_inner_set->contains_element(a_values[12]))
-    r_inner_set->remove_element(a_values[12]);
+    r_inner_set->add_element(a_values[12]);
 
   if(p_inner_set->contains_element(a_values[13]))
-    r_inner_set->remove_element(a_values[13]);
+    r_inner_set->add_element(a_values[13]);
 
   if(p_inner_set->contains_element(a_values[14]))
-    r_inner_set->remove_element(a_values[14]);
+    r_inner_set->add_element(a_values[14]);
 
   if(p_inner_set->contains_element(a_values[15]))
-    r_inner_set->remove_element(a_values[15]);
+    r_inner_set->add_element(a_values[15]);
 
   if(p_inner_set->contains_element(a_values[16]))
-    r_inner_set->remove_element(a_values[16]);
+    r_inner_set->add_element(a_values[16]);
 
   if(p_inner_set->contains_element(a_values[17]))
-    r_inner_set->remove_element(a_values[17]);
+    r_inner_set->add_element(a_values[17]);
 
   if(p_inner_set->contains_element(a_values[18]))
-    r_inner_set->remove_element(a_values[18]);
+    r_inner_set->add_element(a_values[18]);
 
   if(p_inner_set->contains_element(a_values[19]))
-    r_inner_set->remove_element(a_values[19]);
+    r_inner_set->add_element(a_values[19]);
 
   return r_inner_set;
 }

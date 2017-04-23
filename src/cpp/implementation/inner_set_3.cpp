@@ -88,20 +88,18 @@ inner_set<T>* inner_set_3<T>::remove_all_elements(inner_set<T>* p_inner_set)
 template<typename T>
 inner_set<T>* inner_set_3<T>::retain_all_elements(inner_set<T>* p_inner_set)
 {
-  inner_set<T>* r_inner_set = this;
+  inner_set<T>* r_inner_set = new inner_set_0<T>();
 
   if(p_inner_set->contains_element(a_values.element_1))
-    r_inner_set->remove_element(a_values.element_1);
+    r_inner_set = r_inner_set->add_element(a_values.element_1);
 
   if(p_inner_set->contains_element(a_values.element_2))
-    r_inner_set->remove_element(a_values.element_2);
+    r_inner_set = r_inner_set->add_element(a_values.element_2);
 
   if(p_inner_set->contains_element(a_values.element_3))
-  {
-    r_inner_set->remove_element(a_values.element_3);
-  }
+    r_inner_set = r_inner_set->add_element(a_values.element_3);
 
-    return r_inner_set;
+  return r_inner_set;
 }
 
 template<typename T>
