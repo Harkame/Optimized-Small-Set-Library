@@ -26,10 +26,7 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
     }
 
     public InnerArraySet(InnerSet<T> i, T p_element) {
-        this();
-        for (InnerSetIterator<T> iterator = new InnerSetIterator<>(i); iterator.hasNext(); ) {
-            add(iterator.next());
-        }
+        this(i);
         add(p_element);
     }
 

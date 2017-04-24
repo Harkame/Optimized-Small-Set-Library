@@ -71,13 +71,13 @@ public class InnerSet_4 <T> extends AbstractInnerSet<T>
 
     public T getElement(int index)
     {switch(index) {
-                case 1:
+                case 0:
             return element_1;
-                case 2:
+                case 1:
             return element_2;
-                case 3:
+                case 2:
             return element_3;
-                case 4:
+                case 3:
             return element_4;
                 default:
             return null;

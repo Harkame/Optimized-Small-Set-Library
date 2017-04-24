@@ -75,7 +75,8 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
     public T getElement(int index)
     {switch(index) {
         #foreach($element in $elements)
-        case $foreach.count:
+        #set ($count = $foreach.count - 1)
+        case $count:
             return $element;
         #end
         default:

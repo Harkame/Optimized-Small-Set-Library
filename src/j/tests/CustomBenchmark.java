@@ -83,11 +83,11 @@ public class CustomBenchmark
                 //System.out.println("newIncrement:" + increment);
             }
             //for (int k =0; k<LISTE_CROISSANTE_SIZE; k++)
-            //    System.out.println(listeCroissante.get(k).size());
+             //   System.out.println(listeCroissante.get(k).size());
             //System.out.println("fin tirage" + i + "\n");
         }
         //for (int k =0; k<LISTE_CROISSANTE_SIZE; k++)
-        //    System.out.println(listeCroissante.get(k));
+         //   System.out.println(listeCroissante.get(k));
         // END TEST
 
         long stopTime = System.nanoTime();

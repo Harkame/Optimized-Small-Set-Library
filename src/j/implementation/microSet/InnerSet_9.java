@@ -96,23 +96,23 @@ public class InnerSet_9 <T> extends AbstractInnerSet<T>
 
     public T getElement(int index)
     {switch(index) {
-                case 1:
+                case 0:
             return element_1;
-                case 2:
+                case 1:
             return element_2;
-                case 3:
+                case 2:
             return element_3;
-                case 4:
+                case 3:
             return element_4;
-                case 5:
+                case 4:
             return element_5;
-                case 6:
+                case 5:
             return element_6;
-                case 7:
+                case 6:
             return element_7;
-                case 8:
+                case 7:
             return element_8;
-                case 9:
+                case 8:
             return element_9;
                 default:
             return null;
