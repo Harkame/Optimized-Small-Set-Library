@@ -68,10 +68,24 @@ T inner_set_2<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_set_2<T>::remove_element(T p_element)
 {
+  T t_value_1;
+
   if(a_values.element_1 == p_element)
-    return new inner_set_1<T>( a_values.element_2);
-  else             if(a_values.element_2 == p_element)
-    return new inner_set_1<T>( a_values.element_1);
+  {
+    t_value_1 = a_values.element_2;
+
+    delete this;
+
+    return new inner_set_1<T>(t_value_1);
+  }
+  else if(a_values.element_2 == p_element)
+  {
+    t_value_1 = a_values.element_1;
+
+    delete this;
+
+    return new inner_set_1<T>(t_value_1);
+  }
   else
     return this;
 }

@@ -50,7 +50,11 @@ template<typename T>
 inner_set<T>* inner_set_1<T>::remove_element(T p_element)
 {
   if(a_values.element_1 == p_element)
+  {
+    delete this;
+
     return new inner_set_0<T>();
+  }
   else
     return this;
 }

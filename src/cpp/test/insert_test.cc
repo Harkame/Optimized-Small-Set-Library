@@ -99,7 +99,7 @@ void insert_micro_vector_set(benchmark::State& state)
     state.PauseTiming();
     g_micro_vector_set->clear();
     state.ResumeTiming();
-    
+
       for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
         g_micro_vector_set->insert(g_array_random_insert[t_index]);
   }

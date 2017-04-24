@@ -1,6 +1,12 @@
 #include "iterator_inner_set.hpp"
 
 template<typename T>
+iterator_inner_set<T>::iterator_inner_set()
+{
+  a_index = 0;
+}
+
+template<typename T>
 iterator_inner_set<T>::iterator_inner_set(inner_set<T>* p_inner_set)
 {
   a_index = 0;
@@ -70,7 +76,7 @@ bool operator!=(const iterator_inner_set<T> p_iterator_inner_set_a, const iterat
 template<typename T>
 T operator*(const iterator_inner_set<T> p_iterator_inner_set)
 {
-  return p_iterator_inner_set.a_inner_set->get_element(p_iterator_inner_set.a_index - 1);
+  return p_iterator_inner_set.a_inner_set->get_element(p_iterator_inner_set.a_index);
 }
 
 template<typename T>

@@ -1,5 +1,5 @@
-#ifndef TEST_MICRO_SET_HPP
-#define TEST_MICRO_SET_HPP
+#ifndef TEST_ITERATOR_INNER_SET_HPP
+#define TEST_ITERATOR_INNER_SET_HPP
 
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
@@ -30,26 +30,22 @@
 
 #include "iterator_inner_set.cpp"
 
-class test_micro_set : public CppUnit::TestFixture
+class test_iterator_inner_set : public CppUnit::TestFixture
 {
-  CPPUNIT_TEST_SUITE(test_micro_set);
+  CPPUNIT_TEST_SUITE(test_iterator_inner_set);
   CPPUNIT_TEST_SUITE_END();
 
 private:
   micro_set<int>* a_micro_set;
 
 public:
-  void test_insert();
+  void test_next();
 
-  void test_erase();
-
-  void test_retain_all();
+  void test_prev();
 
   void test_begin();
 
   void test_end();
-
-  void test_find();
 };
 
 #endif

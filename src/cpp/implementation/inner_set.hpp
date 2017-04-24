@@ -1,8 +1,6 @@
 #ifndef INNER_SET_HPP
 #define INNER_SET_HPP
 
-#include <iterator>
-
 using namespace std;
 
 template<typename T>
