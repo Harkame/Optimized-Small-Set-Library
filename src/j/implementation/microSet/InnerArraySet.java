@@ -20,13 +20,17 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
 
     public InnerArraySet(InnerSet i) {
         this();
-        addAllElements(i);
+        for (InnerSetIterator<T> iterator = new InnerSetIterator<>(i); iterator.hasNext(); ) {
+            add(iterator.next());
+        }
     }
 
-    public InnerArraySet(InnerSet i, T p_element) {
+    public InnerArraySet(InnerSet<T> i, T p_element) {
         this();
-        addAllElements(i);
-        addElement(p_element);
+        for (InnerSetIterator<T> iterator = new InnerSetIterator<>(i); iterator.hasNext(); ) {
+            add(iterator.next());
+        }
+        add(p_element);
     }
 
     @Override
@@ -112,16 +116,18 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
         return this;
     }
 
-    @Override
     public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSet, MicroSet<T> microSetToPropagate) {
-        if (this.isEmpty()) {
-            microSetToPropagate.innerSet.addAllElements(innerSet);
-        }
+        return innerSet.addAllAndPropagateReverse(this, microSetToPropagate);
+    }
+
+    @Override
+    public InnerSet<T> addAllAndPropagateReverse(InnerSet<T> innerSet, MicroSet<T> microSetPropagate) {
         for (T el : this) {
-            innerSet = innerSet.addAndPropagate(el, microSetToPropagate);
+            innerSet = innerSet.addAndPropagate(el, microSetPropagate);
         }
         return innerSet;
     }
+
 
     @Override
     public int getSize() {
