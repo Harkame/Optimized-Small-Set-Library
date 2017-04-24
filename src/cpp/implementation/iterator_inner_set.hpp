@@ -13,6 +13,8 @@ class iterator_inner_set : iterator<bidirectional_iterator_tag, T>
 
     inner_set<T>* a_inner_set;
 
+    iterator_inner_set();
+
     iterator_inner_set(inner_set<T>*);
 
     virtual ~iterator_inner_set();

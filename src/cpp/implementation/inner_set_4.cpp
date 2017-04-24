@@ -62,10 +62,10 @@ bool inner_set_4<T>::contains_element(T p_element)
 template<typename T>
 bool inner_set_4<T>::contains_all_elements(inner_set<T>* p_inner_set)
 {
-  return p_inner_set->contains_element(a_values.element_1)
-    && p_inner_set->contains_element(a_values.element_2)
-    && p_inner_set->contains_element(a_values.element_3)
-    && p_inner_set->contains_element(a_values.element_4);
+  return p_inner_set->contains_element(a_values.element_1) &&
+    p_inner_set->contains_element(a_values.element_2) &&
+    p_inner_set->contains_element(a_values.element_3) &&
+    p_inner_set->contains_element(a_values.element_4);
 }
 
 template<typename T>
@@ -77,14 +77,49 @@ T inner_set_4<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_set_4<T>::remove_element(T p_element)
 {
+  T t_value_1;
+  T t_value_2;
+  T t_value_3;
+
   if(a_values.element_1 == p_element)
-    return new inner_set_3<T>( a_values.element_2,  a_values.element_3,  a_values.element_4);
-  else             if(a_values.element_2 == p_element)
-    return new inner_set_3<T>( a_values.element_1,  a_values.element_3,  a_values.element_4);
-  else             if(a_values.element_3 == p_element)
-    return new inner_set_3<T>( a_values.element_1,  a_values.element_2,  a_values.element_4);
-  else             if(a_values.element_4 == p_element)
-    return new inner_set_3<T>( a_values.element_1,  a_values.element_2,  a_values.element_3);
+  {
+    t_value_1 = a_values.element_2;
+    t_value_2 = a_values.element_3;
+    t_value_3 = a_values.element_4;
+
+    delete this;
+
+    return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
+  }
+  else if(a_values.element_2 == p_element)
+  {
+    t_value_1 = a_values.element_1;
+    t_value_2 = a_values.element_3;
+    t_value_3 = a_values.element_4;
+
+    delete this;
+
+    return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
+  }
+  else if(a_values.element_3 == p_element)
+  {
+    t_value_1 = a_values.element_1;
+    t_value_2 = a_values.element_2;
+    t_value_3 = a_values.element_4;
+
+    delete this;
+
+    return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
+  }
+  else if(a_values.element_4 == p_element)
+  {
+    t_value_1 = a_values.element_1;
+    t_value_2 = a_values.element_2;
+    t_value_3 = a_values.element_3;
+    delete this;
+
+    return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
+  }
   else
     return this;
 }

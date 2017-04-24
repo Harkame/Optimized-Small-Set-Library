@@ -24,7 +24,7 @@ iterator_inner_set<T> micro_set<T>::begin()
 }
 
 template<typename T>
-iterator_inner_set<T> micro_set<T>::end()
+iterator_inner_set<T>  micro_set<T>::end()
 {
 	iterator_inner_set<T> r_iterator_inner_set(a_inner_set);
 
@@ -42,10 +42,9 @@ iterator_inner_set<T> micro_set<T>::find(T p_element)
 		if(*r_iterator_inner_set == p_element)
 			return r_iterator_inner_set;
 		else
-			r_iterator_inner_set.next();
+			r_iterator_inner_set++;
 
 	return r_iterator_inner_set;
-
 }
 
 template<typename T>
@@ -93,6 +92,18 @@ bool micro_set<T>::retain_all(micro_set<T> p_micro_set)
 	a_inner_set = p_micro_set.a_inner_set->retain_all_elements(a_inner_set);
 
 	return a_inner_set->get_size() != t_size;
+}
+
+template<typename T>
+void micro_set<T>::add_all(micro_set<T> p_micro_set)
+{
+	a_inner_set = p_micro_set.a_inner_set->add_all_elements(a_inner_set);
+}
+
+template<typename T>
+void micro_set<T>::remove_all(micro_set<T> p_micro_set)
+{
+	a_inner_set = p_micro_set.a_inner_set->remove_all_elements(a_inner_set);
 }
 
 template<typename T>
