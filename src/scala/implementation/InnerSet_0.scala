@@ -42,8 +42,9 @@ class InnerSet_0[T] extends AbstractInnerSet[T]{
 
   override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =
   {
-    val microSet: MicroSet[T] = MicroSet(p_innerSet)
-    p_microSet.addAll(microSet)
+    p_microSet.innerSet.addAllElements(p_innerSet)
     p_innerSet
   }
+
+  override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet
 }

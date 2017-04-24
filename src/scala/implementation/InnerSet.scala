@@ -12,6 +12,8 @@ trait InnerSet[T] {
 
   def addAllAndPropagate(p_innerSet: InnerSet[T],p_microSet: MicroSet[T]): InnerSet[T]
 
+  def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T]
+
   def containsElement(p_element: Object): Boolean
 
   def containsAllElements(p_innerSet: InnerSet[T]): Boolean

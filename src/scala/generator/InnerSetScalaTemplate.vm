@@ -6,11 +6,13 @@ package scala.implementation
 object $innerSetClassName
 {
     def apply[T](#foreach($element in $elements)$element: T#if( $foreach.hasNext ), #end#end): $innerSetClassName$t = new $innerSetClassName$t(#foreach($element in $elements)element$foreach.count#if( $foreach.hasNext ), #end#end)
+    def apply[T](p_innerSet: $innerSetClassName$t): $innerSetClassName$t = new $innerSetClassName$t(p_innerSet)
 }
 
 class $innerSetClassName$t(#foreach($element in $elements)$element: T#if( $foreach.hasNext ), #end#end) extends AbstractInnerSet[T]
 {
 
+    def this(p_innerSet: $innerSetClassName$t) = this(#foreach($element in $elements)p_innerSet.$element #if($foreach.hasNext), #end#end)
     override def addElement(p_element: T): InnerSet[T] =
     {
         if (#foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end)
@@ -90,6 +92,8 @@ class $innerSetClassName$t(#foreach($element in $elements)$element: T#if( $forea
         }#end
     }
 
-    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.addAndPropagate(element1,p_microSet)#else p_innerSet#foreach($element in $elements).addAndPropagate($element,p_microSet)#end#end
+    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
+
+    override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.addAndPropagate(element1,p_microSet)#else p_innerSet#foreach($element in $elements).addAndPropagate($element,p_microSet)#end#end
 
 }
