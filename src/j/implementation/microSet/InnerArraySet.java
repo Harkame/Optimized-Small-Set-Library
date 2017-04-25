@@ -18,7 +18,7 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
         super(MAX_SIZE); // Optimise the array length to the size of InnerSet
     }
 
-    public InnerArraySet(InnerSet i) {
+    public InnerArraySet(InnerSet<T> i) {
         this();
         for (InnerSetIterator<T> iterator = new InnerSetIterator<>(i); iterator.hasNext(); ) {
             add(iterator.next());
@@ -54,6 +54,10 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
 
     @Override
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
+        // Reverse the add if the innerSet we add is smaller than this
+        if (innerSet.getSize() < this.getSize()) {
+            return innerSet.addAllElements(this);
+        }
         for (T el : this) {
             innerSet = innerSet.addElement(el);
         }

@@ -8,6 +8,7 @@ public class MicroSet<T> implements Set<T>
 {
 	InnerSet<T> innerSet;
 	public static Use use;
+	public static int appelPropagate = 0;
 
 	public enum Use {
 		INNER_SET, ARRAY_SET, HASH_SET
@@ -141,6 +142,7 @@ public class MicroSet<T> implements Set<T>
 	}
 
 	public MicroSet<T> addAllAndPropagate(MicroSet<T> microSetToAdd) {
+		appelPropagate++;
 		MicroSet<T> mReturn = new MicroSet<>();
 		this.innerSet = this.innerSet.addAllAndPropagate(microSetToAdd.innerSet, mReturn);
 		return mReturn;
