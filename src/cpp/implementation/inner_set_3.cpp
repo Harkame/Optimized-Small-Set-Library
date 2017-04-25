@@ -127,6 +127,36 @@ inner_set<T>* inner_set_3<T>::retain_all_elements(inner_set<T>* p_inner_set)
 }
 
 template<typename T>
+inner_set<T>* inner_set_3<T>::add_and_propagate(T p_element, micro_set<T>* p_micro_set)
+{
+  if(a_values.element_1 == p_element ||
+      a_values.element_2 == p_element ||
+      a_values.element_3 == p_element
+  )
+    return this;
+  else
+  {
+	   p_micro_set->insert(p_element);
+
+	    return new inner_set_1<T>(p_element);
+  }
+}
+
+template<typename T>
+inner_set<T>* inner_set_3<T>::add_all_and_propagate(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+{
+	p_micro_set->a_inner_set = p_micro_set->a_inner_set->add_all_elements(p_inner_set);
+
+	return p_inner_set;
+}
+
+template<typename T>
+inner_set<T>* inner_set_3<T>::add_all_and_propagate_reverse(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+{
+	return p_inner_set;
+}
+
+template<typename T>
 int inner_set_3<T>::get_size()
 {
     return 3;

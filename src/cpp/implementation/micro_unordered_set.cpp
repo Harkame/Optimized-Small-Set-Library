@@ -69,6 +69,16 @@ void micro_unordered_set<T>:: clear()
 }
 
 template<typename T>
+micro_set<T>* micro_unordered_set<T>::add_all_and_propagate(micro_unordered_set<T> p_micro_unordered_set)
+{
+	micro_unordered_set<T>* r_micro_unordored_set = new micro_unordered_set<T>();
+
+	a_inner_set = a_inner_set->add_all_and_propagate(p_micro_unordered_set.a_inner_set, r_micro_unordored_set);
+
+	return r_micro_unordored_set;
+}
+
+template<typename T>
 bool micro_unordered_set<T>::retain_all(micro_unordered_set<T> p_micro_unordered_set)
 {
 	int t_size = size();

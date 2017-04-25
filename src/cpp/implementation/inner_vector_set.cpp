@@ -48,7 +48,7 @@ bool inner_vector_set<T>::contains_all_elements(inner_set<T>* p_inner_set)
       if(!p_inner_set->contains_element(*t_iterator))
         return false;
 
-  return true;
+  return false;
 }
 
 template<typename T>
@@ -64,7 +64,7 @@ inner_set<T>* inner_vector_set<T>::remove_element(T p_element)
 
   if(t_iterator == a_values->end())
     return this;
-    
+
   a_values->erase(t_iterator);
 
   return this;
@@ -86,6 +86,32 @@ inner_set<T>* inner_vector_set<T>::retain_all_elements(inner_set<T>* p_inner_set
       r_inner_set->add_element(*t_iterator);
 
   return r_inner_set;
+}
+
+template<typename T>
+inner_set<T>* inner_vector_set<T>::add_and_propagate(T p_element, micro_set<T>* p_micro_set)
+{
+    if (!contains_element(p_element))
+    {
+        p_micro_set->insert(p_element);
+
+        return add_element(p_element);
+    }
+    return this;
+}
+
+template<typename T>
+inner_set<T>* inner_vector_set<T>::add_all_and_propagate(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+{
+	p_micro_set->a_inner_set = p_micro_set->a_inner_set->add_all_elements(p_inner_set);
+
+	return p_inner_set;
+}
+
+template<typename T>
+inner_set<T>* inner_vector_set<T>::add_all_and_propagate_reverse(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+{
+	return p_inner_set;
 }
 
 template<typename T>

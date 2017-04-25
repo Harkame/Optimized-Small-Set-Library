@@ -4,6 +4,9 @@
 using namespace std;
 
 template<typename T>
+class micro_set;
+
+template<typename T>
 class inner_set
 {
     public :
@@ -27,6 +30,10 @@ class inner_set
       virtual inner_set<T>* remove_all_elements(inner_set<T>*){return nullptr;};
 
       virtual inner_set<T>* retain_all_elements(inner_set<T>*){return nullptr;};
+
+      virtual inner_set<T>* add_and_propagate(T, micro_set<T>*){return nullptr;}
+      virtual inner_set<T>* add_all_and_propagate(inner_set<T>*, micro_set<T>*){return nullptr;}
+      virtual inner_set<T>* add_all_and_propagate_reverse(inner_set<T>*, micro_set<T>*){return nullptr;};
 
       virtual  int get_size(){return 0;};
 };

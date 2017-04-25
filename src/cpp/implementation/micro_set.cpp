@@ -1,6 +1,6 @@
 #include "micro_set.hpp"
-#include "iterator_inner_set.hpp"
 
+#include "iterator_inner_set.hpp"
 
 using namespace std;
 
@@ -104,6 +104,16 @@ template<typename T>
 void micro_set<T>::remove_all(micro_set<T> p_micro_set)
 {
 	a_inner_set = p_micro_set.a_inner_set->remove_all_elements(a_inner_set);
+}
+
+template<typename T>
+micro_set<T>* micro_set<T>::add_all_and_propagate(micro_set<T> p_micro_set)
+{
+	micro_set<T>* r_micro_set = new micro_set<T>();
+
+	a_inner_set = a_inner_set->add_all_and_propagate(p_micro_set.a_inner_set, r_micro_set);
+
+	return r_micro_set;
 }
 
 template<typename T>

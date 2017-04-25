@@ -118,6 +118,32 @@ inner_set<T>* inner_tree_set<T>::retain_all_elements(inner_set<T>* p_inner_set)
 }
 
 template<typename T>
+inner_set<T>* inner_tree_set<T>::add_and_propagate(T p_element, micro_set<T>* p_micro_set)
+{
+    if (!contains_element(p_element))
+    {
+        p_micro_set->insert(p_element);
+
+        return add_element(p_element);
+    }
+    return this;
+}
+
+template<typename T>
+inner_set<T>* inner_tree_set<T>::add_all_and_propagate(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+{
+	p_micro_set->a_inner_set = p_micro_set->a_inner_set->add_all_elements(p_inner_set);
+
+	return p_inner_set;
+}
+
+template<typename T>
+inner_set<T>* inner_tree_set<T>::add_all_and_propagate_reverse(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+{
+	return p_inner_set;
+}
+
+template<typename T>
 int inner_tree_set<T>::get_size()
 {
     return a_values->size();
