@@ -3,11 +3,13 @@ package scala.implementation
 object InnerSet_10
 {
     def apply[T](element1: T, element2: T, element3: T, element4: T, element5: T, element6: T, element7: T, element8: T, element9: T, element10: T): InnerSet_10[T] = new InnerSet_10[T](element1, element2, element3, element4, element5, element6, element7, element8, element9, element10)
+    def apply[T](p_innerSet: InnerSet_10[T]): InnerSet_10[T] = new InnerSet_10[T](p_innerSet)
 }
 
 class InnerSet_10[T](element1: T, element2: T, element3: T, element4: T, element5: T, element6: T, element7: T, element8: T, element9: T, element10: T) extends AbstractInnerSet[T]
 {
 
+    def this(p_innerSet: InnerSet_10[T]) = this(p_innerSet.element1 , p_innerSet.element2 , p_innerSet.element3 , p_innerSet.element4 , p_innerSet.element5 , p_innerSet.element6 , p_innerSet.element7 , p_innerSet.element8 , p_innerSet.element9 , p_innerSet.element10 )
     override def addElement(p_element: T): InnerSet[T] =
     {
         if (element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element) || element4.equals(p_element) || element5.equals(p_element) || element6.equals(p_element) || element7.equals(p_element) || element8.equals(p_element) || element9.equals(p_element) || element10.equals(p_element))
@@ -99,8 +101,9 @@ class InnerSet_10[T](element1: T, element2: T, element3: T, element4: T, element
         {
             this
         }
-        else InnerHashSet(this)
-    }
+        else InnerHashSet(this)    }
 
-    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet.addAndPropagate(element1,p_microSet).addAndPropagate(element2,p_microSet).addAndPropagate(element3,p_microSet).addAndPropagate(element4,p_microSet).addAndPropagate(element5,p_microSet).addAndPropagate(element6,p_microSet).addAndPropagate(element7,p_microSet).addAndPropagate(element8,p_microSet).addAndPropagate(element9,p_microSet).addAndPropagate(element10,p_microSet)
+    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
+
+    override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet.addAndPropagate(element1,p_microSet).addAndPropagate(element2,p_microSet).addAndPropagate(element3,p_microSet).addAndPropagate(element4,p_microSet).addAndPropagate(element5,p_microSet).addAndPropagate(element6,p_microSet).addAndPropagate(element7,p_microSet).addAndPropagate(element8,p_microSet).addAndPropagate(element9,p_microSet).addAndPropagate(element10,p_microSet)
 }

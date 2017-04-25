@@ -3,15 +3,14 @@ package scala.implementation
 import java.util.Set
 import java.util
 
-
 import scala.implementation.Use.Use
 
 object MicroSet
 {
-  def apply[T]: MicroSet[T] = new MicroSet[T]
   def apply[T](innerSet: InnerSet[T]): MicroSet[T] = new MicroSet[T](innerSet)
   def apply[T](microSet: MicroSet[T]): MicroSet[T] = new MicroSet[T](microSet)
   def apply[T](use: Use): MicroSet[T] = new MicroSet[T](use)
+  def apply[T](): MicroSet[T] = new MicroSet[T](InnerSet_0[T])
 }
 
 object Use extends Enumeration
@@ -20,29 +19,24 @@ object Use extends Enumeration
   val INNER_SET, ARRAY_SET, HASH_SET = Value
 }
 
-class MicroSet[T]() extends Set[T] {
+class MicroSet[T](var innerSet: InnerSet[T]) extends Set[T] {
 
-  var innerSet: InnerSet[T] = new InnerSet_0
+  def apply(innerSet_0: InnerSet_0[T]) = new MicroSet[T](innerSet_0)
+  def apply(as: InnerArraySet[T]) = new MicroSet[T](as)
+  def apply(hs: InnerHashSet[T]) = new MicroSet[T](hs)
 
   def this(microSet: MicroSet[T]) =
   {
-    this
-    innerSet = microSet.innerSet.copy.get
+    this(microSet.innerSet.copy.get)
   }
+  
+  def this(use: Use) = this(selectUse(use))
 
-  def this(p_innerSet: InnerSet[T]) =
-  {
-    this
-    innerSet = p_innerSet
+  def selectUse(use: Use): InnerSet[T] = use match{
+    case Use.ARRAY_SET => new InnerArraySet[T]
+    case Use.HASH_SET => new InnerHashSet[T]
+    case Use.INNER_SET | _ => InnerSet_0[T]
   }
-
-  def this(use: Use) =
-  {
-    this
-    if(use == Use.HASH_SET) innerSet = new InnerHashSet[T]
-    if(use == Use.ARRAY_SET) innerSet = new InnerArraySet[T]
-  }
-
 
   def add(element: T): Boolean =
   {

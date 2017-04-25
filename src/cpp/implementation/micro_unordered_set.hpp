@@ -47,6 +47,8 @@ class micro_unordered_set : public set<T>
 
         virtual bool retain_all(micro_unordered_set<T>);
 
+        virtual micro_unordered_set<T>* add_all_and_propagate(micro_unordered_set<T>);
+
         bool operator==(micro_set<T>*);
   };
 

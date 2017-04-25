@@ -58,19 +58,23 @@ object InnerHashSet
   override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
   {
     val it: InnerSetIterator[T] = this.iterator
-    while(it.hasNext){
-      p_innerSet.addElement(it.next())
+    var innerSetReturn: InnerSet[T] = p_innerSet
+      while(it.hasNext){
+      innerSetReturn = innerSetReturn.addElement(it.next())
     }
-    p_innerSet
+    innerSetReturn
   }
 
-   override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =
+   override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
+
+   override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =
    {
      val it: InnerSetIterator[T] = this.iterator
-     while(it.hasNext){
-       p_innerSet.addAndPropagate(it.next(),p_microSet)
+     var innerSetReturn: InnerSet[T] = p_innerSet
+       while(it.hasNext){
+       innerSetReturn = innerSetReturn.addAndPropagate(it.next(),p_microSet)
      }
-     p_innerSet
+     innerSetReturn
    }
 
    override def containsElement(p_element: Object): Boolean = contains(p_element)

@@ -17,7 +17,8 @@ class InnerSetIterator[T](innerSet: InnerSet[T]) extends Iterator[T] {
 
   override def next(): T =
   {
-    val t = innerSet.getElement(index+1)
+    index += 1
+    val t = innerSet.getElement(index)
     t.get
   }
 

@@ -1,18 +1,7 @@
 #ifndef MICROSET_HPP
 #define MICROSET_HPP
 
-#include <iterator>
-
-#include "inner_set_0.hpp"
-#include "inner_set_1.hpp"
-#include "inner_set_2.hpp"
-#include "inner_set_3.hpp"
-#include "inner_set_4.hpp"
-#include "inner_set_5.hpp"
-
-#include "inner_array_set.hpp"
-#include "inner_tree_set.hpp"
-
+#include "inner_set.hpp"
 #include "iterator_inner_set.hpp"
 
 
@@ -51,6 +40,8 @@ class micro_set
         virtual void add_all(micro_set<T>);
 
         virtual void remove_all(micro_set<T>);
+
+        virtual micro_set<T>* add_all_and_propagate(micro_set<T>);
 };
 
 #endif

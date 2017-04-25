@@ -3,11 +3,13 @@ package scala.implementation
 object InnerSet_2
 {
     def apply[T](element1: T, element2: T): InnerSet_2[T] = new InnerSet_2[T](element1, element2)
+    def apply[T](p_innerSet: InnerSet_2[T]): InnerSet_2[T] = new InnerSet_2[T](p_innerSet)
 }
 
 class InnerSet_2[T](element1: T, element2: T) extends AbstractInnerSet[T]
 {
 
+    def this(p_innerSet: InnerSet_2[T]) = this(p_innerSet.element1 , p_innerSet.element2 )
     override def addElement(p_element: T): InnerSet[T] =
     {
         if (element1.equals(p_element) || element2.equals(p_element))
@@ -69,8 +71,10 @@ class InnerSet_2[T](element1: T, element2: T) extends AbstractInnerSet[T]
         }
         else         {
             p_microSet.add(p_element)
-            InnerSet_3(element1, element2, p_element)        }
-    }
+            InnerSet_3(element1, element2, p_element)
+        }    }
 
-    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet.addAndPropagate(element1,p_microSet).addAndPropagate(element2,p_microSet)
+    override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
+
+    override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet.addAndPropagate(element1,p_microSet).addAndPropagate(element2,p_microSet)
 }

@@ -106,7 +106,7 @@ inner_set<T>* inner_set_5<T>::remove_element(T p_element)
     t_value_4 = a_values.element_5;
 
     delete this;
-    
+
     return new inner_set_4<T>(t_value_1, t_value_2, t_value_3, t_value_4);
   }
   else if(a_values.element_3 == p_element)
@@ -174,6 +174,38 @@ inner_set<T>* inner_set_5<T>::retain_all_elements(inner_set<T>* p_inner_set)
     r_inner_set = r_inner_set->add_element(a_values.element_5);
 
   return r_inner_set;
+}
+
+template<typename T>
+inner_set<T>* inner_set_5<T>::add_and_propagate(T p_element, micro_set<T>* p_micro_set)
+{
+  if(a_values.element_1 == p_element ||
+      a_values.element_2 == p_element ||
+      a_values.element_3 == p_element ||
+      a_values.element_4 == p_element ||
+      a_values.element_5 == p_element
+  )
+    return this;
+  else
+  {
+	   p_micro_set->insert(p_element);
+
+	    return new inner_set_1<T>(p_element);
+  }
+}
+
+template<typename T>
+inner_set<T>* inner_set_5<T>::add_all_and_propagate(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+{
+	p_micro_set->a_inner_set = p_micro_set->a_inner_set->add_all_elements(p_inner_set);
+
+	return p_inner_set;
+}
+
+template<typename T>
+inner_set<T>* inner_set_5<T>::add_all_and_propagate_reverse(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+{
+	return p_inner_set;
 }
 
 template<typename T>
