@@ -5,18 +5,22 @@ import java.util
 
 import scala.implementation.Use.Use
 
-object MicroSet
-{
-  def apply[T](innerSet: InnerSet[T]): MicroSet[T] = new MicroSet[T](innerSet)
-  def apply[T](microSet: MicroSet[T]): MicroSet[T] = new MicroSet[T](microSet)
-  def apply[T](use: Use): MicroSet[T] = new MicroSet[T](use)
-  def apply[T](): MicroSet[T] = new MicroSet[T](InnerSet_0[T])
-}
+
 
 object Use extends Enumeration
 {
   type Use = Value
   val INNER_SET, ARRAY_SET, HASH_SET = Value
+}
+
+object MicroSet
+{
+  def apply[T](innerSet: InnerSet[T]): MicroSet[T] = new MicroSet[T](innerSet)
+  def apply[T](microSet: MicroSet[T]): MicroSet[T] = new MicroSet[T](microSet)
+  def apply[T](): MicroSet[T] = new MicroSet[T](InnerSet_0[T])
+
+  var use:Use = Use.INNER_SET
+  var appelPropagate: Int = 0
 }
 
 class MicroSet[T](var innerSet: InnerSet[T]) extends Set[T] {
@@ -30,7 +34,9 @@ class MicroSet[T](var innerSet: InnerSet[T]) extends Set[T] {
     this(microSet.innerSet.copy.get)
   }
   
-  def this(use: Use) = this(selectUse(use))
+  def this() = {
+    this(selectUse(MicroSet.use))
+  }
 
   def selectUse(use: Use): InnerSet[T] = use match{
     case Use.ARRAY_SET => new InnerArraySet[T]
@@ -65,6 +71,7 @@ class MicroSet[T](var innerSet: InnerSet[T]) extends Set[T] {
 
   def addAllAndPropagate(microSetToAdd: MicroSet[T]): MicroSet[T] =
   {
+    MicroSet.appelPropagate += 1
     var microSetReturn: MicroSet[T] = MicroSet[T]
     innerSet = innerSet.addAllAndPropagate(microSetToAdd.innerSet, microSetReturn)
     microSetReturn
@@ -113,7 +120,7 @@ class MicroSet[T](var innerSet: InnerSet[T]) extends Set[T] {
   {
     var oldInnerSet: InnerSet[T] = innerSet
     innerSet = microSet.innerSet.retainAllElements(innerSet)
-    innerSet.getSize != microSet.innerSet.getSize
+    innerSet.getSize != oldInnerSet.getSize
   }
 
   override def retainAll(c: util.Collection[_]): Boolean =
@@ -134,7 +141,7 @@ class MicroSet[T](var innerSet: InnerSet[T]) extends Set[T] {
 
   def clear() = innerSet = innerSet.clear(false)
 
-  override def iterator(): util.Iterator[T] = ??? //TODO
+  override def iterator(): util.Iterator[T] = innerSet.iterator
 
   override def toString: String = "MicroSet { " + "innerSet = " + innerSet + " }" + "\n"
 

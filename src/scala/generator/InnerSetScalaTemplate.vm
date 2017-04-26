@@ -9,7 +9,7 @@ object $innerSetClassName
     def apply[T](p_innerSet: $innerSetClassName$t): $innerSetClassName$t = new $innerSetClassName$t(p_innerSet)
 }
 
-class $innerSetClassName$t(#foreach($element in $elements)$element: T#if( $foreach.hasNext ), #end#end) extends AbstractInnerSet[T]
+class $innerSetClassName$t(#foreach($element in $elements)protected val $element: T#if( $foreach.hasNext ), #end#end) extends AbstractInnerSet[T]
 {
 
     def this(p_innerSet: $innerSetClassName$t) = this(#foreach($element in $elements)p_innerSet.$element #if($foreach.hasNext), #end#end)

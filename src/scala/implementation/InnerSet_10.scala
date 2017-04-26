@@ -6,7 +6,7 @@ object InnerSet_10
     def apply[T](p_innerSet: InnerSet_10[T]): InnerSet_10[T] = new InnerSet_10[T](p_innerSet)
 }
 
-class InnerSet_10[T](element1: T, element2: T, element3: T, element4: T, element5: T, element6: T, element7: T, element8: T, element9: T, element10: T) extends AbstractInnerSet[T]
+class InnerSet_10[T](protected val element1: T, protected val element2: T, protected val element3: T, protected val element4: T, protected val element5: T, protected val element6: T, protected val element7: T, protected val element8: T, protected val element9: T, protected val element10: T) extends AbstractInnerSet[T]
 {
 
     def this(p_innerSet: InnerSet_10[T]) = this(p_innerSet.element1 , p_innerSet.element2 , p_innerSet.element3 , p_innerSet.element4 , p_innerSet.element5 , p_innerSet.element6 , p_innerSet.element7 , p_innerSet.element8 , p_innerSet.element9 , p_innerSet.element10 )
