@@ -1,8 +1,10 @@
 package j.implementation.microSet;
 
-/**
- * Created by fly on 3/2/17.
- */
-public abstract class AbstractInnerSet<T>  implements InnerSet<T> {
 
+public abstract class AbstractInnerSet<T>  implements InnerSet<T> {
+    public static int MAX_SIZE = 5;
+
+    public boolean shouldArray() {
+        return this.getSize() >= MAX_SIZE;
+    }
 }

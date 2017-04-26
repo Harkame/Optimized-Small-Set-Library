@@ -1,6 +1,8 @@
 package j.tests;
 
 import j.implementation.TestObject;
+import j.implementation.microSet.AbstractInnerSet;
+import j.implementation.microSet.InnerArraySet;
 import j.implementation.microSet.MicroSet;
 
 import java.io.File;
@@ -16,12 +18,14 @@ import java.util.Random;
 public class CustomBenchmark
 {
     private static final long MEGABYTE = 1024L * 1024L;
-    private static final int POOL_SIZE = 15;
-    private static final int STOCK_SIZE = 100;
-    private static final int LISTE_CROISSANTE_SIZE = 50;
-    private static final int NOMBRE_TIRAGE = 100;
-    private static final int ITERATION = 1000;
-    private static Random random = new Random(1);
+
+    private static int RANDOM_SEED = 1;
+    private static int POOL_SIZE = 15;
+    private static int STOCK_SIZE = 10;
+    private static int LISTE_CROISSANTE_SIZE = 50;
+    private static int NOMBRE_TIRAGE = 10;
+    private static int ITERATION = 1000;
+    private static Random random = new Random(RANDOM_SEED);
 
     public static long bytesToMegabytes(long bytes) {
         return bytes / MEGABYTE;
@@ -31,13 +35,9 @@ public class CustomBenchmark
         return random.nextInt(max-low) + low;
     }
 
-    public static void bench(int[][] randomIndiceListeCroissante, ArrayList<MicroSet<TestObject>> stock, int[][] randomIndiceStock, MicroSet.Use use, boolean affiche) {
-
-    }
-
     public static void oneRun(MicroSet.Use use) {
         MicroSet.use = use;
-        random = new Random(1);
+        random = new Random(RANDOM_SEED);
         MicroSet.appelPropagate = 0;
         ArrayList<TestObject> testObjects = new ArrayList<>();
         for (int i =  0; i< POOL_SIZE; i++) {
@@ -88,6 +88,7 @@ public class CustomBenchmark
                 int indice = randomIndiceListeCroissante[zz][i];
                 MicroSet<TestObject> increment = stock.get(randomIndiceStock[zz][i]);
                 //System.out.println(indice + "|" + increment);
+                //System.out.println("2: " + listeCroissante.get(2));
                 for (int j = indice; j < LISTE_CROISSANTE_SIZE && !increment.isEmpty(); j++) {
                     increment = listeCroissante.get(j).addAllAndPropagate(increment);
                     //System.out.println("listeJ:" + listeCroissante.get(j));
@@ -97,8 +98,6 @@ public class CustomBenchmark
                 //   System.out.println(listeCroissante.get(k).size());
                 //System.out.println("fin tirage" + i + "\n");
             }
-            //for (int k =0; k<STOCK_SIZE; k++)
-            //    System.out.println(stock.get(k));
         }
         // END TEST
 
@@ -124,12 +123,31 @@ public class CustomBenchmark
     }
 
     public static void main(String[] args) {
-        System.out.println("====== ARRAY_SET ======");
-        oneRun(MicroSet.Use.ARRAY_SET);
-        System.out.println("====== HASH_SET ======");
-        oneRun(MicroSet.Use.HASH_SET);
-        System.out.println("====== INNER_SET ======");
-        oneRun(MicroSet.Use.INNER_SET);
-
+        if (args.length > 0) {
+            RANDOM_SEED = Integer.parseInt(args[1]);
+            POOL_SIZE = Integer.parseInt(args[2]);
+            STOCK_SIZE = Integer.parseInt(args[3]);
+            LISTE_CROISSANTE_SIZE = Integer.parseInt(args[4]);
+            NOMBRE_TIRAGE = Integer.parseInt(args[5]);
+            ITERATION = Integer.parseInt(args[6]);
+            InnerArraySet.MAX_SIZE = Integer.parseInt(args[7]);
+            AbstractInnerSet.MAX_SIZE = Integer.parseInt(args[8]);
+            switch (args[0]) {
+                case "ARRAY":
+                    System.out.println("====== ARRAY_SET ======");
+                    oneRun(MicroSet.Use.ARRAY_SET);
+                    break;
+                case "INNER":
+                    System.out.println("====== INNER_SET ======");
+                    oneRun(MicroSet.Use.INNER_SET);
+                    break;
+                case "HASH":
+                    System.out.println("====== HASH_SET ======");
+                    oneRun(MicroSet.Use.HASH_SET);
+                    break;
+            }
+        } else {
+            System.out.println("TYPE RANDOM_SEED POOL_SIZE STOCK_SIZE LISTE_CROISSANTE_SIZE NOMBRE_TIRAGE ITERATION ARRAY_MAX_SIZE INNER_MAX_SIZE");
+        }
     }
 }

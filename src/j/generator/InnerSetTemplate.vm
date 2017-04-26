@@ -24,7 +24,7 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
     }
 
     public $innerSetClassName<T> copy() {
-        return new $innerSetClassName(this);
+        return this;
     }
 
     public $innerSetClassName($previousInnerSet<T> i, T el)
@@ -41,13 +41,19 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
         if(#foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end)
             return this;
         else
-            return new #if($innerSetOffset == $lastInnerSet)InnerArraySet<T>(this, p_element);#else$nextInnerSet<>(this, p_element);#end
+            if (shouldArray())
+                return new InnerArraySet<T>(this, p_element);
+            else
+                return new #if($innerSetOffset == $lastInnerSet)InnerArraySet<T>(this, p_element);#else$nextInnerSet<>(this, p_element);#end
     }
 
     @Override
     public InnerSet<T> addUnChecked(T p_element)
     {
-        return new #if($innerSetOffset == $lastInnerSet)InnerArraySet<T>(this, p_element);#else$nextInnerSet<>(this, p_element);#end
+        if (shouldArray())
+            return new InnerArraySet<T>(this, p_element);
+        else
+            return new #if($innerSetOffset == $lastInnerSet)InnerArraySet<T>(this, p_element);#else$nextInnerSet<>(this, p_element);#end
     }
 
     @Override
@@ -127,7 +133,10 @@ public class $innerSetClassName <T> extends AbstractInnerSet<T>
             return this;
         else {
             microSetToPropagate.add(p_element);
-            return new #if($innerSetOffset == $lastInnerSet)InnerArraySet<T>(this, p_element);#else$nextInnerSet<>(this, p_element);#end
+            if (shouldArray())
+                return new InnerArraySet<T>(this, p_element);
+            else
+                return new #if($innerSetOffset == $lastInnerSet)InnerArraySet<T>(this, p_element);#else$nextInnerSet<>(this, p_element);#end
         }
     }
 

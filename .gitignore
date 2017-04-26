@@ -1,2 +1,4 @@
-/out
+out
+!out/artifacts/Optimized_Small_Set_Library_jar/*
 .idea/*
+
