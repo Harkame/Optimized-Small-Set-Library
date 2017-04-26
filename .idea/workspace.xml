@@ -6,21 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b999aeaf-6daf-434a-aa0d-e91a20c3e6f9" name="Default" comment="Ajout des methodes ensembliste (paramétré par innerset)&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ARRAY_SETtest.txt" afterPath="$PROJECT_DIR$/ARRAY_SETtest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HASH_SETtest.txt" afterPath="$PROJECT_DIR$/HASH_SETtest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/INNER_SETtest.txt" afterPath="$PROJECT_DIR$/INNER_SETtest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Optimized-Small-Set-Library.iml" afterPath="$PROJECT_DIR$/Optimized-Small-Set-Library.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/generator/Generator.java" afterPath="$PROJECT_DIR$/src/j/generator/Generator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm" afterPath="$PROJECT_DIR$/src/j/generator/InnerSetTemplate.vm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/AbstractInnerSet.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/AbstractInnerSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerArraySet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_0.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_2.java" afterPath="$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/tests/CustomBenchmark.java" afterPath="$PROJECT_DIR$/src/j/tests/CustomBenchmark.java" />
-    </list>
+    <list default="true" id="b999aeaf-6daf-434a-aa0d-e91a20c3e6f9" name="Default" comment="Ajout des methodes ensembliste (paramétré par innerset)&#10;" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1182,7 +1168,7 @@
       <workItem from="1492870603087" duration="1672000" />
       <workItem from="1492955737688" duration="9891000" />
       <workItem from="1493019761630" duration="1801000" />
-      <workItem from="1493201803361" duration="6687000" />
+      <workItem from="1493201803361" duration="7260000" />
     </task>
     <servers />
   </component>
@@ -1219,10 +1205,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215139000" />
+    <option name="totallyTimeSpent" value="215712000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1920" height="1050" extended-state="7" />
+    <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
