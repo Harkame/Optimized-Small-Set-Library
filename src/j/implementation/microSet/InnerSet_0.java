@@ -12,7 +12,7 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 	@Override
 	public InnerSet<T> addElement(T p_element)
 	{
-		return new InnerSet_1<T>(p_element);
+		return new InnerSet_1<T>(this, p_element);
 	}
 
 	@Override
@@ -20,7 +20,9 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 		return addElement(p_element);
 	}
 
-	public InnerSet<T> addAllElements(InnerSet<T> innerSet) { return innerSet; }
+	public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
+		return innerSet.copy();
+	}
 
 	@Override
 	public InnerSet<T> removeElement(Object p_element)
@@ -47,12 +49,12 @@ public class InnerSet_0 <T> extends AbstractInnerSet<T>
 	@Override
 	public InnerSet<T> addAllAndPropagate(InnerSet<T> innerSetToAdd, MicroSet<T> microSetPropagate) {
 		microSetPropagate.innerSet = microSetPropagate.innerSet.addAllElements(innerSetToAdd);
-		return innerSetToAdd;
+		return innerSetToAdd.copy();
 	}
 
 	@Override
 	public InnerSet<T> addAllAndPropagateReverse(InnerSet<T> innerSetToAdd, MicroSet<T> microSetPropagate) {
-		return innerSetToAdd;
+		return innerSetToAdd.copy();
 	}
 
 	public T getElement(int index)
