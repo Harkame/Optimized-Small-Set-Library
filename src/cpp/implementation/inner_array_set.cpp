@@ -274,15 +274,16 @@ inner_set<T>* inner_array_set<T>::add_and_propagate(T p_element, micro_set<T>* p
 template<typename T>
 inner_set<T>* inner_array_set<T>::add_all_and_propagate(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
 {
-	p_micro_set->a_inner_set = p_micro_set->a_inner_set->add_all_elements(p_inner_set);
-
-	return p_inner_set;
+  return p_inner_set->add_all_and_propagate_reverse(this, p_micro_set);
 }
 
 template<typename T>
 inner_set<T>* inner_array_set<T>::add_all_and_propagate_reverse(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
 {
-	return p_inner_set;
+  for(int t_index = 0; t_index < 20; t_index++)
+    p_inner_set = p_inner_set->add_and_propagate(a_values[t_index], p_micro_set);
+
+  return p_inner_set;
 }
 
 template<typename T>

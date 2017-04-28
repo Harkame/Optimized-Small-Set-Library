@@ -27,7 +27,7 @@
 
  //#define MEGABYTE 1024L * 1024L
  #define POOL_SIZE         15
- #define STOCK_SIZE        50
+ #define STOCK_SIZE        10
  #define LIST_SIZE             50
  #define COUNT_TIRAGE 10
  #define ITERATION          1000
@@ -122,7 +122,7 @@ void test_propagate_micro_inner_set()
 
         micro_inner_set<int>* increment = g_stock_micro_inner_set.at(g_random_index_stock[zz][i]);
 
-        for (int j = t_index; j < LIST_SIZE && !increment->empty(); j++)
+        for (int j = t_index; j < LIST_SIZE; j++)
           increment = g_list_micro_inner_set.at(j)->add_all_and_propagate(*increment);
       }
     }

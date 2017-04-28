@@ -106,9 +106,7 @@ template<typename T>
 micro_set<T>* micro_set<T>::add_all_and_propagate(micro_set<T> p_micro_set)
 {
 	micro_set<T>* r_micro_set = new micro_set<T>();
-
-	a_inner_set = a_inner_set->add_all_and_propagate(p_micro_set.a_inner_set, r_micro_set);
-
+	this->a_inner_set = this->a_inner_set->add_all_and_propagate(p_micro_set.a_inner_set, r_micro_set);
 	return r_micro_set;
 }
 

@@ -22,7 +22,7 @@ inner_set<T>* inner_set_0<T>::add_element(T p_element)
 template<typename T>
 inner_set<T>* inner_set_0<T>::add_all_elements(inner_set<T>* p_inner_set)
 {
-	return p_inner_set;
+	cout << "addall" << endl;
 }
 
 template<typename T>
