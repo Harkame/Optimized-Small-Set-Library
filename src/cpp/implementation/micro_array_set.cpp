@@ -1,22 +1,14 @@
 #include "micro_array_set.hpp"
+#include "iterator_inner_set.hpp"
 
-#include "inner_set_0.cpp"
-#include "inner_set_1.cpp"
-#include "inner_set_2.cpp"
-#include "inner_set_3.cpp"
-#include "inner_set_4.cpp"
-#include "inner_set_5.cpp"
-
-//#include "inner_hashset.cpp"
-#include "inner_array_set.cpp"
-
+#include "inner_set_0.hpp"
 
 using namespace std;
 
 template<typename T>
 micro_array_set<T>::micro_array_set()
 {
-	a_inner_set = new inner_array_set<T>();
+	this->a_inner_set = new inner_array_set<T>();
 }
 
 template<typename T>
@@ -25,65 +17,46 @@ micro_array_set<T>::~micro_array_set()
 
 }
 
-
 template<typename T>
-void micro_array_set<T>::begin()
+iterator_inner_set<T> micro_array_set<T>::begin()
 {
-
+	return iterator_inner_set<T>(this->a_inner_set);
 }
 
 template<typename T>
-void micro_array_set<T>::end()
+iterator_inner_set<T>  micro_array_set<T>::end()
 {
+	iterator_inner_set<T> r_iterator_inner_set(this->a_inner_set);
 
+	r_iterator_inner_set.set_end();
+
+	return r_iterator_inner_set;
 }
 
 template<typename T>
-void micro_array_set<T>::rbegin()
+iterator_inner_set<T> micro_array_set<T>::find(T p_element)
 {
+	iterator_inner_set<T> r_iterator_inner_set(this->a_inner_set);
 
-}
+	while(r_iterator_inner_set != end())
+		if(*r_iterator_inner_set == p_element)
+			return r_iterator_inner_set;
+		else
+			r_iterator_inner_set++;
 
-template<typename T>
-void micro_array_set<T>::rend()
-{
-
-}
-
-template<typename T>
-void micro_array_set<T>::cbegin()
-{
-
-}
-
-template<typename T>
-void micro_array_set<T>::cend()
-{
-
-}
-
-template<typename T>
-void micro_array_set<T>::crbegin()
-{
-
-}
-
-template<typename T>
-void micro_array_set<T>::crend()
-{
-
+	return r_iterator_inner_set;
 }
 
 template<typename T>
 bool micro_array_set<T>::empty() const
 {
-    return a_inner_set->get_size() == 0;
+    return this->a_inner_set->get_size() == 0;
 }
 
 template<typename T>
 int micro_array_set<T>::size() const
 {
-    return a_inner_set->get_size();
+    return this->a_inner_set->get_size();
 }
 
 template<typename T>
@@ -91,61 +64,61 @@ int micro_array_set<T>::max_size() const
 {
 	return -1; //Pas de taille max ?
 }
-
-/* Modifiers */
-
 template<typename T>
-void micro_array_set<T>:: insert(){}
-
-template<typename T>
-void micro_array_set<T>:: erase(){}
-
-template<typename T>
-void micro_array_set<T>:: swap(){}
-
-template<typename T>
-void micro_array_set<T>:: clear(){}
-
-template<typename T>
-void micro_array_set<T>:: emplace(){}
-
-template<typename T>
-void micro_array_set<T>:: emplace_hint(){}
-
-/* Observers */ //TODO
-
-/* Operations */
-/*
-template<typename T>
-void micro_hashset<T>:: find()
+void micro_array_set<T>:: insert(T p_element)
 {
-
+	this->a_inner_set = this->a_inner_set->add_element(p_element);
 }
 
 template<typename T>
-void micro_hashset<T>:: count()
+void micro_array_set<T>:: erase(T p_element)
 {
-
+	this->a_inner_set = this->a_inner_set->remove_element(p_element);
 }
-*/
 
 template<typename T>
-void micro_array_set<T>:: lower_bound(){}
-
-template<typename T>
-void micro_array_set<T>:: upper_bound(){}
-
-template<typename T>
-void micro_array_set<T>:: equal_range(){}
-
-/* Allocator */
-
-template<typename T>
-void micro_array_set<T>:: get_allocator(){}
-
-int main()
+void micro_array_set<T>:: clear()
 {
-	micro_array_set<int>* ms = new micro_array_set<int>();
+	delete this->a_inner_set;
 
-	return 0;
+	this->a_inner_set = new inner_array_set<T>();
+}
+
+template<typename T>
+bool micro_array_set<T>::retain_all(micro_array_set<T> p_micro_array_set)
+{
+	int t_size = size();
+
+	this->a_inner_set = p_micro_array_set.a_inner_set->retain_all_elements(this->a_inner_set);
+
+	return this->a_inner_set->get_size() != t_size;
+}
+
+template<typename T>
+void micro_array_set<T>::add_all(micro_array_set<T> p_micro_array_set)
+{
+	this->a_inner_set = p_micro_array_set.a_inner_set->add_all_elements(this->a_inner_set);
+}
+
+template<typename T>
+void micro_array_set<T>::remove_all(micro_array_set<T> p_micro_array_set)
+{
+	this->a_inner_set = p_micro_array_set.a_inner_set->remove_all_elements(this->a_inner_set);
+}
+
+template<typename T>
+micro_array_set<T>* micro_array_set<T>::add_all_and_propagate(micro_array_set<T> p_micro_array_set)
+{
+	micro_array_set<T>* r_micro_array_set = new micro_array_set<T>();
+
+	this->a_inner_set = this->a_inner_set->add_all_and_propagate(p_micro_array_set.a_inner_set, r_micro_array_set);
+
+	return r_micro_array_set;
+}
+
+template<typename T>
+bool  operator==(const micro_array_set<T> p_micro_array_set_a, const micro_array_set<T> p_micro_array_set_b)
+{
+
+	return true;
 }

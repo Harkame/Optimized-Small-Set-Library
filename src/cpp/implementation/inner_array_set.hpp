@@ -13,7 +13,7 @@ template<typename T>
 class inner_array_set : public inner_set<T>
 {
     public :
-        T* a_values;
+        T a_values [20];
         int a_index;
 
         inner_array_set<T>();

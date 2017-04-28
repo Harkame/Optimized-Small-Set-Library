@@ -30,34 +30,34 @@ CPPUNIT_TEST_SUITE_REGISTRATION( test_micro_set );
 
 void test_micro_set::test_insert()
 {
-  micro_set<int> t_micro_set;
+  micro_inner_set<int> t_micro_inner_set;
   iterator_inner_set<int>  t_iterator_inner_set;
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
-    t_micro_set.insert(g_array_random_insert_random[t_index]);
+    t_micro_inner_set.insert(g_array_random_insert_random[t_index]);
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
   {
-    t_iterator_inner_set = t_micro_set.find(g_array_random_insert_random[t_index]);
+    t_iterator_inner_set = t_micro_inner_set.find(g_array_random_insert_random[t_index]);
 
     CPPUNIT_ASSERT(*t_iterator_inner_set == g_array_random_insert_random[t_index]);
-    CPPUNIT_ASSERT(t_iterator_inner_set != t_micro_set.end());
+    CPPUNIT_ASSERT(t_iterator_inner_set != t_micro_inner_set.end());
   }
 }
 
 void test_micro_set::test_erase()
 {
-  micro_set<int> t_micro_set;
+  micro_inner_set<int> t_micro_inner_set;
   iterator_inner_set<int>  t_iterator_inner_set;
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
-    t_micro_set.insert(g_array_random_insert_random[t_index]);
+    t_micro_inner_set.insert(g_array_random_insert_random[t_index]);
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
-    t_micro_set.erase(g_array_random_erase_random[t_index]);
+    t_micro_inner_set.erase(g_array_random_erase_random[t_index]);
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
-    CPPUNIT_ASSERT(t_micro_set.find(g_array_random_erase_random[t_index]) == t_micro_set.end());
+    CPPUNIT_ASSERT(t_micro_inner_set.find(g_array_random_erase_random[t_index]) == t_micro_inner_set.end());
 }
 
 void test_micro_set::test_retain_all()
@@ -67,42 +67,42 @@ void test_micro_set::test_retain_all()
 
 void test_micro_set::test_begin()
 {
-  micro_set<int> t_micro_set;
+  micro_inner_set<int> t_micro_inner_set;
   iterator_inner_set<int>  t_iterator_inner_set;
 
   int t_count_insert = 0;
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
-    t_micro_set.insert(g_array_random_insert_random[t_index]);
+    t_micro_inner_set.insert(g_array_random_insert_random[t_index]);
 
-  CPPUNIT_ASSERT(*t_micro_set.begin() == g_array_random_insert_random[0]);
+  CPPUNIT_ASSERT(*t_micro_inner_set.begin() == g_array_random_insert_random[0]);
 }
 
 void test_micro_set::test_end()
 {
-  micro_set<int> t_micro_set;
+  micro_inner_set<int> t_micro_inner_set;
   iterator_inner_set<int>  t_iterator_inner_set;
 
   int t_count_insert = 0;
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
-    t_micro_set.insert(g_array_random_insert[t_index]);
+    t_micro_inner_set.insert(g_array_random_insert[t_index]);
 
-  CPPUNIT_ASSERT(*t_micro_set.begin() == g_array_random_insert[G_SIZE_ARRAY]);
+  CPPUNIT_ASSERT(*t_micro_inner_set.begin() == g_array_random_insert[G_SIZE_ARRAY]);
 }
 
 void test_micro_set::test_find()
 {
-  micro_set<int> t_micro_set;
+  micro_inner_set<int> t_micro_inner_set;
   iterator_inner_set<int>  t_iterator_inner_set;
 
   int t_count_insert = 0;
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
-    t_micro_set.insert(g_array_random_insert_random[t_index]);
+    t_micro_inner_set.insert(g_array_random_insert_random[t_index]);
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
-    CPPUNIT_ASSERT(*t_micro_set.find(g_array_random_insert_random[t_index]) == g_array_random_insert_random[t_index]);
+    CPPUNIT_ASSERT(*t_micro_inner_set.find(g_array_random_insert_random[t_index]) == g_array_random_insert_random[t_index]);
 }
 
 

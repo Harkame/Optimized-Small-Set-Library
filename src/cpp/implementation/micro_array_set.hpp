@@ -1,89 +1,46 @@
-#ifndef MICROSET_H
-#define MICROSET_H
-
-#include <map>
-#include <set>
+#ifndef MICRO_ARRAY_SET_HPP
+#define MICRO_ARRAY_SET_HPP
 
 #include "inner_set.hpp"
 #include "inner_set_0.hpp"
-#include "inner_array_set.hpp"
+
+#include "iterator_inner_set.hpp"
 
 using namespace std;
 
 template<typename T>
-class micro_array_set : public set<T>
+class micro_array_set : virtual public micro_set<T>
 {
-    private :
-        inner_array_set<T>* a_inner_set;
-
     public :
-        micro_array_set<T>();
+      micro_array_set();
 
-        virtual ~micro_array_set();
+      virtual ~micro_array_set();
 
-        /* Operator */
-        //virtual micro_set<T> operator=(micro_set<T>);
+      virtual iterator_inner_set<T> begin();
 
-        /* Iterators */
+      virtual iterator_inner_set<T> end();
 
-        virtual void begin();
+      virtual iterator_inner_set<T> find(T);
 
-        virtual void end();
+      virtual bool empty() const;
 
-        virtual void rbegin();
+      virtual int size() const;
 
-        virtual void rend();
+      virtual int max_size() const;
 
-        virtual void cbegin();
+      virtual void insert(T);
 
-        virtual void cend();
+      virtual void erase(T);
 
-        virtual void crbegin();
+      virtual void clear();
 
-        virtual void crend();
+      virtual bool retain_all(micro_array_set<T>);
 
-        /* Capacity */
-        virtual bool empty() const;
+      virtual void add_all(micro_array_set<T>);
 
-        virtual int size() const;
+      virtual void remove_all(micro_array_set<T>);
 
-        virtual int max_size() const;
-
-        /* Modifiers */
-
-        virtual void insert();
-
-        virtual void erase();
-
-        virtual void swap();
-
-        virtual void clear();
-
-        virtual void emplace();
-
-        virtual void emplace_hint();
-
-        /* Observers */ //TODO
-
-        //virtual key_compare key_comp() const;
-
-        //virtual value_compare value_comp() const;
-
-        /* Operations */
-
-        //virtual iterator find(const T*) const;
-
-        //virtual size_type count(const T*) const;
-
-        virtual void lower_bound();
-
-        virtual void upper_bound();
-
-        virtual void equal_range();
-
-		/* Allocator */
-
-        virtual void get_allocator();
-};
+      virtual micro_array_set<T>* add_all_and_propagate(micro_array_set<T>);
+  };
 
 #endif

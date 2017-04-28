@@ -1,6 +1,5 @@
 #include "inner_set_0.hpp"
 #include "inner_set.hpp"
-#include "micro_set.hpp"
 
 template<typename T>
 inner_set_0<T>::inner_set_0()

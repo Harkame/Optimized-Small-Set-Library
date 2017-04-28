@@ -12,7 +12,7 @@
 using namespace std;
 
 template<typename T>
-class inner_vector_set : public inner_set<T>
+class inner_vector_set : virtual public inner_set<T>
 {
     private :
       vector<T>* a_values;

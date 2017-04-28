@@ -24,6 +24,7 @@
 #include "inner_vector_set.cpp"
 
 #include "micro_set.cpp"
+#include "micro_inner_set.cpp"
 #include "micro_unordered_set.cpp"
 #include "micro_tree_set.cpp"
 #include "micro_vector_set.cpp"

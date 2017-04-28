@@ -4,6 +4,7 @@
 using namespace std;
 
 template<typename T>
+
 class micro_set;
 
 template<typename T>

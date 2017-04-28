@@ -7,16 +7,12 @@ template<typename T>
 inner_array_set<T>::inner_array_set()
 {
   a_index = 0;
-
-  a_values = new T[20];
 }
 
 template<typename T>
 inner_array_set<T>::inner_array_set(inner_set_5<T>* p_inner_set, T p_element)
 {
   a_index = 6;
-
-  a_values = new T[20];
 
   a_values[0] = p_inner_set->a_values.element_1;
   a_values[1] = p_inner_set->a_values.element_2;
@@ -271,7 +267,7 @@ inner_set<T>* inner_array_set<T>::add_and_propagate(T p_element, micro_set<T>* p
 
     return add_element(p_element);
   }
-  
+
     return this;
 }
 

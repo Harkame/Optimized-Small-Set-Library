@@ -1,5 +1,5 @@
-#ifndef MICRO_TREE_SET_HPP
-#define MICRO_TREE_SET_HPP
+#ifndef MICRO_INNER_SET_HPP
+#define MICRO_INNER_SET_HPP
 
 #include "inner_set.hpp"
 #include "inner_set_0.hpp"
@@ -9,12 +9,12 @@
 using namespace std;
 
 template<typename T>
-class micro_tree_set : virtual public micro_set<T>
+class micro_inner_set : virtual public micro_set<T>
 {
     public :
-      micro_tree_set();
+      micro_inner_set();
 
-      virtual ~micro_tree_set();
+      virtual ~micro_inner_set();
 
       virtual iterator_inner_set<T> begin();
 
@@ -34,13 +34,13 @@ class micro_tree_set : virtual public micro_set<T>
 
       virtual void clear();
 
-      virtual bool retain_all(micro_tree_set<T>);
+      virtual bool retain_all(micro_inner_set<T>);
 
-      virtual void add_all(micro_tree_set<T>);
+      virtual void add_all(micro_inner_set<T>);
 
-      virtual void remove_all(micro_tree_set<T>);
+      virtual void remove_all(micro_inner_set<T>);
 
-      virtual micro_tree_set<T>* add_all_and_propagate(micro_tree_set<T>);
+      virtual micro_inner_set<T>* add_all_and_propagate(micro_inner_set<T>);
   };
 
 #endif

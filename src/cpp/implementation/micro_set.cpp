@@ -7,7 +7,6 @@ using namespace std;
 template<typename T>
 micro_set<T>::micro_set()
 {
-	a_inner_set = new inner_set_0<T>();
 }
 
 template<typename T>
@@ -15,7 +14,6 @@ micro_set<T>::~micro_set()
 {
 
 }
-
 
 template<typename T>
 iterator_inner_set<T> micro_set<T>::begin()
@@ -80,8 +78,6 @@ template<typename T>
 void micro_set<T>:: clear()
 {
 	delete a_inner_set;
-
-	a_inner_set = new inner_set_0<T>();
 }
 
 template<typename T>
@@ -119,6 +115,5 @@ micro_set<T>* micro_set<T>::add_all_and_propagate(micro_set<T> p_micro_set)
 template<typename T>
 bool  operator==(const micro_set<T> p_micro_set_a, const micro_set<T> p_micro_set_b)
 {
-
 	return true;
 }

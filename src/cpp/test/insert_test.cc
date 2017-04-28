@@ -17,21 +17,25 @@
 #include "inner_vector_set.cpp"
 
 #include "micro_set.cpp"
+
+#include "micro_inner_set.cpp"
 #include "micro_unordered_set.cpp"
 #include "micro_tree_set.cpp"
 #include "micro_vector_set.cpp"
+#include "micro_array_set.cpp"
 
 #include "iterator_inner_set.cpp"
 
-#define G_POOL_SIZE 5
+#define G_POOL_SIZE 3
 #define G_POOL_RANDOM true
 
 int g_array_random_insert[G_POOL_SIZE];
 
-micro_set<int>*                      g_micro_set                      = new micro_set<int>();
+micro_inner_set<int>*           g_micro_inner_set           = new micro_inner_set<int>();
 micro_tree_set<int>*             g_micro_tree_set             = new micro_tree_set<int>();
 micro_unordered_set<int>* g_micro_unordered_set = new micro_unordered_set<int>();
 micro_vector_set<int>*         g_micro_vector_set         = new micro_vector_set<int>();
+micro_array_set<int>*           g_micro_array_set           = new micro_array_set<int>();
 
 void generate_random(benchmark::State& state)
 {
@@ -47,20 +51,19 @@ void generate_random(benchmark::State& state)
 
 BENCHMARK(generate_random);
 
-void insert_micro_set(benchmark::State& state)
+void insert_micro_inner_set(benchmark::State& state)
 {
   while (state.KeepRunning())
   {
     state.PauseTiming();
-    g_micro_set->clear();
+  //  g_micro_inner_set->clear();
     state.ResumeTiming();
 
     for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
-      g_micro_set->insert(g_array_random_insert[t_index]);
+      g_micro_inner_set->insert(g_array_random_insert[t_index]);
     }
 }
-
-BENCHMARK(insert_micro_set);
+BENCHMARK(insert_micro_inner_set);
 
 void insert_micro_tree_set(benchmark::State& state)
 {
@@ -74,7 +77,6 @@ void insert_micro_tree_set(benchmark::State& state)
       g_micro_tree_set->insert(g_array_random_insert[t_index]);
     }
 }
-
 BENCHMARK(insert_micro_tree_set);
 
 void insert_micro_unordered_set(benchmark::State& state)
@@ -89,7 +91,6 @@ void insert_micro_unordered_set(benchmark::State& state)
       g_micro_unordered_set->insert(g_array_random_insert[t_index]);
   }
 }
-
 BENCHMARK(insert_micro_unordered_set);
 
 void insert_micro_vector_set(benchmark::State& state)
@@ -104,8 +105,20 @@ void insert_micro_vector_set(benchmark::State& state)
         g_micro_vector_set->insert(g_array_random_insert[t_index]);
   }
 }
-
 BENCHMARK(insert_micro_vector_set);
 
+void insert_micro_array_set(benchmark::State& state)
+{
+  while (state.KeepRunning())
+  {
+    state.PauseTiming();
+    g_micro_array_set->clear();
+    state.ResumeTiming();
+
+      for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
+        g_micro_array_set->insert(g_array_random_insert[t_index]);
+  }
+}
+BENCHMARK(insert_micro_array_set);
 
 BENCHMARK_MAIN()

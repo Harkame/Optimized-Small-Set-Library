@@ -7,7 +7,7 @@
 using namespace std;
 
 template<typename T>
-class inner_set_0 : public inner_set<T>
+class inner_set_0 : virtual public inner_set<T>
 {
     public :
       struct values
@@ -15,28 +15,35 @@ class inner_set_0 : public inner_set<T>
 
       } a_values;
 
-        inner_set_0<T>();
+      static inner_set<T>* empty()
+      {
+      	static inner_set_0<T> r_inner_set_0;
+        
+      	return &r_inner_set_0;
+      }
 
-        virtual ~inner_set_0<T>();
+      inner_set_0<T>();
 
-        virtual inner_set<T>* add_element(T);
-        virtual inner_set<T>* add_all_elements(inner_set<T>*);
+      virtual ~inner_set_0<T>();
 
-        virtual bool contains_element(T);
-        virtual bool contains_all_elements(inner_set<T>*);
+      virtual inner_set<T>* add_element(T);
+      virtual inner_set<T>* add_all_elements(inner_set<T>*);
 
-        virtual T get_element(int);
+      virtual bool contains_element(T);
+      virtual bool contains_all_elements(inner_set<T>*);
 
-        virtual inner_set<T>* remove_element(T);
-        virtual inner_set<T>* remove_all_elements(inner_set<T>*);
+      virtual T get_element(int);
 
-        virtual inner_set<T>* retain_all_elements(inner_set<T>*);
+      virtual inner_set<T>* remove_element(T);
+      virtual inner_set<T>* remove_all_elements(inner_set<T>*);
 
-        virtual inner_set<T>* add_and_propagate(T, micro_set<T>*);
-        virtual inner_set<T>* add_all_and_propagate(inner_set<T>*, micro_set<T>*);
-        virtual inner_set<T>* add_all_and_propagate_reverse(inner_set<T>*, micro_set<T>*);
+      virtual inner_set<T>* retain_all_elements(inner_set<T>*);
 
-        virtual int get_size();
+      virtual inner_set<T>* add_and_propagate(T, micro_set<T>*);
+      virtual inner_set<T>* add_all_and_propagate(inner_set<T>*, micro_set<T>*);
+      virtual inner_set<T>* add_all_and_propagate_reverse(inner_set<T>*, micro_set<T>*);
+
+      virtual int get_size();
 };
 
 #endif

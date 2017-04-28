@@ -1,12 +1,14 @@
 #ifndef ITERATOR_INNER_SET_HPP
 #define ITERATOR_INNER_SET_HPP
 
+#include <iterator>
+
 #include "inner_set.hpp"
 
 using namespace std;
 
 template<typename T>
-class iterator_inner_set : iterator<bidirectional_iterator_tag, T>
+class iterator_inner_set : virtual public iterator<bidirectional_iterator_tag, T>
 {
   public:
     int a_index;

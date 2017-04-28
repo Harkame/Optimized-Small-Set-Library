@@ -127,6 +127,7 @@ inner_set<T>* inner_unordered_set<T>::add_and_propagate(T p_element, micro_set<T
 
         return add_element(p_element);
     }
+
     return this;
 }
 

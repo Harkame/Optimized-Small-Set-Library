@@ -82,9 +82,6 @@ add_test(erase_test erase_test --benchmark_min_time=0.01)
 compile_benchmark_test(retain_all_test)
 add_test(retain_all_test retain_all_test --benchmark_min_time=0.01)
 
-compile_benchmark_test(test_propagation)
-add_test(test_propagation test_propagation --benchmark_min_time=0.01)
-
 check_cxx_compiler_flag(-std=c++03 BENCHMARK_HAS_CXX03_FLAG)
 if (BENCHMARK_HAS_CXX03_FLAG)
   set(CXX03_FLAGS "${CMAKE_CXX_FLAGS}")
