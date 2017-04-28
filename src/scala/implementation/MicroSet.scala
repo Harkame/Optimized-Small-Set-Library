@@ -16,8 +16,7 @@ object Use extends Enumeration
 
 object MicroSet
 {
-
-  def apply[T](): MicroSet[T] = new MicroSet[T]
+  var use: Use = Use.INNER_SET
 
   def selectUse[T](): InnerSet[T] = use match{
     case Use.ARRAY_SET => new InnerArraySet[T]
@@ -25,14 +24,13 @@ object MicroSet
     case Use.INNER_SET | _ => InnerSet_0[T]
   }
 
-
-  var use: Use = Use.INNER_SET
 }
 
 
 class MicroSet[T] extends Set[T] {
 
   var innerSet: InnerSet[T] = MicroSet.selectUse()
+
 
   def add(element: T): Boolean =
   {
@@ -61,7 +59,7 @@ class MicroSet[T] extends Set[T] {
 
   def addAllAndPropagate(microSetToAdd: MicroSet[T]): MicroSet[T] =
   {
-    var microSetReturn: MicroSet[T] = MicroSet[T]
+    var microSetReturn: MicroSet[T] = new MicroSet[T]
     innerSet = innerSet.addAllAndPropagate(microSetToAdd.innerSet, microSetReturn)
     microSetReturn
   }
@@ -116,7 +114,7 @@ class MicroSet[T] extends Set[T] {
   {
     val oldInnerSet: InnerSet[T] = innerSet
     val scalaIterable: Iterable[_ <: T] = c.asInstanceOf[Iterable[_ <: T]]
-    this.innerSet = InnerSet_0[T]
+    this.innerSet = new InnerSet_0[T]
 
     for (el <- scalaIterable) {
       if (oldInnerSet.containsElement(el.asInstanceOf[Object])) innerSet = innerSet.addElement(el)

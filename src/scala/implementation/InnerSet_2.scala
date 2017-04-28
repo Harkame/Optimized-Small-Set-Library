@@ -1,10 +1,5 @@
 package scala.implementation
 
-object InnerSet_2
-{
-    def apply[T](element1: T, element2: T): InnerSet_2[T] = new InnerSet_2[T](element1, element2)
-    def apply[T](p_innerSet: InnerSet_2[T]): InnerSet_2[T] = new InnerSet_2[T](p_innerSet)
-}
 
 class InnerSet_2[T](protected val element1: T, protected val element2: T) extends AbstractInnerSet[T]
 {
@@ -16,10 +11,10 @@ class InnerSet_2[T](protected val element1: T, protected val element2: T) extend
         {
             this
         }
-        else  InnerSet_3(element1, element2, p_element)
+        else  new InnerSet_3(element1, element2, p_element)
     }
 
-    override def addUnchecked(p_element: T): InnerSet[T] =  InnerSet_3(element1, element2, p_element)
+    override def addUnchecked(p_element: T): InnerSet[T] =  new InnerSet_3(element1, element2, p_element)
 
     override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.addElement(element1).addElement(element2)
 
@@ -37,9 +32,9 @@ class InnerSet_2[T](protected val element1: T, protected val element2: T) extend
     override def removeElement(p_element: Object): InnerSet[T] =
     {
             if(element1.equals(p_element))
-         InnerSet_1(element2)
+         new InnerSet_1(element2)
                   else             if(element2.equals(p_element))
-         InnerSet_1(element1)
+         new InnerSet_1(element1)
                         else this
     }
 
@@ -55,11 +50,11 @@ class InnerSet_2[T](protected val element1: T, protected val element2: T) extend
 
     override def getSize: Int = 2
 
-    override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
+    override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option(InnerSet_2(element1: T, element2: T))
+    override def copy: Option[InnerSet[T]] = Option(new InnerSet_2(element1: T, element2: T))
 
-    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
+    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
 
     override def toString : String = "{ " + element1 + ", " + element2 + " }"
 
@@ -71,7 +66,7 @@ class InnerSet_2[T](protected val element1: T, protected val element2: T) extend
         }
         else         {
             p_microSet.add(p_element)
-            InnerSet_3(element1, element2, p_element)
+            new InnerSet_3(element1, element2, p_element)
         }    }
 
     override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
