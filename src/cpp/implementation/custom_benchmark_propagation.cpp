@@ -122,8 +122,8 @@ void test_propagate_micro_inner_set()
 
         micro_inner_set<int>* increment = g_stock_micro_inner_set.at(g_random_index_stock[zz][i]);
 
-        for (int j = t_index; j < LIST_SIZE; j++)
-          increment = g_list_micro_inner_set.at(j)->add_all_and_propagate(*increment);
+        //for (int j = t_index; j < LIST_SIZE; j++)
+          //increment = g_list_micro_inner_set.at(j)->add_all_and_propagate(*increment);
       }
     }
 
