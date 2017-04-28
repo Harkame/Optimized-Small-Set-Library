@@ -13,36 +13,26 @@ object Use extends Enumeration
   val INNER_SET, ARRAY_SET, HASH_SET = Value
 }
 
+
 object MicroSet
 {
-  def apply[T](innerSet: InnerSet[T]): MicroSet[T] = new MicroSet[T](innerSet)
-  def apply[T](microSet: MicroSet[T]): MicroSet[T] = new MicroSet[T](microSet)
-  def apply[T](): MicroSet[T] = new MicroSet[T](InnerSet_0[T])
 
-  var use:Use = Use.INNER_SET
-  var appelPropagate: Int = 0
-}
+  def apply[T](): MicroSet[T] = new MicroSet[T]
 
-class MicroSet[T](var innerSet: InnerSet[T]) extends Set[T] {
-
-  def apply(innerSet_0: InnerSet_0[T]) = new MicroSet[T](innerSet_0)
-  def apply(as: InnerArraySet[T]) = new MicroSet[T](as)
-  def apply(hs: InnerHashSet[T]) = new MicroSet[T](hs)
-
-  def this(microSet: MicroSet[T]) =
-  {
-    this(microSet.innerSet.copy.get)
-  }
-  
-  def this() = {
-    this(selectUse(MicroSet.use))
-  }
-
-  def selectUse(use: Use): InnerSet[T] = use match{
+  def selectUse[T](): InnerSet[T] = use match{
     case Use.ARRAY_SET => new InnerArraySet[T]
     case Use.HASH_SET => new InnerHashSet[T]
     case Use.INNER_SET | _ => InnerSet_0[T]
   }
+
+
+  var use: Use = Use.INNER_SET
+}
+
+
+class MicroSet[T] extends Set[T] {
+
+  var innerSet: InnerSet[T] = MicroSet.selectUse()
 
   def add(element: T): Boolean =
   {
@@ -71,7 +61,6 @@ class MicroSet[T](var innerSet: InnerSet[T]) extends Set[T] {
 
   def addAllAndPropagate(microSetToAdd: MicroSet[T]): MicroSet[T] =
   {
-    MicroSet.appelPropagate += 1
     var microSetReturn: MicroSet[T] = MicroSet[T]
     innerSet = innerSet.addAllAndPropagate(microSetToAdd.innerSet, microSetReturn)
     microSetReturn
