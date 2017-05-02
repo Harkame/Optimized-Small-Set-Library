@@ -23,7 +23,7 @@ class InnerSet_1[T](protected val element1: T) extends AbstractInnerSet[T]
     override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
-        case 1 => Option(element1)
+        case 1 => Some(element1)
         case _ => None
     }
 
@@ -48,7 +48,7 @@ class InnerSet_1[T](protected val element1: T) extends AbstractInnerSet[T]
 
     override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option(new InnerSet_1(element1: T))
+    override def copy: Option[InnerSet[T]] = Some(this)
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
 

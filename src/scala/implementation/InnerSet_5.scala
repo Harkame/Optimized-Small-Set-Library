@@ -23,11 +23,11 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
     override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object]) && p_innerSet.containsElement(element2.asInstanceOf[Object]) && p_innerSet.containsElement(element3.asInstanceOf[Object]) && p_innerSet.containsElement(element4.asInstanceOf[Object]) && p_innerSet.containsElement(element5.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
-        case 1 => Option(element1)
-        case 2 => Option(element2)
-        case 3 => Option(element3)
-        case 4 => Option(element4)
-        case 5 => Option(element5)
+        case 1 => Some(element1)
+        case 2 => Some(element2)
+        case 3 => Some(element3)
+        case 4 => Some(element4)
+        case 5 => Some(element5)
         case _ => None
     }
 
@@ -64,7 +64,7 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
 
     override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option(new InnerSet_5(element1: T, element2: T, element3: T, element4: T, element5: T))
+    override def copy: Option[InnerSet[T]] = Some(this)
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
 
@@ -76,7 +76,7 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
         {
             this
         }
-        else InnerHashSet(this)    }
+        else new InnerHashSet(this)    }
 
     override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
 

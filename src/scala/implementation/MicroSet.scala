@@ -21,7 +21,7 @@ object MicroSet
   def selectUse[T](): InnerSet[T] = use match{
     case Use.ARRAY_SET => new InnerArraySet[T]
     case Use.HASH_SET => new InnerHashSet[T]
-    case Use.INNER_SET | _ => InnerSet_0[T]
+    case Use.INNER_SET | _ => new InnerSet_0[T]
   }
 
 }

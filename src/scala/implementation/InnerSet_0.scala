@@ -13,7 +13,7 @@ class InnerSet_0[T] extends AbstractInnerSet[T]{
 
   override def containsAllElements(p_innerSet: InnerSet[T]): Boolean = false
 
-  override def getElement(p_index: Int): Option[T] = null
+  override def getElement(p_index: Int): Option[T] = None
 
   override def removeElement(p_element: Object): InnerSet[T] = this
 
@@ -25,7 +25,7 @@ class InnerSet_0[T] extends AbstractInnerSet[T]{
 
   override def iterator: InnerSetIterator[T] = new InnerSetIterator[T](this)
 
-  override def copy: Option[InnerSet[T]] = null
+  override def copy: Option[InnerSet[T]] = None
 
   override def clear(unused: Boolean): InnerSet[T] = this
 

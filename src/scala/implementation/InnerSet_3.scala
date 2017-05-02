@@ -23,9 +23,9 @@ class InnerSet_3[T](protected val element1: T, protected val element2: T, protec
     override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object]) && p_innerSet.containsElement(element2.asInstanceOf[Object]) && p_innerSet.containsElement(element3.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
-        case 1 => Option(element1)
-        case 2 => Option(element2)
-        case 3 => Option(element3)
+        case 1 => Some(element1)
+        case 2 => Some(element2)
+        case 3 => Some(element3)
         case _ => None
     }
 
@@ -56,7 +56,7 @@ class InnerSet_3[T](protected val element1: T, protected val element2: T, protec
 
     override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option(new InnerSet_3(element1: T, element2: T, element3: T))
+    override def copy: Option[InnerSet[T]] = Some(this)
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
 

@@ -108,8 +108,7 @@ import java.util.HashSet
 
   override def copy: Option[InnerHashSet[T]] =
   {
-    val innerSet: InnerSet[T] = this
-    Option(new InnerHashSet(innerSet))
+    Some(new InnerHashSet(this))
   }
 
   override def clear(unused: Boolean): InnerSet[T] = this.clear(unused)
