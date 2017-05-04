@@ -40,18 +40,12 @@ public class InnerSet_4 <T> extends AbstractInnerSet<T>
         if(element_1.equals(p_element) || element_2.equals(p_element) || element_3.equals(p_element) || element_4.equals(p_element))
             return this;
         else
-            if (shouldArray())
-                return new InnerArraySet<T>(this, p_element);
-            else
-                return new InnerSet_5<>(this, p_element);    }
+            return new InnerSet_5<>(this, p_element);    }
 
     @Override
     public InnerSet<T> addUnChecked(T p_element)
     {
-        if (shouldArray())
-            return new InnerArraySet<T>(this, p_element);
-        else
-            return new InnerSet_5<>(this, p_element);    }
+        return new InnerSet_5<>(this, p_element);    }
 
     @Override
     public InnerSet<T> removeElement(Object p_element)
@@ -134,10 +128,7 @@ public class InnerSet_4 <T> extends AbstractInnerSet<T>
             return this;
         else {
             microSetToPropagate.add(p_element);
-            if (shouldArray())
-                return new InnerArraySet<T>(this, p_element);
-            else
-                return new InnerSet_5<>(this, p_element);        }
+            return new InnerSet_5<>(this, p_element);        }
     }
 
     @Override

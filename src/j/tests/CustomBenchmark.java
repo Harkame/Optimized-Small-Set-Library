@@ -131,7 +131,7 @@ public class CustomBenchmark
             NOMBRE_TIRAGE = Integer.parseInt(args[5]);
             ITERATION = Integer.parseInt(args[6]);
             InnerArraySet.MAX_SIZE = Integer.parseInt(args[7]);
-            AbstractInnerSet.MAX_SIZE = Integer.parseInt(args[8]);
+            //AbstractInnerSet.MAX_SIZE = Integer.parseInt(args[8]);
             switch (args[0]) {
                 case "ARRAY":
                     System.out.println("====== ARRAY_SET ======");

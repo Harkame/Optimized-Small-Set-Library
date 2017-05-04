@@ -53,7 +53,7 @@ class InnerSet_1[T](protected val element1: T) extends AbstractInnerSet[T]
 
     override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option(InnerSet_1(element1: T))
+    override def copy: InnerSet[T] = this
 
     override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 

@@ -10,7 +10,7 @@ class InnerSet_0[T] extends AbstractInnerSet[T]{
 
   override def addUnchecked(p_element: T): InnerSet[T] = addElement(p_element)
 
-  override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = p_innerSet
+  override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = p_innerSet.copy.getOrElse(default = null)
 
   override def containsElement(p_element: Object): Boolean = false
 
@@ -43,8 +43,8 @@ class InnerSet_0[T] extends AbstractInnerSet[T]{
   override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =
   {
     p_microSet.innerSet.addAllElements(p_innerSet)
-    p_innerSet
+    p_innerSet.copy
   }
 
-  override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet
+  override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.copy.getOrElse(default = null)
 }

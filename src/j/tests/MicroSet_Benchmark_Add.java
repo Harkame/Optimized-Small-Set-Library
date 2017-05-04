@@ -5,7 +5,9 @@ import com.google.caliper.BeforeExperiment;
 import com.google.caliper.Benchmark;
 import com.google.caliper.api.VmOptions;
 import com.google.caliper.runner.CaliperMain;
+import j.generator.Generator;
 import j.implementation.TestObject;
+import j.implementation.microSet.AbstractInnerSet;
 import j.implementation.microSet.MicroSet;
 import j.implementation.microSet.InnerArraySet;
 
@@ -16,7 +18,7 @@ import java.util.TreeSet;
 @VmOptions("-XX:-TieredCompilation")
 public class MicroSet_Benchmark_Add {
 
-    public static final int NUMBER_OF_TEST_OBJECT = 30;
+    public static final int NUMBER_OF_TEST_OBJECT = 10;
 
     MicroSet<TestObject> microInnerSet = new MicroSet<>();
     MicroSet<TestObject> microArraySet = new MicroSet<>();
@@ -59,6 +61,8 @@ public class MicroSet_Benchmark_Add {
 
     @Benchmark
     public void testAdd_MicroHashSet(int reps) {
+        MicroSet.use = MicroSet.Use.HASH_SET;
+        microHashSet = new MicroSet<>();
         for (int i = 0; i < reps; i++) {
             for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 microHashSet.add(testObjects[randomInt[j]]);
@@ -68,6 +72,8 @@ public class MicroSet_Benchmark_Add {
 
     @Benchmark
     public void testAdd_MicroArraySet(int reps) {
+        MicroSet.use = MicroSet.Use.ARRAY_SET;
+        microArraySet = new MicroSet<>();
         for (int i = 0; i < reps; i++) {
             for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 microArraySet.add(testObjects[randomInt[j]]);
@@ -76,6 +82,8 @@ public class MicroSet_Benchmark_Add {
     }
     @Benchmark
     public void testAdd_MicroInnerSet(int reps) {
+        MicroSet.use = MicroSet.Use.INNER_SET;
+        microInnerSet = new MicroSet<>();
         for (int i = 0; i < reps; i++) {
             for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 microInnerSet.add(testObjects[randomInt[j]]);
@@ -84,7 +92,7 @@ public class MicroSet_Benchmark_Add {
     }
 
     public static void main(String[] args) {
-        args = new String[]{ "-i", "runtime", "-r", "ADD scale=" + NUMBER_OF_TEST_OBJECT + ", object_number=" + NUMBER_OF_TEST_OBJECT};
+        args = new String[]{ "-i", "runtime", "-r", "ADD scale=" + Generator.TO_GENERATE+ ", object_number=" + NUMBER_OF_TEST_OBJECT};
         CaliperMain.main(MicroSet_Benchmark_Add.class, args);
     }
 }
