@@ -13,7 +13,7 @@ object MicroSet_test {
   @BeforeEach
   def setUp()
   {
-    microSet = MicroSet[TestObject]
+    microSet = new MicroSet[TestObject]
     microSet.add(testObject)
     println("====================")
     println("Début : " + microSet.toString)

@@ -1,15 +1,12 @@
 package scala.tests
 
-import com.google.caliper.BeforeExperiment
-import com.google.caliper.Benchmark
+import java.util.{HashSet, Random, TreeSet}
+
+import com.google.caliper.{BeforeExperiment, Benchmark}
 import com.google.caliper.api.VmOptions
-
-import scala.implementation.{MicroSet, Use}
-import java.util.HashSet
-import java.util.Random
-import java.util.TreeSet
-
 import com.google.caliper.runner.CaliperMain
+
+import scala.implementation.MicroSet
 
 /**
   * Created by pxl on 03/04/17.
@@ -19,9 +16,9 @@ import com.google.caliper.runner.CaliperMain
 class MicroSet_Benchmark_Add {
 
   val NUMBER_OF_TEST_OBJECT: Int = 30
-  val microInnerSet = new MicroSet[TestObject](Use.INNER_SET)
-  val microArraySet = new MicroSet[TestObject](Use.ARRAY_SET)
-  val microHAshSet = new MicroSet[TestObject](Use.HASH_SET)
+  val microInnerSet = new MicroSet[TestObject]()
+  val microArraySet = new MicroSet[TestObject]()
+  val microHAshSet = new MicroSet[TestObject]()
 
   val hashSet = new HashSet[TestObject]
   val treeSet = new TreeSet[TestObject]

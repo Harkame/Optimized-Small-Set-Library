@@ -1,10 +1,5 @@
 package scala.implementation
 
-object InnerSet_5
-{
-    def apply[T](element1: T, element2: T, element3: T, element4: T, element5: T): InnerSet_5[T] = new InnerSet_5[T](element1, element2, element3, element4, element5)
-    def apply[T](p_innerSet: InnerSet_5[T]): InnerSet_5[T] = new InnerSet_5[T](p_innerSet)
-}
 
 class InnerSet_5[T](protected val element1: T, protected val element2: T, protected val element3: T, protected val element4: T, protected val element5: T) extends AbstractInnerSet[T]
 {
@@ -16,10 +11,10 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
         {
             this
         }
-        else  InnerSet_6(element1, element2, element3, element4, element5, p_element)
+        else new InnerHashSet(this)
     }
 
-    override def addUnchecked(p_element: T): InnerSet[T] =  InnerSet_6(element1, element2, element3, element4, element5, p_element)
+    override def addUnchecked(p_element: T): InnerSet[T] = new InnerHashSet(this)
 
     override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.addElement(element1).addElement(element2).addElement(element3).addElement(element4).addElement(element5)
 
@@ -28,11 +23,11 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
     override def containsAllElements(p_innerSet: InnerSet[T]): Boolean =  p_innerSet.containsElement(element1.asInstanceOf[Object]) && p_innerSet.containsElement(element2.asInstanceOf[Object]) && p_innerSet.containsElement(element3.asInstanceOf[Object]) && p_innerSet.containsElement(element4.asInstanceOf[Object]) && p_innerSet.containsElement(element5.asInstanceOf[Object])
 
     override def getElement(p_index: Int): Option[T] = p_index match{
-        case 1 => Option(element1)
-        case 2 => Option(element2)
-        case 3 => Option(element3)
-        case 4 => Option(element4)
-        case 5 => Option(element5)
+        case 1 => Some(element1)
+        case 2 => Some(element2)
+        case 3 => Some(element3)
+        case 4 => Some(element4)
+        case 5 => Some(element5)
         case _ => None
     }
 
@@ -40,15 +35,15 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
     override def removeElement(p_element: Object): InnerSet[T] =
     {
             if(element1.equals(p_element))
-         InnerSet_4(element2, element3, element4, element5)
+         new InnerSet_4(element2, element3, element4, element5)
                   else             if(element2.equals(p_element))
-         InnerSet_4(element1, element3, element4, element5)
+         new InnerSet_4(element1, element3, element4, element5)
                   else             if(element3.equals(p_element))
-         InnerSet_4(element1, element2, element4, element5)
+         new InnerSet_4(element1, element2, element4, element5)
                   else             if(element4.equals(p_element))
-         InnerSet_4(element1, element2, element3, element5)
+         new InnerSet_4(element1, element2, element3, element5)
                   else             if(element5.equals(p_element))
-         InnerSet_4(element1, element2, element3, element4)
+         new InnerSet_4(element1, element2, element3, element4)
                         else this
     }
 
@@ -67,11 +62,11 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
 
     override def getSize: Int = 5
 
-    override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
+    override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option(InnerSet_5(element1: T, element2: T, element3: T, element4: T, element5: T))
+    override def copy: Option[InnerSet[T]] = Some(this)
 
-    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
+    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
 
     override def toString : String = "{ " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + ", " + element5 + " }"
 
@@ -81,10 +76,7 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
         {
             this
         }
-        else         {
-            p_microSet.add(p_element)
-            InnerSet_6(element1, element2, element3, element4, element5, p_element)
-        }    }
+        else new InnerHashSet(this)    }
 
     override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
 

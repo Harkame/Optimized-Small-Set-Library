@@ -2,9 +2,6 @@ package scala.implementation
 
 import java.util.ArrayList
 
-object InnerArraySet{
-  def apply[T](p_innerSet:InnerSet[T]): InnerArraySet[T] = new InnerArraySet(p_innerSet)
-}
 
 class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
@@ -25,7 +22,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
     if(!contains(p_element))
     {
       if(getSize == maxSize){
-        return InnerHashSet[T](this, p_element)
+        return new InnerHashSet[T](this, p_element)
       }
       else add(p_element)
     }
@@ -35,7 +32,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
   override def addUnchecked(p_element: T): InnerSet[T] =
   {
     if(getSize == maxSize){
-      return InnerHashSet[T](this, p_element)
+      return new InnerHashSet[T](this, p_element)
     }
     else add(p_element)
     this
@@ -83,9 +80,9 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
   override def getSize: Int = size()
 
-  override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
+  override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
-  override def copy: Option[InnerSet[T]] = Option(InnerArraySet(this))
+  override def copy: Option[InnerSet[T]] = Some(new InnerArraySet(this))
 
   override def clear(unused: Boolean): InnerSet[T] = clear(unused)
 
@@ -97,7 +94,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
     {
       p_microSet.add(p_element)
       if(getSize == maxSize){
-        return InnerHashSet[T](this, p_element)
+        return new InnerHashSet[T](this, p_element)
       }
       else add(p_element)
     }
