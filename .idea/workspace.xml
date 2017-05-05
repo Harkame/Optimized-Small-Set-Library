@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b999aeaf-6daf-434a-aa0d-e91a20c3e6f9" name="Default" comment="Ajout des methodes ensembliste (paramétré par innerset)&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Optimized-Small-Set-Library.iml" afterPath="$PROJECT_DIR$/Optimized-Small-Set-Library.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerHashSet.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerHashSet.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" afterPath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" afterPath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" afterPath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +50,8 @@
       <file leaf-file-name="MicroSet_Benchmark_Add.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state relative-caret-position="218">
+              <caret line="84" column="1" lean-forward="false" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
               <folding>
                 <element signature="e#21#64#0" expanded="true" />
               </folding>
@@ -62,32 +59,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InnerSet_0.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala">
+      <file leaf-file-name="MicroSet_Benchmark_Contains.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="29" column="76" lean-forward="true" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
+            <state relative-caret-position="308">
+              <caret line="43" column="18" lean-forward="false" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InnerSet.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet.scala">
+      <file leaf-file-name="MicroSet_Benchmark_Remove.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InnerHashSet.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerHashSet.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="104" column="36" lean-forward="false" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="56">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding>
+                <element signature="e#21#64#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,8 +156,6 @@
         <option value="$PROJECT_DIR$/src/scala/generator/Generator.java" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSetIterator.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/AbstractInnerSet.scala" />
-        <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" />
-        <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" />
         <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
         <option value="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_test.scala" />
@@ -179,10 +166,12 @@
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_5.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_1.scala" />
         <option value="$PROJECT_DIR$/src/scala/generator/InnerSetScalaTemplate.vm" />
-        <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerHashSet.scala" />
+        <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" />
+        <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" />
+        <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" />
       </list>
     </option>
   </component>
@@ -416,6 +405,32 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MicroSet_Benchmark_Remove.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1370,7 +1385,7 @@
       <workItem from="1493365505167" duration="3052000" />
       <workItem from="1493388058252" duration="2200000" />
       <workItem from="1493737584167" duration="3011000" />
-      <workItem from="1493900214101" duration="3785000" />
+      <workItem from="1493900214101" duration="4752000" />
     </task>
     <servers />
   </component>
@@ -1407,11 +1422,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224601000" />
+    <option name="totallyTimeSpent" value="225568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1361" y="0" width="1930" height="1060" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1423,7 +1438,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32989064" sideWeight="0.50125" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47083333" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47083333" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1686,24 +1701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-          <folding>
-            <element signature="e#21#64#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_7.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1859,21 +1856,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerHashSet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="104" column="36" lean-forward="false" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state relative-caret-position="218">
+          <caret line="84" column="1" lean-forward="false" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
           <folding>
             <element signature="e#21#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerHashSet.scala">
+    <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="104" column="36" lean-forward="false" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
+        <state relative-caret-position="308">
+          <caret line="43" column="18" lean-forward="false" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#21#64#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

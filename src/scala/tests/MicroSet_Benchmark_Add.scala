@@ -81,7 +81,8 @@ class MicroSet_Benchmark_Add {
   }
 }
 
-object runner {
+object runner
+{
   val NUMBER_OF_TEST_OBJECT: Int = 30
   def main(args: Array[String]): Unit = {
     val args = Array[String]("-i", "runtime", "-r", "ADD scale=" + NUMBER_OF_TEST_OBJECT + ", object_number=" + NUMBER_OF_TEST_OBJECT)
