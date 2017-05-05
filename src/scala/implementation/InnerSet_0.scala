@@ -1,10 +1,8 @@
 package scala.implementation
 
-import j.implementation.microSet.InnerSet_0
-
 object InnerSet_0 {
   val singleton = new InnerSet_0[Object]
-  def apply[T]: InnerSet_0[T] = singleton
+  def apply[T]: InnerSet_0[T] = singleton.asInstanceOf[InnerSet_0[T]]
 }
 
 class InnerSet_0[T] extends AbstractInnerSet[T]{

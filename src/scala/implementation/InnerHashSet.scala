@@ -102,14 +102,11 @@ import java.util.HashSet
 
   override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = ??? //TODO
 
-  override def getSize: Int = ??? //TODO
+  override def getSize: Int = size()
 
    override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
-  override def copy: Option[InnerHashSet[T]] =
-  {
-    Some(new InnerHashSet(this))
-  }
+  override def copy: InnerHashSet[T] = new InnerHashSet(this)
 
   override def clear(unused: Boolean): InnerSet[T] = this.clear(unused)
 
