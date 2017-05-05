@@ -7,7 +7,7 @@ import java.util.Set;
 public class MicroSet<T> implements Set<T>
 {
 	InnerSet<T> innerSet;
-	public static Use use;
+	public static Use use = Use.INNER_SET;
 	public static int appelPropagate = 0;
 
 	public enum Use {

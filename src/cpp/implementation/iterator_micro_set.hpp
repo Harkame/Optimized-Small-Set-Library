@@ -1,5 +1,5 @@
-#ifndef ITERATOR_INNER_SET_HPP
-#define ITERATOR_INNER_SET_HPP
+#ifndef ITERATOR_MICRO_SET_HPP
+#define ITERATOR_MICRO_SET_HPP
 
 #include "inner_set.hpp"
 
@@ -8,27 +8,33 @@
 using namespace std;
 
 template<typename T>
-class iterator_inner_set : iterator<bidirictiofnal_iterator_tag, T>
+class iterator_micro_set : virtual public iterator<bidirectional_iterator_tag, T>
 {
-  private:
-    inner_set<T>* a_inner_set;
-
   public:
-    iterator_micro_set(inner_set<T>*, bool);
+    int a_index;
+    inner_set<T>* a_inner_set;
+    
+    iterator_micro_set();
+
+    iterator_micro_set(inner_set<T>*);
 
     virtual ~iterator_micro_set();
 
     virtual void advance();
 
-    virtual void distance();
+    virtual iterator_micro_set<T> begin();
 
-    virtual void begin();
+    virtual iterator_micro_set<T> end();
 
-    virtual void end();
+    virtual iterator_micro_set<T> prev();
 
-    virtual void prev();
+    virtual iterator_micro_set<T> next();
 
-    virtual void next();
-}
+    virtual iterator_micro_set<T> operator++();
+    virtual iterator_micro_set<T> operator++(int);
+
+    virtual iterator_micro_set<T> operator--();
+    virtual iterator_micro_set<T> operator--(int);
+};
 
 #endif

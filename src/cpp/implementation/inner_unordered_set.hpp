@@ -10,14 +10,14 @@
 using namespace std;
 
 template<typename T>
-class inner_unordered_set : public inner_set<T>
+class inner_unordered_set : virtual public inner_set<T>, virtual public unordered_set<T>
 {
     public :
-        unordered_set<T>* a_values;
-
         inner_unordered_set<T>();
 
-        inner_unordered_set<T>(inner_array_set<T>*, T);
+        inner_unordered_set<T>(inner_set<T>*);
+
+        inner_unordered_set<T>(inner_tree_set<T>*, T);
 
         virtual ~inner_unordered_set<T>();
 
@@ -26,6 +26,8 @@ class inner_unordered_set : public inner_set<T>
 
         virtual bool contains_element(T);
         virtual bool contains_all_elements(inner_set<T>*);
+
+        virtual inner_set<T>* copy();
 
         virtual T get_element(int);
 

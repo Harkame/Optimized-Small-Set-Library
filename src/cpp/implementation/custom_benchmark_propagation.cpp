@@ -23,7 +23,7 @@
 #include "micro_vector_set.cpp"
 #include "micro_array_set.cpp"
 
-#include "iterator_inner_set.cpp"
+#include "iterator_micro_set.cpp"
 
  //#define MEGABYTE 1024L * 1024L
  #define POOL_SIZE         15

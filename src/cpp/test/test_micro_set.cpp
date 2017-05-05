@@ -1,7 +1,7 @@
 #include "test_micro_set.hpp"
 
 #define G_NUMBER_ELEMENT 100
-#define G_SIZE_ARRAY 7
+#define G_SIZE_ARRAY 10
 
 int g_array_random_insert[G_SIZE_ARRAY];
 int g_array_random_erase[G_SIZE_ARRAY];
@@ -31,24 +31,24 @@ CPPUNIT_TEST_SUITE_REGISTRATION( test_micro_set );
 void test_micro_set::test_insert()
 {
   micro_inner_set<int> t_micro_inner_set;
-  iterator_inner_set<int>  t_iterator_inner_set;
+  iterator_micro_set<int>  t_iterator_micro_set;
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
     t_micro_inner_set.insert(g_array_random_insert_random[t_index]);
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
   {
-    t_iterator_inner_set = t_micro_inner_set.find(g_array_random_insert_random[t_index]);
+    t_iterator_micro_set = t_micro_inner_set.find(g_array_random_insert_random[t_index]);
 
-    CPPUNIT_ASSERT(*t_iterator_inner_set == g_array_random_insert_random[t_index]);
-    CPPUNIT_ASSERT(t_iterator_inner_set != t_micro_inner_set.end());
+    CPPUNIT_ASSERT(*t_iterator_micro_set == g_array_random_insert_random[t_index]);
+    CPPUNIT_ASSERT(t_iterator_micro_set != t_micro_inner_set.end());
   }
 }
 
 void test_micro_set::test_erase()
 {
   micro_inner_set<int> t_micro_inner_set;
-  iterator_inner_set<int>  t_iterator_inner_set;
+  iterator_micro_set<int>  t_iterator_micro_set;
 
   for(int t_index = 0; t_index < G_SIZE_ARRAY; t_index++)
     t_micro_inner_set.insert(g_array_random_insert_random[t_index]);
@@ -68,7 +68,7 @@ void test_micro_set::test_retain_all()
 void test_micro_set::test_begin()
 {
   micro_inner_set<int> t_micro_inner_set;
-  iterator_inner_set<int>  t_iterator_inner_set;
+  iterator_micro_set<int>  t_iterator_micro_set;
 
   int t_count_insert = 0;
 
@@ -81,7 +81,7 @@ void test_micro_set::test_begin()
 void test_micro_set::test_end()
 {
   micro_inner_set<int> t_micro_inner_set;
-  iterator_inner_set<int>  t_iterator_inner_set;
+  iterator_micro_set<int>  t_iterator_micro_set;
 
   int t_count_insert = 0;
 
@@ -94,7 +94,7 @@ void test_micro_set::test_end()
 void test_micro_set::test_find()
 {
   micro_inner_set<int> t_micro_inner_set;
-  iterator_inner_set<int>  t_iterator_inner_set;
+  iterator_micro_set<int>  t_iterator_micro_set;
 
   int t_count_insert = 0;
 

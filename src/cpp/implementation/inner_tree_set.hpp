@@ -7,16 +7,15 @@
 
 #include "inner_array_set.hpp"
 
-
 using namespace std;
 
 template<typename T>
-class inner_tree_set : public inner_set<T>
+class inner_tree_set : virtual public inner_set<T>, virtual public set<T>
 {
     public :
-        set<T>* a_values;
-
         inner_tree_set<T>();
+
+        inner_tree_set<T>(inner_set<T>*);
 
         inner_tree_set<T>(inner_array_set<T>*, T);
 
@@ -27,6 +26,8 @@ class inner_tree_set : public inner_set<T>
 
         virtual bool contains_element(T);
         virtual bool contains_all_elements(inner_set<T>*);
+
+        virtual inner_set<T>* copy();
 
         virtual T get_element(int);
 

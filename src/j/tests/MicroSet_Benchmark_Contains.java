@@ -72,6 +72,8 @@ public class MicroSet_Benchmark_Contains {
 
     @Benchmark
     public void testContains_MicroArraySet(int reps) {
+        MicroSet.use = MicroSet.Use.ARRAY_SET;
+        microArraySet = new MicroSet<>();
         for (int i = 0; i < reps; i++) {
             for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 microArraySet.contains(testObjects[randomInt[j]]);
@@ -81,6 +83,8 @@ public class MicroSet_Benchmark_Contains {
 
     @Benchmark
     public void testContains_MicroHashSet(int reps) {
+        MicroSet.use = MicroSet.Use.HASH_SET;
+        microHashSet = new MicroSet<>();
         for (int i = 0; i < reps; i++) {
             for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 microHashSet.contains(testObjects[randomInt[j]]);
@@ -89,6 +93,8 @@ public class MicroSet_Benchmark_Contains {
     }
     @Benchmark
     public void testContains_MicroInnerSet(int reps) {
+        MicroSet.use = MicroSet.Use.INNER_SET;
+        microInnerSet = new MicroSet<>();
         for (int i = 0; i < reps; i++) {
             for (int j = 0; j < NUMBER_OF_TEST_OBJECT; j++) {
                 microInnerSet.contains(testObjects[randomInt[j]]);

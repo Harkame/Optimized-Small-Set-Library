@@ -15,12 +15,7 @@ class inner_set_0 : virtual public inner_set<T>
 
       } a_values;
 
-      static inner_set<T>* empty()
-      {
-      	static inner_set_0<T> r_inner_set_0;
-        
-      	return &r_inner_set_0;
-      }
+      static inner_set_0<T>* EMPTY;
 
       inner_set_0<T>();
 
@@ -31,6 +26,8 @@ class inner_set_0 : virtual public inner_set<T>
 
       virtual bool contains_element(T);
       virtual bool contains_all_elements(inner_set<T>*);
+
+      virtual inner_set<T>* copy();
 
       virtual T get_element(int);
 
@@ -44,6 +41,8 @@ class inner_set_0 : virtual public inner_set<T>
       virtual inner_set<T>* add_all_and_propagate_reverse(inner_set<T>*, micro_set<T>*);
 
       virtual int get_size();
+
+       inner_set<T>& operator=(const inner_set<T>&){}
 };
 
 #endif

@@ -5,8 +5,6 @@
 
 #include "inner_set_5.hpp"
 
-//#include "inner_unordered_set.hpp"
-
 using namespace std;
 
 template<typename T>
@@ -18,9 +16,9 @@ class inner_array_set : public inner_set<T>
 
         inner_array_set<T>();
 
-        inner_array_set<T>(inner_set_5<T>*, T);
+        inner_array_set<T>(inner_set_3<T>*, T);
 
-        //inner_array_set<T>(inner_unordered_set<T>, T);
+        inner_array_set<T>(inner_set<T>*);
 
         virtual ~inner_array_set<T>();
 

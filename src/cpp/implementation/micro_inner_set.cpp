@@ -1,6 +1,6 @@
 #include "micro_inner_set.hpp"
 #include "inner_unordered_set.hpp"
-#include "iterator_inner_set.hpp"
+#include "iterator_micro_set.hpp"
 
 #include "inner_set_0.hpp"
 
@@ -9,7 +9,7 @@ using namespace std;
 template<typename T>
 micro_inner_set<T>::micro_inner_set()
 {
-	this->a_inner_set = inner_set_0<T>::empty();
+	this->a_inner_set = inner_set_0<T>::EMPTY;
 }
 
 template<typename T>
@@ -19,33 +19,33 @@ micro_inner_set<T>::~micro_inner_set()
 }
 
 template<typename T>
-iterator_inner_set<T> micro_inner_set<T>::begin()
+iterator_micro_set<T> micro_inner_set<T>::begin()
 {
-	return iterator_inner_set<T>(this->a_inner_set);
+	return iterator_micro_set<T>(this->a_inner_set);
 }
 
 template<typename T>
-iterator_inner_set<T>  micro_inner_set<T>::end()
+iterator_micro_set<T>  micro_inner_set<T>::end()
 {
-	iterator_inner_set<T> r_iterator_inner_set(this->a_inner_set);
+	iterator_micro_set<T> r_iterator_micro_set(this->a_inner_set);
 
-	r_iterator_inner_set.set_end();
+	r_iterator_micro_set.end();
 
-	return r_iterator_inner_set;
+	return r_iterator_micro_set;
 }
 
 template<typename T>
-iterator_inner_set<T> micro_inner_set<T>::find(T p_element)
+iterator_micro_set<T> micro_inner_set<T>::find(T p_element)
 {
-	iterator_inner_set<T> r_iterator_inner_set(this->a_inner_set);
+	iterator_micro_set<T> r_iterator_micro_set(this->a_inner_set);
 
-	while(r_iterator_inner_set != end())
-		if(*r_iterator_inner_set == p_element)
-			return r_iterator_inner_set;
+	while(r_iterator_micro_set != end())
+		if(*r_iterator_micro_set == p_element)
+			return r_iterator_micro_set;
 		else
-			r_iterator_inner_set++;
+			r_iterator_micro_set++;
 
-	return r_iterator_inner_set;
+	return r_iterator_micro_set;
 }
 
 template<typename T>
@@ -82,7 +82,7 @@ void micro_inner_set<T>:: clear()
 {
 	delete this->a_inner_set;
 
-	this->a_inner_set = inner_set_0<T>::empty();
+	this->a_inner_set = inner_set_0<T>::EMPTY;
 }
 
 template<typename T>

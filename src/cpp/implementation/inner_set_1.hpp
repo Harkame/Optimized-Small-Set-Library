@@ -25,6 +25,8 @@ class inner_set_1 : public inner_set<T>
         virtual bool contains_element(T);
         virtual bool contains_all_elements(inner_set<T>*);
 
+        virtual inner_set<T>* copy();
+
         virtual T get_element(int);
 
         virtual inner_set<T>* remove_element(T);
