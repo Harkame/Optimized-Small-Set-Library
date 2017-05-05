@@ -52,7 +52,7 @@ class InnerSet_1[T](protected val element1: T) extends AbstractInnerSet[T]
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
 
-    override def toString : String = "{ " + element1 + " }"
+    override def toString : String = "InnerSet1 : { " + element1 + " }"
 
     override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
     {

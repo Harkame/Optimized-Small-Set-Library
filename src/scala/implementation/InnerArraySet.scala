@@ -86,7 +86,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
   override def clear(unused: Boolean): InnerSet[T] = clear(unused)
 
-  override def toString(): String = ???
+  override def toString(): String =  "InnerArraySet : "+ this.toString()
 
   override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
   {

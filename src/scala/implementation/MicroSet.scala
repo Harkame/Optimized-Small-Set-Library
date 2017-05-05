@@ -130,7 +130,7 @@ class MicroSet[T] extends Set[T] {
 
   override def iterator(): util.Iterator[T] = innerSet.iterator
 
-  override def toString: String = "MicroSet { " + "innerSet = " + innerSet + " }" + "\n"
+  override def toString: String = "MicroSet { " + innerSet + " }" + "\n"
 
   override def toArray[T](a: Array[T with Object ]): Array[T with Object] = ??? //TODO
   override def toArray: Array[AnyRef] = ??? //TODO

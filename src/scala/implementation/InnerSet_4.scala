@@ -64,7 +64,7 @@ class InnerSet_4[T](protected val element1: T, protected val element2: T, protec
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
 
-    override def toString : String = "{ " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + " }"
+    override def toString : String = "InnerSet4 : { " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + " }"
 
     override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
     {

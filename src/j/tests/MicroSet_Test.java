@@ -2,6 +2,7 @@ package j.tests;
 
 
 import j.implementation.TestObject;
+import j.implementation.microSet.InnerSet;
 import j.implementation.microSet.MicroSet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ public class MicroSet_Test {
 
     @BeforeEach
     void setUp() {
+        MicroSet.use = MicroSet.Use.INNER_SET;
         microSet = new MicroSet<>();
         microSet.add(testObject);
     }
@@ -147,7 +149,7 @@ public class MicroSet_Test {
         assertEquals(microSet.size(),1);
         microSetRes = microSet.addAllAndPropagate(microSetAdd);
         assertEquals(microSet.size(),3);
-        assertEquals(microSetRes.size(),1);
+        assertEquals(microSetRes.size(),2);
 
     }
 
