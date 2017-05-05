@@ -12,11 +12,8 @@
 using namespace std;
 
 template<typename T>
-class inner_vector_set : virtual public inner_set<T>
+class inner_vector_set : virtual public inner_set<T>, virtual public vector<T>
 {
-    private :
-      vector<T>* a_values;
-
     public :
         inner_vector_set<T>();
 

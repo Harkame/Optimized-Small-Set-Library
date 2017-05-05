@@ -10,19 +10,24 @@ inner_array_set<T>::inner_array_set()
 }
 
 template<typename T>
-inner_array_set<T>::inner_array_set(inner_set_5<T>* p_inner_set, T p_element)
+inner_array_set<T>::inner_array_set(inner_set_3<T>* p_inner_set, T p_element)
 {
-  a_index = 6;
+  a_index = 4;
 
   a_values[0] = p_inner_set->a_values.element_1;
   a_values[1] = p_inner_set->a_values.element_2;
   a_values[2] = p_inner_set->a_values.element_3;
-  a_values[3] = p_inner_set->a_values.element_4;
-  a_values[4] = p_inner_set->a_values.element_5;
 
-  a_values[5] = p_element;
+  a_values[3] = p_element;
 
   delete p_inner_set;
+}
+
+template<typename T>
+inner_array_set<T>::inner_array_set(inner_set<T>* p_inner_set)
+{
+  for(auto t_iterator = p_inner_set->begin(); t_iterator != p_inner_set->end(); t_iterator++)
+    this->insert(*t_iterator);
 }
 
 template<typename T>
@@ -111,66 +116,40 @@ T inner_array_set<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_array_set<T>::remove_element(T p_element)
 {
-  if(a_index == 5)
+  if(a_index == 3)
   {
-    T t_value_1;
-    T t_value_2;
-    T t_value_3;
-    T t_value_4;
-    T t_value_5;
+    T t_value_1 = {};
+    T t_value_2 = {};
+    T t_value_3 = {};
 
     if(a_values[0] == p_element)
     {
       t_value_1 = a_values[1];
       t_value_2 = a_values[2];
       t_value_3 = a_values[3];
-      t_value_4 = a_values[4];
-      t_value_5 = a_values[5];
     }
     else if(a_values[1] == p_element)
     {
       t_value_1 = a_values[0];
       t_value_2 = a_values[2];
       t_value_3 = a_values[3];
-      t_value_4 = a_values[4];
-      t_value_5 = a_values[5];
     }
     else if(a_values[2] == p_element)
     {
       t_value_1 = a_values[0];
       t_value_2 = a_values[1];
       t_value_3 = a_values[3];
-      t_value_4 = a_values[4];
-      t_value_5 = a_values[5];
     }
     else if(a_values[3] == p_element)
     {
       t_value_1 = a_values[0];
       t_value_2 = a_values[1];
       t_value_3 = a_values[2];
-      t_value_4 = a_values[4];
-      t_value_5 = a_values[5];
-    }
-    else if(a_values[4] == p_element)
-    {
-      t_value_1 = a_values[0];
-      t_value_2 = a_values[1];
-      t_value_3 = a_values[2];
-      t_value_4 = a_values[3];
-      t_value_5 = a_values[5];
-    }
-    else if(a_values[5] == p_element)
-    {
-      t_value_1 = a_values[0];
-      t_value_2 = a_values[1];
-      t_value_3 = a_values[2];
-      t_value_4 = a_values[3];
-      t_value_5 = a_values[4];
     }
 
     delete this;
 
-    return new inner_set_5<T>(t_value_1, t_value_2, t_value_3, t_value_4, t_value_5);
+    return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
   }
   else
   {

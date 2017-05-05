@@ -23,7 +23,7 @@ macro(compile_output_test name)
 endmacro(compile_output_test)
 
 
-# Demonstration executable
+# Demonstration executableinsert_test
 compile_benchmark_test(benchmark_test)
 add_test(benchmark benchmark_test --benchmark_min_time=0.01)
 
@@ -70,17 +70,18 @@ add_test(map_test map_test --benchmark_min_time=0.01)
 compile_benchmark_test(multiple_ranges_test)
 add_test(multiple_ranges_test multiple_ranges_test --benchmark_min_time=0.01)
 
-compile_output_test(reporter_output_test)
-add_test(reporter_output_test reporter_output_test --benchmark_min_time=0.01)
-
 compile_benchmark_test(insert_test)
 add_test(insert_test insert_test --benchmark_min_time=0.01)
 
 compile_benchmark_test(erase_test)
 add_test(erase_test erase_test --benchmark_min_time=0.01)
 
-compile_benchmark_test(retain_all_test)
-add_test(retain_all_test retain_all_test --benchmark_min_time=0.01)
+compile_benchmark_test(find_test)
+add_test(find_test find_test --benchmark_min_time=0.01)
+
+compile_output_test(reporter_output_test)
+add_test(reporter_output_test reporter_output_test --benchmark_min_time=0.01)
+
 
 check_cxx_compiler_flag(-std=c++03 BENCHMARK_HAS_CXX03_FLAG)
 if (BENCHMARK_HAS_CXX03_FLAG)

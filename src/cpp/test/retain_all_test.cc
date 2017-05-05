@@ -21,7 +21,7 @@
 #include "micro_tree_set.cpp"
 #include "micro_vector_set.cpp"
 
-#include "iterator_inner_set.cpp"
+#include "iterator_micro_set.cpp"
 
 #define G_POOL_SIZE 4
 #define G_POOL_RANDOM true
@@ -68,7 +68,7 @@ void retain_micro_set(benchmark::State& state)
   while (state.KeepRunning())
   {
     state.PauseTiming();
-    
+
     g_micro_set->clear();
     g_micro_set_retain->clear();
 

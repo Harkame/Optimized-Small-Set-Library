@@ -2,9 +2,11 @@
 #include "inner_set.hpp"
 
 template<typename T>
+inner_set_0<T>* inner_set_0<T>::EMPTY = new inner_set_0<T>();
+
+template<typename T>
 inner_set_0<T>::inner_set_0()
 {
-
 }
 
 template<typename T>
@@ -22,7 +24,7 @@ inner_set<T>* inner_set_0<T>::add_element(T p_element)
 template<typename T>
 inner_set<T>* inner_set_0<T>::add_all_elements(inner_set<T>* p_inner_set)
 {
-	cout << "addall" << endl;
+	return p_inner_set->copy();
 }
 
 template<typename T>
@@ -37,6 +39,12 @@ bool inner_set_0<T>::contains_all_elements(inner_set<T>* p_inner_set)
 {
 	p_inner_set = p_inner_set;
   return false;
+}
+
+template<typename T>
+inner_set<T>*  inner_set_0<T>::copy()
+{
+	return new inner_set_0<T>();
 }
 
 template<typename T>
@@ -80,13 +88,14 @@ inner_set<T>* inner_set_0<T>::add_all_and_propagate(inner_set<T>* p_inner_set, m
 {
 	p_micro_set->a_inner_set = p_micro_set->a_inner_set->add_all_elements(p_inner_set);
 
-	return p_inner_set;
+	return p_inner_set->copy();
 }
 
 template<typename T>
 inner_set<T>* inner_set_0<T>::add_all_and_propagate_reverse(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
 {
-	return p_inner_set;
+	p_micro_set = p_micro_set;
+	return p_inner_set->copy();
 }
 
 template<typename T>

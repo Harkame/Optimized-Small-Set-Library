@@ -25,6 +25,8 @@ class inner_set
       virtual bool contains_element(T){return false;};
       virtual bool contains_all_elements(inner_set<T>*){return false;};
 
+      virtual inner_set<T>* copy(){return nullptr;}
+
       virtual T get_element(int){return (T) NULL;};
 
       virtual inner_set<T>* remove_element(T){return nullptr;};
