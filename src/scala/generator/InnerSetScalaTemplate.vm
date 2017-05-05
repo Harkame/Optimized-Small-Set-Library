@@ -3,11 +3,6 @@
 #set( $instanceOf = ".asInstanceOf[Object]")
 package scala.implementation
 
-object $innerSetClassName
-{
-    def apply[T](#foreach($element in $elements)$element: T#if( $foreach.hasNext ), #end#end): $innerSetClassName$t = new $innerSetClassName$t(#foreach($element in $elements)element$foreach.count#if( $foreach.hasNext ), #end#end)
-    def apply[T](p_innerSet: $innerSetClassName$t): $innerSetClassName$t = new $innerSetClassName$t(p_innerSet)
-}
 
 class $innerSetClassName$t(#foreach($element in $elements)protected val $element: T#if( $foreach.hasNext ), #end#end) extends AbstractInnerSet[T]
 {
@@ -19,11 +14,11 @@ class $innerSetClassName$t(#foreach($element in $elements)protected val $element
         {
             this
         }
-        else #if($innerSetOffset == $lastInnerSet)InnerHashSet(this)#else $nextInnerSet(#foreach($element in $elements)$element#if( $foreach.hasNext ), #end#end, p_element)#end
+        else #if($innerSetOffset == $lastInnerSet)new InnerHashSet(this)#else new $nextInnerSet(#foreach($element in $elements)$element#if( $foreach.hasNext ), #end#end, p_element)#end
 
     }
 
-    override def addUnchecked(p_element: T): InnerSet[T] = #if($innerSetOffset == $lastInnerSet)InnerHashSet(this)#else $nextInnerSet(#foreach($element in $elements)$element#if( $foreach.hasNext ), #end#end, p_element)#end
+    override def addUnchecked(p_element: T): InnerSet[T] = #if($innerSetOffset == $lastInnerSet)new InnerHashSet(this)#else new $nextInnerSet(#foreach($element in $elements)$element#if( $foreach.hasNext ), #end#end, p_element)#end
 
 
     override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.addElement(element1)#else p_innerSet#foreach($element in $elements).addElement($element)#end#end
@@ -37,7 +32,7 @@ class $innerSetClassName$t(#foreach($element in $elements)protected val $element
 
     override def getElement(p_index: Int): Option[T] = p_index match{
     #foreach($element in $elements)
-    case $foreach.count => Option($element)
+    case $foreach.count => Some($element)
     #end
     case _ => None
     }
@@ -50,7 +45,7 @@ class $innerSetClassName$t(#foreach($element in $elements)protected val $element
         #set($sep = "")
         if($el$equals_p)
         #if($innerSetOffset == 1) new InnerSet_0
-        #else $previousInnerSet(#foreach($element in $elements)#if($f.count != $foreach.count)$sep$element#set($sep = ", ")#end#end)
+        #else new $previousInnerSet(#foreach($element in $elements)#if($f.count != $foreach.count)$sep$element#set($sep = ", ")#end#end)
         #end
         #if( $f.hasNext )  else #end
     #end
@@ -71,11 +66,11 @@ class $innerSetClassName$t(#foreach($element in $elements)protected val $element
 
     override def getSize: Int = $innerSetOffset
 
-    override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
+    override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Option($innerSetClassName(#foreach($element in $elements)$element: T#if( $foreach.hasNext ), #end#end))
+    override def copy: Option[InnerSet[T]] = Some(this)
 
-    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
+    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
 
     override def toString : String = "{ " + #foreach($element in $elements)$element#if( $foreach.hasNext ) + ", " + #end#end + " }"
 
@@ -85,10 +80,10 @@ class $innerSetClassName$t(#foreach($element in $elements)protected val $element
         {
             this
         }
-        else #if($innerSetOffset == $lastInnerSet)InnerHashSet(this)#else
+        else #if($innerSetOffset == $lastInnerSet)new InnerHashSet(this)#else
         {
             p_microSet.add(p_element)
-            $nextInnerSet(#foreach($element in $elements)$element#if( $foreach.hasNext ), #end#end, p_element)
+            new $nextInnerSet(#foreach($element in $elements)$element#if( $foreach.hasNext ), #end#end, p_element)
         }#end
     }
 

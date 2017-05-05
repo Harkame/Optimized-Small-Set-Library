@@ -10,18 +10,18 @@ inner_set_2<T>::inner_set_2()
 template<typename T>
 inner_set_2<T>::inner_set_2(T p_element_1, T p_element_2)
 {
-            a_values.element_1 = p_element_1;
-            a_values.element_2 = p_element_2;
-    }
+  a_values.element_1 = p_element_1;
+  a_values.element_2 = p_element_2;
+}
 
 template<typename T>
 inner_set_2<T>::inner_set_2(inner_set_1<T>* p_inner_set, T p_element)
 {
-            a_values.element_1 = p_inner_set->a_values.element_1;
+  a_values.element_1 = p_inner_set->a_values.element_1;
 
-            a_values.element_2 = p_element;
+  a_values.element_2 = p_element;
 
-            delete p_inner_set;
+  delete p_inner_set;
 }
 
 template<typename T>
@@ -60,6 +60,12 @@ bool inner_set_2<T>::contains_all_elements(inner_set<T>* p_inner_set)
 }
 
 template<typename T>
+inner_set<T>*  inner_set_2<T>::copy()
+{
+	return this;
+}
+
+template<typename T>
 T inner_set_2<T>::get_element(int p_index)
 {
     return reinterpret_cast<T*>(&a_values)[p_index];
@@ -68,7 +74,7 @@ T inner_set_2<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_set_2<T>::remove_element(T p_element)
 {
-  T t_value_1;
+  T t_value_1 = {};
 
   if(a_values.element_1 == p_element)
   {

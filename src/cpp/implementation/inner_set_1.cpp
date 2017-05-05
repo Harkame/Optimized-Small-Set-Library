@@ -41,6 +41,12 @@ bool inner_set_1<T>::contains_all_elements(inner_set<T>* p_inner_set)
 }
 
 template<typename T>
+inner_set<T>*  inner_set_1<T>::copy()
+{
+	return this;
+}
+
+template<typename T>
 T inner_set_1<T>::get_element(int p_index)
 {
     return reinterpret_cast<T*>(&a_values)[p_index];

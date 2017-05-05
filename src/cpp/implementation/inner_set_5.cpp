@@ -73,6 +73,12 @@ bool inner_set_5<T>::contains_all_elements(inner_set<T>* p_inner_set)
 }
 
 template<typename T>
+inner_set<T>*  inner_set_5<T>::copy()
+{
+	return this;
+}
+
+template<typename T>
 T inner_set_5<T>::get_element(int p_index)
 {
     return reinterpret_cast<T*>(&a_values)[p_index];
@@ -81,11 +87,10 @@ T inner_set_5<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_set_5<T>::remove_element(T p_element)
 {
-  T t_value_1;
-  T t_value_2;
-  T t_value_3;
-  T t_value_4;
-  T t_value_5;
+  T t_value_1 = {};
+  T t_value_2 = {};
+  T t_value_3 = {};
+  T t_value_4 = {};
 
   if(a_values.element_1 == p_element)
   {

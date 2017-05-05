@@ -4,7 +4,7 @@
 #include "inner_set.hpp"
 #include "inner_set_0.hpp"
 
-#include "iterator_inner_set.hpp"
+#include "iterator_micro_set.hpp"
 
 using namespace std;
 
@@ -18,11 +18,11 @@ class micro_set
 
       virtual ~micro_set();
 
-      virtual iterator_inner_set<T> begin();
+      virtual iterator_micro_set<T> begin();
 
-      virtual iterator_inner_set<T> end();
+      virtual iterator_micro_set<T> end();
 
-      virtual iterator_inner_set<T> find(T);
+      virtual iterator_micro_set<T> find(T);
 
       virtual bool empty() const;
 

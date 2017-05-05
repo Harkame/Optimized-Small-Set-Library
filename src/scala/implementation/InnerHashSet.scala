@@ -2,12 +2,7 @@ package scala.implementation
 
 import java.util.HashSet
 
-object InnerHashSet
-{
-  def apply[T](innerSet: InnerSet[T]): InnerHashSet[T] = new InnerHashSet[T](innerSet)
-  def apply[T](innerSet: InnerSet[T],element: T): InnerHashSet[T] = new InnerHashSet[T](innerSet,element)
 
-}
 
  class InnerHashSet[T] extends HashSet[T] with InnerSet[T]{
 
@@ -109,12 +104,11 @@ object InnerHashSet
 
   override def getSize: Int = ??? //TODO
 
-   override def iterator: InnerSetIterator[T] = InnerSetIterator(this)
+   override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
   override def copy: Option[InnerHashSet[T]] =
   {
-    val innerSet: InnerSet[T] = this
-    Option(InnerHashSet(innerSet))
+    Some(new InnerHashSet(this))
   }
 
   override def clear(unused: Boolean): InnerSet[T] = this.clear(unused)

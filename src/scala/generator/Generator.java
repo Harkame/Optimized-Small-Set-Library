@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Created by pxl on 28/03/17.
  */
 public class Generator {
-    public final static int TO_GENERATE = 10;
+    public final static int TO_GENERATE = 5;
 
     public static void createOneFile(int offset) {
         String innerSetClassName = "InnerSet_" + offset;

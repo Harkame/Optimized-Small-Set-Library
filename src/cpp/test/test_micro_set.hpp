@@ -29,7 +29,7 @@
 #include "micro_tree_set.cpp"
 #include "micro_vector_set.cpp"
 
-#include "iterator_inner_set.cpp"
+#include "iterator_micro_set.cpp"
 
 class test_micro_set : public CppUnit::TestFixture
 {
