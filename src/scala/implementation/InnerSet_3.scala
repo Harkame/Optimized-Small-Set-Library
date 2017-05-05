@@ -56,7 +56,7 @@ class InnerSet_3[T](protected val element1: T, protected val element2: T, protec
 
     override def iterator: InnerSetIterator[T] = new InnerSetIterator(this)
 
-    override def copy: Option[InnerSet[T]] = Some(this)
+    override def copy: InnerSet[T] = this
 
     override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
 

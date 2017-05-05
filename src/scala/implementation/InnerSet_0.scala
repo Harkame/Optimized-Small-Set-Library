@@ -1,5 +1,11 @@
 package scala.implementation
 
+import j.implementation.microSet.InnerSet_0
+
+object InnerSet_0 {
+  val singleton = new InnerSet_0[Object]
+  def apply[T]: InnerSet_0[T] = singleton
+}
 
 class InnerSet_0[T] extends AbstractInnerSet[T]{
 
@@ -7,7 +13,7 @@ class InnerSet_0[T] extends AbstractInnerSet[T]{
 
   override def addUnchecked(p_element: T): InnerSet[T] = addElement(p_element)
 
-  override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = p_innerSet.copy.getOrElse(default = null)
+  override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = p_innerSet.copy
 
   override def containsElement(p_element: Object): Boolean = false
 
@@ -25,7 +31,7 @@ class InnerSet_0[T] extends AbstractInnerSet[T]{
 
   override def iterator: InnerSetIterator[T] = new InnerSetIterator[T](this)
 
-  override def copy: Option[InnerSet[T]] = None
+  override def copy: InnerSet[T] = this
 
   override def clear(unused: Boolean): InnerSet[T] = this
 
@@ -43,5 +49,5 @@ class InnerSet_0[T] extends AbstractInnerSet[T]{
     p_innerSet.copy
   }
 
-  override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.copy.getOrElse(default = null)
+  override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.copy
 }

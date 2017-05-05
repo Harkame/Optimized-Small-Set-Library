@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b999aeaf-6daf-434a-aa0d-e91a20c3e6f9" name="Default" comment="Ajout des methodes ensembliste (paramétré par innerset)&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" afterPath="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/generator/InnerSetScalaTemplate.vm" afterPath="$PROJECT_DIR$/src/scala/generator/InnerSetScalaTemplate.vm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerSet.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerSet.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerSet_1.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerSet_1.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerSet_2.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerSet_2.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerSet_3.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerSet_3.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerSet_4.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerSet_4.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerSet_5.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerSet_5.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,42 +55,89 @@
       <file leaf-file-name="InnerSet_1.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_1.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="972">
-              <caret line="54" column="50" lean-forward="false" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+            <state relative-caret-position="310">
+              <caret line="44" column="13" lean-forward="false" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InnerSet_2.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InnerSet_2.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_2.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="58" column="50" lean-forward="false" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+            <state relative-caret-position="449">
+              <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InnerHashSet.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerHashSet.scala">
+      <file leaf-file-name="InnerSet_3.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_3.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <state relative-caret-position="449">
+              <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MicroSet.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scala/implementation/MicroSet.scala">
+      <file leaf-file-name="InnerSet_4.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_4.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="132" column="48" lean-forward="false" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
-              <folding>
-                <element signature="e#30#50#0" expanded="true" />
-                <element signature="e#139#206#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="449">
+              <caret line="62" column="41" lean-forward="false" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerSet_5.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_5.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="66" column="41" lean-forward="false" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerSetScalaTemplate.vm" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scala/generator/InnerSetScalaTemplate.vm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MicroSet_Benchmark_Add.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-158">
+              <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerSet_0.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InnerSet.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,23 +214,23 @@
         <option value="$PROJECT_DIR$/INNER_SETtest.txt" />
         <option value="$PROJECT_DIR$/src/scala/generator/Generator.java" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSetIterator.scala" />
-        <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/AbstractInnerSet.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" />
-        <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala" />
-        <option value="$PROJECT_DIR$/src/scala/generator/InnerSetScalaTemplate.vm" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerHashSet.scala" />
         <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
         <option value="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_test.scala" />
-        <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_1.scala" />
+        <option value="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" />
+        <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_2.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_3.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_4.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_5.scala" />
-        <option value="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" />
+        <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala" />
+        <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_1.scala" />
+        <option value="$PROJECT_DIR$/src/scala/generator/InnerSetScalaTemplate.vm" />
       </list>
     </option>
   </component>
@@ -440,6 +486,32 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="implementation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InnerSet_0.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1348,7 +1420,7 @@
       <workItem from="1493365505167" duration="3052000" />
       <workItem from="1493388058252" duration="2200000" />
       <workItem from="1493737584167" duration="3011000" />
-      <workItem from="1493900214101" duration="1919000" />
+      <workItem from="1493900214101" duration="2693000" />
     </task>
     <servers />
   </component>
@@ -1385,7 +1457,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222735000" />
+    <option name="totallyTimeSpent" value="223509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1361" y="0" width="1930" height="1060" extended-state="6" />
@@ -1657,27 +1729,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scala/implementation/AbstractInnerSet.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding>
-            <element signature="e#21#64#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1699,14 +1754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_7.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1720,13 +1767,6 @@
         <state relative-caret-position="1850">
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/generator/InnerSetScalaTemplate.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="70" column="54" lean-forward="false" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1789,30 +1829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_5.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="70" column="50" lean-forward="false" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_4.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="66" column="50" lean-forward="false" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_3.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="62" column="50" lean-forward="false" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_test.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1837,18 +1853,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_1.scala">
+    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="54" column="50" lean-forward="false" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+        <state relative-caret-position="576">
+          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_3.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_4.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="62" column="41" lean-forward="false" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_5.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="66" column="41" lean-forward="false" selection-start-line="66" selection-start-column="41" selection-end-line="66" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_2.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="58" column="50" lean-forward="false" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+        <state relative-caret-position="449">
+          <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_1.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="44" column="13" lean-forward="false" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/generator/InnerSetScalaTemplate.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
           <folding />
         </state>
       </provider>

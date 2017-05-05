@@ -30,7 +30,7 @@ trait InnerSet[T] {
 
   def iterator: InnerSetIterator[T]
 
-  def copy: Option[InnerSet[T]]
+  def copy: InnerSet[T]
 
   def clear(unused: Boolean): InnerSet[T]
 
