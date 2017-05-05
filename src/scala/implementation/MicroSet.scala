@@ -18,6 +18,7 @@ object MicroSet
 {
   var use: Use = Use.INNER_SET
 
+
   def selectUse[T](): InnerSet[T] = use match{
     case Use.ARRAY_SET => new InnerArraySet[T]
     case Use.HASH_SET => new InnerHashSet[T]

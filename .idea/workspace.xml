@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b999aeaf-6daf-434a-aa0d-e91a20c3e6f9" name="Default" comment="Ajout des methodes ensembliste (paramétré par innerset)&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" afterPath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" afterPath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" afterPath="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scala/tests/CustomBenchmarkScala.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" afterPath="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,45 +38,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InnerArraySet.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala">
+      <file leaf-file-name="CustomBenchmarkScala.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scala/tests/CustomBenchmarkScala.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="84" column="35" lean-forward="false" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MicroSet_Benchmark_Add.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="84" column="1" lean-forward="false" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
+            <state relative-caret-position="-687">
+              <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
               <folding>
-                <element signature="e#21#64#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MicroSet_Benchmark_Contains.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="43" column="18" lean-forward="false" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MicroSet_Benchmark_Remove.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding>
-                <element signature="e#21#64#0" expanded="true" />
+                <element signature="e#21#67#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,7 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_1.java" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmarck_Add.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmarck_Contains.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmarck_Remove.scala" />
@@ -157,7 +125,6 @@
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSetIterator.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/AbstractInnerSet.scala" />
         <option value="$PROJECT_DIR$/src/j/tests/MicroSet_Test.java" />
-        <option value="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_test.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_2.scala" />
@@ -166,12 +133,14 @@
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_5.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_1.scala" />
         <option value="$PROJECT_DIR$/src/scala/generator/InnerSetScalaTemplate.vm" />
-        <option value="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala" />
         <option value="$PROJECT_DIR$/src/scala/implementation/InnerHashSet.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala" />
         <option value="$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala" />
+        <option value="$PROJECT_DIR$/src/scala/implementation/MicroSet.scala" />
+        <option value="$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala" />
+        <option value="$PROJECT_DIR$/src/scala/tests/CustomBenchmarkScala.scala" />
       </list>
     </option>
   </component>
@@ -429,7 +398,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MicroSet_Benchmark_Remove.scala" />
+              <option name="myItemId" value="MicroSet_Benchmark_Add.scala" />
               <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -478,6 +447,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="InnerSet_0.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Optimized-Small-Set-Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="implementation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InnerArraySet.scala" />
               <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1385,7 +1380,7 @@
       <workItem from="1493365505167" duration="3052000" />
       <workItem from="1493388058252" duration="2200000" />
       <workItem from="1493737584167" duration="3011000" />
-      <workItem from="1493900214101" duration="4752000" />
+      <workItem from="1493900214101" duration="9749000" />
     </task>
     <servers />
   </component>
@@ -1422,7 +1417,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225568000" />
+    <option name="totallyTimeSpent" value="230565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1361" y="0" width="1930" height="1060" extended-state="6" />
@@ -1438,7 +1433,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32989064" sideWeight="0.50125" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47083333" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119791664" sideWeight="0.49875" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1524,7 +1519,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_8.java" />
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_9.java" />
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/InnerSet_2.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1741,14 +1735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/j/tests/CustomBenchmark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/j/implementation/microSet/MicroSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1148">
@@ -1762,17 +1748,6 @@
         <state relative-caret-position="652">
           <caret line="151" column="41" lean-forward="false" selection-start-line="151" selection-start-column="41" selection-end-line="151" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/implementation/MicroSet.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="132" column="48" lean-forward="false" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
-          <folding>
-            <element signature="e#30#50#0" expanded="true" />
-            <element signature="e#139#206#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1840,14 +1815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="84" column="35" lean-forward="false" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerSet_0.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -1864,16 +1831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="84" column="1" lean-forward="false" selection-start-line="84" selection-start-column="1" selection-end-line="84" selection-end-column="1" />
-          <folding>
-            <element signature="e#21#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Contains.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -1884,10 +1841,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Remove.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
+        <state relative-caret-position="380">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#21#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/implementation/InnerArraySet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-630">
+          <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/implementation/MicroSet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-792">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#30#50#0" expanded="true" />
+            <element signature="e#139#206#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/tests/MicroSet_Benchmark_Add.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-687">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#21#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/j/tests/CustomBenchmark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="126" column="12" lean-forward="false" selection-start-line="126" selection-start-column="12" selection-end-line="132" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scala/tests/CustomBenchmarkScala.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-687">
+          <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
+          <folding>
+            <element signature="e#21#67#0" expanded="true" />
           </folding>
         </state>
       </provider>

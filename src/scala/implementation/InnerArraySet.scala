@@ -2,10 +2,12 @@ package scala.implementation
 
 import java.util.ArrayList
 
+object InnerArraySet
+{
+  private val maxSize = 20
+}
 
 class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
-
-  private val maxSize = 20
 
   def this(p_innerSet: InnerSet[T]) =
   {
@@ -21,7 +23,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
   {
     if(!contains(p_element))
     {
-      if(getSize == maxSize){
+      if(getSize == InnerArraySet.maxSize){
         return new InnerHashSet[T](this, p_element)
       }
       else add(p_element)
@@ -31,7 +33,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
   override def addUnchecked(p_element: T): InnerSet[T] =
   {
-    if(getSize == maxSize){
+    if(getSize == InnerArraySet.maxSize){
       return new InnerHashSet[T](this, p_element)
     }
     else add(p_element)
@@ -93,7 +95,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
     if(!contains(p_element))
     {
       p_microSet.add(p_element)
-      if(getSize == maxSize){
+      if(getSize == InnerArraySet.maxSize){
         return new InnerHashSet[T](this, p_element)
       }
       else add(p_element)
