@@ -24,15 +24,15 @@ class MicroSet_Benchmark_Add {
   val hashSet = new HashSet[TestObject]
   val treeSet = new TreeSet[TestObject]
 
-  var tabTestObject: Array[TestObject] = Array.ofDim(runner.NUMBER_OF_TEST_OBJECT)
-  var tabRandomInt: Array[Int] = Array.ofDim(runner.NUMBER_OF_TEST_OBJECT)
+  var tabTestObject: Array[TestObject] = Array.ofDim(runnerAdd.NUMBER_OF_TEST_OBJECT)
+  var tabRandomInt: Array[Int] = Array.ofDim(runnerAdd.NUMBER_OF_TEST_OBJECT)
 
   @BeforeExperiment()
   def setUp() =
   {
     val rand: Random = new Random
-    for(i <- 0 until runner.NUMBER_OF_TEST_OBJECT) tabTestObject(i) = new TestObject(rand.nextInt(13))
-    for(i <- 0 until runner.NUMBER_OF_TEST_OBJECT) tabRandomInt(i) = rand.nextInt(runner.NUMBER_OF_TEST_OBJECT)
+    for(i <- 0 until runnerAdd.NUMBER_OF_TEST_OBJECT) tabTestObject(i) = new TestObject(rand.nextInt(13))
+    for(i <- 0 until runnerAdd.NUMBER_OF_TEST_OBJECT) tabRandomInt(i) = rand.nextInt(runnerAdd.NUMBER_OF_TEST_OBJECT)
   }
 
   @Benchmark
@@ -40,7 +40,7 @@ class MicroSet_Benchmark_Add {
   {
      for(i <- 0 to reps)
      {
-       for(j <- 0 until runner.NUMBER_OF_TEST_OBJECT) treeSet.add(tabTestObject(tabRandomInt(j)))
+       for(j <- 0 until runnerAdd.NUMBER_OF_TEST_OBJECT) treeSet.add(tabTestObject(tabRandomInt(j)))
      }
   }
 
@@ -49,7 +49,7 @@ class MicroSet_Benchmark_Add {
   {
     for(i <- 0 to reps)
     {
-      for(j <- 0 until runner.NUMBER_OF_TEST_OBJECT) hashSet.add(tabTestObject(tabRandomInt(j)))
+      for(j <- 0 until runnerAdd.NUMBER_OF_TEST_OBJECT) hashSet.add(tabTestObject(tabRandomInt(j)))
     }
   }
 
@@ -58,7 +58,7 @@ class MicroSet_Benchmark_Add {
   {
     for(i <- 0 to reps)
     {
-      for(j <- 0 until runner.NUMBER_OF_TEST_OBJECT) microInnerSet.add(tabTestObject(tabRandomInt(j)))
+      for(j <- 0 until runnerAdd.NUMBER_OF_TEST_OBJECT) microInnerSet.add(tabTestObject(tabRandomInt(j)))
     }
   }
 
@@ -67,7 +67,7 @@ class MicroSet_Benchmark_Add {
   {
     for(i <- 0 to reps)
     {
-      for(j <- 0 until runner.NUMBER_OF_TEST_OBJECT) microArraySet.add(tabTestObject(tabRandomInt(j)))
+      for(j <- 0 until runnerAdd.NUMBER_OF_TEST_OBJECT) microArraySet.add(tabTestObject(tabRandomInt(j)))
     }
   }
 
@@ -76,12 +76,12 @@ class MicroSet_Benchmark_Add {
   {
     for(i <- 0 to reps)
     {
-      for(j <- 0 until runner.NUMBER_OF_TEST_OBJECT) microHAshSet.add(tabTestObject(tabRandomInt(j)))
+      for(j <- 0 until runnerAdd.NUMBER_OF_TEST_OBJECT) microHAshSet.add(tabTestObject(tabRandomInt(j)))
     }
   }
 }
 
-object runner
+object runnerAdd
 {
   val NUMBER_OF_TEST_OBJECT: Int = 30
   def main(args: Array[String]): Unit = {

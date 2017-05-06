@@ -86,10 +86,6 @@ public class InnerSet_4 <T> extends AbstractInnerSet<T>
 
 
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-        // Reverse the add if the innerSet we add is smaller than this
-        if (innerSet.getSize() < this.getSize()) {
-            return innerSet.addAllElements(this);
-        }
         return innerSet.addElement(element_1).addElement(element_2).addElement(element_3).addElement(element_4);
     }
 
