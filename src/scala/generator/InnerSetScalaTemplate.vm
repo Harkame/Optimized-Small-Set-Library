@@ -21,7 +21,7 @@ class $innerSetClassName$t(#foreach($element in $elements)protected val $element
     override def addUnchecked(p_element: T): InnerSet[T] = #if($innerSetOffset == $lastInnerSet)new InnerHashSet(this)#else new $nextInnerSet(#foreach($element in $elements)$element#if( $foreach.hasNext ), #end#end, p_element)#end
 
 
-    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.addElement(element1)#else p_innerSet#foreach($element in $elements).addElement($element)#end#end
+    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.addElement(element1)#else p_innerSet#foreach($element in $elements) .addElement($element)#end#end
 
 
     override def containsElement(p_element: Object): Boolean = #foreach($element in $elements)$element$equals_p#if( $foreach.hasNext ) || #end#end
@@ -44,15 +44,15 @@ class $innerSetClassName$t(#foreach($element in $elements)protected val $element
         #set( $f = $foreach )
         #set($sep = "")
         if($el$equals_p)
-        #end
         #if($innerSetOffset == 1) InnerSet_0[T]
         #else new $previousInnerSet(#foreach($element in $elements)#if($f.count != $foreach.count)$sep$element#set($sep = ", ")#end#end)
         #end
         #if( $f.hasNext )  else #end
+    #end
         else this
     }
 
-    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.removeElement(element1$instanceOf)#else p_innerSet#foreach($element in $elements).removeElement($element$instanceOf)#end#end
+    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.removeElement(element1$instanceOf)#else p_innerSet#foreach($element in $elements) .removeElement($element$instanceOf)#end#end
 
 
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
@@ -89,6 +89,6 @@ class $innerSetClassName$t(#foreach($element in $elements)protected val $element
 
     override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
 
-    override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.addAndPropagate(element1,p_microSet)#else p_innerSet#foreach($element in $elements).addAndPropagate($element,p_microSet)#end#end
+    override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.addAndPropagate(element1,p_microSet)#else p_innerSet#foreach($element in $elements) .addAndPropagate($element,p_microSet)#end#end
 
 }

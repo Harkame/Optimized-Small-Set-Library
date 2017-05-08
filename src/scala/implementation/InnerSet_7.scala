@@ -16,7 +16,7 @@ class InnerSet_7[T](protected val element1: T, protected val element2: T, protec
 
     override def addUnchecked(p_element: T): InnerSet[T] =  new InnerSet_8(element1, element2, element3, element4, element5, element6, element7, p_element)
 
-    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.addElement(element1).addElement(element2).addElement(element3).addElement(element4).addElement(element5).addElement(element6).addElement(element7)
+    override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet .addElement(element1) .addElement(element2) .addElement(element3) .addElement(element4) .addElement(element5) .addElement(element6) .addElement(element7)
 
     override def containsElement(p_element: Object): Boolean = element1.equals(p_element) || element2.equals(p_element) || element3.equals(p_element) || element4.equals(p_element) || element5.equals(p_element) || element6.equals(p_element) || element7.equals(p_element)
 
@@ -37,17 +37,23 @@ class InnerSet_7[T](protected val element1: T, protected val element2: T, protec
     override def removeElement(p_element: Object): InnerSet[T] =
     {
             if(element1.equals(p_element))
-                if(element2.equals(p_element))
-                if(element3.equals(p_element))
-                if(element4.equals(p_element))
-                if(element5.equals(p_element))
-                if(element6.equals(p_element))
-                if(element7.equals(p_element))
-                 new InnerSet_6(element1, element2, element3, element4, element5, element6)
-                        else this
+         new InnerSet_6(element2, element3, element4, element5, element6, element7)
+                  else             if(element2.equals(p_element))
+         new InnerSet_6(element1, element3, element4, element5, element6, element7)
+                  else             if(element3.equals(p_element))
+         new InnerSet_6(element1, element2, element4, element5, element6, element7)
+                  else             if(element4.equals(p_element))
+         new InnerSet_6(element1, element2, element3, element5, element6, element7)
+                  else             if(element5.equals(p_element))
+         new InnerSet_6(element1, element2, element3, element4, element6, element7)
+                  else             if(element6.equals(p_element))
+         new InnerSet_6(element1, element2, element3, element4, element5, element7)
+                  else             if(element7.equals(p_element))
+         new InnerSet_6(element1, element2, element3, element4, element5, element6)
+                            else this
     }
 
-    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.removeElement(element1.asInstanceOf[Object]).removeElement(element2.asInstanceOf[Object]).removeElement(element3.asInstanceOf[Object]).removeElement(element4.asInstanceOf[Object]).removeElement(element5.asInstanceOf[Object]).removeElement(element6.asInstanceOf[Object]).removeElement(element7.asInstanceOf[Object])
+    override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet .removeElement(element1.asInstanceOf[Object]) .removeElement(element2.asInstanceOf[Object]) .removeElement(element3.asInstanceOf[Object]) .removeElement(element4.asInstanceOf[Object]) .removeElement(element5.asInstanceOf[Object]) .removeElement(element6.asInstanceOf[Object]) .removeElement(element7.asInstanceOf[Object])
 
     override def retainAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =
     {
@@ -85,5 +91,5 @@ class InnerSet_7[T](protected val element1: T, protected val element2: T, protec
 
     override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
 
-    override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet.addAndPropagate(element1,p_microSet).addAndPropagate(element2,p_microSet).addAndPropagate(element3,p_microSet).addAndPropagate(element4,p_microSet).addAndPropagate(element5,p_microSet).addAndPropagate(element6,p_microSet).addAndPropagate(element7,p_microSet)
+    override def addAllAndPropagateReverse(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] =  p_innerSet .addAndPropagate(element1,p_microSet) .addAndPropagate(element2,p_microSet) .addAndPropagate(element3,p_microSet) .addAndPropagate(element4,p_microSet) .addAndPropagate(element5,p_microSet) .addAndPropagate(element6,p_microSet) .addAndPropagate(element7,p_microSet)
 }

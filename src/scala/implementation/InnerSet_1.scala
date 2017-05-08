@@ -31,8 +31,8 @@ class InnerSet_1[T](protected val element1: T) extends AbstractInnerSet[T]
     override def removeElement(p_element: Object): InnerSet[T] =
     {
             if(element1.equals(p_element))
-                 InnerSet_0[T]
-                        else this
+         InnerSet_0[T]
+                            else this
     }
 
     override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.removeElement(element1.asInstanceOf[Object])
