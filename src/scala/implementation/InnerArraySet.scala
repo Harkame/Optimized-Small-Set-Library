@@ -65,7 +65,14 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
 
   override def removeElement(p_element: Object): InnerSet[T] =
   {
-    if(containsElement(p_element)) remove(p_element)
+    var index = 0
+    while (index < size) {
+        if (p_element == get(index)) {
+          set(index, get(size - 1))
+          remove(size - 1)
+        }
+        index += 1
+    }
     this
   }
 
@@ -73,7 +80,7 @@ class InnerArraySet[T] extends ArrayList[T] with InnerSet[T] {
   {
     val it: InnerSetIterator[T] = p_innerSet.iterator
     while(it.hasNext){
-      if(contains(it.next())) remove(it.next())
+      removeElement(it.next().asInstanceOf[Object])
     }
     this
   }
