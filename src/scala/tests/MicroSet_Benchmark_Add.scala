@@ -83,9 +83,9 @@ class MicroSet_Benchmark_Add {
 
 object runnerAdd
 {
-  val NUMBER_OF_TEST_OBJECT: Int = 30
+  val NUMBER_OF_TEST_OBJECT: Int = 5
   def main(args: Array[String]): Unit = {
-    val args = Array[String]("-i", "runtime", "-r", "ADD scale=" + NUMBER_OF_TEST_OBJECT + ", object_number=" + NUMBER_OF_TEST_OBJECT)
+    val args = Array[String]("-i", "runtime", "-r", "SCALA ADD scale=" + NUMBER_OF_TEST_OBJECT + ", object_number=" + NUMBER_OF_TEST_OBJECT)
     CaliperMain.main(classOf[MicroSet_Benchmark_Add], args)
   }
 }
