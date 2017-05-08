@@ -54,10 +54,6 @@ public class InnerArraySet<T> extends ArrayList<T> implements InnerSet<T> {
 
     @Override
     public InnerSet<T> addAllElements(InnerSet<T> innerSet) {
-        // Reverse the add if the innerSet we add is smaller than this
-        if (innerSet.getSize() < this.getSize()) {
-            return innerSet.addAllElements(this);
-        }
         for (T el : this) {
             innerSet = innerSet.addElement(el);
         }
