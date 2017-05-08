@@ -30,10 +30,9 @@ class InnerSet_1[T](protected val element1: T) extends AbstractInnerSet[T]
 
     override def removeElement(p_element: Object): InnerSet[T] =
     {
-        if(element1.equals(p_element))
-            InnerSet_0[T]
-        else
-            this
+            if(element1.equals(p_element))
+                 InnerSet_0[T]
+                        else this
     }
 
     override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.removeElement(element1.asInstanceOf[Object])
@@ -53,7 +52,7 @@ class InnerSet_1[T](protected val element1: T) extends AbstractInnerSet[T]
 
     override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
-    override def toString : String = "InnerSet1 : { " + element1 + " }"
+    override def toString : String = "{ " + element1 + " }"
 
     override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
     {

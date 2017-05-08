@@ -32,9 +32,8 @@ class InnerSet_2[T](protected val element1: T, protected val element2: T) extend
     override def removeElement(p_element: Object): InnerSet[T] =
     {
             if(element1.equals(p_element))
-         new InnerSet_1(element2)
-                  else             if(element2.equals(p_element))
-         new InnerSet_1(element1)
+                if(element2.equals(p_element))
+                 new InnerSet_1(element1)
                         else this
     }
 
@@ -54,9 +53,9 @@ class InnerSet_2[T](protected val element1: T, protected val element2: T) extend
 
     override def copy: InnerSet[T] = this
 
-    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
+    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
-    override def toString : String = "InnerSet2 : { " + element1 + ", " + element2 + " }"
+    override def toString : String = "{ " + element1 + ", " + element2 + " }"
 
     override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
     {

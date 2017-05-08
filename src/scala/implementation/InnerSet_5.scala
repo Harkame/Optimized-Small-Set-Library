@@ -11,10 +11,10 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
         {
             this
         }
-        else new InnerHashSet(this)
+        else  new InnerSet_6(element1, element2, element3, element4, element5, p_element)
     }
 
-    override def addUnchecked(p_element: T): InnerSet[T] = new InnerHashSet(this)
+    override def addUnchecked(p_element: T): InnerSet[T] =  new InnerSet_6(element1, element2, element3, element4, element5, p_element)
 
     override def addAllElements(p_innerSet: InnerSet[T]): InnerSet[T] =  p_innerSet.addElement(element1).addElement(element2).addElement(element3).addElement(element4).addElement(element5)
 
@@ -35,15 +35,11 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
     override def removeElement(p_element: Object): InnerSet[T] =
     {
             if(element1.equals(p_element))
-         new InnerSet_4(element2, element3, element4, element5)
-                  else             if(element2.equals(p_element))
-         new InnerSet_4(element1, element3, element4, element5)
-                  else             if(element3.equals(p_element))
-         new InnerSet_4(element1, element2, element4, element5)
-                  else             if(element4.equals(p_element))
-         new InnerSet_4(element1, element2, element3, element5)
-                  else             if(element5.equals(p_element))
-         new InnerSet_4(element1, element2, element3, element4)
+                if(element2.equals(p_element))
+                if(element3.equals(p_element))
+                if(element4.equals(p_element))
+                if(element5.equals(p_element))
+                 new InnerSet_4(element1, element2, element3, element4)
                         else this
     }
 
@@ -66,9 +62,9 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
 
     override def copy: InnerSet[T] = this
 
-    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
+    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
-    override def toString : String = "InnerSet5 : { " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + ", " + element5 + " }"
+    override def toString : String = "{ " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + ", " + element5 + " }"
 
     override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
     {
@@ -76,7 +72,10 @@ class InnerSet_5[T](protected val element1: T, protected val element2: T, protec
         {
             this
         }
-        else new InnerHashSet(this)    }
+        else         {
+            p_microSet.add(p_element)
+            new InnerSet_6(element1, element2, element3, element4, element5, p_element)
+        }    }
 
     override def addAllAndPropagate(p_innerSet: InnerSet[T], p_microSet: MicroSet[T]): InnerSet[T] = p_innerSet.addAllAndPropagateReverse(this, p_microSet)
 

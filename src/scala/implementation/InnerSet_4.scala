@@ -34,13 +34,10 @@ class InnerSet_4[T](protected val element1: T, protected val element2: T, protec
     override def removeElement(p_element: Object): InnerSet[T] =
     {
             if(element1.equals(p_element))
-         new InnerSet_3(element2, element3, element4)
-                  else             if(element2.equals(p_element))
-         new InnerSet_3(element1, element3, element4)
-                  else             if(element3.equals(p_element))
-         new InnerSet_3(element1, element2, element4)
-                  else             if(element4.equals(p_element))
-         new InnerSet_3(element1, element2, element3)
+                if(element2.equals(p_element))
+                if(element3.equals(p_element))
+                if(element4.equals(p_element))
+                 new InnerSet_3(element1, element2, element3)
                         else this
     }
 
@@ -62,9 +59,9 @@ class InnerSet_4[T](protected val element1: T, protected val element2: T, protec
 
     override def copy: InnerSet[T] = this
 
-    override def clear(unused: Boolean): InnerSet[T] = new InnerSet_0[T]
+    override def clear(unused: Boolean): InnerSet[T] = InnerSet_0[T]
 
-    override def toString : String = "InnerSet4 : { " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + " }"
+    override def toString : String = "{ " + element1 + ", " + element2 + ", " + element3 + ", " + element4 + " }"
 
     override def addAndPropagate(p_element: T, p_microSet: MicroSet[T]): InnerSet[T] =
     {

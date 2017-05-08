@@ -63,7 +63,7 @@ object CustomBenchmarkScala
     var listeCroissante: Array[MicroSet[TestObject]] = new Array[MicroSet[TestObject]](LISTE_CROISSANTE_SIZE)
     val runtime = Runtime.getRuntime
     runtime.gc()
-    
+
     val startTime = System.nanoTime
 
     for (z <- 0 until ITERATION) {

@@ -49,8 +49,7 @@ class $innerSetClassName$t(#foreach($element in $elements)protected val $element
         #else new $previousInnerSet(#foreach($element in $elements)#if($f.count != $foreach.count)$sep$element#set($sep = ", ")#end#end)
         #end
         #if( $f.hasNext )  else #end
-    #end
-    else this
+        else this
     }
 
     override def removeAllElements(p_innerSet: InnerSet[T]): InnerSet[T] = #if($innerSetOffset  == 1) p_innerSet.removeElement(element1$instanceOf)#else p_innerSet#foreach($element in $elements).removeElement($element$instanceOf)#end#end
