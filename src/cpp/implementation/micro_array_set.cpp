@@ -8,7 +8,7 @@ using namespace std;
 template<typename T>
 micro_array_set<T>::micro_array_set()
 {
-	this->a_inner_set = new inner_array_set<T>();
+	this->a_inner_set = inner_set_0<T>::EMPTY;
 }
 
 template<typename T>
@@ -28,9 +28,7 @@ iterator_micro_set<T>  micro_array_set<T>::end()
 {
 	iterator_micro_set<T> r_iterator_micro_set(this->a_inner_set);
 
-	r_iterator_micro_set.end();
-
-	return r_iterator_micro_set;
+	return r_iterator_micro_set.end();
 }
 
 template<typename T>
@@ -67,7 +65,10 @@ int micro_array_set<T>::max_size() const
 template<typename T>
 void micro_array_set<T>:: insert(T p_element)
 {
-	this->a_inner_set = this->a_inner_set->add_element(p_element);
+	if(this->a_inner_set->get_size() == 0)
+		this->a_inner_set = this->a_inner_set->add_element_array(p_element);
+	else
+		this->a_inner_set = this->a_inner_set->add_element(p_element);
 }
 
 template<typename T>
@@ -81,7 +82,7 @@ void micro_array_set<T>:: clear()
 {
 	delete this->a_inner_set;
 
-	this->a_inner_set = new inner_array_set<T>();
+	this->a_inner_set = inner_set_0<T>::EMPTY;
 }
 
 template<typename T>
@@ -114,11 +115,4 @@ micro_array_set<T>* micro_array_set<T>::add_all_and_propagate(micro_array_set<T>
 	this->a_inner_set = this->a_inner_set->add_all_and_propagate(p_micro_array_set.a_inner_set, r_micro_array_set);
 
 	return r_micro_array_set;
-}
-
-template<typename T>
-bool  operator==(const micro_array_set<T> p_micro_array_set_a, const micro_array_set<T> p_micro_array_set_b)
-{
-
-	return true;
 }

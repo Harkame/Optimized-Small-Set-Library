@@ -1,3 +1,4 @@
+#include "inner_set_0.hpp"
 #include "inner_tree_set.hpp"
 
 #include "inner_unordered_set.hpp"
@@ -43,7 +44,7 @@ inner_tree_set<T>::inner_tree_set(inner_array_set<T>* p_inner_set, T p_element) 
 
   this->insert(p_element);
 
-  delete p_inner_set;
+  //delete p_inner_set;
 }
 
 template<typename T>

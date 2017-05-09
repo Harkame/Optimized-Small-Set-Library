@@ -1,3 +1,4 @@
+#include "inner_set_0.hpp"
 #include "inner_unordered_set.hpp"
 #include "iterator_micro_set.hpp"
 
@@ -17,12 +18,14 @@ inner_unordered_set<T>::inner_unordered_set(inner_set<T>* p_inner_set) : unorder
 template<typename T>
 inner_unordered_set<T>::inner_unordered_set(inner_tree_set<T>* p_inner_tree_set, T p_element) : unordered_set<T>()
 {
+  this->reserve(20);
+
   for(auto t_iterator = p_inner_tree_set->begin(); t_iterator != p_inner_tree_set->end(); t_iterator++)
     this->insert(*t_iterator);
 
   this->insert(p_element);
 
-  delete p_inner_tree_set;
+  //delete p_inner_tree_set;
 }
 
 template<typename T>
@@ -88,9 +91,9 @@ T inner_unordered_set<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_unordered_set<T>::remove_element(T p_element)
 {
-  this->erase(p_element);
+    this->erase(p_element);
 
-  return this;
+    return this;
 }
 
 template<typename T>

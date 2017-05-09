@@ -2,8 +2,7 @@
 #define INNER_ARRAY_SET_HPP
 
 #include "inner_set.hpp"
-
-#include "inner_set_5.hpp"
+#include "inner_set_3.hpp"
 
 using namespace std;
 
@@ -15,9 +14,8 @@ class inner_array_set : public inner_set<T>
         int a_index;
 
         inner_array_set<T>();
-
+        inner_array_set<T>(T);
         inner_array_set<T>(inner_set_3<T>*, T);
-
         inner_array_set<T>(inner_set<T>*);
 
         virtual ~inner_array_set<T>();
@@ -27,6 +25,8 @@ class inner_array_set : public inner_set<T>
 
         virtual bool contains_element(T);
         virtual bool contains_all_elements(inner_set<T>*);
+
+        virtual inner_set<T>* copy();
 
         virtual T get_element(int);
 

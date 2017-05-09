@@ -29,7 +29,6 @@
 int g_array_random_insert[G_POOL_SIZE];
 int g_array_random_erase[G_POOL_SIZE];
 
-
 micro_inner_set<int>*           g_micro_inner_set           = new micro_inner_set<int>();
 micro_array_set<int>*           g_micro_array_set           = new micro_array_set<int>();
 micro_tree_set<int>*             g_micro_tree_set             = new micro_tree_set<int>();
@@ -45,7 +44,7 @@ void generate_random(benchmark::State& state)
     if(G_POOL_RANDOM)
       for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
       {
-        g_array_random_insert[t_index] = (rand() % G_POOL_SIZE) + 1;
+        g_array_random_insert[t_index] = t_index;
         g_array_random_erase[t_index] = (rand() % G_POOL_SIZE) + 1;
       }
       else
@@ -68,14 +67,12 @@ void erase_micro_inner_set(benchmark::State& state)
     g_micro_inner_set->clear();
 
     for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
-    {
-      g_micro_inner_set->insert(g_array_random_erase[t_index] );
-    }
+      g_micro_inner_set->insert(g_array_random_insert[t_index]);
 
     state.ResumeTiming();
 
     for(int t_index=0; t_index < G_POOL_SIZE; t_index++)
-      g_micro_inner_set->erase(g_array_random_erase[t_index] );
+      g_micro_inner_set->erase(g_array_random_erase[t_index]);
   }
 }
 
@@ -91,7 +88,7 @@ void erase_micro_array_set(benchmark::State& state)
 
     for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
     {
-      g_micro_array_set->insert(g_array_random_erase[t_index] );
+      g_micro_array_set->insert(g_array_random_insert[t_index] );
     }
 
     state.ResumeTiming();
@@ -113,7 +110,7 @@ void erase_micro_tree_set(benchmark::State& state)
 
     for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
     {
-      g_micro_tree_set->insert(g_array_random_erase[t_index] );
+      g_micro_tree_set->insert(g_array_random_insert[t_index] );
     }
 
     state.ResumeTiming();
@@ -135,7 +132,7 @@ void erase_micro_unordered_set(benchmark::State& state)
 
     for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
     {
-      g_micro_unordered_set->insert(g_array_random_erase[t_index] );
+      g_micro_unordered_set->insert(g_array_random_insert[t_index] );
     }
 
     state.ResumeTiming();
@@ -157,7 +154,7 @@ void erase_micro_vector_set(benchmark::State& state)
 
     for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
     {
-      g_micro_vector_set->insert(g_array_random_erase[t_index] );
+      g_micro_vector_set->insert(g_array_random_insert[t_index] );
     }
 
     state.ResumeTiming();

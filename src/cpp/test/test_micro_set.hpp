@@ -42,15 +42,17 @@ private:
 public:
   void test_insert();
 
+  void test_add_all();
+
   void test_erase();
+
+  void test_erase_all();
 
   void test_retain_all();
 
-  void test_begin();
-
-  void test_end();
-
   void test_find();
+
+  void test_propagate();
 };
 
 #endif

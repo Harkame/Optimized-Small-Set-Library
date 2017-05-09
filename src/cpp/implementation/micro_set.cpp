@@ -2,11 +2,14 @@
 
 #include "iterator_micro_set.hpp"
 
+#include <cstddef>
+
 using namespace std;
 
 template<typename T>
 micro_set<T>::micro_set()
 {
+		this->a_inner_set = inner_set_0<T>::EMPTY;
 }
 
 template<typename T>

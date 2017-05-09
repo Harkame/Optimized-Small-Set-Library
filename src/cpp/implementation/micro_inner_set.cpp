@@ -29,9 +29,7 @@ iterator_micro_set<T>  micro_inner_set<T>::end()
 {
 	iterator_micro_set<T> r_iterator_micro_set(this->a_inner_set);
 
-	r_iterator_micro_set.end();
-
-	return r_iterator_micro_set;
+	return r_iterator_micro_set.end();
 }
 
 template<typename T>
@@ -80,9 +78,13 @@ void micro_inner_set<T>:: erase(T p_element)
 template<typename T>
 void micro_inner_set<T>:: clear()
 {
-	delete this->a_inner_set;
-
-	this->a_inner_set = inner_set_0<T>::EMPTY;
+	if(this->a_inner_set == nullptr)
+		this->a_inner_set = inner_set_0<T>::EMPTY;
+	else if(this->a_inner_set->get_size() > 0)
+	{
+		delete this->a_inner_set;
+		this->a_inner_set = inner_set_0<T>::EMPTY;
+	}
 }
 
 template<typename T>
@@ -98,7 +100,14 @@ bool micro_inner_set<T>::retain_all(micro_inner_set<T> p_micro_inner_set)
 template<typename T>
 void micro_inner_set<T>::add_all(micro_inner_set<T> p_micro_inner_set)
 {
-	this->a_inner_set = p_micro_inner_set.a_inner_set->add_all_elements(this->a_inner_set);
+	micro_inner_set<T> t_micro_inner_set;
+	iterator_micro_set<T> t_iterator_micro_set = this->begin();
+
+	while(t_iterator_micro_set != t_iterator_micro_set.end())
+		t_micro_inner_set.insert(*t_iterator_micro_set++);
+
+
+	this->a_inner_set = p_micro_inner_set.a_inner_set->add_all_elements(t_micro_inner_set.a_inner_set);
 }
 
 template<typename T>
@@ -108,16 +117,11 @@ void micro_inner_set<T>::remove_all(micro_inner_set<T> p_micro_inner_set)
 }
 
 template<typename T>
-micro_inner_set<T>* micro_inner_set<T>::add_all_and_propagate(micro_inner_set<T> p_micro_inner_set)
+micro_inner_set<T> micro_inner_set<T>::add_all_and_propagate(micro_inner_set<T> p_micro_inner_set)
 {
-	micro_inner_set<T>* r_micro_inner_set = new micro_inner_set<T>();
-	this->a_inner_set = this->a_inner_set->add_all_and_propagate(p_micro_inner_set.a_inner_set, r_micro_inner_set);
+	micro_inner_set<T> r_micro_inner_set;
+
+	this->a_inner_set = this->a_inner_set->add_all_and_propagate(p_micro_inner_set.a_inner_set, &r_micro_inner_set);
+
 	return r_micro_inner_set;
-}
-
-template<typename T>
-bool  operator==(const micro_inner_set<T> p_micro_inner_set_a, const micro_inner_set<T> p_micro_inner_set_b)
-{
-
-	return true;
 }

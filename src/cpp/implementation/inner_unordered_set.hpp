@@ -7,6 +7,8 @@
 
 #include "inner_array_set.hpp"
 
+#include "inner_tree_set.hpp"
+
 using namespace std;
 
 template<typename T>

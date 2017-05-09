@@ -1,3 +1,4 @@
+#include "inner_set_0.hpp"
 #include "inner_vector_set.hpp"
 
 #include <vector>

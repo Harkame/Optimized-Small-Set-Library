@@ -22,6 +22,7 @@ class inner_set_0 : virtual public inner_set<T>
       virtual ~inner_set_0<T>();
 
       virtual inner_set<T>* add_element(T);
+      virtual inner_set<T>* add_element_array(T);  
       virtual inner_set<T>* add_all_elements(inner_set<T>*);
 
       virtual bool contains_element(T);

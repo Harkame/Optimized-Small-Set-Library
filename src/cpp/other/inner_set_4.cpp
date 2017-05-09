@@ -26,7 +26,7 @@ inner_set_4<T>::inner_set_4(inner_set_3<T>* p_inner_set, T p_element)
 
   a_values.element_4 = p_element;
 
-  delete p_inner_set;
+  //delete p_inner_set;
 }
 
 template<typename T>
@@ -93,7 +93,7 @@ inner_set<T>* inner_set_4<T>::remove_element(T p_element)
     t_value_2 = a_values.element_3;
     t_value_3 = a_values.element_4;
 
-    delete this;
+    //delete this;
 
     return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
   }
@@ -103,7 +103,7 @@ inner_set<T>* inner_set_4<T>::remove_element(T p_element)
     t_value_2 = a_values.element_3;
     t_value_3 = a_values.element_4;
 
-    delete this;
+    //delete this;
 
     return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
   }
@@ -113,7 +113,7 @@ inner_set<T>* inner_set_4<T>::remove_element(T p_element)
     t_value_2 = a_values.element_2;
     t_value_3 = a_values.element_4;
 
-    delete this;
+    //delete this;
 
     return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
   }
@@ -122,7 +122,7 @@ inner_set<T>* inner_set_4<T>::remove_element(T p_element)
     t_value_1 = a_values.element_1;
     t_value_2 = a_values.element_2;
     t_value_3 = a_values.element_3;
-    delete this;
+    //delete this;
 
     return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
   }

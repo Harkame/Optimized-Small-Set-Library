@@ -23,37 +23,31 @@
 
 #include "iterator_micro_set.cpp"
 
-#define G_POOL_SIZE          15
+#include <unistd.h>
+
+#define G_POOL_SIZE          3
 #define G_POOL_RANDOM true
 
 int g_array_random_insert[G_POOL_SIZE];
 
-micro_inner_set<int>*           g_micro_inner_set          = new micro_inner_set<int>();
+micro_inner_set<int>*           g_micro_inner_set           = new micro_inner_set<int>();
 micro_array_set<int>*           g_micro_array_set           = new micro_array_set<int>();
 micro_tree_set<int>*             g_micro_tree_set             = new micro_tree_set<int>();
 micro_unordered_set<int>* g_micro_unordered_set = new micro_unordered_set<int>();
-micro_vector_set<int>*         g_micro_vector_set          = new micro_vector_set<int>();
+micro_vector_set<int>*         g_micro_vector_set         = new micro_vector_set<int>();
 
 void generate_random(benchmark::State& state)
 {
   while (state.KeepRunning())
   {
-
     srand( (unsigned) time(nullptr));
 
     if(G_POOL_RANDOM)
-    {
       for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
-      {
         g_array_random_insert[t_index] = (rand() % G_POOL_SIZE) + 1;
-        g_micro_inner_set->insert(g_array_random_insert[t_index]);
-      }
-    }
     else
-    {
       for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
         g_array_random_insert[t_index] = t_index;
-      }
     }
 }
 
@@ -70,9 +64,7 @@ void insert_micro_inner_set(benchmark::State& state)
     state.ResumeTiming();
 
     for(int t_index=0; t_index < G_POOL_SIZE; t_index++)
-    {
       g_micro_inner_set->insert(g_array_random_insert[t_index] );
-    }
   }
 }
 

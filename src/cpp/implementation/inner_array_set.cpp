@@ -1,12 +1,21 @@
+#include "inner_set_0.hpp"
 #include "inner_array_set.hpp"
 
 #include "inner_tree_set.hpp"
-#include <iostream>
+#include "iterator_micro_set.hpp"
 
 template<typename T>
 inner_array_set<T>::inner_array_set()
 {
   a_index = 0;
+}
+
+template<typename T>
+inner_array_set<T>::inner_array_set(T p_element)
+{
+  a_index = 1;
+
+  a_values[0] = p_element;
 }
 
 template<typename T>
@@ -20,14 +29,15 @@ inner_array_set<T>::inner_array_set(inner_set_3<T>* p_inner_set, T p_element)
 
   a_values[3] = p_element;
 
-  delete p_inner_set;
+  //delete p_inner_set;
 }
 
 template<typename T>
 inner_array_set<T>::inner_array_set(inner_set<T>* p_inner_set)
 {
-  for(auto t_iterator = p_inner_set->begin(); t_iterator != p_inner_set->end(); t_iterator++)
-    this->insert(*t_iterator);
+  iterator_micro_set<T> t_iterator(p_inner_set);
+  for(t_iterator = t_iterator; t_iterator != t_iterator.end(); t_iterator++)
+    this->a_values[a_index++] = *t_iterator;
 }
 
 template<typename T>
@@ -39,7 +49,7 @@ inner_array_set<T>::~inner_array_set()
 template<typename T>
 inner_set<T>* inner_array_set<T>::add_element(T p_element)
 {
-  if(a_index == 19)
+  if(a_index == 20)
   {
     if(!contains_element(p_element))
       return new inner_tree_set<T>(this, p_element);
@@ -108,6 +118,12 @@ bool inner_array_set<T>::contains_all_elements(inner_set<T>* p_inner_set)
 }
 
 template<typename T>
+inner_set<T>* inner_array_set<T>::copy()
+{
+  return new inner_array_set<T>(this);
+}
+
+template<typename T>
 T inner_array_set<T>::get_element(int p_index)
 {
     return a_values[p_index];
@@ -147,7 +163,7 @@ inner_set<T>* inner_array_set<T>::remove_element(T p_element)
       t_value_3 = a_values[2];
     }
 
-    delete this;
+    //delete this;
 
     return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
   }
@@ -253,6 +269,7 @@ inner_set<T>* inner_array_set<T>::add_and_propagate(T p_element, micro_set<T>* p
 template<typename T>
 inner_set<T>* inner_array_set<T>::add_all_and_propagate(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
 {
+
   return p_inner_set->add_all_and_propagate_reverse(this, p_micro_set);
 }
 

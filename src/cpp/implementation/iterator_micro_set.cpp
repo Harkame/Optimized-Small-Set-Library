@@ -71,15 +71,13 @@ iterator_micro_set<T> iterator_micro_set<T>::next()
 template<typename T>
 bool operator==(const iterator_micro_set<T> p_iterator_micro_set_a, const iterator_micro_set<T> p_iterator_micro_set_b)
 {
-  return p_iterator_micro_set_a.a_index == p_iterator_micro_set_b.a_index &&
-    *p_iterator_micro_set_a == *p_iterator_micro_set_b;
+  return p_iterator_micro_set_a.a_index == p_iterator_micro_set_b.a_index;
 }
 
 template<typename T>
 bool operator!=(const iterator_micro_set<T> p_iterator_micro_set_a, const iterator_micro_set<T> p_iterator_micro_set_b)
 {
-  return p_iterator_micro_set_a.a_index != p_iterator_micro_set_b.a_index ||
-    *p_iterator_micro_set_a != *p_iterator_micro_set_b;
+  return p_iterator_micro_set_a.a_index != p_iterator_micro_set_b.a_index;
 }
 
 template<typename T>

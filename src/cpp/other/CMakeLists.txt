@@ -79,6 +79,7 @@ add_test(erase_test erase_test --benchmark_min_time=0.01)
 compile_benchmark_test(find_test)
 add_test(find_test find_test --benchmark_min_time=0.01)
 
+
 compile_output_test(reporter_output_test)
 add_test(reporter_output_test reporter_output_test --benchmark_min_time=0.01)
 

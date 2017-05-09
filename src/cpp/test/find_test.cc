@@ -23,17 +23,19 @@
 
 #include "iterator_micro_set.cpp"
 
-#define G_POOL_SIZE          3
+#define G_POOL_SIZE          30
 #define G_POOL_RANDOM true
 
 int g_array_random_insert[G_POOL_SIZE];
 int g_array_random_find[G_POOL_SIZE];
 
-micro_inner_set<int>*           g_micro_inner_set           = new micro_inner_set<int>();
-micro_array_set<int>*           g_micro_array_set           = new micro_array_set<int>();
-micro_tree_set<int>*             g_micro_tree_set             = new micro_tree_set<int>();
-micro_unordered_set<int>* g_micro_unordered_set = new micro_unordered_set<int>();
-micro_vector_set<int>*         g_micro_vector_set         = new micro_vector_set<int>();
+micro_inner_set<int>*           g_micro_inner_set;
+micro_array_set<int>*           g_micro_array_set;
+micro_tree_set<int>*             g_micro_tree_set;
+micro_unordered_set<int>* g_micro_unordered_set;
+micro_vector_set<int>*         g_micro_vector_set;
+
+bool g_already_insert = false;
 
 void generate_random(benchmark::State& state)
 {
@@ -42,30 +44,37 @@ void generate_random(benchmark::State& state)
     srand( (unsigned) time(nullptr));
 
     if(G_POOL_RANDOM)
-    {
       for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
       {
-        g_array_random_insert[t_index] = (rand() % G_POOL_SIZE) + 1;
+          g_array_random_insert[t_index] = t_index;
         g_array_random_find[t_index] = (rand() % G_POOL_SIZE) + 1;
       }
-    }
-    else
-    {
-      for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
-      {
-        g_array_random_insert[t_index] = t_index;
-        g_array_random_find[t_index] = t_index;
-      }
-    }
+      else
+        for(int t_index = 0; t_index < G_POOL_SIZE / 2; t_index++)
+        {
+          g_array_random_insert[t_index] = t_index;
+          g_array_random_find[t_index] = t_index;
+        }
 
-    for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
-    {
-      g_micro_inner_set->insert(g_array_random_insert[t_index]);
-      g_micro_array_set->insert(g_array_random_insert[t_index]);
-      g_micro_tree_set->insert(g_array_random_insert[t_index]);
-      g_micro_unordered_set->insert(g_array_random_insert[t_index]);
-      g_micro_vector_set->insert(g_array_random_insert[t_index]);
-    }
+      if(g_already_insert == false)
+      {
+        g_already_insert = true;
+
+        g_micro_inner_set           = new micro_inner_set<int>();
+        g_micro_array_set           = new micro_array_set<int>();
+        g_micro_tree_set             = new micro_tree_set<int>();
+        g_micro_unordered_set = new micro_unordered_set<int>();
+        g_micro_vector_set         = new micro_vector_set<int>();
+
+        for(int t_index = 0; t_index < G_POOL_SIZE; t_index++)
+        {
+          g_micro_inner_set->insert(g_array_random_insert[t_index] );
+          g_micro_array_set->insert(g_array_random_insert[t_index] );
+          g_micro_tree_set->insert(g_array_random_insert[t_index] );
+          g_micro_unordered_set->insert(g_array_random_insert[t_index] );
+          g_micro_vector_set->insert(g_array_random_insert[t_index] );
+        }
+      }
   }
 }
 
@@ -80,7 +89,7 @@ void find_micro_inner_set(benchmark::State& state)
   }
 }
 
-//BENCHMARK(find_micro_inner_set);
+BENCHMARK(find_micro_inner_set);
 
 void find_micro_array_set(benchmark::State& state)
 {

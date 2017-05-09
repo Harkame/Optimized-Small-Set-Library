@@ -1,3 +1,4 @@
+#include "inner_set_0.hpp"
 #include "inner_set_2.hpp"
 #include "inner_set_3.hpp"
 
@@ -21,7 +22,7 @@ inner_set_2<T>::inner_set_2(inner_set_1<T>* p_inner_set, T p_element)
 
   a_values.element_2 = p_element;
 
-  delete p_inner_set;
+  ////delete p_inner_set;
 }
 
 template<typename T>
@@ -80,7 +81,7 @@ inner_set<T>* inner_set_2<T>::remove_element(T p_element)
   {
     t_value_1 = a_values.element_2;
 
-    delete this;
+    ////delete this;
 
     return new inner_set_1<T>(t_value_1);
   }
@@ -88,7 +89,7 @@ inner_set<T>* inner_set_2<T>::remove_element(T p_element)
   {
     t_value_1 = a_values.element_1;
 
-    delete this;
+    ////delete this;
 
     return new inner_set_1<T>(t_value_1);
   }
@@ -105,7 +106,7 @@ inner_set<T>* inner_set_2<T>::remove_all_elements(inner_set<T>* p_inner_set)
 template<typename T>
 inner_set<T>* inner_set_2<T>::retain_all_elements(inner_set<T>* p_inner_set)
 {
-  inner_set<T>* r_inner_set = new inner_set_0<T>();
+  inner_set<T>* r_inner_set = inner_set_0<T>::EMPTY;
 
   if(p_inner_set->contains_element(a_values.element_1))
     r_inner_set = r_inner_set->add_element(a_values.element_1);
@@ -120,7 +121,7 @@ template<typename T>
 inner_set<T>* inner_set_2<T>::add_and_propagate(T p_element, micro_set<T>* p_micro_set)
 {
   if(a_values.element_1 == p_element ||
-    a_values.element_2 == p_element)
+     a_values.element_2 == p_element)
     return this;
   else
   {

@@ -1,5 +1,6 @@
 #include "inner_set_0.hpp"
 #include "inner_set.hpp"
+#include "inner_array_set.hpp"
 
 template<typename T>
 inner_set_0<T>* inner_set_0<T>::EMPTY = new inner_set_0<T>();
@@ -22,13 +23,15 @@ inner_set<T>* inner_set_0<T>::add_element(T p_element)
 }
 
 template<typename T>
+inner_set<T>* inner_set_0<T>::add_element_array(T p_element)
+{
+	return new inner_array_set<T>(p_element);
+}
+
+template<typename T>
 inner_set<T>* inner_set_0<T>::add_all_elements(inner_set<T>* p_inner_set)
 {
-<<<<<<< HEAD
 	return p_inner_set->copy();
-=======
-	return p_inner_set;
->>>>>>> b6f72d788db8ecc4795762e8df1d07aba783a59c
 }
 
 template<typename T>
@@ -62,7 +65,8 @@ template<typename T>
 inner_set<T>* inner_set_0<T>::remove_element(T p_element)
 {
 	p_element = p_element;
-  return this;
+	
+	return this;
 }
 
 template<typename T>

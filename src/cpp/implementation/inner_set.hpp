@@ -1,6 +1,8 @@
 #ifndef INNER_SET_HPP
 #define INNER_SET_HPP
 
+#include <cstddef>
+
 using namespace std;
 
 template<typename T>
@@ -20,6 +22,7 @@ class inner_set
       virtual ~inner_set<T>(){}
 
       virtual inner_set<T>* add_element(T){return nullptr;};
+      virtual inner_set<T>* add_element_array(T){return nullptr;};
       virtual inner_set<T>* add_all_elements(inner_set<T>*){return nullptr;};
 
       virtual bool contains_element(T){return false;};

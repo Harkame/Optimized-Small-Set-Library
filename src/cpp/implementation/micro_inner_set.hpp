@@ -40,7 +40,7 @@ class micro_inner_set : virtual public micro_set<T>
 
       virtual void remove_all(micro_inner_set<T>);
 
-      virtual micro_inner_set<T>* add_all_and_propagate(micro_inner_set<T>);
+      virtual micro_inner_set<T> add_all_and_propagate(micro_inner_set<T>);
   };
 
 #endif

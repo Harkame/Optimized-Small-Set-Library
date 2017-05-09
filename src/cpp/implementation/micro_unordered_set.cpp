@@ -1,5 +1,7 @@
 #include "micro_unordered_set.hpp"
 
+#include "inner_unordered_set.hpp"
+
 #include "iterator_micro_set.hpp"
 
 using namespace std;
@@ -27,9 +29,7 @@ iterator_micro_set<T>  micro_unordered_set<T>::end()
 {
 	iterator_micro_set<T> r_iterator_micro_set(this->a_inner_set);
 
-	r_iterator_micro_set.end();
-
-	return r_iterator_micro_set;
+	return r_iterator_micro_set.end();
 }
 
 template<typename T>
