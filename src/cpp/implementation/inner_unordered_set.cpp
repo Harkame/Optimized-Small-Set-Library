@@ -110,7 +110,7 @@ inner_set<T>* inner_unordered_set<T>::remove_all_elements(inner_set<T>* p_inner_
 template<typename T>
 inner_set<T>* inner_unordered_set<T>::retain_all_elements(inner_set<T>* p_inner_set)
 {
-  inner_set<T>* r_inner_set = new inner_set_0<T>();
+  inner_set<T>* r_inner_set = inner_set_0<T>::EMPTY;
 
   for(auto t_iterator = this->begin(); t_iterator != this->end(); t_iterator++)
     if(p_inner_set->contains_element(*t_iterator))

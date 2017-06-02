@@ -8,7 +8,7 @@
 using namespace std;
 
 template<typename T>
-class inner_set_3 : public inner_set<T>
+class inner_set_3 : virtual public inner_set<T>
 {
     public :
         struct values

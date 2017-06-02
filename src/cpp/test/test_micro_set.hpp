@@ -10,49 +10,57 @@
 #include <ctime>
 #include <iostream>
 
-#include "inner_set.cpp"
-#include "inner_set_0.cpp"
-#include "inner_set_1.cpp"
-#include "inner_set_2.cpp"
-#include "inner_set_3.cpp"
-#include "inner_set_4.cpp"
-#include "inner_set_5.cpp"
+#include "../implementation/inner_set.cpp"
+#include "../implementation/inner_set_0.cpp"
+#include "../implementation/inner_set_1.cpp"
+#include "../implementation/inner_set_2.cpp"
+#include "../implementation/inner_set_3.cpp"
 
-#include "inner_array_set.cpp"
-#include "inner_unordered_set.cpp"
-#include "inner_tree_set.cpp"
-#include "inner_vector_set.cpp"
+#include "../implementation/inner_array_set.cpp"
+#include "../implementation/inner_unordered_set.cpp"
+#include "../implementation/inner_tree_set.cpp"
+#include "../implementation/inner_vector_set.cpp"
 
-#include "micro_set.cpp"
-#include "micro_inner_set.cpp"
-#include "micro_unordered_set.cpp"
-#include "micro_tree_set.cpp"
-#include "micro_vector_set.cpp"
+#include "../implementation/micro_set.cpp"
 
-#include "iterator_micro_set.cpp"
+#include "../implementation/iterator_micro_set.cpp"
 
 class test_micro_set : public CppUnit::TestFixture
 {
   CPPUNIT_TEST_SUITE(test_micro_set);
   CPPUNIT_TEST_SUITE_END();
 
-private:
-  micro_set<int>* a_micro_set;
+  private:
+    micro_set<int>* a_micro_set;
 
-public:
-  void test_insert();
+  public:
+    /* Iterators */
+    void test_begin();
 
-  void test_add_all();
+    void test_end();
 
-  void test_erase();
+    void test_find();
 
-  void test_erase_all();
+    /* Capacity */
+    void test_empty();
 
-  void test_retain_all();
+    void test_size();
 
-  void test_find();
+    /* Modifiers */
+    void test_insert();
 
-  void test_propagate();
+    void test_insert_all();
+
+    void test_erase();
+
+    void test_erase_all();
+
+    void test_retain_all();
+
+    void test_clear();
+
+    /* Custom */
+    void test_add_all_and_propagate();
 };
 
 #endif

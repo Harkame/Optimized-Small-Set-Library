@@ -4,24 +4,24 @@
 
 #include "benchmark/benchmark_api.h"
 
-#include "inner_set_0.cpp"
-#include "inner_set_1.cpp"
-#include "inner_set_2.cpp"
-#include "inner_set_3.cpp"
-#include "inner_set_4.cpp"
-#include "inner_set_5.cpp"
+#include "../implementation/inner_set.cpp"
+#include "../implementation/inner_set_0.cpp"
+#include "../implementation/inner_set_1.cpp"
+#include "../implementation/inner_set_2.cpp"
+#include "../implementation/inner_set_3.cpp"
 
-#include "inner_array_set.cpp"
-#include "inner_unordered_set.cpp"
-#include "inner_tree_set.cpp"
-#include "inner_vector_set.cpp"
+#include "../implementation/inner_array_set.cpp"
+#include "../implementation/inner_unordered_set.cpp"
+#include "../implementation/inner_tree_set.cpp"
+#include "../implementation/inner_vector_set.cpp"
 
-#include "micro_set.cpp"
-#include "micro_unordered_set.cpp"
-#include "micro_tree_set.cpp"
-#include "micro_vector_set.cpp"
+#include "../implementation/micro_set.cpp"
+#include "../implementation/micro_inner_set.cpp"
+#include "../implementation/micro_unordered_set.cpp"
+#include "../implementation/micro_tree_set.cpp"
+#include "../implementation/micro_vector_set.cpp"
 
-#include "iterator_micro_set.cpp"
+#include "../implementation/iterator_micro_set.cpp"
 
 #define G_POOL_SIZE 4
 #define G_POOL_RANDOM true

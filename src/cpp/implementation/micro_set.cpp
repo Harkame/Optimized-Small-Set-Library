@@ -19,23 +19,21 @@ micro_set<T>::~micro_set()
 }
 
 template<typename T>
-iterator_micro_set<T> micro_set<T>::begin()
+iterator_micro_set<T> micro_set<T>::begin() const
 {
 	return iterator_micro_set<T>(a_inner_set);
 }
 
 template<typename T>
-iterator_micro_set<T>  micro_set<T>::end()
+iterator_micro_set<T>  micro_set<T>::end() const
 {
 	iterator_micro_set<T> r_iterator_micro_set(a_inner_set);
 
-	r_iterator_micro_set.end();
-
-	return r_iterator_micro_set;
+	return r_iterator_micro_set.end();
 }
 
 template<typename T>
-iterator_micro_set<T> micro_set<T>::find(T p_element)
+iterator_micro_set<T> micro_set<T>::find(T p_element) const
 {
 	iterator_micro_set<T> r_iterator_micro_set(a_inner_set);
 
@@ -61,14 +59,15 @@ int micro_set<T>::size() const
 }
 
 template<typename T>
-int micro_set<T>::max_size() const
-{
-	return -1; //Pas de taille max ?
-}
-template<typename T>
 void micro_set<T>:: insert(T p_element)
 {
 	a_inner_set = a_inner_set->add_element(p_element);
+}
+
+template<typename T>
+void micro_set<T>::insert_all(micro_set<T> p_micro_set)
+{
+	a_inner_set = p_micro_set.a_inner_set->add_all_elements(a_inner_set);
 }
 
 template<typename T>
@@ -78,10 +77,9 @@ void micro_set<T>:: erase(T p_element)
 }
 
 template<typename T>
-void micro_set<T>:: clear()
+void micro_set<T>::erase_all(micro_set<T> p_micro_set)
 {
-	delete a_inner_set;
-
+	a_inner_set = p_micro_set.a_inner_set->remove_all_elements(a_inner_set);
 }
 
 template<typename T>
@@ -95,15 +93,9 @@ bool micro_set<T>::retain_all(micro_set<T> p_micro_set)
 }
 
 template<typename T>
-void micro_set<T>::add_all(micro_set<T> p_micro_set)
+void micro_set<T>:: clear()
 {
-	a_inner_set = p_micro_set.a_inner_set->add_all_elements(a_inner_set);
-}
-
-template<typename T>
-void micro_set<T>::remove_all(micro_set<T> p_micro_set)
-{
-	a_inner_set = p_micro_set.a_inner_set->remove_all_elements(a_inner_set);
+	delete a_inner_set;
 }
 
 template<typename T>

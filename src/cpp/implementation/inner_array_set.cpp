@@ -7,12 +7,14 @@
 template<typename T>
 inner_array_set<T>::inner_array_set()
 {
+  a_values = new T[20];
   a_index = 0;
 }
 
 template<typename T>
 inner_array_set<T>::inner_array_set(T p_element)
 {
+  a_values = new T[20];
   a_index = 1;
 
   a_values[0] = p_element;
@@ -22,6 +24,8 @@ template<typename T>
 inner_array_set<T>::inner_array_set(inner_set_3<T>* p_inner_set, T p_element)
 {
   a_index = 4;
+
+  a_values = new T[20];
 
   a_values[0] = p_inner_set->a_values.element_1;
   a_values[1] = p_inner_set->a_values.element_2;
@@ -35,6 +39,8 @@ inner_array_set<T>::inner_array_set(inner_set_3<T>* p_inner_set, T p_element)
 template<typename T>
 inner_array_set<T>::inner_array_set(inner_set<T>* p_inner_set)
 {
+  a_index = 0;
+
   iterator_micro_set<T> t_iterator(p_inner_set);
   for(t_iterator = t_iterator; t_iterator != t_iterator.end(); t_iterator++)
     this->a_values[a_index++] = *t_iterator;
@@ -49,14 +55,17 @@ inner_array_set<T>::~inner_array_set()
 template<typename T>
 inner_set<T>* inner_array_set<T>::add_element(T p_element)
 {
-  if(a_index == 20)
+  if(!contains_element(p_element))
   {
-    if(!contains_element(p_element))
-      return new inner_tree_set<T>(this, p_element);
-  }
-  else
-    if(!contains_element(p_element))
-      a_values[a_index++] = p_element;
+    if(a_index == 20)
+    {
+        return new inner_tree_set<T>(this, p_element);
+    }
+    else
+    {
+        a_values[a_index++] = p_element;
+      }
+    }
 
   return this;
 }
@@ -70,26 +79,11 @@ inner_set<T>* inner_array_set<T>::add_all_elements(inner_set<T>* p_inner_set)
 template<typename T>
 bool inner_array_set<T>::contains_element(T p_element)
 {
-  return a_values[0] == p_element ||
-    a_values[1] == p_element   ||
-    a_values[2] == p_element   ||
-    a_values[3] == p_element   ||
-    a_values[4] == p_element   ||
-    a_values[5] == p_element   ||
-    a_values[6] == p_element   ||
-    a_values[7] == p_element   ||
-    a_values[8] == p_element   ||
-    a_values[9] == p_element   ||
-    a_values[10] == p_element ||
-    a_values[11] == p_element ||
-    a_values[12] == p_element ||
-    a_values[13] == p_element ||
-    a_values[14] == p_element ||
-    a_values[15] == p_element ||
-    a_values[16] == p_element ||
-    a_values[17] == p_element ||
-    a_values[18] == p_element ||
-    a_values[19] == p_element;
+  for(int t_index = 0; t_index < a_index; t_index++)
+    if(a_values[t_index] == p_element)
+      return true;
+
+  return false;
 }
 
 template<typename T>
@@ -132,7 +126,8 @@ T inner_array_set<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_array_set<T>::remove_element(T p_element)
 {
-  if(a_index == 3)
+  /*
+  if(a_index == 4)
   {
     T t_value_1 = {};
     T t_value_2 = {};
@@ -169,20 +164,26 @@ inner_set<T>* inner_array_set<T>::remove_element(T p_element)
   }
   else
   {
-    for(int t_index = 0; t_index < a_index; t_index++)
-      if(a_values[t_index] == p_element)
-      {
-        a_values[t_index] = a_values[a_index--];
-        return this;
-      }
-  }
-    return this;
+  */
+  for(int t_index = 0; t_index < a_index; t_index++)
+    if(a_values[t_index] == p_element)
+    {
+      a_values[t_index] = a_values[a_index - 1];
+      a_index--;
+      return this;
+    }
+  return this;
 }
 
 template<typename T>
 inner_set<T>* inner_array_set<T>::remove_all_elements(inner_set<T>* p_inner_set)
 {
-    return p_inner_set->add_element(a_values[0])->add_element(a_values[1])->add_element(a_values[2])->add_element(a_values[3])->add_element(a_values[4])->add_element(a_values[5])->add_element(a_values[6])->add_element(a_values[7])->add_element(a_values[8])->add_element(a_values[9])->add_element(a_values[10])->add_element(a_values[11])->add_element(a_values[12])->add_element(a_values[13])->add_element(a_values[14])->add_element(a_values[15])->add_element(a_values[16])->add_element(a_values[17])->add_element(a_values[18])->add_element(a_values[19]);
+  iterator_micro_set<T> t_iterator(p_inner_set);
+
+  while(t_iterator++ != t_iterator.end())
+    remove_element(*t_iterator);
+
+  return this;
 }
 
 template<typename T>

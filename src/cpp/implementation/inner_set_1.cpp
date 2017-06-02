@@ -1,6 +1,5 @@
 #include "inner_set_0.hpp"
 #include "inner_set_1.hpp"
-#include "inner_set_2.hpp"
 
 template<typename T>
 inner_set_1<T>::inner_set_1(T p_element)
@@ -71,7 +70,7 @@ inner_set<T>* inner_set_1<T>::remove_all_elements(inner_set<T>* p_inner_set)
 template<typename T>
 inner_set<T>* inner_set_1<T>::retain_all_elements(inner_set<T>* p_inner_set)
 {
-  inner_set<T>* r_inner_set = new inner_set_0<T>();;
+  inner_set<T>* r_inner_set = inner_set_0<T>::EMPTY;
 
   if(p_inner_set->contains_element(a_values.element_1))
     r_inner_set = r_inner_set->add_element(a_values.element_1);

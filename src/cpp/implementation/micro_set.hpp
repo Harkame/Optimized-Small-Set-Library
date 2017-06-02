@@ -18,31 +18,34 @@ class micro_set
 
       virtual ~micro_set();
 
-      virtual iterator_micro_set<T> begin();
+      /* Iterators */
+      virtual iterator_micro_set<T> begin() const;
 
-      virtual iterator_micro_set<T> end();
+      virtual iterator_micro_set<T> end() const;
 
-      virtual iterator_micro_set<T> find(T);
+      virtual iterator_micro_set<T> find(T) const;
 
+      /* Capacity */
       virtual bool empty() const;
 
       virtual int size() const;
 
-      virtual int max_size() const;
-
+      /* Modifiers */
       virtual void insert(T);
+
+      virtual void insert_all(micro_set<T>);
 
       virtual void erase(T);
 
-      virtual void clear();
+      virtual void erase_all(micro_set<T>);
 
       virtual bool retain_all(micro_set<T>);
 
-      virtual void add_all(micro_set<T>);
+      virtual void clear();
 
-      virtual void remove_all(micro_set<T>);
-
+      /* Custom */
       virtual micro_set<T>* add_all_and_propagate(micro_set<T>);
+
 };
 
 #endif

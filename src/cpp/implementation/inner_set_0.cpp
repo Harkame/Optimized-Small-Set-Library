@@ -65,7 +65,7 @@ template<typename T>
 inner_set<T>* inner_set_0<T>::remove_element(T p_element)
 {
 	p_element = p_element;
-	
+
 	return this;
 }
 
