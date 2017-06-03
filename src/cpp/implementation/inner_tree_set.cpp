@@ -14,33 +14,18 @@ template<typename T>
 inner_tree_set<T>::inner_tree_set(inner_set<T>* p_inner_set) : set<T>()
 {
   iterator_micro_set<T> t_iterator(p_inner_set);
+
   for(t_iterator = t_iterator; t_iterator != t_iterator.end(); t_iterator++)
     this->insert(*t_iterator);
 }
 
 template<typename T>
-inner_tree_set<T>::inner_tree_set(inner_array_set<T>* p_inner_set, T p_element) : set<T>()
+inner_tree_set<T>::inner_tree_set(inner_set<T>* p_inner_set, T p_element) : set<T>()
 {
-  this->insert(p_inner_set->a_values[0]);
-  this->insert(p_inner_set->a_values[1]);
-  this->insert(p_inner_set->a_values[2]);
-  this->insert(p_inner_set->a_values[3]);
-  this->insert(p_inner_set->a_values[4]);
-  this->insert(p_inner_set->a_values[5]);
-  this->insert(p_inner_set->a_values[6]);
-  this->insert(p_inner_set->a_values[7]);
-  this->insert(p_inner_set->a_values[8]);
-  this->insert(p_inner_set->a_values[9]);
-  this->insert(p_inner_set->a_values[10]);
-  this->insert(p_inner_set->a_values[11]);
-  this->insert(p_inner_set->a_values[12]);
-  this->insert(p_inner_set->a_values[13]);
-  this->insert(p_inner_set->a_values[14]);
-  this->insert(p_inner_set->a_values[15]);
-  this->insert(p_inner_set->a_values[16]);
-  this->insert(p_inner_set->a_values[17]);
-  this->insert(p_inner_set->a_values[18]);
-  this->insert(p_inner_set->a_values[19]);
+  iterator_micro_set<T> t_iterator(p_inner_set);
+
+  for(t_iterator = t_iterator; t_iterator != t_iterator.end(); t_iterator++)
+    this->insert(*t_iterator);
 
   this->insert(p_element);
 
@@ -69,7 +54,7 @@ inner_set<T>* inner_tree_set<T>::add_all_elements(inner_set<T>* p_inner_set)
 {
   for(auto t_iterator = this->begin(); t_iterator != this->end(); t_iterator++)
   {
-    p_inner_set->add_element(*t_iterator);
+    p_inner_set = p_inner_set->add_element(*t_iterator);
   }
 
   return p_inner_set;

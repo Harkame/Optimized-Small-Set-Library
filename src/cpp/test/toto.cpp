@@ -1,4 +1,4 @@
-#include <vector>
+#include <set>
 #include <unordered_set>
 #include <iostream>
 
@@ -8,14 +8,13 @@ int main()
 {
      unordered_set<int> v;
 
-     v.insert(42);
+     v.insert(1);
+          v.insert(2);
 
-     bool b = v.begin() == v.end();
+     cout << *v.begin() << endl;
+     cout << *v.end() << endl;
 
-     bool t = true;
 
-     cout << "t : " << t << endl;
-     cout <<  b << endl;
 
      return 42;
 }

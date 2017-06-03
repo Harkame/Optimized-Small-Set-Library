@@ -9,7 +9,7 @@ using namespace std;
 template<typename T>
 micro_set<T>::micro_set()
 {
-		this->a_inner_set = inner_set_0<T>::EMPTY;
+	this->a_inner_set = inner_set_0<T>::EMPTY;
 }
 
 template<typename T>
@@ -96,6 +96,8 @@ template<typename T>
 void micro_set<T>:: clear()
 {
 	delete a_inner_set;
+
+	this->a_inner_set = inner_set_0<T>::EMPTY;
 }
 
 template<typename T>

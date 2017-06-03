@@ -81,7 +81,7 @@ inner_set<T>* inner_set_2<T>::remove_element(T p_element)
   {
     t_value_1 = a_values.element_2;
 
-    ////delete this;
+    delete this;
 
     return new inner_set_1<T>(t_value_1);
   }
@@ -89,7 +89,7 @@ inner_set<T>* inner_set_2<T>::remove_element(T p_element)
   {
     t_value_1 = a_values.element_1;
 
-    ////delete this;
+    delete this;
 
     return new inner_set_1<T>(t_value_1);
   }

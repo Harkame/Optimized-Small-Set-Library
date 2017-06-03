@@ -7,14 +7,12 @@
 template<typename T>
 inner_array_set<T>::inner_array_set()
 {
-  a_values = new T[20];
   a_index = 0;
 }
 
 template<typename T>
 inner_array_set<T>::inner_array_set(T p_element)
 {
-  a_values = new T[20];
   a_index = 1;
 
   a_values[0] = p_element;
@@ -25,15 +23,13 @@ inner_array_set<T>::inner_array_set(inner_set_3<T>* p_inner_set, T p_element)
 {
   a_index = 4;
 
-  a_values = new T[20];
-
   a_values[0] = p_inner_set->a_values.element_1;
   a_values[1] = p_inner_set->a_values.element_2;
   a_values[2] = p_inner_set->a_values.element_3;
 
   a_values[3] = p_element;
 
-  //delete p_inner_set;
+  delete p_inner_set;
 }
 
 template<typename T>
@@ -73,7 +69,25 @@ inner_set<T>* inner_array_set<T>::add_element(T p_element)
 template<typename T>
 inner_set<T>* inner_array_set<T>::add_all_elements(inner_set<T>* p_inner_set)
 {
-    return p_inner_set->add_element(a_values[0])->add_element(a_values[1])->add_element(a_values[2])->add_element(a_values[3])->add_element(a_values[4])->add_element(a_values[5])->add_element(a_values[6])->add_element(a_values[7])->add_element(a_values[8])->add_element(a_values[9])->add_element(a_values[10])->add_element(a_values[11])->add_element(a_values[12])->add_element(a_values[13])->add_element(a_values[14])->add_element(a_values[15])->add_element(a_values[16])->add_element(a_values[17])->add_element(a_values[18])->add_element(a_values[19]);
+  /*
+  if((this->get_size() + p_inner_set->get_size()) > 20)
+  {
+    p_inner_set = new inner_tree_set<T>(p_inner_set);
+    p_inner_set->add_all_elements(this);
+  }
+  else
+  {
+    iterator_micro_set<T> t_iterator(this);
+    for(t_iterator; t_iterator != t_iterator.end(); t_iterator++)
+      p_inner_set = p_inner_set->add_element(*t_iterator);
+  }
+  */
+
+  iterator_micro_set<T> t_iterator(this);
+  for(t_iterator; t_iterator != t_iterator.end(); t_iterator++)
+    p_inner_set = p_inner_set->add_element(*t_iterator);
+
+  return p_inner_set;
 }
 
 template<typename T>
@@ -126,45 +140,6 @@ T inner_array_set<T>::get_element(int p_index)
 template<typename T>
 inner_set<T>* inner_array_set<T>::remove_element(T p_element)
 {
-  /*
-  if(a_index == 4)
-  {
-    T t_value_1 = {};
-    T t_value_2 = {};
-    T t_value_3 = {};
-
-    if(a_values[0] == p_element)
-    {
-      t_value_1 = a_values[1];
-      t_value_2 = a_values[2];
-      t_value_3 = a_values[3];
-    }
-    else if(a_values[1] == p_element)
-    {
-      t_value_1 = a_values[0];
-      t_value_2 = a_values[2];
-      t_value_3 = a_values[3];
-    }
-    else if(a_values[2] == p_element)
-    {
-      t_value_1 = a_values[0];
-      t_value_2 = a_values[1];
-      t_value_3 = a_values[3];
-    }
-    else if(a_values[3] == p_element)
-    {
-      t_value_1 = a_values[0];
-      t_value_2 = a_values[1];
-      t_value_3 = a_values[2];
-    }
-
-    //delete this;
-
-    return new inner_set_3<T>(t_value_1, t_value_2, t_value_3);
-  }
-  else
-  {
-  */
   for(int t_index = 0; t_index < a_index; t_index++)
     if(a_values[t_index] == p_element)
     {

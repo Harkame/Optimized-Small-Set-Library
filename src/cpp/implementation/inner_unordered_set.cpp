@@ -25,7 +25,7 @@ inner_unordered_set<T>::inner_unordered_set(inner_tree_set<T>* p_inner_tree_set,
 
   this->insert(p_element);
 
-  //delete p_inner_tree_set;
+  delete p_inner_tree_set;
 }
 
 template<typename T>
@@ -47,7 +47,7 @@ inner_set<T>* inner_unordered_set<T>::add_all_elements(inner_set<T>* p_inner_set
 {
   for(auto t_iterator = this->begin(); t_iterator != this->end(); t_iterator++)
   {
-    p_inner_set->add_element(*t_iterator);
+       p_inner_set = p_inner_set->add_element(*t_iterator);
   }
 
     return p_inner_set;

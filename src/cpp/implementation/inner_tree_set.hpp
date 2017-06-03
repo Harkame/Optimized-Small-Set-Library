@@ -17,7 +17,7 @@ class inner_tree_set : virtual public inner_set<T>, virtual public set<T>
 
         inner_tree_set<T>(inner_set<T>*);
 
-        inner_tree_set<T>(inner_array_set<T>*, T);
+        inner_tree_set<T>(inner_set<T>*, T);
 
         virtual ~inner_tree_set<T>();
 
