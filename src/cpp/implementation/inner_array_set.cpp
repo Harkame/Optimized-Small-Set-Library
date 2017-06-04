@@ -4,22 +4,47 @@
 #include "inner_tree_set.hpp"
 #include "iterator_micro_set.hpp"
 
-template<typename T>
-inner_array_set<T>::inner_array_set()
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set()
 {
   a_index = 0;
 }
 
-template<typename T>
-inner_array_set<T>::inner_array_set(T p_element)
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(T p_element)
 {
   a_index = 1;
 
   a_values[0] = p_element;
 }
 
-template<typename T>
-inner_array_set<T>::inner_array_set(inner_set_3<T>* p_inner_set, T p_element)
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_1<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 2;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+
+  a_values[1] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_2<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 3;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+
+  a_values[2] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_3<T, p_to_up>* p_inner_set, T p_element)
 {
   a_index = 4;
 
@@ -32,30 +57,30 @@ inner_array_set<T>::inner_array_set(inner_set_3<T>* p_inner_set, T p_element)
   delete p_inner_set;
 }
 
-template<typename T>
-inner_array_set<T>::inner_array_set(inner_set<T>* p_inner_set)
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set<T, p_to_up>* p_inner_set)
 {
   a_index = 0;
 
-  iterator_micro_set<T> t_iterator(p_inner_set);
+  iterator_micro_set<T, p_to_up> t_iterator(p_inner_set);
   for(t_iterator = t_iterator; t_iterator != t_iterator.end(); t_iterator++)
     this->a_values[a_index++] = *t_iterator;
 }
 
-template<typename T>
-inner_array_set<T>::~inner_array_set()
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::~inner_array_set()
 {
 
 }
 
-template<typename T>
-inner_set<T>* inner_array_set<T>::add_element(T p_element)
+template<typename T, int p_to_up>
+inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::add_element(T p_element)
 {
   if(!contains_element(p_element))
   {
     if(a_index == 20)
     {
-        return new inner_tree_set<T>(this, p_element);
+        return new inner_tree_set<T, p_to_up>(this, p_element);
     }
     else
     {
@@ -66,8 +91,8 @@ inner_set<T>* inner_array_set<T>::add_element(T p_element)
   return this;
 }
 
-template<typename T>
-inner_set<T>* inner_array_set<T>::add_all_elements(inner_set<T>* p_inner_set)
+template<typename T, int p_to_up>
+inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::add_all_elements(inner_set<T, p_to_up>* p_inner_set)
 {
   /*
   if((this->get_size() + p_inner_set->get_size()) > 20)
@@ -77,21 +102,21 @@ inner_set<T>* inner_array_set<T>::add_all_elements(inner_set<T>* p_inner_set)
   }
   else
   {
-    iterator_micro_set<T> t_iterator(this);
+    iterator_micro_set<T, p_to_up> t_iterator(this);
     for(t_iterator; t_iterator != t_iterator.end(); t_iterator++)
       p_inner_set = p_inner_set->add_element(*t_iterator);
   }
   */
 
-  iterator_micro_set<T> t_iterator(this);
+  iterator_micro_set<T, p_to_up> t_iterator(this);
   for(t_iterator; t_iterator != t_iterator.end(); t_iterator++)
     p_inner_set = p_inner_set->add_element(*t_iterator);
 
   return p_inner_set;
 }
 
-template<typename T>
-bool inner_array_set<T>::contains_element(T p_element)
+template<typename T, int p_to_up>
+bool inner_array_set<T, p_to_up>::contains_element(T p_element)
 {
   for(int t_index = 0; t_index < a_index; t_index++)
     if(a_values[t_index] == p_element)
@@ -100,8 +125,8 @@ bool inner_array_set<T>::contains_element(T p_element)
   return false;
 }
 
-template<typename T>
-bool inner_array_set<T>::contains_all_elements(inner_set<T>* p_inner_set)
+template<typename T, int p_to_up>
+bool inner_array_set<T, p_to_up>::contains_all_elements(inner_set<T, p_to_up>* p_inner_set)
 {
   return p_inner_set->contains_element(a_values[0]) &&
   p_inner_set->contains_element(a_values[1])   &&
@@ -125,20 +150,20 @@ bool inner_array_set<T>::contains_all_elements(inner_set<T>* p_inner_set)
   p_inner_set->contains_element(a_values[19]);
 }
 
-template<typename T>
-inner_set<T>* inner_array_set<T>::copy()
+template<typename T, int p_to_up>
+inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::copy()
 {
-  return new inner_array_set<T>(this);
+  return new inner_array_set<T, p_to_up>(this);
 }
 
-template<typename T>
-T inner_array_set<T>::get_element(int p_index)
+template<typename T, int p_to_up>
+T inner_array_set<T, p_to_up>::get_element(int p_index)
 {
     return a_values[p_index];
 }
 
-template<typename T>
-inner_set<T>* inner_array_set<T>::remove_element(T p_element)
+template<typename T, int p_to_up>
+inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::remove_element(T p_element)
 {
   for(int t_index = 0; t_index < a_index; t_index++)
     if(a_values[t_index] == p_element)
@@ -150,10 +175,10 @@ inner_set<T>* inner_array_set<T>::remove_element(T p_element)
   return this;
 }
 
-template<typename T>
-inner_set<T>* inner_array_set<T>::remove_all_elements(inner_set<T>* p_inner_set)
+template<typename T, int p_to_up>
+inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::remove_all_elements(inner_set<T, p_to_up>* p_inner_set)
 {
-  iterator_micro_set<T> t_iterator(p_inner_set);
+  iterator_micro_set<T, p_to_up> t_iterator(p_inner_set);
 
   while(t_iterator++ != t_iterator.end())
     remove_element(*t_iterator);
@@ -161,10 +186,10 @@ inner_set<T>* inner_array_set<T>::remove_all_elements(inner_set<T>* p_inner_set)
   return this;
 }
 
-template<typename T>
-inner_set<T>* inner_array_set<T>::retain_all_element(inner_set<T>* p_inner_set)
+template<typename T, int p_to_up>
+inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::retain_all_element(inner_set<T, p_to_up>* p_inner_set)
 {
-  inner_set<T>* r_inner_set = new inner_array_set<T>;
+  inner_set<T, p_to_up>* r_inner_set = inner_set_0<T, p_to_up>::EMPTY;
 
   if(p_inner_set->contains_element(a_values[0]))
     r_inner_set->add_element(a_values[0]);
@@ -226,11 +251,20 @@ inner_set<T>* inner_array_set<T>::retain_all_element(inner_set<T>* p_inner_set)
   if(p_inner_set->contains_element(a_values[19]))
     r_inner_set->add_element(a_values[19]);
 
-  return r_inner_set;
+    if(r_inner_set->get_size() == 0)
+    {
+      delete r_inner_set;
+      return this;
+    }
+    else
+    {
+      delete this;
+      return r_inner_set;
+    }
 }
 
-template<typename T>
-inner_set<T>* inner_array_set<T>::add_and_propagate(T p_element, micro_set<T>* p_micro_set)
+template<typename T, int p_to_up>
+inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::add_and_propagate(T p_element, micro_set<T, p_to_up>* p_micro_set)
 {
   if(!contains_element(p_element))
   {
@@ -242,15 +276,15 @@ inner_set<T>* inner_array_set<T>::add_and_propagate(T p_element, micro_set<T>* p
     return this;
 }
 
-template<typename T>
-inner_set<T>* inner_array_set<T>::add_all_and_propagate(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+template<typename T, int p_to_up>
+inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::add_all_and_propagate(inner_set<T, p_to_up>* p_inner_set, micro_set<T, p_to_up>* p_micro_set)
 {
 
   return p_inner_set->add_all_and_propagate_reverse(this, p_micro_set);
 }
 
-template<typename T>
-inner_set<T>* inner_array_set<T>::add_all_and_propagate_reverse(inner_set<T>* p_inner_set, micro_set<T>* p_micro_set)
+template<typename T, int p_to_up>
+inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::add_all_and_propagate_reverse(inner_set<T, p_to_up>* p_inner_set, micro_set<T, p_to_up>* p_micro_set)
 {
   for(int t_index = 0; t_index < 20; t_index++)
     p_inner_set = p_inner_set->add_and_propagate(a_values[t_index], p_micro_set);
@@ -258,8 +292,8 @@ inner_set<T>* inner_array_set<T>::add_all_and_propagate_reverse(inner_set<T>* p_
   return p_inner_set;
 }
 
-template<typename T>
-int inner_array_set<T>::get_size()
+template<typename T, int p_to_up>
+int inner_array_set<T, p_to_up>::get_size()
 {
     return a_index;
 }

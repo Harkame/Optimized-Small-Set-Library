@@ -1,20 +1,22 @@
 #include <set>
 #include <unordered_set>
 #include <iostream>
+#include "toto.hpp"
 
 using namespace std;
 
+template<typename T, int i>
+void titi<T, i>::print()
+{
+     cout << "a_i = " << a_i << endl;
+}
+
+
+
 int main()
 {
-     unordered_set<int> v;
-
-     v.insert(1);
-          v.insert(2);
-
-     cout << *v.begin() << endl;
-     cout << *v.end() << endl;
-
-
+     titi<int, 785> t;
+     t.print();
 
      return 42;
 }

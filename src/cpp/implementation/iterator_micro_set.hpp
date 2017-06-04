@@ -7,34 +7,34 @@
 
 using namespace std;
 
-template<typename T>
+template<typename T, int p_to_up>
 class iterator_micro_set : virtual public iterator<bidirectional_iterator_tag, T>
 {
   public:
     int a_index;
-    inner_set<T>* a_inner_set;
-    
+    inner_set<T, p_to_up>* a_inner_set;
+
     iterator_micro_set();
 
-    iterator_micro_set(inner_set<T>*);
+    iterator_micro_set(inner_set<T, p_to_up>*);
 
     virtual ~iterator_micro_set();
 
     virtual void advance();
 
-    virtual iterator_micro_set<T> begin();
+    virtual iterator_micro_set<T, p_to_up> begin();
 
-    virtual iterator_micro_set<T> end();
+    virtual iterator_micro_set<T, p_to_up> end();
 
-    virtual iterator_micro_set<T> prev();
+    virtual iterator_micro_set<T, p_to_up> prev();
 
-    virtual iterator_micro_set<T> next();
+    virtual iterator_micro_set<T, p_to_up> next();
 
-    virtual iterator_micro_set<T> operator++();
-    virtual iterator_micro_set<T> operator++(int);
+    virtual iterator_micro_set<T, p_to_up> operator++();
+    virtual iterator_micro_set<T, p_to_up> operator++(int);
 
-    virtual iterator_micro_set<T> operator--();
-    virtual iterator_micro_set<T> operator--(int);
+    virtual iterator_micro_set<T, p_to_up> operator--();
+    virtual iterator_micro_set<T, p_to_up> operator--(int);
 };
 
 #endif

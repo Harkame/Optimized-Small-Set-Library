@@ -1,9 +1,5 @@
 #include "test_micro_set.hpp"
 
-#define NUMBER_ITERATION 1000000
-#define NUMBER_ELEMENT 75
-#define SIZE_ARRAY 22
-
 int g_array_random_insert_1[SIZE_ARRAY];
 int g_array_random_insert_2[SIZE_ARRAY];
 int g_array_random_erase[SIZE_ARRAY];
@@ -30,7 +26,7 @@ void test_micro_set::test_begin()
   if(SIZE_ARRAY > 20)
     return;
 
-  micro_set<int> t_micro_set;
+  micro_set<int, TO_UP> t_micro_set;
 
   for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
     t_micro_set.insert(g_array_random_insert_1[t_index]);
@@ -43,8 +39,8 @@ void test_micro_set::test_end()
   if(SIZE_ARRAY > 20)
     return;
 
-  micro_set<int> t_micro_set;
-  iterator_micro_set<int>  t_iterator_micro_set;
+  micro_set<int, TO_UP> t_micro_set;
+  iterator_micro_set<int, TO_UP>  t_iterator_micro_set;
 
   t_iterator_micro_set = t_micro_set.end();
 
@@ -60,8 +56,8 @@ void test_micro_set::test_end()
 
 void test_micro_set::test_find()
 {
-  micro_set<int> t_micro_set;
-  iterator_micro_set<int>  t_iterator_micro_set;
+  micro_set<int, TO_UP> t_micro_set;
+  iterator_micro_set<int, TO_UP>  t_iterator_micro_set;
 
   for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
     t_micro_set.insert(g_array_random_insert_1[t_index]);
@@ -72,7 +68,7 @@ void test_micro_set::test_find()
 
 void test_micro_set::test_empty()
 {
-  micro_set<int> t_micro_set;
+  micro_set<int, TO_UP> t_micro_set;
 
   CPPUNIT_ASSERT(t_micro_set.empty());
 
@@ -90,7 +86,7 @@ void test_micro_set::test_empty()
 
 void test_micro_set::test_size()
 {
-  micro_set<int> t_micro_set;
+  micro_set<int, TO_UP> t_micro_set;
 
   CPPUNIT_ASSERT(t_micro_set.size() == 0);
 
@@ -111,8 +107,8 @@ void test_micro_set::test_size()
 
 void test_micro_set::test_insert()
 {
-  micro_set<int> t_micro_set;
-  iterator_micro_set<int>  t_iterator_micro_set;
+  micro_set<int, TO_UP> t_micro_set;
+  iterator_micro_set<int, TO_UP>  t_iterator_micro_set;
 
   for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
     t_micro_set.insert(g_array_random_insert_1[t_index]);
@@ -128,7 +124,7 @@ void test_micro_set::test_insert()
   for(t_iterator_micro_set = t_micro_set.begin(); t_iterator_micro_set != t_micro_set.end(); t_iterator_micro_set++)
   {
     int t_count_occurence = 0;
-    iterator_micro_set<int> t_iterator_micro_set_2 = t_micro_set.begin();
+    iterator_micro_set<int, TO_UP> t_iterator_micro_set_2 = t_micro_set.begin();
 
     for(auto t_iterator_micro_set_2 = t_micro_set.begin(); t_iterator_micro_set_2 != t_micro_set.end(); t_iterator_micro_set_2++)
       if(*t_iterator_micro_set == *t_iterator_micro_set_2)
@@ -140,12 +136,12 @@ void test_micro_set::test_insert()
 
 void test_micro_set::test_insert_all()
 {
-  micro_set<int> t_micro_set_a;
+  micro_set<int, TO_UP> t_micro_set_a;
 
   for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
     t_micro_set_a.insert(g_array_random_insert_1[t_index]);
 
-  micro_set<int> t_micro_set_b;
+  micro_set<int, TO_UP> t_micro_set_b;
 
   for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
     t_micro_set_b.insert(g_array_random_insert_2[t_index]);
@@ -161,8 +157,8 @@ void test_micro_set::test_insert_all()
 
 void test_micro_set::test_erase()
 {
-  micro_set<int> t_micro_set;
-  iterator_micro_set<int>  t_iterator_micro_set;
+  micro_set<int, TO_UP> t_micro_set;
+  iterator_micro_set<int, TO_UP>  t_iterator_micro_set;
 
   for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
     t_micro_set.insert(g_array_random_insert_1[t_index]);
@@ -176,8 +172,8 @@ void test_micro_set::test_erase()
 
 void test_micro_set::test_erase_all()
 {
-  micro_set<int> t_micro_set;
-  iterator_micro_set<int>  t_iterator_micro_set;
+  micro_set<int, TO_UP> t_micro_set;
+  iterator_micro_set<int, TO_UP>  t_iterator_micro_set;
 
   for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
     t_micro_set.insert(g_array_random_insert_1[t_index]);
@@ -193,12 +189,52 @@ void test_micro_set::test_erase_all()
 
 void test_micro_set::test_retain_all()
 {
+  micro_set<int, TO_UP> t_micro_set_a;
 
+  for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
+    t_micro_set_a.insert(g_array_random_insert_1[t_index]);
+
+  micro_set<int, TO_UP> t_micro_set_b;
+
+  for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
+    t_micro_set_b.insert(g_array_random_insert_2[t_index]);
+
+    for(auto t_iterator_set = t_micro_set_a.begin(); t_iterator_set != t_micro_set_a.end(); t_iterator_set++)
+      cout << *t_iterator_set << endl;
+
+      cout << "------------" << endl;
+      for(auto t_iterator_set = t_micro_set_b.begin(); t_iterator_set != t_micro_set_b.end(); t_iterator_set++)
+        cout << *t_iterator_set << endl;
+
+  t_micro_set_a.retain_all(t_micro_set_b);
+
+        cout << "------------" << endl;
+
+  set<int> t_retain_values;
+
+  for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
+      for(int t_index_2 = 0; t_index_2 < SIZE_ARRAY; t_index_2++)
+        if(g_array_random_insert_1[t_index] == g_array_random_insert_2[t_index_2])
+          t_retain_values.insert(g_array_random_insert_1[t_index]);
+
+  for(auto t_iterator_set = t_micro_set_a.begin(); t_iterator_set != t_micro_set_a.end(); t_iterator_set++)
+    cout << *t_iterator_set << endl;
+
+  for(auto t_iterator_set = t_retain_values.begin(); t_iterator_set != t_retain_values.end(); t_iterator_set++)
+    cout << *t_iterator_set << endl;
+
+  CPPUNIT_ASSERT(t_micro_set_a.size() == t_retain_values.size());
+
+  for(auto t_iterator_set = t_retain_values.begin(); t_iterator_set != t_retain_values.end(); t_iterator_set++)
+  {
+    CPPUNIT_ASSERT(t_micro_set_a.find(*t_iterator_set) != t_micro_set_a.end());
+    CPPUNIT_ASSERT(t_retain_values.find(*t_iterator_set) != t_retain_values.end());
+  }
 }
 
 void test_micro_set::test_clear()
 {
-  micro_set<int> t_micro_set;
+  micro_set<int, TO_UP> t_micro_set;
 
   for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
     t_micro_set.insert(g_array_random_insert_1[t_index]);

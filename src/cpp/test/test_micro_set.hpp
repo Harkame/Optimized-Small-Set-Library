@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <vector>
 
 #include "../implementation/inner_set.cpp"
 #include "../implementation/inner_set_0.cpp"
@@ -19,11 +20,16 @@
 #include "../implementation/inner_array_set.cpp"
 #include "../implementation/inner_unordered_set.cpp"
 #include "../implementation/inner_tree_set.cpp"
-#include "../implementation/inner_vector_set.cpp"
 
 #include "../implementation/micro_set.cpp"
 
 #include "../implementation/iterator_micro_set.cpp"
+
+
+#define NUMBER_ITERATION 1000000
+#define NUMBER_ELEMENT 75
+#define SIZE_ARRAY 3
+#define TO_UP 3
 
 class test_micro_set : public CppUnit::TestFixture
 {
@@ -31,7 +37,7 @@ class test_micro_set : public CppUnit::TestFixture
   CPPUNIT_TEST_SUITE_END();
 
   private:
-    micro_set<int>* a_micro_set;
+    micro_set<int, TO_UP>* a_micro_set;
 
   public:
     /* Iterators */
