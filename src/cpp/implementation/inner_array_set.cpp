@@ -27,7 +27,7 @@ inner_array_set<T, p_to_up>::inner_array_set(inner_set_1<T, p_to_up>* p_inner_se
 
   a_values[1] = p_element;
 
-  //delete p_inner_set;
+  delete p_inner_set;
 }
 
 template<typename T, int p_to_up>

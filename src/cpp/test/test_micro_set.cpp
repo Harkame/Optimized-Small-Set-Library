@@ -199,21 +199,7 @@ void test_micro_set::test_retain_all()
   for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
     t_micro_set_b.insert(g_array_random_insert_2[t_index]);
 
-    for(auto t_iterator_set = t_micro_set_a.begin(); t_iterator_set != t_micro_set_a.end(); t_iterator_set++)
-      cout << *t_iterator_set << endl;
-
-      cout << "-----" << endl;
-
-    for(auto t_iterator_set = t_micro_set_b.begin(); t_iterator_set != t_micro_set_b.end(); t_iterator_set++)
-      cout << *t_iterator_set << endl;
-
-
   t_micro_set_a.retain_all(t_micro_set_b);
-
-  cout << "NEW" << endl;
-
-  for(auto t_iterator_set = t_micro_set_a.begin(); t_iterator_set != t_micro_set_a.end(); t_iterator_set++)
-    cout << *t_iterator_set << endl;
 
   set<int> t_retain_values;
 
