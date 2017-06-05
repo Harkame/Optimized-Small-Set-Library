@@ -1,11 +1,7 @@
 #include "inner_set_0.hpp"
-#include "inner_set.hpp"
+#include "inner_set_2.hpp"
 
 #include "inner_array_set.hpp"
-
-#include <cstdlib>
-#include <ctime>
-#include <iostream>
 
 template<typename T, int p_to_up>
 inner_set_0<T, p_to_up>* inner_set_0<T, p_to_up>::EMPTY = new inner_set_0<T, p_to_up>();
@@ -28,12 +24,6 @@ inner_set<T, p_to_up>* inner_set_0<T, p_to_up>::add_element(T p_element)
 		return new inner_array_set<T, p_to_up>(p_element);
 	else
 		return new inner_set_1<T, p_to_up>(p_element);
-}
-
-template<typename T, int p_to_up>
-inner_set<T, p_to_up>* inner_set_0<T, p_to_up>::add_element_array(T p_element)
-{
-	return new inner_array_set<T, p_to_up>(p_element);
 }
 
 template<typename T, int p_to_up>

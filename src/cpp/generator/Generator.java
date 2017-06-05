@@ -78,6 +78,9 @@ public class Generator {
             context.put("innerSetClassName", innerSetClassName);
             context.put("elements", elements);
             context.put("InnerSetInclude", "inner_set_" + offset + ".hpp");
+            context.put("InnerSetPreviousInclude", "inner_set_" + (offset - 1)+ ".hpp");
+            context.put("InnerSetNextInclude", "inner_set_" + (offset + 1) + ".hpp");
+            context.put("InnerSetArraynclude", "inner_array_set.hpp");
 
             Path dir = Paths.get(pathToGenerated);
             Files.createDirectories(dir);
@@ -94,10 +97,10 @@ public class Generator {
     }
 
     public static void main(String[] args) {
-        for(int i = 1; i <= TO_GENERATE; i++)
+        for(int i = 2; i <= TO_GENERATE - 1; i++)
             createOneFileHeader(i);
 
-        for(int i = 1; i <= TO_GENERATE; i++)
+        for(int i = 2; i <= TO_GENERATE - 1; i++)
             createOneFileSource(i);
     }
 

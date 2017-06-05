@@ -202,13 +202,18 @@ void test_micro_set::test_retain_all()
     for(auto t_iterator_set = t_micro_set_a.begin(); t_iterator_set != t_micro_set_a.end(); t_iterator_set++)
       cout << *t_iterator_set << endl;
 
-      cout << "------------" << endl;
-      for(auto t_iterator_set = t_micro_set_b.begin(); t_iterator_set != t_micro_set_b.end(); t_iterator_set++)
-        cout << *t_iterator_set << endl;
+      cout << "-----" << endl;
+
+    for(auto t_iterator_set = t_micro_set_b.begin(); t_iterator_set != t_micro_set_b.end(); t_iterator_set++)
+      cout << *t_iterator_set << endl;
+
 
   t_micro_set_a.retain_all(t_micro_set_b);
 
-        cout << "------------" << endl;
+  cout << "NEW" << endl;
+
+  for(auto t_iterator_set = t_micro_set_a.begin(); t_iterator_set != t_micro_set_a.end(); t_iterator_set++)
+    cout << *t_iterator_set << endl;
 
   set<int> t_retain_values;
 
@@ -216,12 +221,6 @@ void test_micro_set::test_retain_all()
       for(int t_index_2 = 0; t_index_2 < SIZE_ARRAY; t_index_2++)
         if(g_array_random_insert_1[t_index] == g_array_random_insert_2[t_index_2])
           t_retain_values.insert(g_array_random_insert_1[t_index]);
-
-  for(auto t_iterator_set = t_micro_set_a.begin(); t_iterator_set != t_micro_set_a.end(); t_iterator_set++)
-    cout << *t_iterator_set << endl;
-
-  for(auto t_iterator_set = t_retain_values.begin(); t_iterator_set != t_retain_values.end(); t_iterator_set++)
-    cout << *t_iterator_set << endl;
 
   CPPUNIT_ASSERT(t_micro_set_a.size() == t_retain_values.size());
 
