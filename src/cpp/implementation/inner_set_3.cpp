@@ -1,7 +1,6 @@
 #include "inner_set_2.hpp"
 #include "inner_set_3.hpp"
 #include "inner_set_4.hpp"
-
 #include "inner_array_set.hpp"
 
 template<typename T, int p_to_up>

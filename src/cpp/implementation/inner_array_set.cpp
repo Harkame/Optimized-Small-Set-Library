@@ -184,6 +184,242 @@ inner_array_set<T, p_to_up>::inner_array_set(inner_set_10<T, p_to_up>* p_inner_s
 }
 
 template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_11<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 12;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
+  a_values[5] = p_inner_set->a_values.element_6;
+  a_values[6] = p_inner_set->a_values.element_7;
+  a_values[7] = p_inner_set->a_values.element_8;
+  a_values[8] = p_inner_set->a_values.element_9;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[10] = p_inner_set->a_values.element_11;
+
+  a_values[11] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_12<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 13;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
+  a_values[5] = p_inner_set->a_values.element_6;
+  a_values[6] = p_inner_set->a_values.element_7;
+  a_values[7] = p_inner_set->a_values.element_8;
+  a_values[8] = p_inner_set->a_values.element_9;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[10] = p_inner_set->a_values.element_11;
+  a_values[11] = p_inner_set->a_values.element_12;
+
+  a_values[12] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_13<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 14;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
+  a_values[5] = p_inner_set->a_values.element_6;
+  a_values[6] = p_inner_set->a_values.element_7;
+  a_values[7] = p_inner_set->a_values.element_8;
+  a_values[8] = p_inner_set->a_values.element_9;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[10] = p_inner_set->a_values.element_11;
+  a_values[11] = p_inner_set->a_values.element_12;
+  a_values[12] = p_inner_set->a_values.element_13;
+
+  a_values[13] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_14<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 15;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
+  a_values[5] = p_inner_set->a_values.element_6;
+  a_values[6] = p_inner_set->a_values.element_7;
+  a_values[7] = p_inner_set->a_values.element_8;
+  a_values[8] = p_inner_set->a_values.element_9;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[10] = p_inner_set->a_values.element_11;
+  a_values[11] = p_inner_set->a_values.element_12;
+  a_values[12] = p_inner_set->a_values.element_13;
+  a_values[13] = p_inner_set->a_values.element_14;
+
+  a_values[14] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_15<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 16;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
+  a_values[5] = p_inner_set->a_values.element_6;
+  a_values[6] = p_inner_set->a_values.element_7;
+  a_values[7] = p_inner_set->a_values.element_8;
+  a_values[8] = p_inner_set->a_values.element_9;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[10] = p_inner_set->a_values.element_11;
+  a_values[11] = p_inner_set->a_values.element_12;
+  a_values[12] = p_inner_set->a_values.element_13;
+  a_values[13] = p_inner_set->a_values.element_14;
+  a_values[14] = p_inner_set->a_values.element_15;
+
+  a_values[15] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_16<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 17;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
+  a_values[5] = p_inner_set->a_values.element_6;
+  a_values[6] = p_inner_set->a_values.element_7;
+  a_values[7] = p_inner_set->a_values.element_8;
+  a_values[8] = p_inner_set->a_values.element_9;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[10] = p_inner_set->a_values.element_11;
+  a_values[11] = p_inner_set->a_values.element_12;
+  a_values[12] = p_inner_set->a_values.element_13;
+  a_values[13] = p_inner_set->a_values.element_14;
+  a_values[14] = p_inner_set->a_values.element_15;
+  a_values[15] = p_inner_set->a_values.element_16;
+
+  a_values[16] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_17<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 17;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
+  a_values[5] = p_inner_set->a_values.element_6;
+  a_values[6] = p_inner_set->a_values.element_7;
+  a_values[7] = p_inner_set->a_values.element_8;
+  a_values[8] = p_inner_set->a_values.element_9;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[10] = p_inner_set->a_values.element_11;
+  a_values[11] = p_inner_set->a_values.element_12;
+  a_values[12] = p_inner_set->a_values.element_13;
+  a_values[13] = p_inner_set->a_values.element_14;
+  a_values[14] = p_inner_set->a_values.element_15;
+  a_values[15] = p_inner_set->a_values.element_16;
+  a_values[16] = p_inner_set->a_values.element_17;
+
+  a_values[17] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_18<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 19;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
+  a_values[5] = p_inner_set->a_values.element_6;
+  a_values[6] = p_inner_set->a_values.element_7;
+  a_values[7] = p_inner_set->a_values.element_8;
+  a_values[8] = p_inner_set->a_values.element_9;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[10] = p_inner_set->a_values.element_11;
+  a_values[11] = p_inner_set->a_values.element_12;
+  a_values[12] = p_inner_set->a_values.element_13;
+  a_values[13] = p_inner_set->a_values.element_14;
+  a_values[14] = p_inner_set->a_values.element_15;
+  a_values[15] = p_inner_set->a_values.element_16;
+  a_values[16] = p_inner_set->a_values.element_17;
+  a_values[17] = p_inner_set->a_values.element_18;
+
+  a_values[18] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
+inner_array_set<T, p_to_up>::inner_array_set(inner_set_19<T, p_to_up>* p_inner_set, T p_element)
+{
+  a_index = 20;
+
+  a_values[0] = p_inner_set->a_values.element_1;
+  a_values[1] = p_inner_set->a_values.element_2;
+  a_values[2] = p_inner_set->a_values.element_3;
+  a_values[3] = p_inner_set->a_values.element_4;
+  a_values[4] = p_inner_set->a_values.element_5;
+  a_values[5] = p_inner_set->a_values.element_6;
+  a_values[6] = p_inner_set->a_values.element_7;
+  a_values[7] = p_inner_set->a_values.element_8;
+  a_values[8] = p_inner_set->a_values.element_9;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[9] = p_inner_set->a_values.element_10;
+  a_values[10] = p_inner_set->a_values.element_11;
+  a_values[11] = p_inner_set->a_values.element_12;
+  a_values[12] = p_inner_set->a_values.element_13;
+  a_values[13] = p_inner_set->a_values.element_14;
+  a_values[14] = p_inner_set->a_values.element_15;
+  a_values[15] = p_inner_set->a_values.element_15;
+  a_values[16] = p_inner_set->a_values.element_17;
+  a_values[17] = p_inner_set->a_values.element_18;
+  a_values[18] = p_inner_set->a_values.element_19;
+
+  a_values[19] = p_element;
+
+  delete p_inner_set;
+}
+
+template<typename T, int p_to_up>
 inner_array_set<T, p_to_up>::inner_array_set(inner_set<T, p_to_up>* p_inner_set)
 {
   a_index = 0;
@@ -220,22 +456,8 @@ inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::add_element(T p_element)
 template<typename T, int p_to_up>
 inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::add_all_elements(inner_set<T, p_to_up>* p_inner_set)
 {
-  /*
-  if((this->get_size() + p_inner_set->get_size()) > 20)
-  {
-    p_inner_set = new inner_tree_set<T>(p_inner_set);
-    p_inner_set->add_all_elements(this);
-  }
-  else
-  {
-    iterator_micro_set<T, p_to_up> t_iterator(this);
-    for(t_iterator; t_iterator != t_iterator.end(); t_iterator++)
-      p_inner_set = p_inner_set->add_element(*t_iterator);
-  }
-  */
-
   iterator_micro_set<T, p_to_up> t_iterator(this);
-  for(t_iterator; t_iterator != t_iterator.end(); t_iterator++)
+  for(t_iterator = t_iterator; t_iterator != t_iterator.end(); t_iterator++)
     p_inner_set = p_inner_set->add_element(*t_iterator);
 
   return p_inner_set;
@@ -256,7 +478,7 @@ bool inner_array_set<T, p_to_up>::contains_all_elements(inner_set<T, p_to_up>* p
 {
   iterator_micro_set<T, p_to_up> t_iterator(this);
 
-  for(t_iterator; t_iterator != t_iterator.end(); t_iterator++)
+  for(t_iterator = t_iterator; t_iterator != t_iterator.end(); t_iterator++)
     if(!p_inner_set->contains_element(*t_iterator))
       return false;
 
@@ -336,7 +558,7 @@ inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::add_all_and_propagate(inner_
 template<typename T, int p_to_up>
 inner_set<T, p_to_up>* inner_array_set<T, p_to_up>::add_all_and_propagate_reverse(inner_set<T, p_to_up>* p_inner_set, micro_set<T, p_to_up>* p_micro_set)
 {
-  for(int t_index = 0; t_index < 20; t_index++)
+  for(int t_index = 0; t_index < a_index; t_index++)
     p_inner_set = p_inner_set->add_and_propagate(a_values[t_index], p_micro_set);
 
   return p_inner_set;

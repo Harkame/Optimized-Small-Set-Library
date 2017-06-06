@@ -18,6 +18,12 @@ inner_set_0<T, p_to_up>::~inner_set_0()
 }
 
 template<typename T, int p_to_up>
+inner_set<T, p_to_up>*  inner_set_0<T, p_to_up>::copy()
+{
+	return inner_set_0<T, p_to_up>::EMPTY;
+}
+
+template<typename T, int p_to_up>
 inner_set<T, p_to_up>* inner_set_0<T, p_to_up>::add_element(T p_element)
 {
 	if(this->a_to_up == 0)
@@ -44,12 +50,6 @@ bool inner_set_0<T, p_to_up>::contains_all_elements(inner_set<T, p_to_up>* p_inn
 {
 	p_inner_set = p_inner_set;
   return false;
-}
-
-template<typename T, int p_to_up>
-inner_set<T, p_to_up>*  inner_set_0<T, p_to_up>::copy()
-{
-	return new inner_set_0<T, p_to_up>();
 }
 
 template<typename T, int p_to_up>

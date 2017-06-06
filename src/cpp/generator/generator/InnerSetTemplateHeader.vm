@@ -1,0 +1,48 @@
+#[[#]]#ifndef $innerSetClassNameDefine
+#[[#]]#define $innerSetClassNameDefine
+
+
+#[[#include]]# "inner_set.hpp"
+#[[#include]]# "$previousInnerSetInclude"
+
+using namespace std;
+
+template<typename T, int p_to_up>
+class $innerSetClassName : public inner_set<T, p_to_up>
+{
+    public :
+        struct values
+        {
+            #foreach($element in $elements) T $element#if( $foreach.hasNext); #end#end;
+        } a_values;
+
+        $innerSetClassName<T, p_to_up>();
+        $innerSetClassName<T, p_to_up>(#foreach($element in $elements) T#if( $foreach.hasNext),#end#end);
+        $innerSetClassName<T, p_to_up>($previousInnerSet<T, p_to_up>*, T);
+
+        virtual inner_set<T, p_to_up>* copy();
+
+        virtual ~$innerSetClassName<T, p_to_up>();
+
+        virtual bool contains_element(T);
+        virtual bool contains_all_elements(inner_set<T, p_to_up>*);
+
+        virtual T get_element(int);
+
+        virtual int get_size();
+
+        virtual inner_set<T, p_to_up>* add_element(T);
+        virtual inner_set<T, p_to_up>* add_all_elements(inner_set<T, p_to_up>*);
+
+
+        virtual inner_set<T, p_to_up>* remove_element(T);
+        virtual inner_set<T, p_to_up>* remove_all_elements(inner_set<T, p_to_up>*);
+
+        virtual inner_set<T, p_to_up>* retain_all_elements(inner_set<T, p_to_up>*);
+
+        virtual inner_set<T, p_to_up>* add_and_propagate(T, micro_set<T, p_to_up>*);
+        virtual inner_set<T, p_to_up>* add_all_and_propagate(inner_set<T, p_to_up>*, micro_set<T, p_to_up>*);
+        virtual inner_set<T, p_to_up>* add_all_and_propagate_reverse(inner_set<T, p_to_up>*, micro_set<T, p_to_up>*);
+};
+
+#endif

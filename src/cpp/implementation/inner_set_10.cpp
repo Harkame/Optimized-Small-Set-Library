@@ -1,6 +1,6 @@
 #include "inner_set_9.hpp"
 #include "inner_set_10.hpp"
-
+#include "inner_set_11.hpp"
 #include "inner_array_set.hpp"
 
 template<typename T, int p_to_up>
@@ -29,7 +29,7 @@ inner_set_10<T, p_to_up>::inner_set_10(inner_set_9<T, p_to_up>* p_inner_set, T p
 {
             a_values.element_1 = p_inner_set->a_values.element_1;            a_values.element_2 = p_inner_set->a_values.element_2;            a_values.element_3 = p_inner_set->a_values.element_3;            a_values.element_4 = p_inner_set->a_values.element_4;            a_values.element_5 = p_inner_set->a_values.element_5;            a_values.element_6 = p_inner_set->a_values.element_6;            a_values.element_7 = p_inner_set->a_values.element_7;            a_values.element_8 = p_inner_set->a_values.element_8;            a_values.element_9 = p_inner_set->a_values.element_9;                    a_values.element_10 = p_element;
 
-  delete p_inner_set;
+	delete p_inner_set;
 }
 
 template<typename T, int p_to_up>
@@ -48,7 +48,10 @@ template<typename T, int p_to_up>
 inner_set<T, p_to_up>* inner_set_10<T, p_to_up>::add_element(T p_element)
 {
 	if(!contains_element(p_element))
+		if(this->a_to_up == 10)
 			return new inner_array_set<T, p_to_up>(this, p_element);
+		else
+			return new inner_set_11<T, p_to_up>(this, p_element);
 	else
 		return this;
 }
@@ -192,7 +195,7 @@ inner_set<T, p_to_up>* inner_set_10<T, p_to_up>::add_and_propagate(T p_element, 
   	{
   		p_micro_set->insert(p_element);
 
-		return new inner_array_set<T, p_to_up>(this, p_element);
+		return new inner_set_11<T, p_to_up>(this, p_element);
 	}
 }
 

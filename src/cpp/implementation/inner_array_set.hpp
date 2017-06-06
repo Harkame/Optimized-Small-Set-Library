@@ -14,6 +14,15 @@
 #include "inner_set_8.hpp"
 #include "inner_set_9.hpp"
 #include "inner_set_10.hpp"
+#include "inner_set_11.hpp"
+#include "inner_set_12.hpp"
+#include "inner_set_13.hpp"
+#include "inner_set_14.hpp"
+#include "inner_set_15.hpp"
+#include "inner_set_16.hpp"
+#include "inner_set_17.hpp"
+#include "inner_set_18.hpp"
+#include "inner_set_19.hpp"
 
 using namespace std;
 
@@ -36,6 +45,15 @@ class inner_array_set : public inner_set<T, p_to_up>
           inner_array_set<T, p_to_up>(inner_set_8<T, p_to_up>*, T);
           inner_array_set<T, p_to_up>(inner_set_9<T, p_to_up>*, T);
           inner_array_set<T, p_to_up>(inner_set_10<T, p_to_up>*, T);
+          inner_array_set<T, p_to_up>(inner_set_11<T, p_to_up>*, T);
+          inner_array_set<T, p_to_up>(inner_set_12<T, p_to_up>*, T);
+          inner_array_set<T, p_to_up>(inner_set_13<T, p_to_up>*, T);
+          inner_array_set<T, p_to_up>(inner_set_14<T, p_to_up>*, T);
+          inner_array_set<T, p_to_up>(inner_set_15<T, p_to_up>*, T);
+          inner_array_set<T, p_to_up>(inner_set_16<T, p_to_up>*, T);
+          inner_array_set<T, p_to_up>(inner_set_17<T, p_to_up>*, T);
+          inner_array_set<T, p_to_up>(inner_set_18<T, p_to_up>*, T);
+          inner_array_set<T, p_to_up>(inner_set_19<T, p_to_up>*, T);
 
           inner_array_set<T, p_to_up>(inner_set<T, p_to_up>*);
 

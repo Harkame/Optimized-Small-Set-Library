@@ -61,6 +61,8 @@ int micro_set<T, p_to_up>::size() const
 template<typename T, int p_to_up>
 void micro_set<T, p_to_up>:: insert(T p_element)
 {
+	if(this->a_inner_set == nullptr)
+	this->a_inner_set = inner_set_0<T, p_to_up>::EMPTY;
 	a_inner_set = a_inner_set->add_element(p_element);
 }
 
@@ -91,7 +93,9 @@ void micro_set<T, p_to_up>::retain_all(micro_set<T, p_to_up> p_micro_set)
 template<typename T, int p_to_up>
 void micro_set<T, p_to_up>:: clear()
 {
-	delete a_inner_set;
+	if(a_inner_set != nullptr)
+		if(a_inner_set->get_size() != 0)
+			delete a_inner_set;
 
 	this->a_inner_set = inner_set_0<T, p_to_up>::EMPTY;
 }
@@ -100,7 +104,9 @@ template<typename T, int p_to_up>
 micro_set<T, p_to_up>* micro_set<T, p_to_up>::add_all_and_propagate(micro_set<T, p_to_up> p_micro_set)
 {
 	micro_set<T, p_to_up>* r_micro_set = new micro_set<T, p_to_up>();
+
 	this->a_inner_set = this->a_inner_set->add_all_and_propagate(p_micro_set.a_inner_set, r_micro_set);
+
 	return r_micro_set;
 }
 

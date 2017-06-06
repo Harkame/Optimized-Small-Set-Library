@@ -24,7 +24,7 @@ template<typename T, int p_to_up>
 inner_set_6<T, p_to_up>::inner_set_6(inner_set_5<T, p_to_up>* p_inner_set, T p_element)
 {
             a_values.element_1 = p_inner_set->a_values.element_1;            a_values.element_2 = p_inner_set->a_values.element_2;            a_values.element_3 = p_inner_set->a_values.element_3;            a_values.element_4 = p_inner_set->a_values.element_4;            a_values.element_5 = p_inner_set->a_values.element_5;                    a_values.element_6 = p_element;
-    
+
 	delete p_inner_set;
 }
 
@@ -126,23 +126,23 @@ inner_set<T, p_to_up>* inner_set_6<T, p_to_up>::retain_all_elements(inner_set<T,
 
 		if(p_inner_set->contains_element(a_values.element_1))
 		 r_inner_set = r_inner_set->add_element(a_values.element_1);
-	
+
 	 	if(p_inner_set->contains_element(a_values.element_2))
 		 r_inner_set = r_inner_set->add_element(a_values.element_2);
-	
+
 	 	if(p_inner_set->contains_element(a_values.element_3))
 		 r_inner_set = r_inner_set->add_element(a_values.element_3);
-	
+
 	 	if(p_inner_set->contains_element(a_values.element_4))
 		 r_inner_set = r_inner_set->add_element(a_values.element_4);
-	
+
 	 	if(p_inner_set->contains_element(a_values.element_5))
 		 r_inner_set = r_inner_set->add_element(a_values.element_5);
-	
+
 	 	if(p_inner_set->contains_element(a_values.element_6))
 		 r_inner_set = r_inner_set->add_element(a_values.element_6);
-	
-	 
+
+
     if(this->get_size() != 0)
       delete this;
 

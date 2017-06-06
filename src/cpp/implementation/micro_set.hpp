@@ -16,7 +16,6 @@ class micro_set
 
 
   public:
-
       micro_set();
 
       virtual ~micro_set();
@@ -50,7 +49,6 @@ class micro_set
       virtual micro_set<T, p_to_up>* add_all_and_propagate(micro_set<T, p_to_up>);
 
       friend class inner_set_0<T, p_to_up>;
-
 };
 
 #endif

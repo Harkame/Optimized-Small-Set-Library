@@ -48,10 +48,7 @@ inner_set<T, p_to_up>* inner_set_9<T, p_to_up>::add_element(T p_element)
 {
 	if(!contains_element(p_element))
 		if(this->a_to_up == 9)
-          {
-               cout << "UP FROM 10" << endl;
 			return new inner_array_set<T, p_to_up>(this, p_element);
-          }
 		else
 			return new inner_set_10<T, p_to_up>(this, p_element);
 	else

@@ -231,8 +231,45 @@ void test_micro_set::test_clear()
 
 void test_micro_set::test_add_all_and_propagate()
 {
-//TODO
-}
+     micro_set<int, TO_UP> t_micro_set_a;
+
+     for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
+       t_micro_set_a.insert(g_array_random_insert_1[t_index]);
+
+     micro_set<int, TO_UP> t_micro_set_b;
+
+     for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
+       t_micro_set_b.insert(g_array_random_insert_2[t_index]);
+
+      micro_set<int, TO_UP>*  t_micro_set_c = t_micro_set_a.add_all_and_propagate(t_micro_set_b);
+
+      for(auto t_iterator = t_micro_set_b.begin(); t_iterator != t_micro_set_b.end(); t_iterator++)
+        CPPUNIT_ASSERT(t_micro_set_a.find(*t_iterator) != t_micro_set_a.end());
+
+      for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
+        CPPUNIT_ASSERT(t_micro_set_a.find(g_array_random_insert_2[t_index]) != t_micro_set_a.end());
+
+        set<int> t_diff_values;
+
+
+
+      for(int t_index = 0; t_index < SIZE_ARRAY; t_index++)
+      {
+        int t_count = 0;
+        for(int t_index_2 = 0; t_index_2 < SIZE_ARRAY; t_index_2++)
+        {
+          if(g_array_random_insert_2[t_index] == g_array_random_insert_1[t_index_2])
+            t_count = 1;
+        }
+
+        if(t_count == 0)
+          t_diff_values.insert(g_array_random_insert_2[t_index] );
+      }
+
+  for(auto t_iterator = t_diff_values.begin(); t_iterator != t_diff_values.end(); t_iterator++)
+    CPPUNIT_ASSERT(t_micro_set_c->find(*t_iterator) != t_micro_set_c->end());
+
+  }
 
 int main()
 {

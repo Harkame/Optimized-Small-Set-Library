@@ -23,6 +23,15 @@
 #include "../implementation/inner_set_8.cpp"
 #include "../implementation/inner_set_9.cpp"
 #include "../implementation/inner_set_10.cpp"
+#include "../implementation/inner_set_11.cpp"
+#include "../implementation/inner_set_12.cpp"
+#include "../implementation/inner_set_13.cpp"
+#include "../implementation/inner_set_14.cpp"
+#include "../implementation/inner_set_15.cpp"
+#include "../implementation/inner_set_16.cpp"
+#include "../implementation/inner_set_17.cpp"
+#include "../implementation/inner_set_18.cpp"
+#include "../implementation/inner_set_19.cpp"
 
 
 #include "../implementation/inner_array_set.cpp"
@@ -35,9 +44,9 @@
 
 
 #define NUMBER_ITERATION 1000000
-#define NUMBER_ELEMENT 75
-#define SIZE_ARRAY 7
-#define TO_UP 1
+#define NUMBER_ELEMENT 15
+#define SIZE_ARRAY 30
+#define TO_UP 13
 
 class test_micro_set : public CppUnit::TestFixture
 {
